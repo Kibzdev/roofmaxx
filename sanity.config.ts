@@ -8,6 +8,7 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -23,6 +24,7 @@ export default defineConfig({
     types: schemaTypes,
   },
   plugins: [
+    vercelDeployTool(),
     presentationTool({
       previewUrl: {
         draftMode: {
