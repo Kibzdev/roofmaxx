@@ -40,7 +40,8 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
     className = clsx(baseStyles[variant], colorStyles, className);
 
     if (href) {
-      return <Link href={href} passHref><p ref={ref as React.Ref<HTMLAnchorElement>} className={className} {...props} /></Link>;
+      // Correcting the element to 'a' instead of 'p'
+      return <Link href={href} passHref><a ref={ref as React.Ref<HTMLAnchorElement>} className={className} {...props} /></Link>;
     } else {
       return <button ref={ref as React.Ref<HTMLButtonElement>} className={className} {...props} />;
     }
