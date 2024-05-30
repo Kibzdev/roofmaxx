@@ -40,8 +40,13 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
     className = clsx(baseStyles[variant], colorStyles, className);
 
     if (href) {
-      // Correcting the element to 'a' instead of 'p'
-      return <Link href={href} passHref><a ref={ref as React.Ref<HTMLAnchorElement>} className={className} {...props} /></Link>;
+      // Using Link with automatic <a> tag handling
+      return (
+        <Link href={href} passHref>
+          {/* Applying ref and className directly to Link as Next.js 14 handles <a> automatically */}
+          <span ref={ref as React.Ref<HTMLAnchorElement>} className={className} {...props} />
+        </Link>
+      );
     } else {
       return <button ref={ref as React.Ref<HTMLButtonElement>} className={className} {...props} />;
     }

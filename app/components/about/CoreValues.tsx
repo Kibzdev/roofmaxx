@@ -10,7 +10,7 @@ import integrityIcon from '../../../public/assets/icons/security.svg';
 
 
 interface ValueProps {
-  icon: StaticImageData;
+  icon: string;
   title: string;
   description: string;
 }
@@ -29,23 +29,23 @@ const CoreValue: React.FC = () => {
   return (
       <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 p-8")}>
       <ValueCard 
-        icon={collaborationIcon}
+        icon={collaborationIcon.src}
         title="Collaboration"
        
         description="Collaboration is the process of two or more people or organizations working together to complete a task or achieve a goal."
       />
       <ValueCard 
-        icon={trustIcon}
+        icon={trustIcon.src}
         title="Trust"
         description="Trust will help us foster a positive and productive environment that delivers value to our users and customers."
       />
       <ValueCard 
-        icon={transparencyIcon}
+        icon={transparencyIcon.src}
         title="Transparency"
         description="Transparency, as used in science is operating in such a way that it is easy for others to see what actions are performed."
       />
       <ValueCard 
-        icon={integrityIcon}
+        icon={integrityIcon.src}
         title="Integrity"
         description="Collaboration is the process of two or more people or organizations working together to complete a task or achieve a goal."
       />
