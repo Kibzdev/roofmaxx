@@ -6,6 +6,8 @@ import { services } from "@/constants";
 // Assuming the type for a single service item
 type Service = {
   _id: string;
+  title:string;
+  desc: string;
   // Add other properties that ServiceCard needs
   [key: string]: any; // Example placeholder, specify actual expected properties
 };

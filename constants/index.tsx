@@ -24,32 +24,32 @@ export const servicesLinks = [
 ];
 export const services = [
   {
-    _id: 3001,
+    _id: '3001',
     title: "Roof Cleaning",
     desc: "Revitalize your roof with our professional roof cleaning service, removing dirt, moss, and debris to extend its lifespan and restore its appearance."
   },
   {
-    _id: 3002,
+    _id: '3002',
     title: "Roof Painting",
     desc: "Our roof painting service refreshes and protects your roof, adding a durable, weather-resistant coating that enhances its look and shields it from the elements."
   },
   {
-    _id: 3003,
+    _id: '3003',
     title: "Gutter Replacement",
     desc: "Our gutter replacement service ensures proper drainage and protects your home from water damage, with durable gutters that are tailored to your home's design."
   },
   {
-    _id: 3004,
+    _id: '3004',
     title: "Roof Leaks Repair",
     desc: "We offer comprehensive roof leaks repair to identify and fix any leaks, ensuring your roof stays watertight and your home remains safe and dry."
   },
   {
-    _id: 3005,
+    _id: '3005',
     title: "Roof Replacement",
     desc: "Our roof replacement service offers a seamless transition from old to new, providing you with a durable, high-quality roof that enhances your home's safety and curb appeal."
   },
   {
-    _id: 3006,
+    _id: '3006',
     title: "Roof Inspection",
     desc: "Our roof replacement service offers a seamless transition from old to new, providing you with a durable, high-quality roof that enhances your home's safety and curb appeal."
   },
