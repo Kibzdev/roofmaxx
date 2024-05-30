@@ -1,7 +1,7 @@
 // pages/gallery.tsx
 import React from 'react';
 import GalleryCard from "../components/GalleryCard";
-import { sanityDocument } from "next-sanity"
+import { SanityDocument } from "next-sanity"
 import { sanityFetch } from '../../sanity/lib/client';
 
 // Define the structure of the image object
