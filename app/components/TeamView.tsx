@@ -8,6 +8,10 @@ import ExpertCard from './ExpertCard';
 // Assuming a type definition for individual team members
 type TeamMember = {
   _id: string;
+  photo: string;       // URL for the expert's photo
+  name: string;        // Expert's name
+  expertise: string;
+
   // Define other properties expected by ExpertCard
   [key: string]: any; // Replace with specific fields used by ExpertCard for better type safety
 };

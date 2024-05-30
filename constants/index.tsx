@@ -95,21 +95,21 @@ export const usps = [
 ]
 export const teamMembers= [
   {
-    _id: 600,
+    _id: '600',
     photo:gent01,
     name: "Michael",
     expertise: "Leak Repair",
   
    },
    {
-    _id: 601,
+    _id: '601',
     photo:gent02,
     name: "Godwin",
     expertise: "Leak Repair",
   
    },
    {
-    _id: 602,
+    _id: '602',
     photo:gent03,
     name: "Brian",
     expertise: "Leak Repair",
