@@ -10,17 +10,17 @@ export const navData = [
 ];
 // constants/paths.js
 export const quickLinks = [
-  { id: 1, label: 'About Us', path: '/about' },
-  { id: 2, label: 'Services', path: '/services' },
-  { id: 3, label: 'Contact', path: '/contact' },
-  { id: 4, label: 'Blog', path: '/blog' },
+  { id: '1', label: 'About Us', path: '/about' },
+  { id: '2', label: 'Services', path: '/services' },
+  { id: '3', label: 'Contact', path: '/contact' },
+  { id: '4', label: 'Blog', path: '/blog' },
 ];
 export const servicesLinks = [
-  { id: 1, label: 'Roof Installation', path: '/services/roof-installation' },
-  { id: 2, label: 'Roof Replacement', path: '/services/roof-replacement' },
-  { id: 3, label: 'Roof Repair', path: '/services/roof-repair' },
-  { id: 4, label: 'Roof Painting', path: '/services/roof-painting' },
-  { id: 5, label: 'Gutter Replacement', path: '/services/gutter-replacement' },
+  { id: '1', label: 'Roof Installation', path: '/services/roof-installation' },
+  { id: '2', label: 'Roof Replacement', path: '/services/roof-replacement' },
+  { id: '3', label: 'Roof Repair', path: '/services/roof-repair' },
+  { id: '4', label: 'Roof Painting', path: '/services/roof-painting' },
+  { id: '5', label: 'Gutter Replacement', path: '/services/gutter-replacement' },
 ];
 export const services = [
   {
@@ -55,37 +55,37 @@ export const services = [
   },
 ];
 export const usps = [
-  { _id: 400,
+  { _id: '400',
     icon: contractor,
     title:"Expertise",
     brief:" With over [number] years of industry experience, Roofing Max boasts a team of highly skilled and trained professionals dedicated to delivering unparalleled expertise and craftsmanship in every project.",
     
 
   },
-  { _id: 401,
+  { _id: '401',
     icon: tech,
     title:"Technology ",
     brief:"We leverage the latest in roofing technology, from drone inspections to energy-efficient materials, to provide cutting-edge solutions that are both durable and environmentally friendly",
   
   },
-  { _id: 402,
+  { _id: '402',
     icon: cert,
     title:"Quality",
     brief:"- At Roofing Max, quality is non-negotiable. We source premium materials and adhere to stringent quality standards to ensure durability, longevity, and resilience in every roofing solution we deliver."
 
   },
-  { _id: 403,
+  { _id: '403',
     icon: checkmark,
     title:"Satisfaction",
     brief:"At our roofing company, safety isn't just a priority—it's ingrained in every aspect of our operations. From the moment we begin planning a project to the final inspection, we're committed to providing a safe environment for our team members, clients, and communities."
   },
-  { _id: 404,
+  { _id: '404',
     icon: goal,
     title:"Customer Centric",
     brief:"What sets Roofing Max apart is our relentless pursuit of perfection and our unwavering commitment to our customers' needs. Unlike our competitors, we don't just fix roofs; we protect homes and families with integrity, professionalism, and care."
 
   },
-  { _id: 405,
+  { _id: '405',
     icon: security,
     title:"Safety",
     brief:"Our top priority is safety. With rigorous protocols, trained professionals, and state-of-the-art equipment, we ensure that every roofing solution is executed with the utmost care, protecting both our team and your property."
@@ -118,7 +118,7 @@ export const teamMembers= [
 ]
 export const posts = [
   {
-    id: 1,
+    id: '1',
     title: 'Drone Roof inspection',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
     author: 'Our Team',
@@ -128,7 +128,7 @@ export const posts = [
     image: drone
   },
   {
-    id: 2,
+    id: '2',
     title: 'Choosing color for your Roof',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
     author: 'Our Team',
