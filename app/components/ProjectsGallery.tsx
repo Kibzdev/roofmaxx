@@ -45,7 +45,7 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = ({ projects= [] }) => {
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4">
             {projects.map((project) => (
                 project.images.map((image, index) => (
-                    <GalleryCard key={image.asset._id} img={image.asset.url} title={project.project_name} brief={image.alt} />
+                    <GalleryCard key={image.asset._id} img={image.asset.url} title={project.project_name}  />
                 ))
             ))}
         </div>
