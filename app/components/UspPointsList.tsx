@@ -9,7 +9,7 @@ type Usp = {
   _id: string;
   icon: string;
   title: string;
-  brief: string;
+  brief: string
   // Add other properties that UspPointsCard expects
   [key: string]: any; // Replace with specific fields used by UspPointsCard for better type safety
 };
