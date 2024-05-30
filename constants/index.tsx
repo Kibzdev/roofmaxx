@@ -120,7 +120,7 @@ export const posts = [
   {
     id: 1,
     title: 'Drone Roof inspection',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
     author: 'Our Team',
     date: '24 April 2024',
     readTime: '5 mins read',
@@ -130,7 +130,7 @@ export const posts = [
   {
     id: 2,
     title: 'Choosing color for your Roof',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.....',
     author: 'Our Team',
     date: '24 April 2024',
     readTime: '5 mins read',

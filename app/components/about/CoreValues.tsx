@@ -7,7 +7,7 @@ import collaborationIcon from '../../../public/assets/icons/tech.svg';
 import trustIcon from '../../../public/assets/icons/certified.svg';
 import transparencyIcon from '../../../public/assets/icons/reliable.svg';
 import integrityIcon from '../../../public/assets/icons/security.svg';
-import Container from '../Container';
+
 
 interface ValueProps {
   icon: StaticImageData;
