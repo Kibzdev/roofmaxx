@@ -284,3 +284,62 @@ export const servicesData = [
     ]
   }
 ];
+export const projectGallerys = [
+  {
+   _id: '500',
+   img:nyki,
+   location: "Nanyuki",
+   service: "ROOF REPLACEMENT",
+   imgNo:1
+  },
+  {
+   _id: '501',
+   img:nyki,
+   location: "Kitale",
+   service: "ROOF CLEANING",
+   imgNo:2
+  },
+  {
+   _id: '502',
+   img:nyki,
+   location: "Thika",
+   service: "ROOF INSPECTION",
+   imgNo:3
+  },
+  {
+   _id: '503',
+   img:nyki,
+   location: "Kisumu",
+   service: "ROOF PAINTING",
+   imgNo:5,
+  },
+  {
+   _id: '505',
+   img:nyki,
+   location: "Nyeri",
+   service: "Leak Repair",
+   imgNo:6
+  },
+  {
+   _id: '504',
+   img:nyki,
+   location: "Ngong",
+   service: "Gutter Installation",
+   imgNo:7,
+  },
+  {
+   _id: '505',
+   img:nyki,
+   location: "Nyeri",
+   service: "Leak Repair",
+   imgNo: 8,
+  },
+  {
+   _id: '505',
+   img:nyki,
+   location: "Nyeri",
+   service: "Leak Repair",
+   imgNo:9,
+  },
+  
+]

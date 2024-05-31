@@ -7,7 +7,7 @@ interface ServiceCardProps {
   desc: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, desc }) => {
+const RoofingServices: React.FC<ServiceCardProps> = ({ title, desc }) => {
   return (
     <div className="flex-col items-center gap-4 mx-auto max-w-sm bg-white border-t-8 border-t-sky-800 mt-8 p-6">
       <h3 className="text-center text-red-500 font-semibold">{title}</h3>
@@ -22,4 +22,4 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, desc }) => {
   );
 }
 
-export default ServiceCard;
+export default RoofingServices;

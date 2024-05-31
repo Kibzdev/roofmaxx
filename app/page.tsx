@@ -3,7 +3,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import CompBriefCta from './components/CompBriefCta';
 import InspireCTO from './components/InspireCto';
-import RoofingServices from './components/RoofingService';
+import RoofingService from './components/RoofingService';
 import UspPointsList from './components/UspPointsList';
 import ProjectsGallery from './components/ProjectsGallery';
 import TeamView from './components/TeamView';
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
     <main>
       <Hero/>
       <CompBriefCta />
-      <RoofingServices/>
+      <RoofingService title="one" desc="new" />
       <InspireCTO/>
       <UspPointsList/>
       <ProjectsGallery/>

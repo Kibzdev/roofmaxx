@@ -1,55 +1,31 @@
-// pages/gallery.tsx
 import React from 'react';
-import GalleryCard from "../components/GalleryCard";
-import { SanityDocument } from "next-sanity"
-import { sanityFetch } from '../../sanity/lib/client';
+import GalleryCard from "./GalleryCard";
+import { projectGallerys } from "@/constants";
 
-// Define the structure of the image object
-type Image = {
-    asset: {
-        _id: string;
-        url: string;
-    };
-    alt?: string; // Making alt text optional
-};
 
-// Define the structure of a project
-type Project = {
+interface ProjectGallery {
     _id: string;
-    project_name: string;
-    images: Image[];
-};
-
-// Define the props for the GalleryPage component
-type ProjectsGalleryProps = {
-    projects: Project[];
-};
-const PROJECTSGALLERY = `*[_type == "project" && defined(images)]{
-  _id,
-  project_name,
-  images[]{
-    asset->{
-      _id,
-      url
-    },
-    alt
+    img: string;
+    location: string;
+    service: string;
+    imgNo: number; // Ensure that this is a string as per your error details
   }
-}
-`
+  
 
-
-
-// Define the GalleryPage component using the GalleryPageProps
-const ProjectsGallery: React.FC<ProjectsGalleryProps> = ({ projects= [] }) => {
-    return (
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4">
-            {projects.map((project) => (
-                project.images.map((image, index) => (
-                    <GalleryCard key={image.asset._id} img={image.asset.url} title={project.project_name}  />
-                ))
-            ))}
-        </div>
-    );
+const ProjectsGallery: React.FC = () => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 md:gap-0 px-6">
+      {projectGallerys.map((projectGallery: ProjectGallery, index: number) => (
+        <GalleryCard
+          key={projectGallery._id}
+          img={projectGallery.img}
+          location={projectGallery.location}
+          service={projectGallery.service}
+          imgNo={projectGallery.imgNo}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default ProjectsGallery;
