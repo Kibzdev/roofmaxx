@@ -1,31 +1,21 @@
-// import React from 'react';
-// import Image from "next/image";
-// import { groq } from "next-sanity";
-// import { client } from '@/sanity/lib/client';
+import React from 'react';
+import Image from "next/image";
+import { bgservice } from "../../../public/assets";
 
+// Define an interface for the component props
+interface ServiceBannerProps {
+  serviceId: string; // Assuming serviceId is a string, adjust the type as needed
+}
 
-// const query =  groq`
-// *[_type == "service"] {
-//   "serviceBannerUrl": service_banner.asset
-// }
-// ;
-// `
+const ServiceBanner: React.FC<ServiceBannerProps> = ({serviceId}) => {
+  // Example of using the serviceId to find service details if needed
+  // const service = servicesBannerData.find(service => service.id === serviceId);
 
-// // Define the type for the props expected by the component
-// interface ServiceBannerProps {
-//   serviceId: string; // Adjust the type according to what serviceId is expected to be (string, number, etc.)
-// }
+  return (
+    <div className="relative w-full h-64 sm:h-96 bg-gray-300">
+      <Image src={bgservice} alt="roofing" className="object-cover w-full h-full" width={1440} height={640} />
+    </div>
+  );
+};
 
-// export default async function ServiceBanner (){
-//   // const service = servicesBannerData.find(service => service.id === serviceId);
-//   const serviceBanners = await  client.fetch(query)
-//   console.log(serviceBanners)
-//   return (
-//     <div className="relative w-full h-64 sm:h-96 bg-gray-300">
-
-//       <Image src={bgservice} alt="roofing" className="object-cover w-full h-full" width={1440} height={640} />
-//     </div>
-//   );
-// };
-
-
+export default ServiceBanner;

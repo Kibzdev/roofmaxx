@@ -138,3 +138,149 @@ export const posts = [
     image: paints,
   },
 ];
+export const BREADCRUMB_DATA = [
+  { _id: 'customizations', label: 'Customizations', path: '/customizations' },
+  { _id: 'lightingIntegration', label: 'Lighting Integration', path: '/lighting-integration' },
+  { _id: 'pricing', label: 'Pricing', path: '/pricing' },
+  { _id: 'projects', label: 'Projects', path: '/projects' },
+  { _id: 'process', label: 'Process', path: '/process' }
+];
+export const SERVICE_DESC_DATA = {
+  _id: 'serviceDesc',
+  content: `ROOFMAX offer the best ceiling installations in Kenya with outstanding service, professional finish and business integrity. We guarantee ceiling installations that are both professional and aesthetically pleasing. No job is too big or small, and ROOFMAX transforms both first time small homes into havens, and brought additional layers of excellence to large luxury homes as well. We specialize in creating ceilings that not only elevate the aesthetics of a space but also enhance its functionality, making your interiors truly exceptional. We offer superior products, quality installations and service that is unmatched.`,
+  sidePanel: [
+    { _id: 'drywall', label: 'Drywall Ceiling' },
+    { _id: 'suspended', label: 'Suspended (Drop) Ceiling' },
+    { _id: 'tile', label: 'Ceiling Tile' },
+    { _id: 'coffered', label: 'Coffered Ceiling' },
+    { _id: 'acoustic', label: 'Acoustic Ceiling' },
+    { _id: 'woodPanel', label: 'Wood Panel Ceiling' },
+    { _id: 'tin', label: 'Tin Ceiling' }
+  ]
+};
+export const SERVICE_BENEFITS = [
+  { _id: '2000', title: 'High Quality Materials', description: 'Only the best materials are used for durability and aesthetics.' },
+  { _id: '2001', title: 'Expert Installation', description: 'Professional installation by certified technicians.' },
+  { _id: '2002', title: 'Custom Designs', description: 'Customize designs to meet unique tastes and requirements.' },
+  { _id: '2003', title: 'Energy Efficient', description: 'Ceilings that help reduce energy costs by improving insulation.' },
+  { _id: '2004', title: 'Long-Lasting Warranty', description: 'Each installation comes with a comprehensive warranty for peace of mind.' }
+];
+export const SLIDER_IMAGES = [
+  { _id: 1, src: flatceiling, alt: 'Coved Ceiling' },
+  { _id: 2, src:cofferedceiling, alt: 'Coffered Ceiling' },
+  { _id: 3, src: tinceiling, alt: 'Wood Panel Ceiling' }
+];
+export const faqs = [
+  { _id: '3000', question: "What types of ceilings can you install?", answer: "We install a variety of ceiling types including drywall, suspended, coffered, and more." },
+  { _id: '3001', question: "How long does a ceiling installation take?", answer: "Installation time varies based on ceiling type and room size, but typically ranges from a few days to a week." },
+  { _id: '3002', question: "Do you offer customized ceiling designs?", answer: "Yes, we provide custom designs to match your specific aesthetic and functional needs." },
+  { _id: '3003', question: "Is my presence required during installation?", answer: "It is not necessary for you to be present, but we recommend checking in periodically." },
+  { _id: '3004', question: "What is the cost of ceiling installation?", answer: "Costs vary depending on the ceiling type and size of the area. Contact us for a detailed quote." },
+  { _id: '3005', question: "Are your workers licensed and insured?", answer: "Yes, all our technicians are fully licensed and insured for your peace of mind." },
+  { _id: '3006', question: "How do I maintain my new ceiling?", answer: "We will provide you with maintenance tips specific to the type of ceiling installed." },
+  { _id: '3007', question: "Do you remove old ceiling material?", answer: "Yes, we can handle the removal and disposal of old ceiling material." },
+  { _id: '3008', question: "What warranty do you offer on installations?", answer: "We offer a comprehensive warranty that covers materials and labor." },
+  { _id: '3009', question: "How do I schedule a consultation?", answer: "You can schedule a consultation by contacting us via phone, email, or our website." }
+  // Additional FAQs can be added here
+];
+export const SERVICE_INTRO = {
+  callToAction: {
+    text: "Call us Today!",
+    phone: "800-756-0809",
+    subText: "and get a FREE MORTGAGE Quote",
+  },
+  services: [
+    {
+      _id: 'service1',
+      title: 'Residential',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.',
+      image: residential
+    },
+    {
+      _id: 'service2',
+      title: 'Commercial',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.',
+      image: commercial
+    },
+  ],
+};
+export const servicesData = [
+  {
+    _id: '1000',
+    title: "ROOF REPAIR",
+    services: [
+      "Leak Repairs",
+      "Shingle Replacement",
+      "Flashing Repair",
+      "Gutter Cleaning and Repair",
+      "Roof Ventilation Repair",
+      "Roof Inspection",
+      "Flat Roof Repair"
+    ]
+  },
+  {
+    _id: '1001',
+    title: "Ceiling Installation",
+    services:[
+      "Drywall Ceiling Installation",
+      "Suspended (Drop) Ceiling Installation",
+      "Ceiling Tile Installation",
+      "Coffered Ceiling Installation",
+      "Acoustic Ceiling Installation",
+      "Wood Panel Ceiling Installation",
+      "Tin Ceiling Installation"
+    ]
+  },
+  {
+    _id: '1002',
+    title: "Solar Cleaning",
+    services:[
+      "Residential Solar Panel Cleaning",
+      "Commercial Solar Panel Cleaning",
+      "Industrial Solar Panel Cleaning",
+      "Bird Proofing and Pest Control",
+      "Debris Removal",
+      "Waterless Cleaning Options",
+      "Solar Panel Recoating"
+    ]
+  },
+  {
+    _id: '1003',
+    title: "ROOFTOP WATERPROOFING",
+    services: [
+      "Waterproof Membrane Installation",
+      "Roof Coating",
+      "Roof Sealing",
+      "Roof Caulking",
+      "Drainage Solutions",
+      "Thermal Insulation",
+      "Waterproofing Accessories"
+    ]
+  },
+  {
+    _id: '1004',
+    title: "Roof Inspection",
+    services: [
+      "Drone Roof Inspection",
+      "Structural Inspection",
+      "Leak Detection",
+      "Flashing and Sealant Inspection",
+      "Gutter and Downspout Inspection",
+      "Attic Inspection",
+      "Thermal Imaging Inspection"
+    ]
+  },
+  {
+    _id: '1005',
+    title: "Roof Cleaning",
+    services: [
+      "Soft Washing",
+      "Pressure Washing",
+      "Chemical Roof Cleaning",
+      "Eco-Friendly Cleaning Solutions",
+      "Roof Coating and Sealing",
+      "Gutter Cleaning",
+      "Roof Stain Removal"
+    ]
+  }
+];
