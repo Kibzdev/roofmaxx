@@ -20,7 +20,7 @@ export const serviceType = defineType({
       fields: [
         defineField({ name: 'service_id', type: 'string', title: 'Service ID' }),
         defineField({ name: 'service_name', type: 'string', title: 'Service Name' }),
-        defineField({ name: 'description', type: 'string', title: 'Description' })
+        defineField({ name: 'description', type: 'text', title: 'Description' })
       ]
     }),
     defineField({
@@ -39,7 +39,7 @@ export const serviceType = defineType({
             type: 'slug',
             title: 'Slug',
             options: {
-              source: 'type_name',
+              source: 'service_types.type_name',
               maxLength: 200, // Will limit the length of the slug to 200 characters
               slugify: input => input
                               .toLowerCase()
@@ -59,7 +59,6 @@ export const serviceType = defineType({
       group: 'details',
       options: { source: 'name'},
       validation:(rule) =>rule
-      .required()
       .error(`required to generate a page on the website`),
       hidden:({document})=> !document?.name,
     }),
@@ -109,12 +108,11 @@ export const serviceType = defineType({
       description: 'List of frequently asked questions and their answers related to this service.'
     }),
   ],
-  preview : {
+  preview: {
     select: {
-      name: 'name',
-      subtitle: 'headline.name',
-      media: 'image'
-  },
+      title: 'identification.service_name',
+      media: 'service_banner'
+    },
   
 }
 

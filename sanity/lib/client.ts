@@ -1,7 +1,7 @@
 
 import "server-only";
 import { createClient, type QueryParams } from 'next-sanity'
-
+import ImageUrlBuilder from "@sanity/image-url";
 
 export const client = createClient({
   projectId: "fjfiw14y",
@@ -32,3 +32,7 @@ export async function sanityFetch<QueryResponse>({
     },
   });
 }
+const builder = ImageUrlBuilder(client);
+export const urlFor = (source: any) => {
+  return builder.image(source);
+};

@@ -37,19 +37,7 @@ export const clientType = defineType({
       title: 'Phone Number',
       description: 'Contact phone number for the client'
     }),
-    defineField({
-      name: 'county',
-      title: 'County',
-      type: 'array',
-      of: [{
-          type: 'object',
-          fields: [
-            defineField({ name: 'county', type: 'string', title: 'County', description: 'Name of the county' }),
-            defineField({ name: 'town', type: 'string', title: 'Town', description: 'Name of the town' })
-          ]
-      }] // Referencing the county object type defined above
-    }),
-   
+    
     defineField({
       name: 'location',
       type: 'reference',

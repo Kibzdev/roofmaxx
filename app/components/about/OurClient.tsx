@@ -1,11 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
 import Container from '../Container';
+import FadeIn from '../FadeIn';
 
 const OurClient: React.FC = () => {
   return (
     <Container>
-       <div className={clsx(
+      <FadeIn>
+      <div className={clsx(
       "flex flex-col justify-center items-center",
       "bg-white p-8",
       "text-center",
@@ -32,6 +34,8 @@ const OurClient: React.FC = () => {
        
       </div>
     </div>
+      </FadeIn>
+       
     </Container>
    
   );

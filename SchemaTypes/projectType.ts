@@ -6,6 +6,21 @@ export const projectType = defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'projectid',
+      type: 'string',
+      title: 'Project ID',
+    }),
+    defineField({
+      name: 'projectbanner',
+      type: 'image',
+      title: 'Project Banner',
+      description: 'Hero Banner representing the project',
+      options: {
+        hotspot: true // Enables image cropping around areas designated as important
+      }
+    }),
+
+    defineField({
       name: 'project_name',
       type: 'string',
       title: 'Project Name',
@@ -92,4 +107,10 @@ export const projectType = defineType({
       }
     }),
   ],
+  preview: {
+    select: {
+      title: "project_name",
+      media: "image",
+    },
+  }
 });

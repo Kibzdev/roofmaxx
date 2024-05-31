@@ -1,3 +1,4 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        "4xl": "2.5rem",
+      },
+
+      fontFamily: {
+        sans: ["Mona Sans", ...defaultTheme.fontFamily.sans],
+        display: [
+          ["Mona Sans", ...defaultTheme.fontFamily.sans],
+          { fontVariationSettings: '"wdth" 125' },
+        ],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

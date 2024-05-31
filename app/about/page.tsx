@@ -9,7 +9,7 @@ import GetStartedCTO from '../components/about/GetStartedCTO'
 
 const About = () => {
   return (
-    <div>
+    <div className='relative mt-0'>
       <AboutBanner />
       <HeaderTitle/>
       <OurClient/>
