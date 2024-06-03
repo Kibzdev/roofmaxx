@@ -48,11 +48,6 @@ interface ServiceType {
   slug: Slug;
 }
 
-interface ServiceIdentification {
-  service_id: string;
-  service_name: string;
-  description: string;
-}
 
 interface CustomerRequirements {
   pre_service_requirements: string[];
@@ -64,11 +59,41 @@ interface FAQ {
   answer: string;
 }
 
-export interface Service extends Base {
-  identification: ServiceIdentification;
-  service_types: ServiceType[];
-  slug: Slug;
-  service_banner: Image;
-  customerRequirements: CustomerRequirements;
-  faqs: FAQ[];
+//New Types
+
+// types.ts
+export interface Service {
+  serviceId: string; // Ensure this matches the data structure you are fetching
+  serviceName: string;
+  serviceDescription: string;
+  _id: string;
+  service_types: Array<{
+    _ref: string;
+  }>;
+  slug: {
+    current: string;
+  };
+  service_banner: {
+    asset: {
+      _ref: string;
+    };
+  };
+  customerRequirements: {
+    pre_service_requirements: string[];
+    post_service_care: string[];
+  };
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+export interface ServiceIdentification {
+  service_Id: string; // If needed
+  serviceName: string;
+  serviceDescription: string; // If the description field is named as such
+}
+export interface Service {
+  
+  // Add other properties as needed
 }

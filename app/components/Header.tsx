@@ -32,13 +32,9 @@ const Header = () => {
     <header className='flex flex-col items-center w-full'>
       <TopBar/>
       <Navbar />
-      <Container className="relative z-50 flex justify-between py-8">
-    
+      <Container className="relative z-50 flex justify-between ">
       <div className="flex items-center gap-6">
-              
-
             </div>
-
       </Container>
        
           

@@ -20,39 +20,20 @@ export const serviceType = defineType({
       fields: [
         defineField({ name: 'service_id', type: 'string', title: 'Service ID' }),
         defineField({ name: 'service_name', type: 'string', title: 'Service Name' }),
-        defineField({ name: 'description', type: 'text', title: 'Description' })
+        defineField({ name: 'service_desc', type: 'text', title: 'Description' })
       ]
     }),
     defineField({
       name: 'service_types',
       type: 'array',
-      title: 'Service Types',
+      title: 'Niches',
       description: 'Types of services offered.',
       of: [{
-        type: 'object',
-        fields: [
-          defineField({ name: 'type_name', type: 'string', title: 'Type Name', description: 'Name of the service type' }),
-          defineField({ name: 'type_banner', type: 'image', title: 'Type Image', description: 'Image representing the type of service', options: { hotspot: true } }),
-          defineField({ name: 'desc', type: 'array', title: 'Description', description: 'Detailed descriptions of the service type',  of:[{type: 'block'}]}),
-          defineField({
-            name: 'slug',
-            type: 'slug',
-            title: 'Slug',
-            options: {
-              source: 'service_types.type_name',
-              maxLength: 200, // Will limit the length of the slug to 200 characters
-              slugify: input => input
-                              .toLowerCase()
-                              .replace(/\s+/g, '-')
-                              .replace(/[^\w\-]+/g, '')
-                              .replace(/\-\-+/g, '-') // Replace multiple dashes with a single dash
-            },
-            description: 'Slug for the service type (used for creating SEO-friendly URLs)'
-          }),
-          
-        ]
+        type: 'reference',
+        to: [{ type: 'nicheType' }]
       }]
     }),
+        
     defineField({
       name: 'slug',
       type: 'slug',

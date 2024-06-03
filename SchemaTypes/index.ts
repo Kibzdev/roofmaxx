@@ -3,6 +3,7 @@ import { projectType } from './projectType'
 import { serviceType } from './serviceType'
 import { locationType } from './locationType'
 import { teamType } from './teamType'
+import {  nicheType } from './nicheType'
 
 export const schemaTypes = [
   serviceType,
@@ -10,4 +11,6 @@ export const schemaTypes = [
   clientType,
   locationType,
   teamType,
+  nicheType,
+
 ]

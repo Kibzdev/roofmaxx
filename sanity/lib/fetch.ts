@@ -1,10 +1,11 @@
 // ./sanity/lib/fetch.ts
 
-import type { ClientPerspective, QueryParams } from "next-sanity";
+import { groq, type ClientPerspective, type QueryParams } from "next-sanity";
 import { draftMode } from "next/headers";
-
 import { client } from "./client";
 import { token } from "./token";
+import { Service } from '../../types'
+;
 
 /**
  * Used to fetch data in Server Components, it has built in support for handling Draft Mode and perspectives.
@@ -51,3 +52,29 @@ export async function sanityFetch<QueryResponse>({
     next: { revalidate: 60 },
   });
 }
+
+/*services fetch*/
+
+
+// All services
+export const fetchServiceData = async (): Promise<Service[]> => {
+  const query = groq`
+    *[_type == "service"] {
+      "serviceName": identification.service_name,
+      "serviceDescription": identification.service_desc
+    }
+  `;
+  const data: Service[] = await client.fetch(query);
+  return data;
+}
+
+// description 
+
+
+
+
+
+/*Projects */
+// Tests 
+
+
