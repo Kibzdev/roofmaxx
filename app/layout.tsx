@@ -21,19 +21,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
-  
-        {draftMode().isEnabled && (
-          <div>
-            <p className="p-4 bg-blue-300 block" onClick={() => window.location.href = '/api/disable-draft'}>
-              Disable preview mode
-            </p>
-          </div>
-        )}
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"></link>
         <Header/>
         {children}
         <Footer/>
-
-        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   );

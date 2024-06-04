@@ -11,9 +11,7 @@ import ServiceFaqs from '../../components/service/ServiceFaqs';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 
-interface ServicesPageProps {
-  services: Service[];
-}
+
 
 const query =groq`*[_type == "service"] {
   "serviceId": identification.service_id,

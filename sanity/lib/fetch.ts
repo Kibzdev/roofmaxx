@@ -67,7 +67,17 @@ export const fetchServiceData = async (): Promise<Service[]> => {
   const data: Service[] = await client.fetch(query);
   return data;
 }
-
+// Service Nav
+export const fetchNavigationData = async () => {
+  const query = `
+    *[_type == "service"]{
+      "id": _id,
+      "label": identification.service_name
+    }
+  `;
+  const data = await client.fetch(query);
+  return data;
+};
 // description 
 
 

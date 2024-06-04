@@ -93,7 +93,10 @@ export interface ServiceIdentification {
   serviceName: string;
   serviceDescription: string; // If the description field is named as such
 }
-export interface Service {
+export interface Project {
+  project_name : string;
+  projectbannerUrl: string;
+
   
   // Add other properties as needed
 }

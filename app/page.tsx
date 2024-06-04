@@ -5,7 +5,6 @@ import CompBriefCta from './components/CompBriefCta';
 import InspireCTO from './components/InspireCto';
 import RoofingService from './components/RoofingService';
 import UspPointsList from './components/UspPointsList';
-import ProjectsGallery from './components/ProjectsGallery';
 import TeamView from './components/TeamView';
 import Stats from './components/Stats';
 import TestimonialCard from './components/TestimonialCard';
@@ -20,7 +19,6 @@ const Home: React.FC = () => {
       <RoofingService title="one" desc="new" />
       <InspireCTO/>
       <UspPointsList/>
-      <ProjectsGallery/>
       <TeamView/>
       <Stats/>
       <TestimonialCard/>
