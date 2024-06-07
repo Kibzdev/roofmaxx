@@ -167,3 +167,24 @@ export interface GalleryCardProps {
   projects: Project[];
 }
 
+// service
+// app/types.ts
+export interface ServiceParams {
+  slug: string;
+}
+
+export interface ServiceIdentification {
+  service_id: string;
+  service_name: string;
+  service_desc: string;
+}
+
+
+export interface Service {
+  identification: {
+    service_id: string;
+    service_name: string;
+    service_desc: string;
+  };
+  slug: { current: string };
+}

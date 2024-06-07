@@ -1,25 +1,47 @@
-// components/ServiceCard.tsx
+"use client";
 
 import React from 'react';
+import Link from 'next/link';
 
-type ServiceCardProps = {
-  title: string;
-  desc: string;
-  serviceItem: string;  // Add this if it is meant to be part of the props
-};
+interface ServiceIdentification {
+  service_id: string;
+  service_name: string;
+  service_desc: string;
+}
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, desc, serviceItem }) => {
+interface Service {
+  identification: ServiceIdentification;
+  slug: { current: string } | null;
+}
+
+interface ServiceCardProps {
+  services?: Service[];
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ services = [] }) => {
   return (
-    <div className="flex-col items-center gap-4 mx-auto max-w-sm bg-white border-t-8 border-t-sky-800 mt-8 p-6">
-      <h3 className="text-center text-red-500 font-semibold">{title}</h3>
-      <p className="font-light text-center">{desc}</p>
-      {/* Assuming serviceItem is used somewhere here, for example: */}
-      <p>{serviceItem}</p>
-      <a href="#" className="inline-flex font-medium items-center text-red-500 hover:underline mt-4">
-        Learn More
-      </a>
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 w-full h-full">
+      {services.map((service, index) => (
+        <Link
+          key={index}
+          href={service.slug?.current ? `/services/${service.slug.current}` : '#'}
+          className="relative block w-full h-full cursor-pointer"
+        >
+          <div className="relative w-full h-full p-4 bg-white border border-gray-200 shadow-sm hover:shadow-md">
+            <h3 className="text-center text-red-500 font-semibold mb-2">
+              {service.identification.service_name}
+            </h3>
+            <p className="font-light text-center mb-4">
+              {service.identification.service_desc}
+            </p>
+            <p className="text-center text-gray-500 text-sm">
+              <strong>Service ID:</strong> {service.identification.service_id}
+            </p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
-}
+};
 
 export default ServiceCard;

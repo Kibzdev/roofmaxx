@@ -1,15 +1,15 @@
 import { defineField, defineType } from 'sanity';
-import {CalendarIcon } from '@sanity/icons';
+import { CalendarIcon } from '@sanity/icons';
 
 export const serviceType = defineType({
   name: 'service',
-  title: "Service",
+  title: 'Service',
   type: 'document',
   icon: CalendarIcon,
 
   groups: [
-  {name: 'details', title:'Details'},
-  {name: 'editorial', title: "Editorial"}
+    { name: 'details', title: 'Details' },
+    { name: 'editorial', title: 'Editorial' }
   ],
   fields: [
     defineField({
@@ -33,17 +33,15 @@ export const serviceType = defineType({
         to: [{ type: 'nicheType' }]
       }]
     }),
-        
     defineField({
       name: 'slug',
       type: 'slug',
-      group: 'details',
-      options: { source: 'name'},
-      validation:(rule) =>rule
-      .error(`required to generate a page on the website`),
-      hidden:({document})=> !document?.name,
+      title: 'Slug',
+      options: {
+        source: (doc: any) => doc.identification?.service_name,
+        maxLength: 200, // Optional: sets the maximum slug length
+      },
     }),
-    
     defineField({
       name: 'service_banner',
       type: 'image',
@@ -54,23 +52,21 @@ export const serviceType = defineType({
         hotspot: true // Enables image cropping around areas designated as important
       }
     }),
-    
-    
     defineField({
       name: 'customerRequirements',
       title: 'Customer Requirements',
       type: 'object',
       group: 'details',
       fields: [
-        defineField({ name: 'pre_service_requirements', type: 'array', title: 'Pre-service Requirements', of: [{type: 'string'}] }),
-        defineField({ name: 'post_service_care', type: 'array', title: 'Post-service Care', of: [{type: 'string'}] })
+        defineField({ name: 'pre_service_requirements', type: 'array', title: 'Pre-service Requirements', of: [{ type: 'string' }] }),
+        defineField({ name: 'post_service_care', type: 'array', title: 'Post-service Care', of: [{ type: 'string' }] })
       ]
     }),
     defineField({
       name: 'faqs',
       title: 'FAQs',
       type: 'array',
-      group:'editorial',
+      group: 'editorial',
       of: [
         {
           type: 'object',
@@ -94,7 +90,5 @@ export const serviceType = defineType({
       title: 'identification.service_name',
       media: 'service_banner'
     },
-  
-}
-
+  }
 });

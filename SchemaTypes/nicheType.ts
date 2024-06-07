@@ -17,6 +17,15 @@ export const nicheType = defineType({
     defineField({ name: 'niche_name', type: 'string', title: 'Niche Name', validation: Rule => Rule.required() }),
     defineField({ name: 'niche_banner', type: 'image', title: 'Niche Image', options: { hotspot: true } }),
     defineField({ name: 'niche_desc', type: 'text', title: 'Description' }),
+    defineField({
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'niche_name', // Generates the slug from the project name
+        maxLength: 200, // Optional: sets the maximum slug length
+      }
+    }),
     defineField({ name: 'niche_benefits', type: 'text', title: 'Benefits' }),
     defineField({
       name: 'faqs',
