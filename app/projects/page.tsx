@@ -37,7 +37,10 @@ const Projects = () => {
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
         </p>
       </PageIntro>
+     
       {error ? <p>{error}</p> : <GalleryCard projects={projects}/>}
+      
+     
     </div>
   );
 };

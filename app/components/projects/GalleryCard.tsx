@@ -11,13 +11,14 @@ interface GalleryCardProps {
 
 const GalleryCard: React.FC<GalleryCardProps> = ({ projects }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 w-full h-full">
+    <div   className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 w-full h-full">
       {projects.map((project, index) => (
         <Link
           key={index}
           href={`/projects/${project.slug}`}
           className="relative block w-full h-full cursor-pointer"
         >
+          <h2>{project.projectid}</h2>
           <div className="relative w-full h-full">
             <Image
               src={project.projectbannerUrl || '/default.jpg'}
