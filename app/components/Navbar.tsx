@@ -44,7 +44,12 @@ const NavBar: React.FC = () => {
               {/* Dropdown nav item */}
               <Menu as="div" className="relative">
                 <MenuButton className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
+                <Link href="/services">
+                <p className="text-white hover:bg-sky-600 hover:text-white">
                   Services
+                </p>
+              </Link>
+                 
                 </MenuButton>
                 <Transition
                   as={Fragment}
