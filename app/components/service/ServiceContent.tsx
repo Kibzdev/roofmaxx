@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { urlFor } from '@/sanity/lib/client'; // Update the import paths according to your project structure
+import { urlFor } from '@/sanity/lib/sanityclient'; // Update the import paths according to your project structure
 
 // Assuming Service has the following structure
 interface Service {

@@ -87,16 +87,83 @@ export interface Service {
     answer: string;
   }>;
 }
+export interface ProjectClient {
+  name: string;
+  photoUrl: string;
+  testimonial: string;
+}
+
+export interface ImageAsset {
+  _type: 'image';
+  asset: {
+      _ref: string;
+  };
+}
 
 export interface ServiceIdentification {
   service_Id: string; // If needed
   serviceName: string;
   serviceDescription: string; // If the description field is named as such
 }
-export interface Project {
-  project_name : string;
-  projectbannerUrl: string;
+// /types/index.ts
 
-  
-  // Add other properties as needed
+export interface Project {
+  projectid: string;
+  project_name: string;
+  projectbannerUrl: string;
+  client: {
+    name: string;
+    category: string;
+    clientImage: string;
+    testimonial: string;
+  };
+  service_used: {
+    name: string;
+    description: string;
+  };
+  start_date: string;
+  end_date: string;
+  status: string;
+  budget: number;
+  description: string;
+  outcome: string;
+  images: { url: string }[];
+  documents: { url: string }[];
+  client_attachments: { url: string }[];
+  slug:string;
 }
+
+
+export interface Location {
+  _id: string;
+  name: string;
+  address?: string;
+}
+
+export interface Client {
+  client_id: string;
+  name: string;
+  category: 'Residential' | 'Commercial' | 'Industrial';
+  phone: string;
+  location: Location;
+  photoUrl: string;
+  testimonial: string;
+  project_ref: Array<{ _id: string }>;
+}
+
+export interface ProjectDetailProps {
+  projects: Project[];
+  clients: Client[];
+  locations: Location[];
+}
+export interface ProjectClient {
+  name: string;       // Client's name
+  photoUrl: string;   // URL to the client's photo
+  testimonial: string; // Client's testimonial about the project
+}
+
+
+export interface GalleryCardProps {
+  projects: Project[];
+}
+

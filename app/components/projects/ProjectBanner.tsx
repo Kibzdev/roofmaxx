@@ -1,19 +1,53 @@
-import React from 'react';
-import Image from "next/image";
-import { bgservice } from "../../../public/assets";
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { sanityClient, urlFor } from '../../../sanity/lib/sanityclient';
+import clsx from 'clsx';
 
-// Define an interface for the component props
 interface ProjectBannerProps {
-  serviceId: string; // Assuming serviceId is a string, adjust the type as needed
+  serviceId: string;
 }
 
-const ProjectBanner: React.FC<ProjectBannerProps> = ({serviceId}) => {
-  // Example of using the serviceId to find service details if needed
-  // const service = servicesBannerData.find(service => service.id === serviceId);
+interface Project {
+  projectbanner: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
+const ProjectBanner: React.FC<ProjectBannerProps> = ({ serviceId }) => {
+  const [bannerUrl, setBannerUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBanner = async () => {
+      try {
+        const query = `*[_type == "project" && projectid == $serviceId][0]{ projectbanner }`;
+        const params = { serviceId };
+        const project: Project = await sanityClient.fetch(query, params);
+        const imageUrl = project?.projectbanner ? urlFor(project.projectbanner).url() : null;
+        setBannerUrl(imageUrl);
+      } catch (error) {
+        console.error('Error fetching project banner:', error);
+      }
+    };
+
+    fetchBanner();
+  }, [serviceId]);
 
   return (
-    <div className="relative w-full h-64 sm:h-96 bg-gray-300">
-      <Image src={bgservice} alt="roofing" className="object-cover w-full h-full" width={1440} height={640} />
+    <div className={clsx("relative w-full h-64 sm:h-96 bg-gray-300")}>
+      {bannerUrl ? (
+        <Image
+          src={bannerUrl}
+          alt="Project Banner"
+          className="object-cover w-full h-full"
+          layout="fill"
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center">
+          <p>Loading...</p>
+        </div>
+      )}
     </div>
   );
 };

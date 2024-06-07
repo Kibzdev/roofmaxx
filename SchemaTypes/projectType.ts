@@ -33,6 +33,15 @@ export const projectType = defineType({
       description: 'Reference to client details'
     }),
     defineField({
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'project_name', // Generates the slug from the project name
+        maxLength: 200, // Optional: sets the maximum slug length
+      }
+    }),    
+    defineField({
       name: 'service_used',
       type: 'reference',
       title: 'Service Used',
