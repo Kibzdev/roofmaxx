@@ -1,236 +1,190 @@
-// Import necessary libraries
-import { Fragment } from 'react';
-import { Menu, MenuButton, MenuItem, MenuItems, Transition, Popover,PopoverButton,PopoverOverlay,PopoverPanel  } from '@headlessui/react';
-import Link from 'next/link';
-import Logo from './Logo';
-import Button from './Button';
-import { TbMenu2 } from "react-icons/tb";
-import { IoIosArrowUp } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion"
-import React, { ReactNode } from 'react';
+import Image from "next/image";
+import { Fragment } from "react";
+import logo from "../../public/assets/logos/logo.png";
+import Link from "next/link";
+import {
+  AiOutlineMenu,
+  AiOutlineClose,
+  AiOutlineInstagram,
+  AiOutlineFacebook,
+  AiOutlineX,
+} from "react-icons/ai";
+import { useState } from "react";
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 
-type MobileNavLinksProps = {
-  children: ReactNode;
-} & React.ComponentPropsWithoutRef<typeof Popover.Button>;  // Extend props from Popover.Button
+const serviceLinks = [
+  { href: "/services/ceiling-installation", label: "Ceiling Installation" },
+  { href: "/services/roof-repair", label: "Roof Repair" },
+  { href: "/services/roof-cleaning", label: "Roof Cleaning" },
+  { href: "/services/roof-painting", label: "Roof Painting" },
+  { href: "/services/solar-cleaning", label: "Solar Cleaning" },
+  { href: "/services/root-waterproofing", label: "RoofTop WaterProofing" },
+];
 
-const MobileNavLinks: React.FC<MobileNavLinksProps> = ({ children, ...props }) => {
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <PopoverButton 
-      as={Link}  // Specify that Popover.Button should render as a Link component
-      className="block text-base leading-7 tracking-tight text-sky-800"
-      {...props}
-    >
-      {children}
-    </PopoverButton>
-  );
-}
-// Define a function component with TypeScript
-const NavBar: React.FC = () => {
-  return (
-    <div className="flex w-full bg-sky-800 text-white items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between  h-16">
-          <div className="flex items-center">
-            <div className="-ml-2 mr-6 flex items-center">
-             <Logo/>
-            </div>
-            <div className="flex space-x-4">
-              {/* Primary nav */}
-              <Link href="/">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Home
-                </p>
-              </Link>
-              {/* Dropdown nav item */}
-              <Menu as="div" className="relative">
-                <MenuButton className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                <Link href="/services">
-                <p className="text-white hover:bg-sky-600 hover:text-white">
-                  Services
-                </p>
-              </Link>
-                 
-                </MenuButton>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <MenuItems className="absolute z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      {["Ceiling Installation", "Roof Repair", "Roof Painting", "Roof Replacement"].map((service) => (
-                        <MenuItem key={service}>
-                          {({ active }) => (
-                            <Link href={`/${service.toLowerCase().replace(/ /g, '-')}`}>
-                              <p
-                                className={`${
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                                } block px-4 py-2 text-sm`}
-                              >
-                                {service}
-                              </p>
-                            </Link>
-                          )}
-                        </MenuItem>
-                      ))}
-                    </div>
-                  </MenuItems>
-                </Transition>
-              </Menu>
-              <Link href="/about">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  About Us
-                </p>
-              </Link>
-              <Link href="/projects">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Projects
-                </p>
-              </Link>
-              <Link href="/contact">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Contact
-                </p>
-              </Link>
-              <Link href="/blog">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Blog
-                </p>
-              </Link>
-              <div className="flex items-center gap-6">
-              <Button href="#"  className="hidden lg:block">Get a Quote</Button>
-
-            </div>
-            </div>
-             {/* Mobile Navlinks */}
-             <Popover className="lg:hidden">
-              {({open})=> (
-                <>
-                  <PopoverButton className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-white p-2
-                   hover:bg-sky-800 hover:stroke-gray-100
-                   active:stroke-sky-800 [&:not(:focus-visible)]:focus-outline-none outline-none" 
-                   aria-label="Toggle Site Navigation"
-                   >
-                     {({open})=> open?(<IoIosArrowUp className="text-2xl text-white" />):(<TbMenu2 className="text-2xl text-white"/>)}
-                  </PopoverButton>
-                  <AnimatePresence initial={false}>
-                    {open && (
-                      <>
-                         <PopoverOverlay
-                         
-                         static
-                         as={motion.div}
-                         initial={{opacity: 0 }}
-                         animate={{opacity: 1 }}
-                         exit={{ opacity: 0 }}
-                         className="fixed inset-0 z-0 bg-gray-300/60 backdrop::blur"   
-                         />
-                         <PopoverPanel 
-                            static as={motion.div}
-                            initial={{ opacity: 0, y:-32  }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{
-                              opacity:0,
-                              y: -32,
-                              transition:{duration:0.2},
-                            }}
-                            className="absolute  inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
+    <nav className="fixed w-full h-24 shadow-xl bg-sky-800 z-50">
+      <div className="flex justify-between items-center h-full w-full md:justify-center px-4 2xl:px-16">
+        <Link href="/">
+          <Image
+            src={logo}
+            alt="logo"
+            width={205}
+            height={75}
+            className="cursor-pointer"
+            priority
+          />
+        </Link>
+        <div className="hidden sm:flex">
+          <ul className="hidden sm:flex justify-center items-center">
+            <Link href="/">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                Home
+              </li>
+            </Link>
+            <Link href="/projects">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                Projects
+              </li>
+            </Link>
+            <Menu as="div" className="relative">
+              <MenuButton className="text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
+                Services
+              </MenuButton>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="flex flex-col rounded-lg justify-around py-1 item-center">
+                    {serviceLinks.map((serviceLink) => (
+                      <MenuItem key={serviceLink.href}>
+                        {({ active }) => (
+                          <div
+                            className={`block data-[focus]:bg-blue-100 ${
+                              active ? "bg-blue-100" : ""
+                            }`}
+                          >
+                            <a
+                              href={serviceLink.href}
+                              className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-center justify-center"
                             >
-                          <div className="space-y-4"> 
-                           
-                              <MobileNavLinks>
-                              <div className="flex space-x-4">
-              {/* Primary nav */}
-              <Link href="/">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Home
-                </p>
-              </Link>
-              {/* Dropdown nav item */}
-              <Menu as="div" className="relative">
-                <MenuButton className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Services
-                </MenuButton>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <MenuItems className="absolute z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      {["Ceiling Installation", "Roof Repair", "Roof Painting", "Roof Replacement"].map((service) => (
-                        <MenuItem key={service}>
-                          {({ active }) => (
-                            <Link href={`/${service.toLowerCase().replace(/ /g, '-')}`}>
-                              <p
-                                className={`${
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                                } block px-4 py-2 text-sm`}
-                              >
-                                {service}
-                              </p>
-                            </Link>
-                          )}
-                        </MenuItem>
-                      ))}
-                    </div>
-                  </MenuItems>
-                </Transition>
-              </Menu>
-              <Link href="/about">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  About Us
-                </p>
-              </Link>
-              <Link href="/projects">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Projects
-                </p>
-              </Link>
-              <Link href="/contact">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Contact
-                </p>
-              </Link>
-              <Link href="/blog">
-                <p className="text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
-                  Blog
-                </p>
-              </Link>
-              <div className="flex items-center gap-6">
-              <Button href="#"  className="hidden lg:block">Get a Quote</Button>
-
-            </div>
-            </div>
-                              </MobileNavLinks>
-
-                    
+                              {serviceLink.label}
+                            </a>
                           </div>
-                          <div className="mt-8 flex flex-col gap-4">
-                            <Button href="#" className="flex bg-sky-800 items-center hover:text-white">Get a Quote</Button>
-                          </div>
-                         </PopoverPanel>
-                      </>
-                    )}
-                  </AnimatePresence>
-                </>
-              )}
-
-            </Popover>
-
-          </div>
+                        )}
+                      </MenuItem>
+                    ))}
+                  </div>
+                </MenuItems>
+              </Transition>
+            </Menu>
+            <Link href="/about">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                About
+              </li>
+            </Link>
+            <Link href="/contact">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                Contact
+              </li>
+            </Link>
+            <Link href="/blog">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                Blog
+              </li>
+            </Link>
+          </ul>
+        </div>
+        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
+          <AiOutlineMenu size={25} className="text-white" />
         </div>
       </div>
-    </div>
+
+      {/* Mobile */}
+      <div
+        className={
+          menuOpen
+            ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
+            : "fixed  left-[-100%] top-0 p-10 ease-in duration-500"
+        }
+      >
+        <div className="flex w-full items-center justify-end">
+          <div onClick={handleNav} className="cursor-pointer">
+            <AiOutlineClose size={25} className="text-sky-800" />
+          </div>
+        </div>
+        <div className="flex-col py-4">
+          <ul className="flex flex-col font-medium gap-4">
+            <Link href="/">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Home
+              </li>
+            </Link>
+            <Link href="/projects">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Projects
+              </li>
+            </Link>
+            <Link href="/services">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Services
+              </li>
+            </Link>
+            <Link href="/about">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                About
+              </li>
+            </Link>
+            <Link href="/contact">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Contact
+              </li>
+            </Link>
+            <Link href="/blog">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Blog
+              </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="flex flex-row justify-around pt-10 items-center">
+          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800" />
+          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800" />
+          <AiOutlineX size={30} className="cursor-pointer" />
+        </div>
+      </div>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;
