@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const HeroBanner = () => {
   return (
-    <div className="relative w-full sm:mt-9 h-screen bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
-      <div className="flex flex-col bg-slate-50 md:bg-red-500 p-6 ml-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center">
+    <div className="relative w-full mt-56 bg-  sm:mt-9 h-screen bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+      <div className="flex flex-col bg-#C1CCCF md:bg-red-500 md:ml-10  p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md  justify-center md:mt-24">
         <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Schedule a Free Inspection</h2>
         <form className="space-y-4 flex flex-col items-center justify-center">
           <input
@@ -44,23 +44,23 @@ const HeroBanner = () => {
           </select>
           <textarea
             placeholder="Message"
-            className="w-full p-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+            className="md:w-full w-4/5 p-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
             rows={4}
           />
           <button
             type="submit"
-            className=" w-2/5 md:bg-sky-800 bg-red-500 text-white  p-2 rounded mt-4"
+            className="w-2/5 bg-red-500 md:bg-sky-800 text-white  p-2 rounded mt-4"
           >
             Submit
           </button>
         </form>
       </div>
-      <div className="relative mt-40  md:mt-0  w-full md:w-2/3 h-96 md:h-full  flex justify-center items-center">
+      <div className="relative sm:mt-96 md:mt-0 w-full md:w-2/3  flex justify-center h-full">
         <Image
           src={herobg}
           alt="Hero Image"
           objectFit="cover"
-          className="md:rounded-lg"
+          className="md:rounded-none"
           width={1200}
           height={640}
         />

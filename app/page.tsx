@@ -10,12 +10,12 @@ import Stats from './components/Stats';
 import TestimonialCard from './components/TestimonialCard';
 import ContactUs from './components/ContactUs';
 import LatestPost from './components/LatestPost';
-import HeroBanner from './HeroBanner';
+import HeroBanner from './components/HeroBanner';
 
 const Home: React.FC = () => {
   return (
-    <main>
-  <HeroBanner/>
+    <main >
+      <HeroBanner/>
       <CompBriefCta />
       <RoofingService title="one" desc="new" />
       <InspireCTO/>

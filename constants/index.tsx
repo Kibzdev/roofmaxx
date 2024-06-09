@@ -1,6 +1,4 @@
-import { bgservice, cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, flatceiling, gent01, gent02, gent03, goal, kev, mary, nyki, paints, residential, roofing, security, servicebg, tech, tinceiling } from "../public/assets";
-import { bbcLogo, cbsLogo, cnnLogo, fastCompanyLogo, forbesLogo,huffpostLogo, techcrunchLogo, wiredLogo} from "../public/assets/logos"
-
+import { cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, flatceiling, gent01, gent02, gent03, goal, kev, mary, nyki, paints, residential, roofing, security, servicebg, tech, tinceiling } from "../public/assets";
 export const navData = [
   { _id: '101', title: "Home", href:"#home"},
   { _id: '102', title: "Services", href:"#services"},
