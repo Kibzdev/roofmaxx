@@ -48,11 +48,6 @@ const Navbar = () => {
                 Home
               </li>
             </Link>
-            <Link href="/projects">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                Projects
-              </li>
-            </Link>
             <Menu as="div" className="relative ml-10">
               <MenuButton className="text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
                 Services
@@ -90,6 +85,12 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
+            <Link href="/projects">
+              <li className="ml-10 uppercase hover:border-b text-white text-xl">
+                Projects
+              </li>
+            </Link>
+            
             <Link href="/about">
               <li className="ml-10 uppercase hover:border-b text-white text-xl">
                 About
@@ -135,14 +136,6 @@ const Navbar = () => {
                 Home
               </li>
             </Link>
-            <Link href="/projects">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Projects
-              </li>
-            </Link>
             <Link href="/services">
               <li
                 onClick={() => setMenuOpen(false)}
@@ -151,6 +144,15 @@ const Navbar = () => {
                 Services
               </li>
             </Link>
+            <Link href="/projects">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
+              >
+                Projects
+              </li>
+            </Link>
+        
             <Link href="/about">
               <li
                 onClick={() => setMenuOpen(false)}
