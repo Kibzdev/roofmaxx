@@ -53,7 +53,7 @@ const Navbar = () => {
                 Projects
               </li>
             </Link>
-            <Menu as="div" className="relative">
+            <Menu as="div" className="relative ml-10">
               <MenuButton className="text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
                 Services
               </MenuButton>
@@ -67,12 +67,12 @@ const Navbar = () => {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="flex flex-col rounded-lg justify-around py-1 item-center">
+                  <div className="flex flex-col flex-wrap rounded-lg justify-between py-1 item-center">
                     {serviceLinks.map((serviceLink) => (
                       <MenuItem key={serviceLink.href}>
                         {({ active }) => (
                           <div
-                            className={`block data-[focus]:bg-blue-100 ${
+                            className={`block data-[focus]:bg-blue-100 px-4 py-4 ${
                               active ? "bg-blue-100" : ""
                             }`}
                           >
