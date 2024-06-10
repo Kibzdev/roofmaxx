@@ -33,7 +33,7 @@ const TestimonialCard: React.FC = () => {
             also feel confident in its durability and weather resistance.
           </p>
           <div className="mt-4">
-            <span className="block text-xl font-semibold">Michael Kizongo</span>
+            <span className="block text-xl font-semibold">Michelle Kizongo</span>
             <span className="block text-base text-blue-300">Customer</span>
           </div>
         </div>

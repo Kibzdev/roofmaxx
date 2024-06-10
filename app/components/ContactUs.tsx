@@ -1,9 +1,10 @@
 // components/ContactUs.tsx
 import React from 'react';
+import Title from './Title';
 
 const ContactUs: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
+    <div className="flex flex-col items-center md:flex-row  md:justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
       <div className="flex-1 bg-sky-800 w-full h-full py-8 px-8">
         <h2 className="text-2xl font-bold mb-4">We are Always Ready To Listen!</h2>
         <p className="mb-4">Tell us about yourself and we will contact you soon</p>

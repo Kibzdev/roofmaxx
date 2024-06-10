@@ -1,4 +1,4 @@
-import { cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, flatceiling, gent01, gent02, gent03, goal, kev, mary, nyki, paints, residential, roofing, security, servicebg, tech, tinceiling } from "../public/assets";
+import { cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, festus, flatceiling, gent01, gent02, gent03, goal, kev, mambo, mary, nyki, osoro, paints, residential, roofing, security, servicebg, tech, tinceiling } from "../public/assets";
 export const navData = [
   { _id: '101', title: "Home", href:"#home"},
   { _id: '102', title: "Services", href:"#services"},
@@ -94,22 +94,22 @@ export const usps = [
 export const teamMembers= [
   {
     _id: '600',
-    photo:gent01,
-    name: "Michael",
+    photo:festus,
+    name: "Festus",
     expertise: "Leak Repair",
   
    },
    {
     _id: '601',
-    photo:gent02,
-    name: "Godwin",
+    photo:osoro,
+    name: "Osoro",
     expertise: "Leak Repair",
   
    },
    {
     _id: '602',
-    photo:gent03,
-    name: "Brian",
+    photo:mambo,
+    name: "Mambo",
     expertise: "Leak Repair",
   
    },
