@@ -27,7 +27,7 @@ const TeamView: React.FC = () => {
         through sustainable practices and cutting-edge technology.
         </p>
       </div>
-      <div className="flex w-full items-center justify-center">
+      <div className="flex w-full flex-1 items-center justify-center">
         {teamMembers.map((teamMember: TeamMember) => (
           <ExpertCard key={teamMember._id} {...teamMember} />
         ))}

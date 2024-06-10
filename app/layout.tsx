@@ -6,6 +6,7 @@ import { draftMode } from "next/headers";  // Assuming this is the correct impor
 import "./globals.css";
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Head from 'next/head';
 const inter = Inter({ subsets: ["latin"] });  // Inter font setup
 
 export const metadata = {
@@ -20,8 +21,14 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <Head>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"></link>
+      </Head>
+      </Head>
       <body className={inter.className}>
-      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"></link>
+     
         <Header/>
         {children}
         <Footer/>

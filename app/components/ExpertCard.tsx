@@ -15,10 +15,10 @@ const ExpertCard: React.FC<ExpertCardProps> = ({ photo, expertise, name }) => {
         <Image
           src={photo}
           alt={name} // Update alt to reflect the name or a more descriptive text
-          objectFit='scale-down'
+          objectFit='cover'
           width={340}
           height={240} // Assuming this was meant to be a square aspect ratio
-          className="border-white rounded-2xl h-[240px] w-[240px] md:rounded-full shadow-md shadow-sky-500 md:w-[440px] md:h-[540px]"
+          className="border-white rounded-2xl h-[240px] w-[240px] md:rounded-2xl shadow-md shadow-sky-500 md:w-[440px] md:h-[540px]"
         />
       </div>
       <h2 className="text-white text-lg font-semibold text-center mt-2">{name}</h2>
