@@ -1,6 +1,5 @@
 // Home.tsx
 import React from 'react';
-import Hero from './components/Hero';
 import CompBriefCta from './components/CompBriefCta';
 import InspireCTO from './components/InspireCto';
 import UspPointsList from './components/UspPointsList';

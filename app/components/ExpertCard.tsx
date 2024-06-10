@@ -10,15 +10,15 @@ type ExpertCardProps = {
 
 const ExpertCard: React.FC<ExpertCardProps> = ({ photo, expertise, name }) => {
   return (
-    <div className="grid grid-cols-1 items-center justify-center px-2 border-white w-full">
-      <div className="w-full flex justify-center">
+    <div className="grid grid-cols-1 items-center justify-center px-2 border-l-orange-400 border-white">
+      <div className="w-full flex justify-center ">
         <Image
           src={photo}
           alt={name} // Update alt to reflect the name or a more descriptive text
           objectFit='cover'
-          width={340}
+          width={240}
           height={240} // Assuming this was meant to be a square aspect ratio
-          className="border-white rounded-2xl h-[240px] w-[240px] md:rounded-2xl shadow-md shadow-sky-500 md:w-[440px] md:h-[540px]"
+          className="rounded-full"
         />
       </div>
       <h2 className="text-white text-lg font-semibold text-center mt-2">{name}</h2>
