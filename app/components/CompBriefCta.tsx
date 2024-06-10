@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const CompBriefCta: React.FC = () => {
   return (
-    <div className="flex flex-wrap md:flex-row lg:flex-row bg-sky-800 mt-24 md:mt-0">
+    <div className=" relative flex flex-wrap md:flex-row lg:flex-row bg-sky-800 mt-36 md:mt-0">
       <div className="flex flex-col items-center gap-4 p-6 mx-auto md:w-1/3 w-full py-10">
         <Image src={diamond} width={128} height={128} alt="diamond"/>
         <h3 className="text-center text-white font-semibold">RESIDENTIAL ROOFING</h3>
@@ -30,7 +30,7 @@ const CompBriefCta: React.FC = () => {
         <Image src={diamond} width={128} height={128} alt="diamond"/>
         <h3 className="text-center text-white font-semibold">COMMERCIAL ROOFING</h3>
         <p className="text-white tracking-wider text-center font-light text-lg"> Our expert team works closely with developers and property managers to provide customized, high-quality roofs that enhance the value and longevity of commercial properties</p>
-        <Button variant="outline" className="rounded-full py-4 px-6 md:px-12 border-4 text-white  hover:bg-red-500">Learn More</Button>
+        <Button variant="outline" className="rounded-full py-4 px-6 md:px-12 border-4 text-white mb-8 hover:bg-red-500">Learn More</Button>
       </div>
     </div>
   );
