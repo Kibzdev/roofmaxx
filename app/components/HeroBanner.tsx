@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HeroBanner = () => {
   return (
-    <div className="relative w-full h-screen mt-20 md:mt-0 bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+    <div className="relative w-full h-screen mt-24 md:mt-0 bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="flex flex-col bg-#C1CCCF md:bg-red-500 md:ml-10  p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md  justify-center md:mt-24">
         <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Schedule a Free Inspection</h2>
         <form className="space-y-4 flex flex-col items-center justify-center">
