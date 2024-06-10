@@ -22,13 +22,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <Head>
-      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"></link>
       </Head>
-      </Head>
       <body className={inter.className}>
-     
         <Header/>
         {children}
         <Footer/>
