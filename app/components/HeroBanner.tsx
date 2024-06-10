@@ -24,12 +24,7 @@ const HeroBanner = () => {
           />
           <input
             type="text"
-            placeholder="Address"
-            className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
-          />
-          <input
-            type="text"
-            placeholder="City"
+            placeholder="Town"
             className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
           />
           <select className="md:w-full w-4/5 py-4 px-2 border border-gray-300 rounded bg-sky-800 text-white focus:bg-sky-600 focus:border-sky-600 focus:outline-none">
@@ -55,7 +50,7 @@ const HeroBanner = () => {
           </button>
         </form>
       </div>
-      <div className="relative sm:mt-96 md:mt-0 w-full md:w-2/3  flex justify-center h-full">
+      <div className="relative mt-0 md:mt-0 w-full md:w-2/3  flex justify-center h-full">
         <Image
           src={herobg}
           alt="Hero Image"
