@@ -1,37 +1,51 @@
-// components/TeamView.tsx
 import React from 'react';
-import Button from "./Button";
+import { teamMembers } from '@/constants';
+import SectionIntro from './SectionIntro';
+import ExpertCard from './team/ExpertCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import FadeIn from './FadeIn';
 
-import { teamMembers } from "@/constants";
-import ExpertCard from './ExpertCard';
-
-// Assuming a type definition for individual team members
+// Define the type for individual team members
 type TeamMember = {
   _id: string;
-  photo: string;       // URL for the expert's photo
-  name: string;        // Expert's name
-  expertise: string;
-
-  // Define other properties expected by ExpertCard
-  [key: string]: any; // Replace with specific fields used by ExpertCard for better type safety
+  photo: string;  // URL for the expert's photo
+  name: string;   // Expert's name
+  expertise: string; // Description of the expert's area of expertise
 };
 
 const TeamView: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-sky-800 w-full h-full mt-6 py-10 px-6 gap-2">
-      <div className="flex flex-col w-full md:w-1/2 gap-2 items-center justify-center">
-        <h3 className="font-medium text-white text-xl uppercase">Team Members</h3>
-        <h2 className="text-red-500 font-semibold text-lg">Meet Our Qualified Team</h2>
-        <p className="text-white tracking-wider font-light text-center px-12">
-        Our team of experienced professionals is dedicated to providing top-notch service, ensuring the longevity and integrity of your roof 
-        through sustainable practices and cutting-edge technology.
-        </p>
+    <div className="flex flex-col bg-[#075985] w-full h-full mt-2 py-6 px-6 items-center gap-10">
+      <div className="w-full">
+        <SectionIntro subtitle="Meet our Experts" title="The Team">
+          <p className='text-white font-medium'>Ready To Serve</p>
+        </SectionIntro>
       </div>
-      <div className="flex flex-col md:flex-row w-full  items-center justify-center">
-        {teamMembers.map((teamMember: TeamMember) => (
-          <ExpertCard key={teamMember._id} {...teamMember} />
-        ))}
-      </div>
+      <FadeIn>
+      <Carousel className="flex max-w-6xl">
+        <CarouselContent className="-ml-1 md:gap-4">
+          {teamMembers.map((teamMember: TeamMember) => (
+            <CarouselItem 
+              key={teamMember._id} 
+              className="basis-full sm:basis-1/2  lg:basis-1/3 "
+            >
+              <div className="p-1">
+                <ExpertCard {...teamMember} />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black border border-white p-2 rounded-full shadow-lg z-10 hover:bg-[#ef4444] hover:text-white" />
+        <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#ef4444] text-white border border-white p-2 rounded-full shadow-lg z-10 hover:bg-white hover:text-[#ef4444]" />
+      </Carousel>
+      </FadeIn>
+     
     </div>
   );
 }

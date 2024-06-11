@@ -4,8 +4,8 @@ import Title from './Title';
 
 const ContactUs: React.FC = () => {
   return (
-    <div className="flex flex-col items-center md:flex-row  md:justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
-      <div className="flex-1 bg-sky-800 w-full h-full py-8 px-8">
+    <div className="flex flex-col  items-center md:flex-row  md:justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
+      <div className="flex w-full  md:w-3/5 bg-sky-800 flex-col h-full py-8 px-8">
         <h2 className="text-2xl font-bold mb-4">We are Always Ready To Listen!</h2>
         <p className="mb-4">Tell us about yourself and we will contact you soon</p>
         <form className="space-y-4">
@@ -40,11 +40,11 @@ const ContactUs: React.FC = () => {
           <button type="submit" className="bg-red-500 text-white py-2 px-4 rounded mt-4">SUBMIT</button>
         </form>
       </div>
-      <div className="flex-1 text-left md:text-center bg-white items-center justify-center px-5 text-sky-800 w-full h-full">
-        <h3 className="text-xl font-bold mb-4">CONTACT INFORMATION</h3>
+      <div className="flex w-2/5 flex-col text-left md:text-center bg-white items-center justify-center px-5 text-sky-800  h-full">
+        <h3 className="text-xl font-bold  text-red-500 mb-4">CONTACT INFORMATION</h3>
         <p className="mb-4">Embakasi, Next to Coca-cola Bottles Factory</p>
         <p className="mb-4">
-          <span className="font-bold">Email Us:</span> <br />
+          <span className="font-bold text-red-500">Email Us:</span> <br />
           info@Roofingmax.com <br />
           sales@Roofingmax.com
         </p>

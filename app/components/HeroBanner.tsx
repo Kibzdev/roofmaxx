@@ -1,7 +1,23 @@
+"use client"
+import  {useState} from "react"
 import { herobg } from '@/public/assets';
 import Image from 'next/image';
 
+
 const HeroBanner = () => {
+  const [result, setResult] = useState<Record<string, string>>({});
+  const [loading, setLoading ] = useState<boolean>(false)
+
+  const sendEmail = () => {
+    fetch('/api/emails',{
+      method: 'POST'
+    })
+    .then (response => response.json())
+    .then(data => setResult(data))
+    .catch(error => setResult(error))
+    .finally(() => setLoading(false))
+
+  }
   return (
     <div className="relative w-full h-screen mt-24 md:mt-0 bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="flex flex-col bg-#C1CCCF md:bg-red-500 md:ml-10  p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md  justify-center md:mt-24">
@@ -59,6 +75,7 @@ const HeroBanner = () => {
           width={1200}
           height={640}
         />
+        <h2></h2>
       </div>
     </div>
   );

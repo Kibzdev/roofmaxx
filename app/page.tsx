@@ -12,7 +12,7 @@ import HeroBanner from './components/HeroBanner';
 
 const Home: React.FC = () => {
   return (
-    <main>
+    <main className='mx-auto'>
       <HeroBanner/>
       <CompBriefCta />
       <InspireCTO/>
