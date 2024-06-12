@@ -1,4 +1,4 @@
-import { cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, festus, flatceiling, gent01, gent02, gent03, goal, kev, mambo, mary, nyki, osoro, paints, residential, roofing, security, servicebg, tech, tinceiling } from "../public/assets";
+import { cert, certified, checkmark, cofferedceiling, commercial, contractor, drone, festus, flatceiling, gent01, gent02, gent03, goal, gutter, kev, mambo, mary, nyki, osoro, paints, residential, roofing, roofrepair, security, servicebg,spcfloor, tech, tinceiling } from "../public/assets";
 export const navData = [
   { _id: '101', title: "Home", href:"#home"},
   { _id: '102', title: "Services", href:"#services"},
@@ -340,4 +340,19 @@ export const projectGallerys = [
    imgNo:9,
   },
   
+]
+
+export const serviceCarouselCards = [
+  {
+    _id: '600',
+    photo:roofrepair,
+   },
+   {
+    _id: '601',
+    photo:spcfloor,
+   },
+   {
+    _id: '603',
+    photo:gutter,
+   },
 ]
