@@ -1,34 +1,14 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 import { fetchNicheBySlug } from '@/sanity/lib/fetch';
 import { Niche } from '@/types';
-import Image from 'next/image';
 
 interface NicheDataProps {
-  slug: string;
+  niche: Niche | null;
+  error: string | null;
 }
 
-const NicheData: React.FC<NicheDataProps> = ({ slug }) => {
-  const [niche, setNiche] = useState<Niche | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const getNiche = async () => {
-      try {
-        const data = await fetchNicheBySlug(slug);
-        setNiche(data);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to fetch niche');
-        setLoading(false);
-      }
-    };
-
-    getNiche();
-  }, [slug]);
-
-  if (loading) return <div>Loading...</div>;
+const NicheData: React.FC<NicheDataProps> = ({ niche, error }) => {
   if (error) return <div>{error}</div>;
   if (!niche) return <div>Niche not found</div>;
 
@@ -63,6 +43,21 @@ const NicheData: React.FC<NicheDataProps> = ({ slug }) => {
       </ul>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { slug } = context.params!;
+
+  try {
+    const niche = await fetchNicheBySlug(slug as string);
+    return {
+      props: { niche, error: null },
+    };
+  } catch (error) {
+    return {
+      props: { niche: null, error: 'Failed to fetch niche' },
+    };
+  }
 };
 
 export default NicheData;
