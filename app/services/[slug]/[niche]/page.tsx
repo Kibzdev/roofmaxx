@@ -1,54 +1,9 @@
-import Image from 'next/image';
-import { fetchNicheBySlug } from '@/sanity/lib/fetch';
-import { Niche } from '@/types';
+import React from 'react'
 
-interface NicheDataProps {
-  niche: Niche | null;
-  error: string | null;
-}
-
-const NicheData: React.FC<NicheDataProps> = ({ niche, error }) => {
-  if (error) return <div>{error}</div>;
-  if (!niche) return <div>Niche not found</div>;
-
+const NIcheData = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mt-8">{niche.niche_name}</h2>
-      <div className="w-full h-auto my-8 rounded-lg shadow-lg">
-        <Image
-          src={niche.niche_banner.asset.url}
-          alt={niche.niche_name}
-          width={1920}
-          height={1080}
-          layout="responsive"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-      </div>
-      <p>{niche.niche_desc}</p>
-      <h3 className="text-xl font-semibold mt-4">Benefits:</h3>
-      <ul>
-        {niche.niche_benefits.map((benefit, index) => (
-          <li key={index}>{benefit}</li>
-        ))}
-      </ul>
-      <h3 className="text-xl font-semibold mt-4">FAQs:</h3>
-      <ul>
-        {niche.faqs.map((faq, index) => (
-          <li key={index}>
-            <strong>{faq.question}</strong>: {faq.answer}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default async function Page({ params }: { params: { slug: string } }) {
-  try {
-    const niche = await fetchNicheBySlug(params.slug);
-    return <NicheData niche={niche} error={null} />;
-  } catch (error) {
-    return <NicheData niche={null} error="Failed to fetch niche" />;
-  }
+    <div>NIcheData</div>
+  )
 }
+
+export default NIcheData
