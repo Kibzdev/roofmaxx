@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { fetchNicheBySlug } from '@/sanity/lib/fetch';
 import { Niche } from '@/types';
