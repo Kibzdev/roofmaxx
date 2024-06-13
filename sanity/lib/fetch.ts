@@ -249,3 +249,25 @@ export const fetchNicheBySlug = async (slug: string): Promise<Niche | null> => {
   return niche;
 }
 
+export const fetchAllNiches = async (): Promise<Niche[]> => {
+  const query = groq`
+    *[_type == "niche"] {
+      _id,
+      niche_name,
+      niche_banner {
+        asset->{
+          url
+        }
+      },
+      slug,
+      niche_desc,
+      niche_benefits,
+      faqs[] {
+        question,
+        answer
+      }
+    }
+  `;
+  const data: Niche[] = await sanityClient.fetch(query);
+  return data;
+};

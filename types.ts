@@ -149,6 +149,7 @@ export interface Niche {
   faqs: FAQ[]; // Add this line
 }
 
+
 export interface Location {
   _id: string;
   name: string;
