@@ -1,4 +1,3 @@
-import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { fetchNicheBySlug } from '@/sanity/lib/fetch';
 import { Niche } from '@/types';
@@ -45,19 +44,11 @@ const NicheData: React.FC<NicheDataProps> = ({ niche, error }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { slug } = context.params!;
-
+export default async function Page({ params }: { params: { slug: string } }) {
   try {
-    const niche = await fetchNicheBySlug(slug as string);
-    return {
-      props: { niche, error: null },
-    };
+    const niche = await fetchNicheBySlug(params.slug);
+    return <NicheData niche={niche} error={null} />;
   } catch (error) {
-    return {
-      props: { niche: null, error: 'Failed to fetch niche' },
-    };
+    return <NicheData niche={null} error="Failed to fetch niche" />;
   }
-};
-
-export default NicheData;
+}
