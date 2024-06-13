@@ -10,6 +10,7 @@ import ContactUs from './components/ContactUs';
 import LatestPost from './components/LatestPost';
 import HeroBanner from './components/HeroBanner';
 import ServicesBlock from './components/service/ServicesBlock';
+import ProjectsCard from './components/projects/ProjectCard';
 
 const Home: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
       <ServicesBlock/>
       <InspireCTO/>
       <UspPointsList/>
+      <ProjectsCard/>
       <TeamView/>
       <Stats/>
       <TestimonialCard/>

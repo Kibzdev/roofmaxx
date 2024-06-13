@@ -9,10 +9,10 @@ export default function ServiceDetailLayout({
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
      <div className='flex'>
-      <div className='flex w-4/5'>
+      <div className='w-full flex md:w-4/5'>
          {children}
       </div>
-      <div className='flex-w-1/5'>
+      <div className='hidden md:block flex-w-1/5'>
       <NavigationCard/>
       </div>
      </div>

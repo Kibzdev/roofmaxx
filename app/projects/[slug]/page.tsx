@@ -4,6 +4,7 @@ import { sanityClient } from '@/sanity/lib/sanityclient';
 import { Project } from '@/types';
 import PageIntro from '@/app/components/PageIntro';
 import Image from 'next/image';
+import Container from '@/app/components/Container';
 
 interface ProjectDataProps {
   project: Project;
@@ -13,9 +14,9 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
   return (
     <div className="container mx-auto px-4 py-8">
       <PageIntro eyebrow="Project Details" title={project.project_name}>
-        <p className="text-gray-700">{project.description}</p>
       </PageIntro>
-      <div className="w-full h-auto my-8 rounded-lg shadow-lg">
+      <div className='flex w-full bg-amber-500 justify-center'>
+      <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
         <Image
           src={project.projectbannerUrl}
           alt={project.project_name}
@@ -26,26 +27,44 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
           className="rounded-lg"
         />
       </div>
+      </div>
+     
 
-      <h2 className="text-2xl font-bold mt-8">Client Information</h2>
-      <p className="text-gray-700">{project.client.name}</p>
+      <div className='flex w-full '>
+      <p className="text-gray-700   w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{project.description}</p>
+      </div>
+      
+    <Container>
+       <div className='flex bg-red-900  flex-col md:flex-row justify-center gap-4  items-center md:justify-around py-4 px-4'>
+          <div className='flex flex-col'>
+          <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Client Information</h2>
+          <p className="text-gray-700 font-medium tracking-wide uppercase py-4">{project.client.name}</p>
+          <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Service Used</h2>
+          <p className="text-gray-700 font-medium tracking-wide uppercase py-4 ">{project.service_used.name}</p>
+          </div>
+      
+          <div className='flex flex-col'>
+          <h2  className="text-2xl font-bold mt-8 text-sky-800 uppercase">Project Timeline</h2>
+          <p className="text-gray-700 font-bold py-4">Start Date: {new Date(project.start_date).toLocaleDateString()}</p>
+          <p className="text-gray-700 font-bold">End Date: {new Date(project.end_date).toLocaleDateString()}</p>
+          </div>
+      
+          <div className='flex flex-col'>
+              <h2 className="text-2xl font-bold mt-8  text-sky-800 uppercase">Status</h2>
+              <p className="text-gray-700">{project.status}</p>
+              <h2 className="text-2xl font-bold mt-8">Outcome</h2>
+              <p className="text-gray-700">{project.outcome}</p>
+            </div>   
+          <div  className='flex flex-col'>
+            <h2 className="text-2xl font-bold mt-8  text-sky-800 uppercase">Budget</h2>
+            <p className="text-gray-700">${project.budget}</p>
+        </div>
+        </div>
+     
+    </Container>
 
-      <h2 className="text-2xl font-bold mt-8">Service Used</h2>
-      <p className="text-gray-700">{project.service_used.name}</p>
-
-      <h2 className="text-2xl font-bold mt-8">Project Timeline</h2>
-      <p className="text-gray-700">Start Date: {new Date(project.start_date).toLocaleDateString()}</p>
-      <p className="text-gray-700">End Date: {new Date(project.end_date).toLocaleDateString()}</p>
-
-      <h2 className="text-2xl font-bold mt-8">Status</h2>
-      <p className="text-gray-700">{project.status}</p>
-
-      <h2 className="text-2xl font-bold mt-8">Budget</h2>
-      <p className="text-gray-700">${project.budget}</p>
-
-      <h2 className="text-2xl font-bold mt-8">Outcome</h2>
-      <p className="text-gray-700">{project.outcome}</p>
-
+      
+      
       <h2 className="text-2xl font-bold mt-8">Project Images</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
         {project.images && project.images.map((image) => (

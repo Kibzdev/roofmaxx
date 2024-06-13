@@ -18,7 +18,6 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ projects }) => {
           href={`/projects/${project.slug}`}
           className="relative block w-full h-full cursor-pointer"
         >
-          <h2>{project.projectid}</h2>
           <div className="relative w-full h-full">
             <Image
               src={project.projectbannerUrl || '/default.jpg'}

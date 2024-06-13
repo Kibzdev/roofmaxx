@@ -4,7 +4,7 @@ import React from 'react'
 import NavigationCard from '@/app/components/service/NavigationCard';
 import ServiceBreadcrumbNav from '@/app/components/service/ServiceBreadcrumb';
 
-const Servicetype = () => {
+const Niche = () => {
   return (
     <div className='flex '>
       <div className='flex w-4/5'>
@@ -20,4 +20,4 @@ const Servicetype = () => {
   )
 }
 
-export default Servicetype
+export default Niche

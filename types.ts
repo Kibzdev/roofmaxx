@@ -62,35 +62,36 @@ interface FAQ {
 //New Types
 
 // types.ts
-export interface Service {
-  serviceId: string; // Ensure this matches the data structure you are fetching
-  serviceName: string;
-  serviceDescription: string;
-  _id: string;
-  service_types: Array<{
-    _ref: string;
-  }>;
-  slug: {
-    current: string;
-  };
-  service_banner: {
-    asset: {
-      _ref: string;
-    };
-  };
-  customerRequirements: {
-    pre_service_requirements: string[];
-    post_service_care: string[];
-  };
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
-}
+// export interface Service {
+//   serviceId: string; // Ensure this matches the data structure you are fetching
+//   serviceName: string;
+//   serviceDescription: string;
+//   _id: string;
+//   service_types: Array<{
+//     _ref: string;
+//   }>;
+//   slug: {
+//     current: string;
+//   };
+//   service_banner: {
+//     asset: {
+//       _ref: string;
+//     };
+//   };
+//   customerRequirements: {
+//     pre_service_requirements: string[];
+//     post_service_care: string[];
+//   };
+//   faqs: Array<{
+//     question: string;
+//     answer: string;
+//   }>;
+// }
 export interface ProjectClient {
   name: string;
   photoUrl: string;
   testimonial: string;
+
 }
 
 export interface ImageAsset {
@@ -132,6 +133,17 @@ export interface Project {
   client_attachments: { url: string }[];
   slug:string;
 }
+export interface Niche {
+  _id: string;
+  niche_name: string;
+  niche_banner: {
+    asset: {
+      url: string;
+    };
+  };
+  slug: string;
+  niche_desc: string;
+}
 
 
 export interface Location {
@@ -166,6 +178,9 @@ export interface ProjectClient {
 export interface GalleryCardProps {
   projects: Project[];
 }
+export interface NichecardProps {
+  niches: Niche[];
+}
 
 // service
 // app/types.ts
@@ -186,5 +201,21 @@ export interface Service {
     service_name: string;
     service_desc: string;
   };
-  slug: { current: string };
+  service_types: Niche[]; // Update to use the Niche type
+  slug: {
+    current: string;
+  };
+  service_banner: {
+    asset: {
+      url: string;
+    };
+  };
+  customerRequirements: {
+    pre_service_requirements: string[];
+    post_service_care: string[];
+  };
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
 }

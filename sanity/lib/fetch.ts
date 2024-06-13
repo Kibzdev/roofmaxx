@@ -1,17 +1,10 @@
-// ./sanity/lib/fetch.ts
-
 import { SanityClient, groq, type ClientPerspective, type QueryParams } from "next-sanity";
 import { draftMode } from "next/headers";
 import { sanityClient } from "./sanityclient";
 import { token } from "./token";
-import { Service,Project } from '../../types'
+import { Service, Project } from '../../types';
 
-/**
- * Used to fetch data in Server Components, it has built in support for handling Draft Mode and perspectives.
- * When using the "published" perspective then time-based revalidation is used, set to match the time-to-live on Sanity's API CDN (60 seconds)
- * and will also fetch from the CDN.
- * When using the "previewDrafts" perspective then the data is fetched from the live API and isn't cached, it will also fetch draft content that isn't published yet.
- */
+// Interface for Project Banner
 interface ProjectBanner {
   _type: 'image';
   asset: {
@@ -19,28 +12,18 @@ interface ProjectBanner {
   };
 }
 
+// Interface for Gallery Card Project
 interface GalleryCardProject {
   projectid: string;
   project_name: string;
   projectbannerUrl: string; // This will be derived from the projectbanner asset
 }
 
-
-
-
-
-
-
-
+// Function to fetch data with built-in support for handling Draft Mode and perspectives
 export async function sanityFetch<QueryResponse>({
   query,
   params = {},
   perspective = draftMode().isEnabled ? "previewDrafts" : "published",
-  /**
-   * Stega embedded Content Source Maps are used by Visual Editing by both the Sanity Presentation Tool and Vercel Visual Editing.
-   * The Sanity Presentation Tool will enable Draft Mode when loading up the live preview, and we use it as a signal for when to embed source maps.
-   * When outside of the Sanity Studio we also support the Vercel Toolbar Visual Editing feature, which is only enabled in production when it's a Vercel Preview Deployment.
-   */
   stega = perspective === "previewDrafts" ||
     process.env.VERCEL_ENV === "preview",
 }: {
@@ -53,29 +36,22 @@ export async function sanityFetch<QueryResponse>({
     return sanityClient.fetch<QueryResponse>(query, params, {
       stega,
       perspective: "previewDrafts",
-      // The token is required to fetch draft content
       token,
-      // The `previewDrafts` perspective isn't available on the API CDN
       useCdn: false,
-      // And we can't cache the responses as it would slow down the live preview experience
       next: { revalidate: 0 },
     });
   }
   return sanityClient.fetch<QueryResponse>(query, params, {
     stega,
     perspective: "published",
-    // The `published` perspective is available on the API CDN
     useCdn: true,
-    // Only enable Stega in production if it's a Vercel Preview Deployment, as the Vercel Toolbar supports Visual Editing
-    // When using the `published` perspective we use time-based revalidation to match the time-to-live on Sanity's API CDN (60 seconds)
     next: { revalidate: 60 },
   });
 }
 
-/*services fetch*/
+/* Services Fetch */
 
-
-// All services
+// Fetch all services
 export const fetchServiceData = async (): Promise<Service[]> => {
   const query = groq`
     *[_type == "service"] {
@@ -86,9 +62,10 @@ export const fetchServiceData = async (): Promise<Service[]> => {
   const data: Service[] = await sanityClient.fetch(query);
   return data;
 }
-// Service Nav
+
+// Fetch navigation data for services
 export const fetchNavigationData = async () => {
-  const query = `
+  const query = groq`
     *[_type == "service"]{
       "id": _id,
       "label": identification.service_name
@@ -96,15 +73,11 @@ export const fetchNavigationData = async () => {
   `;
   const data = await sanityClient.fetch(query);
   return data;
-};
-// description 
+}
 
+/* Projects Fetch */
 
-
-/*Projects */
-
-// all projects
-
+// Fetch all projects
 export const fetchProjects = async () => {
   const query = groq`
     *[_type == "project"]{
@@ -138,14 +111,15 @@ export const fetchProjects = async () => {
   return data;
 }
 
-// fetch projec_name project banner
+// Fetch project gallery card data
 export async function fetchGalleryCard(): Promise<GalleryCardProject[]> {
-  const query = `*[_type == "project"]{
-    projectid,
-    project_name,
-    "projectbannerUrl": projectbanner.asset->url
-  }`;
-
+  const query = groq`
+    *[_type == "project"]{
+      projectid,
+      project_name,
+      "projectbannerUrl": projectbanner.asset->url
+    }
+  `;
   try {
     const projects: GalleryCardProject[] = await sanityClient.fetch(query);
     return projects;
@@ -155,23 +129,72 @@ export async function fetchGalleryCard(): Promise<GalleryCardProject[]> {
   }
 }
 
-// fetch project details
+// Fetch project details by slug
 export const fetchProjectBySlug = async (slug: string): Promise<Project> => {
-  const query = groq`*[_type == "project" && slug.current == $slug][0] {
-    projectid,
-    project_name,
-    "projectbannerUrl": projectbanner.asset->url,
-    client,
-    service_used,
-    start_date,
-    end_date,
-    status,
-    budget,
-    description,
-    outcome,
-    images[]{_key, asset->{url}},
-    documents[]{_key, asset->{url}},
-    client_attachments[]{_key, asset->{url}}
-  }`;
+  const query = groq`
+    *[_type == "project" && slug.current == $slug][0] {
+      projectid,
+      project_name,
+      "projectbannerUrl": projectbanner.asset->url,
+      client,
+      service_used,
+      start_date,
+      end_date,
+      status,
+      budget,
+      description,
+      outcome,
+      images[]{_key, asset->{url}},
+      documents[]{_key, asset->{url}},
+      client_attachments[]{_key, asset->{url}}
+    }
+  `;
   return await sanityClient.fetch(query, { slug });
+}
+
+/* Services Fetch by Slug */
+
+// Fetch service details by slug
+export const fetchServiceBySlug = async (slug: string): Promise<Service | null> => {
+  const query = groq`
+    *[_type == "service" && slug.current == $slug][0] {
+      identification {
+        service_id,
+        service_name,
+        service_desc
+      },
+      service_types[]->{
+        _id,
+        niche_name,
+        niche_banner {
+          asset->{
+            url
+          }
+        },
+        slug,
+        niche_desc,
+        niche_benefits,
+        faqs[] {
+          question,
+          answer
+        }
+      },
+      slug,
+      service_banner {
+        asset->{
+          url
+        }
+      },
+      customerRequirements {
+        pre_service_requirements,
+        post_service_care
+      },
+      faqs[] {
+        question,
+        answer
+      }
+    }
+  `;
+  const service = await sanityClient.fetch(query, { slug });
+  return service;
 };
