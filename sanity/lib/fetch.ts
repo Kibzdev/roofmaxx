@@ -2,7 +2,7 @@ import { SanityClient, groq, type ClientPerspective, type QueryParams } from "ne
 import { draftMode } from "next/headers";
 import { sanityClient } from "./sanityclient";
 import { token } from "./token";
-import { Service, Project } from '../../types';
+import { Service, Project, Niche } from '../../types';
 
 // Interface for Project Banner
 interface ProjectBanner {
@@ -197,4 +197,55 @@ export const fetchServiceBySlug = async (slug: string): Promise<Service | null> 
   `;
   const service = await sanityClient.fetch(query, { slug });
   return service;
-};
+}
+
+/* Niche Fetch */
+
+// Fetch all niches
+export const fetchNicheData = async (): Promise<Niche[]> => {
+  const query = groq`
+    *[_type == "niche"]{
+      _id,
+      category->{
+        _id,
+        title
+      },
+      niche_name,
+      niche_banner,
+      niche_desc,
+      slug,
+      niche_benefits,
+      faqs[]{
+        question,
+        answer
+      }
+    }
+  `;
+  const niches: Niche[] = await sanityClient.fetch(query);
+  return niches;
+}
+
+// Fetch niche details by slug
+export const fetchNicheBySlug = async (slug: string): Promise<Niche | null> => {
+  const query = groq`
+    *[_type == "nicheType" && slug.current == $slug][0] {
+      _id,
+      category->{
+        _id,
+        title
+      },
+      niche_name,
+      niche_banner,
+      niche_desc,
+      slug,
+      niche_benefits,
+      faqs[]{
+        question,
+        answer
+      }
+    }
+  `;
+  const niche: Niche= await sanityClient.fetch(query, { slug });
+  return niche;
+}
+

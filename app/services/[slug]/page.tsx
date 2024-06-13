@@ -1,4 +1,3 @@
-import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { Service } from '@/types';

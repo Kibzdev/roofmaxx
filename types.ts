@@ -141,10 +141,13 @@ export interface Niche {
       url: string;
     };
   };
-  slug: string;
+  slug: {
+    current: string;
+  };
   niche_desc: string;
+  niche_benefits: string[]; // Add this line
+  faqs: FAQ[]; // Add this line
 }
-
 
 export interface Location {
   _id: string;
