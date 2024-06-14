@@ -55,6 +55,7 @@ interface CustomerRequirements {
 }
 
 interface FAQ {
+  _key: string,
   question: string;
   answer: string;
 }
@@ -199,27 +200,29 @@ export interface ServiceIdentification {
 }
 
 
+export interface FaqItem {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
 export interface Service {
   identification: {
     service_id: string;
     service_name: string;
     service_desc: string;
   };
-  service_types: Niche[]; // Update to use the Niche type
-  slug: {
-    current: string;
-  };
-  service_banner: {
+  service_types?: any[];
+  slug: string;
+  service_banner?: {
     asset: {
       url: string;
     };
   };
-  customerRequirements: {
-    pre_service_requirements: string[];
-    post_service_care: string[];
+  customerRequirements?: {
+    pre_service_requirements?: string[];
+    post_service_care?: string[];
   };
-  faqs: {
-    question: string;
-    answer: string;
-  }[];
+  faqs?: FaqItem[];
 }
+

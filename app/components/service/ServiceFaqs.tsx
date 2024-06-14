@@ -1,45 +1,39 @@
-"use client"
-import React, { useState } from 'react';
-import { faqs } from '@/constants';
-import clsx from 'clsx';
+'use client';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-// Define an interface for each FAQ item
 interface FaqItem {
-  _id: string; // Assuming _id is a unique identifier
+  _key: string;
   question: string;
   answer: string;
 }
 
-const ServiceFaqs: React.FC = () => {
-  const [activeId, setActiveId] = useState<string | null>(null);
+interface ServiceFaqsProps {
+  faqs: FaqItem[];
+}
 
-  const toggleFAQ = (id: string) => {
-    setActiveId(activeId === id ? null : id);
-  };
-
+const ServiceFaqs: React.FC<ServiceFaqsProps> = ({ faqs = [] }) => {
   return (
     <div className="flex justify-center items-center flex-col w-full rounded-3xl bg-white p-8">
       <h1 className="text-xl font-semibold mb-4">Frequently Asked Questions</h1>
-      {faqs.map((faq: FaqItem) => (
-        <div key={faq._id} className="mb-2">
-          <button
-            onClick={() => toggleFAQ(faq._id)}
-            className={clsx("w-full text-left", {
-              "font-bold": activeId === faq._id,
-            })}
-          >
-            {faq.question}
-          </button>
-          <div
-            className={clsx("transition-height duration-500 ease-in-out", {
-              "h-auto p-4": activeId === faq._id,
-              "h-0 overflow-hidden": activeId !== faq._id,
-            })}
-          >
-            {activeId === faq._id && <p>{faq.answer}</p>}
-          </div>
-        </div>
-      ))}
+      <Accordion type="single" collapsible className="w-full">
+        {faqs.map((faq: FaqItem) => (
+          <AccordionItem key={faq._key || uuidv4()} value={faq._key || uuidv4()}>
+            <AccordionTrigger className="w-full text-left font-medium">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="transition-height duration-500 ease-in-out">
+              <p>{faq.answer}</p>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   );
 };

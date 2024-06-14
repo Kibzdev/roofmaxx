@@ -175,6 +175,7 @@ export const fetchServiceBySlug = async (slug: string): Promise<Service | null> 
         niche_desc,
         niche_benefits,
         faqs[] {
+           _key,
           question,
           answer
         }
