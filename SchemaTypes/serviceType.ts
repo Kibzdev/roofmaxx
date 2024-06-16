@@ -53,6 +53,20 @@ export const serviceType = defineType({
       }
     }),
     defineField({
+      name: 'serviceProjects',
+      type: 'array',
+      title: 'Service Projects',
+      of: [{ type: 'reference', to: [{ type: 'project' }] }],
+      description: 'Reference to other service-related projects'
+    }),
+    defineField({
+      name: 'clients',
+      type: 'array',
+      title: 'Clients',
+      of: [{ type: 'reference', to: [{ type: 'client' }] }],
+      description: 'References to clients associated with this service'
+    }),
+    defineField({
       name: 'customerRequirements',
       title: 'Customer Requirements',
       type: 'object',

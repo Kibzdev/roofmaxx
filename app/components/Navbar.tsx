@@ -31,15 +31,16 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full h-16 mt-12 md:h-24 shadow-xl bg-sky-800 z-50">
       <div className="flex justify-between items-center h-full w-full md:justify-center px-4 2xl:px-16">
-        <Link href="/">
-          <Image
-            src={logo}
-            alt="logo"
-            width={205}
-            height={75}
-            className="cursor-pointer"
-            priority
-          />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="logo"
+                width={205}
+                height={75}
+                className="cursor-pointer"
+                priority
+                style={{ width: 'auto', height: 'auto' }}
+              />
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex justify-center items-center">

@@ -6,10 +6,6 @@ type Base = {
   _updatedAt: string;
 };
 
-interface Image {
-  _type: "image";
-  asset: Reference;
-}
 
 interface Reference {
   _type: "reference";
@@ -48,66 +44,36 @@ interface ServiceType {
   slug: Slug;
 }
 
-
 interface CustomerRequirements {
   pre_service_requirements: string[];
   post_service_care: string[];
 }
 
 interface FAQ {
-  _key: string,
+  _key: string;
   question: string;
   answer: string;
 }
 
-//New Types
-
-// types.ts
-// export interface Service {
-//   serviceId: string; // Ensure this matches the data structure you are fetching
-//   serviceName: string;
-//   serviceDescription: string;
-//   _id: string;
-//   service_types: Array<{
-//     _ref: string;
-//   }>;
-//   slug: {
-//     current: string;
-//   };
-//   service_banner: {
-//     asset: {
-//       _ref: string;
-//     };
-//   };
-//   customerRequirements: {
-//     pre_service_requirements: string[];
-//     post_service_care: string[];
-//   };
-//   faqs: Array<{
-//     question: string;
-//     answer: string;
-//   }>;
-// }
+// New Types
 export interface ProjectClient {
   name: string;
   photoUrl: string;
   testimonial: string;
-
 }
 
 export interface ImageAsset {
   _type: 'image';
   asset: {
-      _ref: string;
+    _ref: string;
   };
 }
 
 export interface ServiceIdentification {
-  service_Id: string; // If needed
-  serviceName: string;
-  serviceDescription: string; // If the description field is named as such
+  service_id: string;
+  service_name: string;
+  service_desc: string;
 }
-// /types/index.ts
 
 export interface Project {
   projectid: string;
@@ -132,24 +98,45 @@ export interface Project {
   images: { url: string }[];
   documents: { url: string }[];
   client_attachments: { url: string }[];
-  slug:string;
+  slug: string; // Ensure this is a string
 }
+export interface Asset {
+  url: string;
+}
+
+export interface Faq {
+  _key: string;
+  question: string;
+  answer: string;
+}
+export interface Image {
+  asset: Asset;
+}
+export interface Asset {
+  url: string;
+}
+
+
+export interface Faq {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
 export interface Niche {
-  _id: string;
-  niche_name: string;
-  niche_banner: {
-    asset: {
-      url: string;
-    };
+  category: {
+    _id: string;
+    title: string;
   };
+  niche_name: string;
+  niche_banner: Image | null;
+  niche_desc: string;
+  niche_benefits: string;
   slug: {
     current: string;
   };
-  niche_desc: string;
-  niche_benefits: string[]; // Add this line
-  faqs: FAQ[]; // Add this line
+  faqs: Faq[];
 }
-
 
 export interface Location {
   _id: string;
@@ -173,22 +160,16 @@ export interface ProjectDetailProps {
   clients: Client[];
   locations: Location[];
 }
-export interface ProjectClient {
-  name: string;       // Client's name
-  photoUrl: string;   // URL to the client's photo
-  testimonial: string; // Client's testimonial about the project
-}
-
 
 export interface GalleryCardProps {
   projects: Project[];
 }
+
 export interface NichecardProps {
   niches: Niche[];
 }
 
-// service
-// app/types.ts
+// Service
 export interface ServiceParams {
   slug: string;
 }
@@ -198,7 +179,6 @@ export interface ServiceIdentification {
   service_name: string;
   service_desc: string;
 }
-
 
 export interface FaqItem {
   _key: string;
@@ -224,5 +204,10 @@ export interface Service {
     post_service_care?: string[];
   };
   faqs?: FaqItem[];
+  serviceProjects?: Project[];
+  clients?: Client[];
 }
 
+export interface Params {
+  slug: string;
+}

@@ -236,17 +236,23 @@ export const fetchNicheBySlug = async (slug: string): Promise<Niche | null> => {
         title
       },
       niche_name,
-      niche_banner,
+      niche_banner{
+        asset->{
+          _id,
+          url
+        }
+      },
       niche_desc,
       slug,
       niche_benefits,
       faqs[]{
+        _key,
         question,
         answer
       }
     }
   `;
-  const niche: Niche= await sanityClient.fetch(query, { slug });
+  const niche: Niche = await sanityClient.fetch(query, { slug });
   return niche;
 }
 
