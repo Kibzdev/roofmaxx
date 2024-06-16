@@ -1,15 +1,14 @@
-import Image from "next/image";
-import { Fragment } from "react";
-import logo from "../../public/assets/logos/logo.png";
-import Link from "next/link";
+import Image from 'next/image';
+import { Fragment, useState } from 'react';
+import Link from 'next/link';
+import logo from '../../public/assets/logos/logo.png';
 import {
   AiOutlineMenu,
   AiOutlineClose,
   AiOutlineInstagram,
   AiOutlineFacebook,
   AiOutlineX,
-} from "react-icons/ai";
-import { useState } from "react";
+} from 'react-icons/ai';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 
 const serviceLinks = [
@@ -31,24 +30,22 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full h-16 mt-12 md:h-24 shadow-xl bg-sky-800 z-50">
       <div className="flex justify-between items-center h-full w-full md:justify-center px-4 2xl:px-16">
-            <Link href="/">
-              <Image
-                src={logo}
-                alt="logo"
-                width={205}
-                height={75}
-                className="cursor-pointer"
-                priority
-                style={{ width: 'auto', height: 'auto' }}
-              />
+        <Link href="/" passHref>
+          <Image
+            src={logo}
+            alt="logo"
+            className="cursor-pointer"
+            priority
+            sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
+            width={128}
+            height={32}
+          />
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex justify-center items-center">
-            <Link href="/">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                Home
-              </li>
-            </Link>
+            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+              <Link href="/">Home</Link>
+            </li>
             <Menu as="div" className="relative ml-10">
               <MenuButton className="text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
                 Services
@@ -72,12 +69,9 @@ const Navbar = () => {
                               active ? "bg-blue-100" : ""
                             }`}
                           >
-                            <a
-                              href={serviceLink.href}
-                              className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-center justify-center"
-                            >
+                            <Link href={serviceLink.href} className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-center justify-center">
                               {serviceLink.label}
-                            </a>
+                            </Link>
                           </div>
                         )}
                       </MenuItem>
@@ -86,27 +80,18 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
-            <Link href="/projects">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                Projects
-              </li>
-            </Link>
-            
-            <Link href="/about">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                About
-              </li>
-            </Link>
-            <Link href="/contact">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                Contact
-              </li>
-            </Link>
-            <Link href="/blog">
-              <li className="ml-10 uppercase hover:border-b text-white text-xl">
-                Blog
-              </li>
-            </Link>
+            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+              <Link href="/about">About</Link>
+            </li>
+            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+              <Link href="/blog">Blog</Link>
+            </li>
           </ul>
         </div>
         <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
@@ -127,57 +112,27 @@ const Navbar = () => {
             <AiOutlineClose size={25} className="text-sky-800" />
           </div>
         </div>
+
         <div className="flex-col py-4">
           <ul className="flex flex-col font-medium gap-4">
-            <Link href="/">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Home
-              </li>
-            </Link>
-            <Link href="/services">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Services
-              </li>
-            </Link>
-            <Link href="/projects">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Projects
-              </li>
-            </Link>
-        
-            <Link href="/about">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                About
-              </li>
-            </Link>
-            <Link href="/contact">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Contact
-              </li>
-            </Link>
-            <Link href="/blog">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="ml-10 uppercase text-sky-800 hover:border-b text-xl"
-              >
-                Blog
-              </li>
-            </Link>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/">Home</Link>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/services">Services</Link>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/about">About</Link>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+              <Link href="/blog">Blog</Link>
+            </li>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-10 items-center">

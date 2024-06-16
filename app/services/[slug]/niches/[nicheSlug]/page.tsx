@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { groq } from 'next-sanity';
 import SectionIntro from '@/app/components/SectionIntro';
+import NicheFaq from '@/app/components/niche/NIcheFaq';
 
 interface NichePageProps {
   params: {
@@ -14,14 +15,20 @@ interface NichePageProps {
   };
 }
 
-const generateUniqueKeysForFAQs = (faqs: { _key: string; question: string; answer: string; }[]) => {
+interface FAQ {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
+const generateUniqueKeysForFAQs = (faqs: FAQ[]) => {
   return faqs.map(faq => ({
     ...faq,
     _key: faq._key || uuidv4()
   }));
 };
 
-const checkForDuplicateKeys = (faqs: { _key: string; question: string; answer: string; }[]) => {
+const checkForDuplicateKeys = (faqs: FAQ[]) => {
   const keys = faqs.map(faq => faq._key);
   const uniqueKeys = new Set(keys);
   if (keys.length !== uniqueKeys.size) {
@@ -54,10 +61,8 @@ const NichePage = async ({ params }: NichePageProps) => {
   }
 
   return (
-    <Container>
-      <div className="flex flex-col items-center justify-center container mx-auto px-4 py-8 w-full">
-        <h1 className="text-3xl font-bold mb-4">{niche.niche_name}</h1>
-        <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
+    <div className='flex flex-col w-full '>
+       <div className="w-full h-auto my-8 rounded-lg shadow-lg  items-center justify-center">
           {bannerUrl && (
             <Image
               src={bannerUrl}
@@ -69,7 +74,9 @@ const NichePage = async ({ params }: NichePageProps) => {
             />
           )}
         </div>
-        <SectionIntro subtitle="Solutions For you" title={niche.niche_name} />
+        <Container>
+      <div className="flex flex-col items-center justify-center  container mx-auto px-4 py-8 w-full">
+        <h1 className="text-3xl font-bold mb-4 text-red-500 uppercase">{niche.niche_name}</h1>
         <div className="flex items-center justify-center w-full">
           <p className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{niche.niche_desc}</p>
         </div>
@@ -80,16 +87,13 @@ const NichePage = async ({ params }: NichePageProps) => {
         {niche.faqs && (
           <div className="flex flex-col mt-8 justify-center max-w-4xl items-center">
             <h2 className="text-2xl font-bold mb-4 text-center text-sky-900">FAQs</h2>
-            {niche.faqs.map((faq) => (
-              <div key={faq._key} className="mb-4">
-                <h3 className="font-semibold text-sky-800 text-xl">{faq.question}</h3>
-                <p className="font-medium tracking-widest text-lg">{faq.answer}</p>
-              </div>
-            ))}
+            <NicheFaq faqs={niche.faqs} />
           </div>
         )}
       </div>
     </Container>
+    </div>
+  
   );
 };
 

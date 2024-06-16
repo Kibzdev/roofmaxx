@@ -5,6 +5,7 @@ import React, { useState,useEffect} from 'react';
 import ServiceCard from '../components/service/ServiceCard';
 import { groq } from 'next-sanity';
 import PageIntro from '../components/PageIntro';
+import Container from '../components/Container';
 
 
 const query = groq`*[_type == "service"]{
@@ -42,7 +43,10 @@ const Services = () => {
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
         </p>
       </PageIntro>
-      {error ? <p>{error}</p> :<ServiceCard services={services} />}
+      <Container>
+        {error ? <p>{error}</p> :<ServiceCard services={services} />}
+      </Container>
+     
     </div>
   );
 }

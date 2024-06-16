@@ -14,3 +14,13 @@ body {
   font-family: 'Arial', sans-serif;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+.border-l-half::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px; /* Adjust the width of the border */
+  height: 50%; /* Adjust the height to be half */
+  background-color: #075985; /* Match the border color */
+  transform: translateY(-50%);
+}
