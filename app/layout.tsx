@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Head from 'next/head';
 import { Metadata } from 'next'
+import BottomMenu from './components/BottomMenu';
 const inter = Inter({ subsets: ["latin"] });  // Inter font setup
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </Head>
       <body className={`inter.className} overflow-x-hidden`}>
         <Header/>
+        <BottomMenu/>
         {children}
         <Footer/>
       </body>
