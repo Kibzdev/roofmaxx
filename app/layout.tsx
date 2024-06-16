@@ -29,10 +29,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </Head>
       <body className={`inter.className} overflow-x-hidden`}>
         <Header/>
-        
+        <BottomMenu/>
         {children}
         <Footer/>
-        <BottomMenu/>
+       
       </body>
     </html>
   );
