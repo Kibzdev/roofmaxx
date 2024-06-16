@@ -13,7 +13,9 @@ const NicheCard: React.FC<NicheCardProps> = ({ niche, serviceSlug }) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg my-4">
+      
       <Link href={`/services/${serviceSlug}/niches/${niche.slug.current}`}>
+      <div className='relative w-full h-64 my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center'>
         {bannerUrl && (
           <Image
             src={bannerUrl}
@@ -24,6 +26,8 @@ const NicheCard: React.FC<NicheCardProps> = ({ niche, serviceSlug }) => {
             className="w-full"
           />
         )}
+      </div>
+      
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2 text-sky-800 uppercase text-center">{niche.niche_name}</div>
           <p className="text-red-700  text-center font-medium hover:bg-red-500 hover:text-white hover:py-4">View Details</p>
