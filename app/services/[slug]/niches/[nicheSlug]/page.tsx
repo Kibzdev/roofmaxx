@@ -71,14 +71,14 @@ const NichePage = async ({ params }: NichePageProps) => {
         </div>
         <SectionIntro subtitle="Solutions For you" title={niche.niche_name} />
         <div className="flex items-center justify-center w-full">
-          <p className="mt-4 text-center tracking-wider font-medium">{niche.niche_desc}</p>
+          <p className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{niche.niche_desc}</p>
         </div>
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-4 text-center uppercase text-sky-800 tracking-wide">Benefits</h2>
-          <p>{niche.niche_benefits}</p>
+          <p className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{niche.niche_benefits}</p>
         </div>
         {niche.faqs && (
-          <div className="flex flex-col mt-8 justify-center max-w-2xl items-center">
+          <div className="flex flex-col mt-8 justify-center max-w-4xl items-center">
             <h2 className="text-2xl font-bold mb-4 text-center text-sky-900">FAQs</h2>
             {niche.faqs.map((faq) => (
               <div key={faq._key} className="mb-4">
