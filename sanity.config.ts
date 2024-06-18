@@ -13,15 +13,23 @@ import { presentationTool } from 'sanity/presentation'
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './sanity/env'
 import { schemaTypes } from './SchemaTypes'
+import StudioNavbar from './app/components/StudioNavbar'
 
 export default defineConfig({
   basePath: '/studio',
+  name:"Roofmax_studio",
+  title:"Roofmax Studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema: {
     types: schemaTypes,
   },
+  studio: {
+    components: {
+      navbar:StudioNavbar,
+  },
+},
   plugins: [
    presentationTool({
       previewUrl: {

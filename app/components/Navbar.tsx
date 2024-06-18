@@ -22,9 +22,14 @@ const serviceLinks = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleServicesToggle = () => {
+    setServicesOpen(!servicesOpen);
   };
 
   return (
@@ -59,17 +64,20 @@ const Navbar = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="flex flex-col flex-wrap rounded-lg justify-between py-1 item-center">
+                <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
                     {serviceLinks.map((serviceLink) => (
                       <MenuItem key={serviceLink.href}>
                         {({ active }) => (
                           <div
-                            className={`block data-[focus]:bg-blue-100 px-4 py-4 ${
-                              active ? "bg-blue-100" : ""
+                            className={`block w-full data-[focus]:bg-blue-100 px-4 py-4 ${
+                              active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
                             }`}
                           >
-                            <Link href={serviceLink.href} className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-center justify-center">
+                            <Link
+                              href={serviceLink.href}
+                              className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-start justify-start"
+                            >
                               {serviceLink.label}
                             </Link>
                           </div>
@@ -104,7 +112,7 @@ const Navbar = () => {
         className={
           menuOpen
             ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
-            : "fixed  left-[-100%] top-0 p-10 ease-in duration-500"
+            : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
         }
       >
         <div className="flex w-full items-center justify-end">
@@ -118,8 +126,20 @@ const Navbar = () => {
             <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
               <Link href="/">Home</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
-              <Link href="/services">Services</Link>
+            <li
+              onClick={handleServicesToggle}
+              className="ml-10 uppercase text-sky-800 hover:border-b  text-xl cursor-pointer"
+            >
+              Services
+              {servicesOpen && (
+                <ul className="pl-4 mt-2">
+                  {serviceLinks.map((serviceLink) => (
+                    <li key={serviceLink.href} className="ml-10 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                      <Link href={serviceLink.href}>{serviceLink.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
             <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
               <Link href="/projects">Projects</Link>

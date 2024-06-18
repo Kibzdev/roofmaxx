@@ -24,3 +24,29 @@ body {
   background-color: #075985; /* Match the border color */
   transform: translateY(-50%);
 }
+.social-icon {
+  @apply flex items-center justify-center w-10 h-10 bg-red-500 rounded-full shadow-lg transition-transform transform hover:scale-110 hover:shadow-xl;
+}
+
+.social-icon svg {
+  @apply text-white w-5 h-5;
+}
+
+/* services heading */
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  animation-name: typing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}

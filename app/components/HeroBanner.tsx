@@ -1,9 +1,10 @@
-"use client"
-import { useState } from "react"
+"use client";
+import { useState } from 'react';
 import { homebg } from '@/public/assets';
+import NavSocials from './NavSocials';
 import Image from 'next/image';
 
-const HeroBanner = () => {
+const HeroBanner: React.FC = () => {
   const [result, setResult] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -18,18 +19,19 @@ const HeroBanner = () => {
   }
 
   return (
-    <div className="relative w-full h-screen mt-24 md:mt-0 bg-slate-5 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+    <div className="relative w-full h-screen mt-24 md:mt-0 bg-slate-500 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="absolute inset-0">
         <Image
           src={homebg}
           alt="Background Image"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="z-0"
         />
-        <div className="absolute inset-0 bg-black opacity-25 z-10"></div> {/* Optional overlay for better contrast */}
+        <div className="absolute inset-0 bg-black opacity-10 z-10"></div> {/* Optional overlay for better contrast */}
       </div>
-      <div className="relative z-20 flex flex-col bg-#C1CCCF md:bg-red-500 md:ml-10 p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center md:mt-24">
+      <div className="relative z-20 flex flex-col bg-gray-300 md:bg-red-500 md:ml-10 p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center md:mt-24">
         <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Schedule a Free Inspection</h2>
         <form className="space-y-4 flex flex-col items-center justify-center">
           <input
@@ -77,6 +79,7 @@ const HeroBanner = () => {
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
+      <NavSocials />
     </div>
   );
 };

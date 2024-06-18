@@ -6,6 +6,9 @@ import ServiceCard from '../components/service/ServiceCard';
 import { groq } from 'next-sanity';
 import PageIntro from '../components/PageIntro';
 import Container from '../components/Container';
+import ServiceMainCat from '../components/service/ServiceMainCat';
+import SectionIntro from '../components/SectionIntro';
+import ServicesHeading from '../components/service/ServiceHeading';
 
 
 const query = groq`*[_type == "service"]{
@@ -38,11 +41,11 @@ const Services = () => {
   return (
    
     <div>
-      <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
-        <p>
-          With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
-        </p>
-      </PageIntro>
+      <PageIntro eyebrow='Our Services' title="What we Do" centered/>
+    
+      <ServiceMainCat/>
+      <ServicesHeading/>
+   
       <Container>
         {error ? <p>{error}</p> :<ServiceCard services={services} />}
       </Container>
