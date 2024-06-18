@@ -9,6 +9,7 @@ import Container from '../components/Container';
 import ServiceMainCat from '../components/service/ServiceMainCat';
 import SectionIntro from '../components/SectionIntro';
 import ServicesHeading from '../components/service/ServiceHeading';
+import OurService from '../components/service/OurService';
 
 
 const query = groq`*[_type == "service"]{
@@ -49,6 +50,7 @@ const Services = () => {
       <Container>
         {error ? <p>{error}</p> :<ServiceCard services={services} />}
       </Container>
+      <OurService/>
      
     </div>
   );
