@@ -13,11 +13,13 @@ import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/r
 
 const serviceLinks = [
   { href: "/services/ceiling-installation", label: "Ceiling Installation" },
-  { href: "/services/roof-repair", label: "Roof Repair" },
-  { href: "/services/roof-cleaning", label: "Roof Cleaning" },
-  { href: "/services/roof-painting", label: "Roof Painting" },
-  { href: "/services/solar-cleaning", label: "Solar Cleaning" },
+  { href: "/services/interior-construction-and-supplies", label: "Interior Construction & Supplies" },
+  { href: "/services/High Pressure Roof Cleaning", label: "High Pressure Roof Cleaning" },
+  { href: "/services/airless-roof-spray-painting", label: "airless-roof-spray-painting" },
   { href: "/services/root-waterproofing", label: "RoofTop WaterProofing" },
+  { href: "/services/skylights-and-translucent-sheeting", label: "skylights and translucent sheeting" },
+
+
 ];
 
 const Navbar = () => {
