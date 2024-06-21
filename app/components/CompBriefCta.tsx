@@ -13,7 +13,7 @@ const CompBriefCta: React.FC = () => {
         <Image src={diamond} width={128} height={128} alt="diamond"/>
         <h3 className="text-center text-white font-semibold">RESIDENTIAL ROOFING</h3>
         <p className='text-white tracking-wider text-center font-light text-lg'>RoofMax provides top-quality roofing solutions for residential homes, ensuring durability, energy efficiency, and aesthetic appeal</p>
-        <Link href="/services/residential">
+        <Link href="/services">
         <Button variant="outline" className="rounded-full py-4 px-6 md:px-12 border-4 text-white hover:bg-red-500">Learn More</Button>
         </Link>
        
@@ -30,7 +30,10 @@ const CompBriefCta: React.FC = () => {
         <Image src={diamond} width={128} height={128} alt="diamond"/>
         <h3 className="text-center text-white font-semibold">COMMERCIAL ROOFING</h3>
         <p className="text-white tracking-wider text-center font-light text-lg"> Our expert team works closely with developers and property managers to provide customized, high-quality roofs that enhance the value and longevity of commercial properties</p>
+        <Link href="/services">
         <Button variant="outline" className="rounded-full py-4 px-6 md:px-12 border-4 text-white mb-8 hover:bg-red-500">Learn More</Button>
+        </Link>
+       
       </div>
     </div>
   );

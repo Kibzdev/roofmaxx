@@ -1,40 +1,38 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-/* app/globals.css */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
 
-}
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: inherit;
-  margin: 0;
-  padding: 0;
 }
+
 .border-l-half::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 0;
-  width: 4px; /* Adjust the width of the border */
-  height: 50%; /* Adjust the height to be half */
-  background-color: #075985; /* Match the border color */
+  width: 4px;
+  height: 50%;
+  background-color: #075985;
   transform: translateY(-50%);
 }
+
 .social-icon {
   @apply flex items-center justify-center w-10 h-10 bg-red-500 rounded-full shadow-lg transition-transform transform hover:scale-110 hover:shadow-xl;
 }
@@ -43,7 +41,6 @@ body {
   @apply text-white w-5 h-5;
 }
 
-/* services heading */
 @keyframes typing {
   0% {
     opacity: 0;
