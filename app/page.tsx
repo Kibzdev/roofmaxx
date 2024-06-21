@@ -16,14 +16,9 @@ const Home: React.FC = () => {
   return (
     <main className='mx-auto'>
       <HeroBanner/>
-      <CompBriefCta />
-      <ServicesBlock/>
       <InspireCTO/>
-      <UspPointsList/>
       <ProjectsCard/>
       <TeamView/>
-      <Stats/>
-      <TestimonialCard/>
       <ContactUs/>
       <LatestPost/>
 
