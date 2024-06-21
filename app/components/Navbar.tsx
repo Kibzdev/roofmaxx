@@ -16,10 +16,12 @@ const serviceLinks = [
   { href: "/services/interior-construction-and-supplies", label: "Interior Construction & Supplies" },
   { href: "/services/high-pressure-roof-cleaning", label: "High Pressure Roof Cleaning" },
   { href: "/services/airless-roof-spray-painting", label: "airless-roof-spray-painting" },
-  { href: "/services/root-waterproofing", label: "RoofTop WaterProofing" },
+  { href: "/services/roof-coating-and-waterproofing", label: "Roof Coating & Waterproofing" },
   { href: "/services/skylights-and-translucent-sheeting", label: "skylights and translucent sheeting" },
-
-
+  { href: "/services/pvc-gutter-installation", label: "PVC Gutter Installation" },
+  { href: "/services/pvc-roof-installation", label: "Roof Installation" },
+  { href: "/services/roof-inspection", label: "Roof Roof Inspection" },
+  
 ];
 
 const Navbar = () => {

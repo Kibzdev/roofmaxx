@@ -19,7 +19,6 @@ export const projectType = defineType({
         hotspot: true // Enables image cropping around areas designated as important
       }
     }),
-
     defineField({
       name: 'project_name',
       type: 'string',
@@ -59,25 +58,6 @@ export const projectType = defineType({
       title: 'End Date'
     }),
     defineField({
-      name: 'status',
-      type: 'string',
-      title: 'Project Status',
-      options: {
-        list: [
-          {title: 'Planning', value: 'planning'},
-          {title: 'In Progress', value: 'in_progress'},
-          {title: 'Completed', value: 'completed'},
-          {title: 'On Hold', value: 'on_hold'}
-        ],
-        layout: 'radio'
-      }
-    }),
-    defineField({
-      name: 'budget',
-      type: 'number',
-      title: 'Budget'
-    }),
-    defineField({
       name: 'description',
       type: 'text',
       title: 'Project Description'
@@ -97,29 +77,17 @@ export const projectType = defineType({
       }
     }),
     defineField({
-      name: 'documents',
-      type: 'array',
-      title: 'Documents',
-      of: [{ type: 'file' }],
-      options: {
-        layout: 'grid'
-      }
-    }),
-    defineField({
-      name: 'client_attachments',
-      type: 'array',
-      title: 'Client Attachments',
-      description: 'Files attached by the client, such as roof designs or specific requirements',
-      of: [{ type: 'file' }],
-      options: {
-        layout: 'grid'
-      }
+      name: 'expert',
+      type: 'reference',
+      title: 'Expert',
+      to: [{ type: 'team' }],
+      description: 'Reference to the expert/team member involved in this project'
     }),
   ],
   preview: {
     select: {
       title: "project_name",
-      media: "image",
+      media: "projectbanner",
     },
   }
 });
