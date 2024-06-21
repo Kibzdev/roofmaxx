@@ -138,7 +138,7 @@ const Navbar = () => {
               {servicesOpen && (
                 <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.href} className="ml-10 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                    <li key={serviceLink.href} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
                       <Link href={serviceLink.href}>{serviceLink.label}</Link>
                     </li>
                   ))}
