@@ -12,7 +12,6 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 
 const serviceLinks = [
-  { href: "/services/ceiling-installation", label: "Ceiling Installation" },
   { href: "/services/interior-construction-and-supplies", label: "Interior Construction & Supplies" },
   { href: "/services/high-pressure-roof-cleaning", label: "High Pressure Roof Cleaning" },
   { href: "/services/airless-roof-spray-painting", label: "airless-roof-spray-painting" },
@@ -20,7 +19,8 @@ const serviceLinks = [
   { href: "/services/skylights-and-translucent-sheeting", label: "skylights and translucent sheeting" },
   { href: "/services/pvc-gutter-installation", label: "PVC Gutter Installation" },
   { href: "/services/pvc-roof-installation", label: "Roof Installation" },
-  { href: "/services/roof-inspection", label: "Roof Roof Inspection" },
+  { href: "/services/roof-inspection", label: "Roof Inspection" },
+  { href: "/services/solar-panel-cleaning", label: "Solar Panel Cleaning" },
   
 ];
 
@@ -136,7 +136,7 @@ const Navbar = () => {
             >
               Services
               {servicesOpen && (
-                <ul className="pl-4 mt-2">
+                <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
                     <li key={serviceLink.href} className="ml-10 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
                       <Link href={serviceLink.href}>{serviceLink.label}</Link>
