@@ -35,7 +35,7 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
       </div>
       
     <Container>
-       <div className='flex bg-red-900  flex-col md:flex-row justify-center gap-4  items-center md:justify-around py-4 px-4'>
+       <div className='flex  flex-col md:flex-row justify-center gap-4  items-center md:justify-around py-4 px-4'>
           <div className='flex flex-col'>
           <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Client Information</h2>
           <p className="text-gray-700 font-medium tracking-wide uppercase py-4">{project.client.name}</p>
@@ -104,37 +104,43 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
 
 async function getProject(slug: string): Promise<Project | null> {
   const query = groq`
-    *[_type == "project" && slug.current == $slug][0]{
-      projectid,
-      project_name,
-      "projectbannerUrl": projectbanner.asset->url,
-      client->{
-        name,
-        category,
-        "clientImage": photo.asset->url,
-        testimonial
-      },
-      service_used->{
-        name,
-        description
-      },
-      start_date,
-      end_date,
-      status,
-      budget,
-      description,
-      outcome,
-      images[]{
-        "url": asset->url
-      },
-      documents[]{
-        "url": asset->url
-      },
-      client_attachments[]{
-        "url": asset->url
-      }
+  *[_type == "project" && slug.current == $slug][0]{
+    projectid,
+    project_name,
+    "projectbannerUrl": projectbanner.asset->url,
+    client->{
+      name,
+      category,
+      "clientImage": photo.asset->url,
+      testimonial
+    },
+    service_used->{
+      name,
+      description
+    },
+    start_date,
+    end_date,
+    status,
+    budget,
+    description,
+    outcome,
+    images[]{
+      "url": asset->url
+    },
+    documents[]{
+      "url": asset->url
+    },
+    client_attachments[]{
+      "url": asset->url
+    },
+    expert->{
+      firstname,
+      lastname,
+      expertise,
+      "expertImage": image.asset->url
     }
-  `;
+  }
+`;
   const project = await sanityClient.fetch(query, { slug });
   return project;
 }
