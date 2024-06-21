@@ -19,7 +19,7 @@ const SectionIntro: React.FC<PageIntroProps> = ({ subtitle, title, children, cen
          <h1>
           <span className='block font-display text-base font-semibold text-white'>{subtitle}</span>
           <span className="sr-only"> - </span>
-          <span className={clsx("mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight text-red-500 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
+          <span className={clsx("mt-6 font-bold block max-w-5xl font-display text-5xl tracking-tight text-red-500 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
          </h1>
          <div className={clsx(
             "mt-6 max-w-3xl text-xl text-red-500",

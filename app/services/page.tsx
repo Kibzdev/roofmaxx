@@ -10,6 +10,8 @@ import ServiceMainCat from '../components/service/ServiceMainCat';
 import SectionIntro from '../components/SectionIntro';
 import ServicesHeading from '../components/service/ServiceHeading';
 import OurService from '../components/service/OurService';
+import UspPointsList from '../components/UspPointsList';
+import ServiceValueCard from '../components/service/ServiceValues';
 
 
 const query = groq`*[_type == "service"]{
@@ -51,6 +53,7 @@ const Services = () => {
         {error ? <p>{error}</p> :<ServiceCard services={services} />}
       </Container>
       <OurService/>
+      <ServiceValueCard/>
      
     </div>
   );

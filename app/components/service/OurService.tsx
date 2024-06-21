@@ -4,7 +4,7 @@ import { kev, logo } from '@/public/assets';
 
 const OurService: React.FC = () => {
   return (
-    <div className="relative bg-sky-700 text-white py-16 md:py-24">
+    <div className="relative bg-sky-700 text-white py-16 md:py-24 mt-6">
       <div className="container mx-auto px-4 flex  md:flex-row items-center">
         <div className="flex flex-col w-3/5  md:w-1/2 items-center justify-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center md:text-start">

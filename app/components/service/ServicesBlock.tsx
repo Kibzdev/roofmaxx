@@ -49,32 +49,32 @@ const ServicesBlock = () => {
             <div className='grid grid-cols-1 gap-4'>
               <Link href="/services/roof-installation">
                 <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>New </span> Roof Installation
-                </p>
-              </Link>
-              <Link href="/services/roof-installation">
-                <p className='font-abold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>Roof</span>  Repairs
+                  <span className='text-sky-800 mr-2'>→</span>New Roof Installation
                 </p>
               </Link>
               <Link href="/services/roof-installation">
                 <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>Rain </span>Gutter Installation
+                  <span className=' text-sky-800 mr-2'>→</span>Roof Repairs
                 </p>
               </Link>
               <Link href="/services/roof-installation">
                 <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>Water</span>Proofing
+                  <span className=' text-sky-800 mr-2'>→</span>Rain Gutter Installation
                 </p>
               </Link>
               <Link href="/services/roof-installation">
                 <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>Gypsum </span>Installation
+                  <span className=' text-sky-800  mr-2'>→</span>Water Proofing
                 </p>
               </Link>
               <Link href="/services/roof-installation">
                 <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
-                  <span className='text-sky-800 mr-2'>→</span><span className='text-sky-800'>SPC </span>FLOORING
+                  <span className='text-sky-800 mr-2'>→</span>Gypsum Installation
+                </p>
+              </Link>
+              <Link href="/services/roof-installation">
+                <p className='font-bold text-lg md:text-3xl text-red-500 flex items-center'>
+                  <span className='text-sky-800 mr-2'>→</span>SPC Flooring
                 </p>
               </Link>
             </div>
