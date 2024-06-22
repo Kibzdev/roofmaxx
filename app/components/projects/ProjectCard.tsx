@@ -1,12 +1,12 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-
 import { groq } from 'next-sanity';
 import { sanityClient } from '@/sanity/lib/sanityclient';
-
 import PageIntro from '../PageIntro';
 import GalleryCard from './GalleryCard';
 import Container from '../Container';
+import Button from '../Button';
+import Link from 'next/link';
 
 const query = groq`*[_type == "project"] {
   projectid,
@@ -40,13 +40,18 @@ const ProjectsCard = () => {
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
         </p>
       </PageIntro>
+      <div className='mt-8'>
       <Container>
-      {error ? <p>{error}</p> : <GalleryCard projects={projects}/>}
+        {error ? <p>{error}</p> : <GalleryCard projects={projects} />}
+        <div className='flex justify-end w-full mt-4'>
+        <Link href="/projects">
+          <Button className='bg-red-500 text-white px-4 py-4'> View More</Button>
+        </Link>
+      </div>
       </Container>
-     
+      </div>
+   
       
-      
-     
     </div>
   );
 };

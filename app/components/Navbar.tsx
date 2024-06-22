@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Link from 'next/link';
 import logo from '../../public/assets/logos/logo.png';
 import {
@@ -10,23 +10,22 @@ import {
   AiOutlineX,
 } from 'react-icons/ai';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
-
-const serviceLinks = [
-  { href: "/services/interior-construction-and-supplies", label: "Interior Construction & Supplies" },
-  { href: "/services/high-pressure-roof-cleaning", label: "High Pressure Roof Cleaning" },
-  { href: "/services/airless-roof-spray-painting", label: "airless-roof-spray-painting" },
-  { href: "/services/roof-coating-and-waterproofing", label: "Roof Coating & Waterproofing" },
-  { href: "/services/skylights-and-translucent-sheeting", label: "skylights and translucent sheeting" },
-  { href: "/services/pvc-gutter-installation", label: "PVC Gutter Installation" },
-  { href: "/services/pvc-roof-installation", label: "Roof Installation" },
-  { href: "/services/roof-inspection", label: "Roof Inspection" },
-  { href: "/services/solar-panel-cleaning", label: "Solar Panel Cleaning" },
-  
-];
+import { fetchServiceLinks } from '@/sanity/lib/fetch';
+import { ServiceLink } from '../../types';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [serviceLinks, setServiceLinks] = useState<ServiceLink[]>([]);
+
+  useEffect(() => {
+    const getServices = async () => {
+      const services = await fetchServiceLinks();
+      setServiceLinks(services);
+    };
+
+    getServices();
+  }, []);
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
@@ -71,7 +70,7 @@ const Navbar = () => {
                 <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
                     {serviceLinks.map((serviceLink) => (
-                      <MenuItem key={serviceLink.href}>
+                      <MenuItem key={serviceLink.service_id}>
                         {({ active }) => (
                           <div
                             className={`block w-full data-[focus]:bg-blue-100 px-4 py-4 ${
@@ -79,7 +78,7 @@ const Navbar = () => {
                             }`}
                           >
                             <Link
-                              href={serviceLink.href}
+                              href={`/services/${serviceLink.href}`}
                               className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-start justify-start"
                             >
                               {serviceLink.label}
@@ -132,14 +131,14 @@ const Navbar = () => {
             </li>
             <li
               onClick={handleServicesToggle}
-              className="ml-10 uppercase text-sky-800 hover:border-b  text-xl cursor-pointer"
+              className="ml-10 uppercase text-sky-800 hover:border-b text-xl cursor-pointer"
             >
               Services
               {servicesOpen && (
                 <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.href} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
-                      <Link href={serviceLink.href}>{serviceLink.label}</Link>
+                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                      <Link href={`/services/${serviceLink.href}`}>{serviceLink.label}</Link>
                     </li>
                   ))}
                 </ul>

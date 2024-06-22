@@ -1,8 +1,19 @@
-import { SanityClient, groq, type ClientPerspective, type QueryParams } from "next-sanity";
-import { draftMode } from "next/headers";
-import { sanityClient } from "./sanityclient";
-import { token } from "./token";
-import { Service, Project, Niche } from '../../types';
+import { groq } from 'next-sanity';
+import { sanityClient } from './sanityclient';
+import { Service, Project, Niche, ServiceLink } from '../../types';
+
+// Fetch all service links for navigation
+export const fetchServiceLinks = async (): Promise<ServiceLink[]> => {
+  const query = groq`
+    *[_type == "service"]{
+      "href": slug.current,
+      "label": identification.service_name,
+      "service_id": identification.service_id
+    }
+  `;
+  const data = await sanityClient.fetch<ServiceLink[]>(query);
+  return data;
+};
 
 // Interface for Project Banner
 interface ProjectBanner {
@@ -18,38 +29,6 @@ interface GalleryCardProject {
   project_name: string;
   projectbannerUrl: string; // This will be derived from the projectbanner asset
 }
-
-// Function to fetch data with built-in support for handling Draft Mode and perspectives
-export async function sanityFetch<QueryResponse>({
-  query,
-  params = {},
-  perspective = draftMode().isEnabled ? "previewDrafts" : "published",
-  stega = perspective === "previewDrafts" ||
-    process.env.VERCEL_ENV === "preview",
-}: {
-  query: string;
-  params?: QueryParams;
-  perspective?: Omit<ClientPerspective, "raw">;
-  stega?: boolean;
-}) {
-  if (perspective === "previewDrafts") {
-    return sanityClient.fetch<QueryResponse>(query, params, {
-      stega,
-      perspective: "previewDrafts",
-      token,
-      useCdn: false,
-      next: { revalidate: 0 },
-    });
-  }
-  return sanityClient.fetch<QueryResponse>(query, params, {
-    stega,
-    perspective: "published",
-    useCdn: true,
-    next: { revalidate: 60 },
-  });
-}
-
-/* Services Fetch */
 
 // Fetch all services
 export const fetchServiceData = async (): Promise<Service[]> => {
@@ -74,8 +53,6 @@ export const fetchNavigationData = async () => {
   const data = await sanityClient.fetch(query);
   return data;
 }
-
-/* Projects Fetch */
 
 // Fetch all projects
 export const fetchProjects = async () => {
@@ -105,9 +82,7 @@ export const fetchProjects = async () => {
       "clientAttachments": client_attachments[].asset->url
     }
   `;
-  const data = await sanityFetch<{ [key: string]: any }[]>({
-    query
-  });
+  const data = await sanityClient.fetch<{ [key: string]: any }[]>(query);
   return data;
 }
 
@@ -151,8 +126,6 @@ export const fetchProjectBySlug = async (slug: string): Promise<Project> => {
   `;
   return await sanityClient.fetch(query, { slug });
 }
-
-/* Services Fetch by Slug */
 
 // Fetch service details by slug
 export const fetchServiceBySlug = async (slug: string): Promise<Service | null> => {
@@ -199,8 +172,6 @@ export const fetchServiceBySlug = async (slug: string): Promise<Service | null> 
   const service = await sanityClient.fetch(query, { slug });
   return service;
 }
-
-/* Niche Fetch */
 
 // Fetch all niches
 export const fetchNicheData = async (): Promise<Niche[]> => {

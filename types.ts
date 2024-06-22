@@ -36,7 +36,11 @@ interface Category extends Base {
   description: string;
   title: string;
 }
-
+export interface ServiceLink {
+  href: string;
+  label: string;
+  service_id: string;
+}
 interface ServiceType {
   type_name: string;
   type_banner: Image;

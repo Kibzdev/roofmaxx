@@ -30,9 +30,6 @@ const OurClient: React.FC = () => {
           Crowning Dream Homes Across Kenya: Welcome to Roofmax!!
         </p>
         
-        <button className="bg-red-500 hover:bg-sky-800 text-white font-medium uppercase py-2 px-6 rounded w-1/2  mt-6">
-     Contact us <span className="text-white-500 text-md text-lg">→</span>
-     </button>
       </div>
       <div className="relative z-20 flex flex-col bg-gray-300 md:bg-red-500 md:ml-10 p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center md:mt-24">
         <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Schedule a Free Inspection</h2>
