@@ -59,8 +59,21 @@ export const projectType = defineType({
     }),
     defineField({
       name: 'description',
-      type: 'text',
-      title: 'Project Description'
+      type: 'array',
+      title: 'Project Description',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Strike', value: 'strike-through' },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: 'outcome',

@@ -12,10 +12,10 @@ interface ProjectDataProps {
 
 const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="flex flex-col container mx-auto px-4 py-8">
       <PageIntro eyebrow="Project Details" title={project.project_name}>
       </PageIntro>
-      <div className='flex w-full bg-amber-500 justify-center'>
+      <div className='flex w-full bg-gray-50 shadow-sm justify-center'>
       <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
         <Image
           src={project.projectbannerUrl}
@@ -28,14 +28,17 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
         />
       </div>
       </div>
-     
-
       <div className='flex w-full '>
+      <h2 className="text-2xl font-bold text-center text-sky-800 uppercase mt-8">About the Project</h2>
       <p className="text-gray-700   w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{project.description}</p>
       </div>
-      
-    <Container>
-       <div className='flex  flex-col md:flex-row justify-center gap-4  items-center md:justify-around py-4 px-4'>
+      <div className='flex flex-col'>
+              <h2 className="text-2xl font-bold text-center text-sky-800 uppercase mt-8">Outcome</h2>
+              <p className="text-gray-700   w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">{project.outcome}</p>
+            </div>   
+      <div className='flex flex-col'>
+      <Container>
+       <div className='flex  flex-col justify-center gap-4  items-center md:justify-around py-4 px-4'>
           <div className='flex flex-col'>
           <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Client Information</h2>
           <p className="text-gray-700 font-medium tracking-wide uppercase py-4">{project.client.name}</p>
@@ -55,13 +58,11 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
               <h2 className="text-2xl font-bold mt-8">Outcome</h2>
               <p className="text-gray-700">{project.outcome}</p>
             </div>   
-          <div  className='flex flex-col'>
-            <h2 className="text-2xl font-bold mt-8  text-sky-800 uppercase">Budget</h2>
-            <p className="text-gray-700">${project.budget}</p>
-        </div>
         </div>
      
     </Container>
+      </div>
+   
 
       
       
@@ -81,23 +82,7 @@ const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold mt-8">Documents</h2>
-      <ul className="list-disc list-inside my-4">
-        {project.documents && project.documents.map((doc) => (
-          <li key={doc.url}>
-            <a href={doc.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Download Document</a>
-          </li>
-        ))}
-      </ul>
-
-      <h2 className="text-2xl font-bold mt-8">Client Attachments</h2>
-      <ul className="list-disc list-inside my-4">
-        {project.client_attachments && project.client_attachments.map((att) => (
-          <li key={att.url}>
-            <a href={att.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Download Attachment</a>
-          </li>
-        ))}
-      </ul>
+     
     </div>
   );
 };

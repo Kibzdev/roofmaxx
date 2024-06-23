@@ -10,12 +10,8 @@ export default function ProjectDetailLayout({
 }) {
   return (
     <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <ServiceBanner serviceId='34'/>
-      <ServiceBreadcrumbNav/>
-
      <div className='flex'>
-      <div className='flex w-4/5'>
+      <div className='flex w-full md:w-4/5'>
          {children}
       </div>
       <div className='flex-w-1/5'>
