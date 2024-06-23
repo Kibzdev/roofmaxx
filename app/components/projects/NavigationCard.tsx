@@ -10,7 +10,7 @@ interface SidePanelItem {
 
 const NavigationCard: React.FC = () => {
   return (
-    <div className={clsx('flex flex-col items-top sticky right-0 top-12 bg-gray-50 text-sky-800 p-4 rounded-lg shadow-md')}>
+    <div className={clsx('hidden md:flex flex-col items-top sticky right-0 top-12 bg-gray-50 text-sky-800 p-4 rounded-lg shadow-md')}>
       <h2 className={clsx('text-lg font-bold mb-3')}>WHAT WE DO</h2>
       <ul>
         {SERVICE_DESC_DATA.sidePanel.map((item: SidePanelItem) => (

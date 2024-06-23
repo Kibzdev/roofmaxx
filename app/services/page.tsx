@@ -45,10 +45,8 @@ const Services = () => {
    
     <div>
       <PageIntro eyebrow='Our Services' title="What we Do" centered/>
-    
       <ServiceMainCat/>
       <ServicesHeading/>
-   
       <Container>
         {error ? <p>{error}</p> :<ServiceCard services={services} />}
       </Container>

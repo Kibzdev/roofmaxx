@@ -1,5 +1,5 @@
 
-import NavigationCard from '../../components/service/NavigationCard';
+import NavigationCard from '../../components/projects/NavigationCard';
 export default function ServiceDetailLayout({
   children, // will be a page or nested layout
 }: {

@@ -1,6 +1,6 @@
 import ServiceBanner from '../../components/service/ServiceBanner';
 import ServiceBreadcrumbNav from '../../components/service/ServiceBreadcrumb';
-import NavigationCard from '../../components/service/NavigationCard';
+import NavigationCard from '../../components/projects/NavigationCard';
 
 
 export default function ProjectDetailLayout({

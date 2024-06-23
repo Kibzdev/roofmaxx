@@ -53,11 +53,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4 hover:underline hover:underline-offset-4">Contact</h3>
           <p className="mb-2 flex items-center">
-            <span className="mr-2">📍</span> Embakasi near CocaCola
-          </p>
-          <p className="mb-2 flex items-center">
-            <span className="mr-2">📞</span> +(254) -0700- 667 -667 <br />
-            +(254) -0700- 667 -667
+            <span className="mr-2">📞</span> +(254) -0713 147 147 <br />
           </p>
           <p className="mb-2 flex items-center">
             <span className="mr-2">✉️</span> info@roofmax.com
