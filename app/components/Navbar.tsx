@@ -79,7 +79,7 @@ const Navbar = () => {
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-6 px-4 uppercase text-sky-800 font-medium items-start justify-start"
+                              className="flex flex-col gap-6 px-0 font-bold uppercase text-sky-800 items-start justify-start"
                             >
                               {serviceLink.label}
                             </Link>
