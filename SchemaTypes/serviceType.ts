@@ -67,14 +67,11 @@ export const serviceType = defineType({
       description: 'References to clients associated with this service'
     }),
     defineField({
-      name: 'customerRequirements',
-      title: 'Customer Requirements',
-      type: 'object',
-      group: 'details',
-      fields: [
-        defineField({ name: 'pre_service_requirements', type: 'array', title: 'Pre-service Requirements', of: [{ type: 'string' }] }),
-        defineField({ name: 'post_service_care', type: 'array', title: 'Post-service Care', of: [{ type: 'string' }] })
-      ]
+      name: 'experts',
+      type: 'array',
+      title: 'Experts',
+      of: [{ type: 'reference', to: [{ type: 'team' }] }],
+      description: 'References to the experts/team members involved in this project'
     }),
     defineField({
       name: 'faqs',

@@ -7,6 +7,7 @@ import ServiceFaqs from '@/app/components/service/ServiceFaqs';
 import NicheCard from '@/app/components/niche/NicheCard';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityClient } from '@/sanity/lib/sanityclient';
+import ServiceProjects from '@/app/components/service/ServiceProjects';
 
 // Configure the URL builder for Sanity
 const builder = imageUrlBuilder(sanityClient);
@@ -126,9 +127,9 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
-          <h2 className="text-2xl font-bold mt-8">Service Projects</h2>
-          {/* <ServiceProjects /> */}
+        <div className="flex flex-col w-full justify-center items-center">
+          <h2 className="text-2xl font-bold text-sky-800 uppercase py-4 text-center mt-8">Service Projects</h2>
+          <ServiceProjects />
         </div>
         <div>
         <h2 className="text-2xl font-bold mt-8">Testimonials</h2>
