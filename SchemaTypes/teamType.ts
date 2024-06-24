@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-export const  teamType=defineType({
+export const teamType = defineType({
   name: "team",
   title: "Team",
   type: "document",
@@ -37,7 +37,17 @@ export const  teamType=defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "text",
+      type: "array",
+      of: [{
+        type: 'block',
+        marks: {
+          decorators: [
+            { title: 'Bold', value: 'strong' },
+            { title: 'Italic', value: 'em' },
+            { title: 'Underline', value: 'underline' }
+          ]
+        }
+      }]
     }),
     defineField({
       name: "slug",
@@ -52,7 +62,7 @@ export const  teamType=defineType({
       name: 'projects',
       title: 'Projects Done',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'project'}]}],
+      of: [{ type: 'reference', to: [{ type: 'project' }] }],
       description: 'Reference to project details'
     })
   ],

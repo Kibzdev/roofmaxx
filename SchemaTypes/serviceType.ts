@@ -20,7 +20,21 @@ export const serviceType = defineType({
       fields: [
         defineField({ name: 'service_id', type: 'string', title: 'Service ID' }),
         defineField({ name: 'service_name', type: 'string', title: 'Service Name' }),
-        defineField({ name: 'service_desc', type: 'text', title: 'Description' })
+        defineField({ 
+          name: 'service_desc', 
+          type: 'array', 
+          title: 'Description', 
+          of: [{
+            type: 'block',
+            marks: {
+              decorators: [
+                { title: 'Bold', value: 'strong' },
+                { title: 'Italic', value: 'em' },
+                { title: 'Underline', value: 'underline' }
+              ]
+            }
+          }]
+        })
       ]
     }),
     defineField({

@@ -16,7 +16,21 @@ export const nicheType = defineType({
     }),
     defineField({ name: 'niche_name', type: 'string', title: 'Niche Name', validation: Rule => Rule.required() }),
     defineField({ name: 'niche_banner', type: 'image', title: 'Niche Image', options: { hotspot: true } }),
-    defineField({ name: 'niche_desc', type: 'text', title: 'Description' }),
+    defineField({ 
+      name: 'niche_desc', 
+      type: 'array', 
+      title: 'Description',
+      of: [{
+        type: 'block',
+        marks: {
+          decorators: [
+            { title: 'Bold', value: 'strong' },
+            { title: 'Italic', value: 'em' },
+            { title: 'Underline', value: 'underline' }
+          ]
+        }
+      }] 
+    }),
     defineField({
       name: 'slug',
       type: 'slug',
@@ -26,7 +40,21 @@ export const nicheType = defineType({
         maxLength: 200, // Optional: sets the maximum slug length
       }
     }),
-    defineField({ name: 'niche_benefits', type: 'text', title: 'Benefits' }),
+    defineField({ 
+      name: 'niche_benefits', 
+      type: 'array', 
+      title: 'Benefits',
+      of: [{
+        type: 'block',
+        marks: {
+          decorators: [
+            { title: 'Bold', value: 'strong' },
+            { title: 'Italic', value: 'em' },
+            { title: 'Underline', value: 'underline' }
+          ]
+        }
+      }] 
+    }),
     defineField({
       name: 'faqs',
       title: 'FAQs',
