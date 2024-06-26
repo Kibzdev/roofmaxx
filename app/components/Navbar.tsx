@@ -51,7 +51,7 @@ const Navbar = () => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex justify-center items-center">
-            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/">Home</Link>
             </li>
             <Menu as="div" className="relative ml-10">
@@ -91,16 +91,16 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
-            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/projects">Projects</Link>
             </li>
-            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/about">About</Link>
             </li>
-            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/contact">Contact</Link>
             </li>
-            <li className="ml-10 uppercase hover:border-b text-white text-xl">
+            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/blog">Blog</Link>
             </li>
           </ul>
@@ -126,42 +126,42 @@ const Navbar = () => {
 
         <div className="flex-col py-4">
           <ul className="flex flex-col font-medium gap-4">
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/">Home</Link>
             </li>
             <li
               onClick={handleServicesToggle}
-              className="ml-10 uppercase text-sky-800 hover:border-b text-xl cursor-pointer"
+              className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium cursor-pointer"
             >
               Services
               {servicesOpen && (
                 <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:bg-sky-600 hover:text-white hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
                       <Link href={`/services/${serviceLink.href}`}>{serviceLink.label}</Link>
                     </li>
                   ))}
                 </ul>
               )}
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/projects">Projects</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/about">About</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/contact">Contact</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:border-b text-xl">
+            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
               <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-10 items-center">
-          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800" />
-          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800" />
-          <AiOutlineX size={30} className="cursor-pointer" />
+          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
+          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
+          <AiOutlineX size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
         </div>
       </div>
     </nav>
