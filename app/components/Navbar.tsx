@@ -35,6 +35,13 @@ const Navbar = () => {
     setServicesOpen(!servicesOpen);
   };
 
+  const closeServicesDropdown = () => {
+    setServicesOpen(false);
+  };
+
+  const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
+  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
+
   return (
     <nav className="fixed w-full h-16 mt-12 md:h-24 shadow-xl bg-sky-800 z-50">
       <div className="flex justify-between items-center h-full w-full md:justify-center px-4 2xl:px-16">
@@ -51,11 +58,11 @@ const Navbar = () => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex justify-center items-center">
-            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
-              <Link href="/">Home</Link>
+            <li className="ml-10 text-xl">
+              <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
             <Menu as="div" className="relative ml-10">
-              <MenuButton className="text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium">
+              <MenuButton className={desktopLinkClasses}>
                 Services
               </MenuButton>
               <Transition
@@ -80,6 +87,7 @@ const Navbar = () => {
                             <Link
                               href={`/services/${serviceLink.href}`}
                               className="flex flex-col gap-6 px-0 font-bold uppercase text-sky-800 items-start justify-start"
+                              onClick={closeServicesDropdown}
                             >
                               {serviceLink.label}
                             </Link>
@@ -91,17 +99,17 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
-            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
-              <Link href="/projects">Projects</Link>
+            <li className="ml-10 text-xl">
+              <Link href="/projects" className={desktopLinkClasses}>Projects</Link>
             </li>
-            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
-              <Link href="/about">About</Link>
+            <li className="ml-10 text-xl">
+              <Link href="/about" className={desktopLinkClasses}>About</Link>
             </li>
-            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
-              <Link href="/contact">Contact</Link>
+            <li className="ml-10 text-xl">
+              <Link href="/contact" className={desktopLinkClasses}>Contact</Link>
             </li>
-            <li className="ml-10 uppercase hover:bg-sky-600 hover:text-white text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
-              <Link href="/blog">Blog</Link>
+            <li className="ml-10 text-xl">
+              <Link href="/blog" className={desktopLinkClasses}>Blog</Link>
             </li>
           </ul>
         </div>
@@ -126,42 +134,44 @@ const Navbar = () => {
 
         <div className="flex-col py-4">
           <ul className="flex flex-col font-medium gap-4">
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/">Home</Link>
             </li>
             <li
               onClick={handleServicesToggle}
-              className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium cursor-pointer"
+              className={`${mobileLinkClasses} cursor-pointer`}
             >
               Services
               {servicesOpen && (
                 <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:bg-sky-600 hover:text-white hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
-                      <Link href={`/services/${serviceLink.href}`}>{serviceLink.label}</Link>
+                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                      <Link href={`/services/${serviceLink.href}`} onClick={() => { handleNav(); closeServicesDropdown(); }}>
+                        {serviceLink.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               )}
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/projects">Projects</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/about">About</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/contact">Contact</Link>
             </li>
-            <li onClick={() => setMenuOpen(false)} className="ml-10 uppercase text-sky-800 hover:bg-sky-600 hover:text-white text-xl px-3 py-2 rounded-none text-lg font-medium">
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-10 items-center">
-          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
-          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
-          <AiOutlineX size={30} className="cursor-pointer text-sky-800 hover:bg-sky-600 hover:text-white p-1 rounded-full" />
+          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800" />
+          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800" />
+          <AiOutlineX size={30} className="cursor-pointer" />
         </div>
       </div>
     </nav>

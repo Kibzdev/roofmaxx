@@ -7,7 +7,7 @@ const TopBar: React.FC = () => {
   const email = 'info@roofmax.com';
   const subject = 'Customer Inquiry';
   const body = 'Hello, I would like more information about your services.';
-  const phoneNumber = '+254703667667';
+  const phoneNumber = '+254713147147';
 
   return (
     <div className="fixed  flex bg-red-500 justify-between items-center lg:p-6 h-12 w-full z-50">
