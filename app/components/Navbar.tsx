@@ -52,8 +52,8 @@ const Navbar = () => {
             className="cursor-pointer"
             priority
             sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
-            width={128}
-            height={32}
+            width={220}
+            height={80}
           />
         </Link>
         <div className="hidden sm:flex">
