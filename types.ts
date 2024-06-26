@@ -18,11 +18,17 @@ interface Slug {
 }
 
 interface Block {
-  _key: string;
-  _type: "block";
-  children: Span[];
-  markDefs: any[];
-  style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+  _type: 'block';
+  children: Array<{
+    _type: 'span';
+    text: string;
+    marks?: string[];
+  }>;
+  markDefs?: Array<{
+    _key: string;
+    _type: string;
+  }>;
+  style?: string;
 }
 
 interface Span {
@@ -97,12 +103,26 @@ export interface Project {
   end_date: string;
   status: string;
   budget: number;
-  description: string;
+  description: Block[]; // Update description to be an array of blocks
   outcome: string;
   images: { url: string }[];
   documents: { url: string }[];
   client_attachments: { url: string }[];
-  slug: string; // Ensure this is a string
+  slug: string;
+}
+
+interface Block {
+  _type: 'block';
+  children: Array<{
+    _type: 'span';
+    text: string;
+    marks?: string[];
+  }>;
+  markDefs?: Array<{
+    _key: string;
+    _type: string;
+  }>;
+  style?: string;
 }
 export interface Asset {
   url: string;
