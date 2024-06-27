@@ -9,46 +9,13 @@ import imageUrlBuilder from '@sanity/image-url';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import ServiceProjects from '@/app/components/service/ServiceProjects';
 import { PortableText, PortableTextBlock } from '@portabletext/react';
+import { Service, ServiceDataProps, FaqItem } from '@/types'; // Adjust the import path as necessary
 
 // Configure the URL builder for Sanity
 const builder = imageUrlBuilder(sanityClient);
 
 function urlFor(source: any): string {
   return builder.image(source).url();
-}
-
-// Define FaqItem type
-interface FaqItem {
-  _key: string;
-  question: string;
-  answer: string;
-}
-
-// Example Service type
-interface Service {
-  identification: {
-    service_id: string;
-    service_name: string;
-    service_desc: PortableTextBlock[];
-  };
-  service_types?: any[];
-  slug: string;
-  service_banner?: {
-    asset: {
-      url: string;
-    };
-  };
-  customerRequirements?: {
-    pre_service_requirements?: string[];
-    post_service_care?: string[];
-  };
-  faqs?: FaqItem[];
-}
-
-interface ServiceDataProps {
-  params: {
-    slug: string;
-  };
 }
 
 export async function generateMetadata({ params }: ServiceDataProps): Promise<Metadata> {
@@ -63,7 +30,9 @@ export async function generateMetadata({ params }: ServiceDataProps): Promise<Me
 
   // Extract text content from service_desc blocks for metadata description
   const description = service.identification.service_desc
-    .map(block => block.children.map(child => child.text).join(' '))
+    .map((block: PortableTextBlock) => 
+      block.children.map((child: any) => child.text).join(' ')
+    )
     .join(' ');
 
   return {

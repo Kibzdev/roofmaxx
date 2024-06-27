@@ -6,7 +6,6 @@ type Base = {
   _updatedAt: string;
 };
 
-
 interface Reference {
   _type: "reference";
   current: string;
@@ -42,11 +41,13 @@ interface Category extends Base {
   description: string;
   title: string;
 }
+
 export interface ServiceLink {
   href: string;
   label: string;
   service_id: string;
 }
+
 interface ServiceType {
   type_name: string;
   type_banner: Image;
@@ -82,7 +83,7 @@ export interface ImageAsset {
 export interface ServiceIdentification {
   service_id: string;
   service_name: string;
-  service_desc: string;
+  service_desc: Block[];  // Updated to be an array of blocks
 }
 
 export interface Project {
@@ -103,7 +104,7 @@ export interface Project {
   end_date: string;
   status: string;
   budget: number;
-  description: Block[]; // Update description to be an array of blocks
+  description: Block[];  // Update description to be an array of blocks
   outcome: string;
   images: { url: string }[];
   documents: { url: string }[];
@@ -111,19 +112,6 @@ export interface Project {
   slug: string;
 }
 
-interface Block {
-  _type: 'block';
-  children: Array<{
-    _type: 'span';
-    text: string;
-    marks?: string[];
-  }>;
-  markDefs?: Array<{
-    _key: string;
-    _type: string;
-  }>;
-  style?: string;
-}
 export interface Asset {
   url: string;
 }
@@ -133,18 +121,9 @@ export interface Faq {
   question: string;
   answer: string;
 }
+
 export interface Image {
   asset: Asset;
-}
-export interface Asset {
-  url: string;
-}
-
-
-export interface Faq {
-  _key: string;
-  question: string;
-  answer: string;
 }
 
 export interface Niche {
@@ -198,12 +177,6 @@ export interface ServiceParams {
   slug: string;
 }
 
-export interface ServiceIdentification {
-  service_id: string;
-  service_name: string;
-  service_desc: string;
-}
-
 export interface FaqItem {
   _key: string;
   question: string;
@@ -211,11 +184,7 @@ export interface FaqItem {
 }
 
 export interface Service {
-  identification: {
-    service_id: string;
-    service_name: string;
-    service_desc: string;
-  };
+  identification: ServiceIdentification;
   service_types?: any[];
   slug: string;
   service_banner?: {
@@ -234,4 +203,11 @@ export interface Service {
 
 export interface Params {
   slug: string;
+}
+
+// Define ServiceDataProps interface
+export interface ServiceDataProps {
+  params: {
+    slug: string;
+  };
 }
