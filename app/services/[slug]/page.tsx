@@ -1,3 +1,4 @@
+// app/[slug]/page.tsx
 import { Metadata } from 'next';
 import { fetchServiceBySlug } from '@/sanity/lib/fetch';
 import PageIntro from '@/app/components/PageIntro';
@@ -5,17 +6,42 @@ import Image from 'next/image';
 import Container from '@/app/components/Container';
 import ServiceFaqs from '@/app/components/service/ServiceFaqs';
 import NicheCard from '@/app/components/niche/NicheCard';
-import imageUrlBuilder from '@sanity/image-url';
-import { sanityClient } from '@/sanity/lib/sanityclient';
+import { urlFor } from '@/sanity/lib/sanityclient';
 import ServiceProjects from '@/app/components/service/ServiceProjects';
-import { PortableText, PortableTextBlock } from '@portabletext/react';
-import { Service, ServiceDataProps, FaqItem } from '@/types'; // Adjust the import path as necessary
+import { PortableText } from '@portabletext/react';
 
-// Configure the URL builder for Sanity
-const builder = imageUrlBuilder(sanityClient);
+// Define FaqItem type
+interface FaqItem {
+  _key: string;
+  question: string;
+  answer: string;
+}
 
-function urlFor(source: any): string {
-  return builder.image(source).url();
+// Example Service type
+interface Service {
+  identification: {
+    service_id: string;
+    service_name: string;
+    service_desc: any[]; // Updated to array of blocks
+  };
+  service_types?: any[];
+  slug: string;
+  service_banner?: {
+    asset: {
+      url: string;
+    };
+  };
+  customerRequirements?: {
+    pre_service_requirements?: string[];
+    post_service_care?: string[];
+  };
+  faqs?: FaqItem[];
+}
+
+interface ServiceDataProps {
+  params: {
+    slug: string;
+  };
 }
 
 export async function generateMetadata({ params }: ServiceDataProps): Promise<Metadata> {
@@ -28,21 +54,14 @@ export async function generateMetadata({ params }: ServiceDataProps): Promise<Me
     };
   }
 
-  // Ensure service_desc is always treated as an array
-  const serviceDesc = Array.isArray(service.identification.service_desc) 
-    ? service.identification.service_desc 
-    : [];
-
-  // Extract text content from service_desc blocks for metadata description
-  const description = serviceDesc
-    .map((block: PortableTextBlock) => 
-      'children' in block ? block.children.map((child: any) => child.text).join(' ') : ''
-    )
-    .join(' ');
+  // Extract plain text from the block content for the description
+  const serviceDescriptionText = service.identification.service_desc
+    ?.map((block: any) => block.children?.map((child: any) => child.text).join(''))
+    .join(' ') || '';
 
   return {
     title: service.identification.service_name,
-    description,
+    description: serviceDescriptionText,
   };
 }
 
@@ -71,11 +90,6 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
     checkForDuplicateKeys(service.faqs);
   }
 
-  // Ensure service_desc is always treated as an array
-  const serviceDesc = Array.isArray(service.identification.service_desc) 
-    ? service.identification.service_desc 
-    : [];
-
   return (
     <div className="container mx-auto px-4 py-8">
       <PageIntro eyebrow="Service Details" title={service.identification.service_name} />
@@ -96,7 +110,9 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
       <div className="flex w-full">
         <div className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
-          <PortableText value={serviceDesc} />
+          {service.identification.service_desc && (
+            <PortableText value={service.identification.service_desc} />
+          )}
         </div>
       </div>
 
@@ -105,7 +121,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           <div className="flex flex-col">
             <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Service Niches</h2>
             <div className="flex flex-wrap justify-center gap-4 rounded-xl">
-              {service.service_types?.map((niche) => (
+              {service.service_types?.map((niche: any) => (
                 <NicheCard key={niche._id} niche={niche} serviceSlug={slug} />
               ))}
             </div>
