@@ -17,12 +17,12 @@ const PageIntro: React.FC<PageIntroProps> = ({ eyebrow, title, children, centere
     <Container className={clsx("mt-24 sm:mt-32 lg:mt-40")}>
       <FadeIn>
          <h1>
-          <span className='block font-display text-base font-semibold text-sky-600'>{eyebrow}</span>
+          <span className='block font-display text-xl font-semibold text-sky-600'>{eyebrow}</span>
           <span className="sr-only"> - </span>
           <span className={clsx("mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight text-sky-800 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
          </h1>
          <div className={clsx(
-            "mt-6 max-w-3xl text-xl text-red-500",
+            "mt-6 max-w-3xl text-xl text-gray-700",
             centered && "mx-auto"
           )}>
            {children}
