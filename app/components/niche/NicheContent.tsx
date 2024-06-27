@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Container from '@/app/components/Container';
 import SectionIntro from '@/app/components/SectionIntro';
 import { Niche } from '@/types';
+import { PortableText } from '@portabletext/react';
 
 interface NicheContentProps {
   niche: Niche;
@@ -30,7 +31,9 @@ const NicheContent: React.FC<NicheContentProps> = ({ niche, bannerUrl }) => {
         <div className="flex flex-col items-center justify-center container mx-auto px-4 py-8 w-full">
           <SectionIntro subtitle="Solutions For you" title={niche.niche_name} />
           <div className="flex items-center justify-center w-full">
-            <p className="mt-4 text-center tracking-wider">{niche.niche_desc}</p>
+            <div className="mt-4 text-center tracking-wider">
+              <PortableText value={niche.niche_desc} />
+            </div>
           </div>
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 text-center uppercase text-sky-800 tracking-wide">Benefits</h2>
