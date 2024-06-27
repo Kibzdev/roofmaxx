@@ -28,10 +28,15 @@ export async function generateMetadata({ params }: ServiceDataProps): Promise<Me
     };
   }
 
+  // Ensure service_desc is always treated as an array
+  const serviceDesc = Array.isArray(service.identification.service_desc) 
+    ? service.identification.service_desc 
+    : [];
+
   // Extract text content from service_desc blocks for metadata description
-  const description = service.identification.service_desc
+  const description = serviceDesc
     .map((block: PortableTextBlock) => 
-      block.children.map((child: any) => child.text).join(' ')
+      'children' in block ? block.children.map((child: any) => child.text).join(' ') : ''
     )
     .join(' ');
 
@@ -66,6 +71,11 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
     checkForDuplicateKeys(service.faqs);
   }
 
+  // Ensure service_desc is always treated as an array
+  const serviceDesc = Array.isArray(service.identification.service_desc) 
+    ? service.identification.service_desc 
+    : [];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <PageIntro eyebrow="Service Details" title={service.identification.service_name} />
@@ -86,7 +96,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
       <div className="flex w-full">
         <div className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
-          <PortableText value={service.identification.service_desc} />
+          <PortableText value={serviceDesc} />
         </div>
       </div>
 
