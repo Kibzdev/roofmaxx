@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Fragment, useState, useEffect } from 'react';
 import Link from 'next/link';
-import logo from '../../public/assets/logos/logo.png';
+import logo from '../../public/assets/logos/logo.svg';
 import {
   AiOutlineMenu,
   AiOutlineClose,
@@ -43,21 +43,23 @@ const Navbar = () => {
   const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
 
   return (
-    <nav className="fixed w-full h-16 mt-12 md:h-24 shadow-xl bg-sky-800 z-50">
-      <div className="flex justify-between items-center h-full w-full md:justify-center px-4 2xl:px-16">
-        <Link href="/" passHref>
-          <Image
-            src={logo}
-            alt="logo"
-            className="cursor-pointer"
-            priority
-            sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
-            width={220}
-            height={80}
-          />
-        </Link>
-        <div className="hidden sm:flex">
-          <ul className="hidden sm:flex justify-center items-center">
+    <nav className="fixed flex justify-between mt-12 items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16">
+      <div className="flex justify-between items-center h-full w-full">
+        <div className="flex items-center">
+          <Link href="/" passHref>
+            <Image
+              src={logo}
+              alt="logo"
+              className="cursor-pointer"
+              priority
+              sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
+              width={440}
+              height={120}
+            />
+          </Link>
+        </div>
+        <div className="hidden sm:flex w-full justify-center items-center">
+          <ul className="flex justify-center items-center">
             <li className="ml-10 text-xl">
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
@@ -113,7 +115,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
+        <div onClick={handleNav} className="sm:hidden cursor-pointer">
           <AiOutlineMenu size={25} className="text-white" />
         </div>
       </div>

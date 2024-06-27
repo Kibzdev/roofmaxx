@@ -14,7 +14,7 @@ type PageIntroProps = {
 
 const PageIntro: React.FC<PageIntroProps> = ({ eyebrow, title, children, centered = false }) => {
   return (
-    <Container className={clsx("mt-24 sm:mt-32 lg:mt-40")}>
+    <Container className={clsx("mt-18 sm:mt-32 lg:mt-20")}>
       <FadeIn>
          <h1>
           <span className='block font-display text-xl font-semibold text-sky-600'>{eyebrow}</span>

@@ -8,6 +8,7 @@ import NicheCard from '@/app/components/niche/NicheCard';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import ServiceProjects from '@/app/components/service/ServiceProjects';
+import { PortableText, PortableTextBlock } from '@portabletext/react';
 
 // Configure the URL builder for Sanity
 const builder = imageUrlBuilder(sanityClient);
@@ -28,7 +29,7 @@ interface Service {
   identification: {
     service_id: string;
     service_name: string;
-    service_desc: string;
+    service_desc: PortableTextBlock[];
   };
   service_types?: any[];
   slug: string;
@@ -60,9 +61,14 @@ export async function generateMetadata({ params }: ServiceDataProps): Promise<Me
     };
   }
 
+  // Extract text content from service_desc blocks for metadata description
+  const description = service.identification.service_desc
+    .map(block => block.children.map(child => child.text).join(' '))
+    .join(' ');
+
   return {
     title: service.identification.service_name,
-    description: service.identification.service_desc,
+    description,
   };
 }
 
@@ -97,22 +103,22 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
       <div className="flex w-full justify-center">
         <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
           {serviceBannerUrl && (
-           <Image
-           src={serviceBannerUrl}
-           alt={service.identification.service_name}
-           width={1920}
-           height={1080}
-           style={{ objectFit: 'cover' }}
-           className="rounded-lg"
-         />
+            <Image
+              src={serviceBannerUrl}
+              alt={service.identification.service_name}
+              width={1920}
+              height={1080}
+              style={{ objectFit: 'cover' }}
+              className="rounded-lg"
+            />
           )}
         </div>
       </div>
 
       <div className="flex w-full">
-        <p className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
-          {service.identification.service_desc}
-        </p>
+        <div className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
+          <PortableText value={service.identification.service_desc} />
+        </div>
       </div>
 
       <Container>
@@ -132,8 +138,8 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           <ServiceProjects />
         </div>
         <div>
-        <h2 className="text-2xl font-bold mt-8">Testimonials</h2>
-        {/* <ServiceProjects /> */}
+          <h2 className="text-2xl font-bold mt-8">Testimonials</h2>
+          {/* <ServiceProjects /> */}
         </div>
 
         <div className="flex max-w-6xl items-center justify-center">
