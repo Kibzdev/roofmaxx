@@ -1,4 +1,3 @@
-// app/[slug]/page.tsx
 import { Metadata } from 'next';
 import { fetchServiceBySlug } from '@/sanity/lib/fetch';
 import PageIntro from '@/app/components/PageIntro';
@@ -9,34 +8,7 @@ import NicheCard from '@/app/components/niche/NicheCard';
 import { urlFor } from '@/sanity/lib/sanityclient';
 import ServiceProjects from '@/app/components/service/ServiceProjects';
 import { PortableText } from '@portabletext/react';
-
-// Define FaqItem type
-interface FaqItem {
-  _key: string;
-  question: string;
-  answer: string;
-}
-
-// Example Service type
-interface Service {
-  identification: {
-    service_id: string;
-    service_name: string;
-    service_desc: any[]; // Updated to array of blocks
-  };
-  service_types?: any[];
-  slug: string;
-  service_banner?: {
-    asset: {
-      url: string;
-    };
-  };
-  customerRequirements?: {
-    pre_service_requirements?: string[];
-    post_service_care?: string[];
-  };
-  faqs?: FaqItem[];
-}
+import { Service, FaqItem, Niche } from '@/types';
 
 interface ServiceDataProps {
   params: {
@@ -54,7 +26,6 @@ export async function generateMetadata({ params }: ServiceDataProps): Promise<Me
     };
   }
 
-  // Extract plain text from the block content for the description
   const serviceDescriptionText = service.identification.service_desc
     ?.map((block: any) => block.children?.map((child: any) => child.text).join(''))
     .join(' ') || '';
@@ -75,7 +46,6 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
   const serviceBannerUrl = service.service_banner?.asset.url || urlFor(service.service_banner?.asset);
 
-  // Check for duplicate keys
   const checkForDuplicateKeys = (faqs: FaqItem[]) => {
     const keys = faqs.map(faq => faq._key);
     const uniqueKeys = new Set(keys);
@@ -121,7 +91,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           <div className="flex flex-col">
             <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Service Niches</h2>
             <div className="flex flex-wrap justify-center gap-4 rounded-xl">
-              {service.service_types?.map((niche: any) => (
+              {service.service_types?.map((niche: Niche) => (
                 <NicheCard key={niche._id} niche={niche} serviceSlug={slug} />
               ))}
             </div>

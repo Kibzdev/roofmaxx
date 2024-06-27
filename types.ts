@@ -34,6 +34,7 @@ export interface PortableTextBlock {
   style?: string;
 }
 
+// Block type definition
 interface Block {
   _type: 'block';
   children: Array<{
