@@ -166,7 +166,7 @@ export interface Niche extends Base {
   niche_name: string;
   niche_banner: Image | null;
   niche_desc: Block[];
-  niche_benefits: string;
+  niche_benefits: Block[]; // Updated to array of blocks
   slug: Slug;
   faqs: Faq[];
 }

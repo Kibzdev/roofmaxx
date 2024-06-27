@@ -5,8 +5,7 @@ import { Niche } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { groq } from 'next-sanity';
-import SectionIntro from '@/app/components/SectionIntro';
-import NicheFaq from '@/app/components/niche/NicheFaq'
+import NicheFaq from '@/app/components/niche/NicheFaq';
 import { PortableText } from '@portabletext/react';
 
 interface NichePageProps {
@@ -85,9 +84,9 @@ const NichePage = async ({ params }: NichePageProps) => {
           </div>
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 text-center uppercase text-sky-800 tracking-wide">Benefits</h2>
-            <p className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
-              {niche.niche_benefits}
-            </p>
+            <div className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
+              <PortableText value={niche.niche_benefits} />
+            </div>
           </div>
           {niche.faqs && (
             <div className="flex flex-col mt-8 justify-center max-w-4xl items-center">
