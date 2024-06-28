@@ -5,10 +5,8 @@ import { Niche } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { groq } from 'next-sanity';
-
 import { PortableText } from '@portabletext/react';
 import NicheFaq from '@/app/components/niche/NicheFaq';
-
 
 interface NichePageProps {
   params: {
@@ -48,7 +46,6 @@ const NichePage = async ({ params }: NichePageProps) => {
     return <div>Niche not found</div>;
   }
 
-  // Log the entire niche object to inspect its structure
   console.log('Fetched niche object:', niche);
 
   const bannerUrl = niche.niche_banner?.asset?.url;
@@ -63,7 +60,7 @@ const NichePage = async ({ params }: NichePageProps) => {
   }
 
   return (
-    <div className='flex flex-col w-full '>
+    <div className='flex flex-col w-full'>
       <div className="w-full h-auto my-8 rounded-lg shadow-lg items-center justify-center">
         {bannerUrl && (
           <Image

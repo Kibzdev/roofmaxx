@@ -32,7 +32,8 @@ const HeroBanner: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black opacity-10 z-10"></div> {/* Optional overlay for better contrast */}
       </div>
-      <ScheduleForm /> {/* Use the new component here */}
+
+      <ScheduleForm className="md:ml-44" /> {/* Add margin-left class to align right */}
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
