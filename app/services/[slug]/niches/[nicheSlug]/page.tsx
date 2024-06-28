@@ -5,8 +5,10 @@ import { Niche } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { groq } from 'next-sanity';
-import NicheFaq from '@/app/components/niche/NicheFaq';
+
 import { PortableText } from '@portabletext/react';
+import NicheFaq from '@/app/components/niche/NicheFaq';
+
 
 interface NichePageProps {
   params: {

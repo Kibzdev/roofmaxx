@@ -23,9 +23,8 @@ const TeamView: React.FC = () => {
   return (
     <div className="flex flex-col bg-[#075985] w-full h-full mt-2 py-6 px-6 items-center gap-10">
       <div className="w-full">
-        <SectionIntro subtitle="Meet our Experts" title="The Team">
-          <p className='text-white font-medium'>Ready To Serve</p>
-        </SectionIntro>
+        <SectionIntro subtitle="Meet our Experts" title="The Team"/>
+     
       </div>
       <FadeIn>
       <Carousel className="flex max-w-6xl">

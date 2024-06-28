@@ -1,11 +1,25 @@
-// components/ContactUs.tsx
-import React from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
+import { fetchServiceData } from '@/sanity/lib/fetch'; // Adjust the import path as necessary
+import { Service } from '../../types'; // Adjust the import path as necessary
 import Title from './Title';
 
 const ContactUs: React.FC = () => {
+  const [services, setServices] = useState<Service[]>([]); // State to hold service data
+
+  // Fetch services on component mount
+  useEffect(() => {
+    const loadServices = async () => {
+      const serviceData = await fetchServiceData();
+      setServices(serviceData);
+    };
+
+    loadServices();
+  }, []);
+
   return (
-    <div className="flex flex-col  items-center md:flex-row  md:justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
-      <div className="flex w-full  md:w-3/5 bg-sky-800 flex-col h-full py-8 px-8">
+    <div className="flex flex-col items-center md:flex-row md:justify-between text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
+      <div className="flex w-full md:w-3/5 bg-sky-800 flex-col h-full py-8 px-8">
         <h2 className="text-2xl font-bold mb-4">We are Always Ready To Listen!</h2>
         <p className="mb-4">Tell us about yourself and we will contact you soon</p>
         <form className="space-y-4">
@@ -32,16 +46,18 @@ const ContactUs: React.FC = () => {
           <div>
             <label htmlFor="service" className="block text-sm">Service</label>
             <select id="service" className="w-full p-2 bg-red-500 text-white border-b border-white outline-none">
-              <option>Service 1</option>
-              <option>Service 2</option>
-              <option>Service 3</option>
+              {services.map(service => (
+                <option key={service.identification.service_id} value={service.identification.service_id}>
+                  {service.identification.service_name}
+                </option>
+              ))}
             </select>
           </div>
           <button type="submit" className="bg-red-500 text-white py-2 px-4 rounded mt-4">SUBMIT</button>
         </form>
       </div>
-      <div className="flex w-2/5 flex-col text-left md:text-center bg-white items-center justify-center px-5 text-sky-800  h-full">
-        <h3 className="text-xl font-bold  text-red-500 mb-4">CONTACT INFORMATION</h3>
+      <div className="flex w-2/5 flex-col text-left md:text-center bg-white items-center justify-center px-5 text-sky-800 h-full">
+        <h3 className="text-xl font-bold text-red-500 mb-4">CONTACT INFORMATION</h3>
         <p className="mb-4">Embakasi, Next to Coca-cola Bottles Factory</p>
         <p className="mb-4">
           <span className="font-bold text-red-500">Email Us:</span> <br />
