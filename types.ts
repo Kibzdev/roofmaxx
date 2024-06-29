@@ -12,6 +12,13 @@ interface Reference {
   _type: "reference";
   current: string;
 }
+// GalleryCardProject type definition
+export interface GalleryCardProject {
+  projectid: string;
+  project_name: string;
+  projectbannerUrl: string;
+}
+
 
 // Slug type definition
 interface Slug {

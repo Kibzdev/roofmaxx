@@ -5,7 +5,7 @@ import {
   ServiceLink,
   Project,
   Niche,
-  GalleryCardProps,
+  GalleryCardProject,
   ProjectClient,
 } from '../../types'; // Adjust the import path as necessary
 
@@ -78,7 +78,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
 };
 
 // Fetch project gallery card data
-export async function fetchGalleryCard(): Promise<GalleryCardProps[]> {
+export async function fetchGalleryCard(): Promise<GalleryCardProject[]> {
   const query = groq`
     *[_type == "project"]{
       projectid,
@@ -88,7 +88,7 @@ export async function fetchGalleryCard(): Promise<GalleryCardProps[]> {
     }
   `;
   try {
-    const projects: GalleryCardProps[] = await sanityClient.fetch(query);
+    const projects: GalleryCardProject[] = await sanityClient.fetch(query);
     return projects;
   } catch (error) {
     console.error("Failed to fetch gallery card data:", error);
