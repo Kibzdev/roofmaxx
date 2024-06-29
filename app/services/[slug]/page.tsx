@@ -44,7 +44,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
     return <div>Service not found</div>;
   }
 
-  const serviceBannerUrl = service.service_banner?.asset.url || urlFor(service.service_banner?.asset);
+  const serviceBannerUrl = service.service_banner?.asset.url || urlFor(service.service_banner?.asset).url();
 
   const checkForDuplicateKeys = (faqs: FaqItem[]) => {
     const keys = faqs.map(faq => faq._key);
