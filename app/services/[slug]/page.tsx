@@ -61,8 +61,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <PageIntro eyebrow="Service Details" title={service.identification.service_name} />
+    <div className=" mt-12 md:mt-16  container mx-auto px-4 py-8">
       <div className="flex w-full justify-center">
         <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
           {serviceBannerUrl && (
@@ -77,6 +76,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           )}
         </div>
       </div>
+      <PageIntro eyebrow="Service Details" title={service.identification.service_name} />
 
       <div className="flex w-full">
         <div className="text-gray-700 w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
