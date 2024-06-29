@@ -5,8 +5,8 @@ import { posts } from "@/constants"; // Ensure this import contains the correct 
 const LatestPost: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto py-12">
-      <h2 className="text-3xl font-bold text-sky-800 mb-8">
-        <span className="border-b-4 border-red-500 pb-2">Latest Posts</span>
+      <h2 className="text-3xl text-center md:text-left font-bold text-sky-800 mb-8">
+        <span className="border-b-4 border-red-500 pb-2 text-center md:text-left md:ml-4">Latest Posts</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {posts.map((post) => (
