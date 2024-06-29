@@ -11,12 +11,10 @@ export default function ProjectDetailLayout({
   return (
     <section>
      <div className='flex'>
-      <div className='flex w-full md:w-4/5'>
+      <div className='flex w-full'>
          {children}
       </div>
-      <div className='flex-w-1/5'>
-      <NavigationCard/>
-      </div>
+     
      
      </div>
       

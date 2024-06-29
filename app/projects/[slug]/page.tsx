@@ -13,7 +13,7 @@ interface ProjectDataProps {
 
 const ProjectData: React.FC<ProjectDataProps> = ({ project }) => {
   return (
-    <div className="flex flex-col container mx-auto px-4 py-8 items-center justify-center">
+    <div className="flex  w-full flex-col container mx-auto px-4 py-8 items-center justify-center">
       <div className='flex w-full bg-gray-50 shadow-sm justify-center'>
         <div className="w-full h-auto my-8 rounded-lg shadow-lg max-w-5xl items-center justify-center">
           <Image

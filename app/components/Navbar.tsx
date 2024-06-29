@@ -43,14 +43,14 @@ const Navbar = () => {
   const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
 
   return (
-    <nav className="fixed flex justify-between mt-12 items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16">
+    <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
       <div className="flex justify-between items-center h-full w-full">
         <div className="flex items-center">
           <Link href="/" passHref>
             <Image
               src={logo}
               alt="logo"
-              className="cursor-pointer"
+              className="cursor-pointer hidden sm:block"
               priority
               sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
               width={440}
@@ -64,9 +64,7 @@ const Navbar = () => {
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
             <Menu as="div" className="relative ml-10">
-              <MenuButton className={desktopLinkClasses}>
-                Services
-              </MenuButton>
+              <MenuButton className={desktopLinkClasses}>Services</MenuButton>
               <Transition
                 as={Fragment}
                 enter="transition ease-out duration-100"
@@ -115,8 +113,21 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div onClick={handleNav} className="sm:hidden cursor-pointer">
-          <AiOutlineMenu size={25} className="text-white" />
+        <div className="sm:hidden flex justify-between items-center w-full">
+          <Link href="/" passHref>
+            <Image
+              src={logo}
+              alt="logo"
+              className="cursor-pointer"
+              priority
+              sizes="(max-width: 768px) 32px, (min-width: 769px) 64px"
+              width={160}
+              height={60}
+            />
+          </Link>
+          <div onClick={handleNav} className="cursor-pointer">
+            <AiOutlineMenu size={25} className="text-white" />
+          </div>
         </div>
       </div>
 
