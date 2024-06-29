@@ -61,7 +61,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
   }
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full mt-28 md:mt-36">
       <div className="relative w-full h-96 md:h-[640px] bg-gray-200 shadow-lg">
         {serviceBannerUrl && (
           <Image
