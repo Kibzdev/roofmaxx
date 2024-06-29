@@ -27,10 +27,9 @@ const Footer: React.FC = () => {
           <ul className="space-y-2">
             {quickLinks.map(link => (
               <li key={link.id}>
-                <Link href={link.path}>
-                  <p className="flex items-center">
-                    <span className="mr-2">→</span> {link.label}
-                  </p>
+                <Link href={link.path} className="group flex items-center">
+                  <span className="mr-2 group-hover:no-underline">→</span> 
+                  <span className="hover:underline hover:underline-offset-4 hover:text-white hover:decoration-red-500">{link.label}</span>
                 </Link>
               </li>
             ))}
@@ -41,10 +40,9 @@ const Footer: React.FC = () => {
           <ul className="space-y-2">
             {serviceLinks.map(link => (
               <li key={link.service_id}>
-                <Link href={`/services/${link.href}`}>
-                  <p className="flex items-center">
-                    <span className="mr-2">→</span> {link.label}
-                  </p>
+                <Link href={`/services/${link.href}`} className="group flex items-center">
+                  <span className="mr-2 group-hover:no-underline">→</span> 
+                  <span className="hover:underline hover:underline-offset-4 hover:text-white hover:decoration-red-500">{link.label}</span>
                 </Link>
               </li>
             ))}
