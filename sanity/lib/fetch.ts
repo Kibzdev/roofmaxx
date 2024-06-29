@@ -122,35 +122,41 @@ export const fetchProjectBySlug = async (slug: string): Promise<Project> => {
 // Fetch service details by slug
 export async function fetchServiceBySlug(slug: string): Promise<Service> {
   const query = groq`
-    *[_type == "service" && slug.current == $slug][0]{
-      identification {
-        service_name,
-        service_desc[]{
+  *[_type == "service" && slug.current == $slug][0]{
+    identification {
+      service_name,
+      service_desc[]{
+        ...,
+        children[]{
           ...,
-          children[]{
-            ...,
-            text
-          }
+          text
         }
-      },
-      service_banner{
+      }
+    },
+    service_banner{
+      asset->{
+        url
+      }
+    },
+    service_types[]->{
+      _id,
+      title,
+      description,
+      niche_name,  // Add this line
+      niche_banner{
         asset->{
           url
         }
       },
-      service_types[]->{
-        _id,
-        title,
-        description
-      },
-      faqs[] {
-        _key,
-        question,
-        answer
-      }
+      slug
+    },
+    faqs[] {
+      _key,
+      question,
+      answer
     }
-  `;
-
+  }
+`;
   const service: Service = await sanityClient.fetch(query, { slug });
   return service;
 }
