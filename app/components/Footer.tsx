@@ -23,33 +23,33 @@ const Footer: React.FC = () => {
     <footer className="bg-sky-800 text-white py-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xl font-semibold mb-4 hover:underline hover:underline-offset-4">Quick Links</h3>
+          <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Quick Links</h3>
           <ul className="space-y-2">
             {quickLinks.map(link => (
               <li key={link.id}>
                 <Link href={link.path} className="group flex items-center">
                   <span className="mr-2 group-hover:no-underline">→</span> 
-                  <span className="hover:underline hover:underline-offset-4 hover:text-white hover:decoration-red-500">{link.label}</span>
+                  <span className="hover:underline hover:underline-offset-8 hover:text-white hover:decoration-red-500 hover:decoration-4">{link.label}</span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xl font-semibold mb-4 hover:underline hover:underline-offset-4">Services</h3>
+          <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Services</h3>
           <ul className="space-y-2">
             {serviceLinks.map(link => (
               <li key={link.service_id}>
                 <Link href={`/services/${link.href}`} className="group flex items-center">
                   <span className="mr-2 group-hover:no-underline">→</span> 
-                  <span className="hover:underline hover:underline-offset-4 hover:text-white hover:decoration-red-500">{link.label}</span>
+                  <span className="hover:underline hover:underline-offset-8 hover:text-white hover:decoration-red-500 hover:decoration-4">{link.label}</span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xl font-semibold mb-4 hover:underline hover:underline-offset-4">Contact</h3>
+          <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Contact</h3>
           <p className="mb-2 flex items-center">
             <span className="mr-2">📞</span> +(254) -0713 147 147 <br />
           </p>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xl font-semibold mb-4 hover:underline hover:underline-offset-4">Recent Posts</h3>
+          <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Recent Posts</h3>
           <div className="space-y-4">
             <div className="flex items-start">
               <Image src={greenroof} width={64} height={64} alt="Tile Roofing Cleaning" className="mr-4 rounded-md" />
