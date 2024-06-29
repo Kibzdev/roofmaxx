@@ -11,11 +11,11 @@ interface FAQ {
   answer: string;
 }
 
-interface NicheFaqProps {
+interface NicheFAQProps {
   faqs: FAQ[];
 }
 
-const NicheFaq: React.FC<NicheFaqProps> = ({ faqs }) => {
+const NicheFAQ: React.FC<NicheFAQProps> = ({ faqs }) => {
   return (
     <Accordion type="single" collapsible className="w-full">
       {faqs.map((faq) => (
@@ -32,4 +32,4 @@ const NicheFaq: React.FC<NicheFaqProps> = ({ faqs }) => {
   );
 };
 
-export default NicheFaq;
+export default NicheFAQ;

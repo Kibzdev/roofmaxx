@@ -6,7 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { sanityClient } from '@/sanity/lib/sanityclient';
 import { groq } from 'next-sanity';
 import { PortableText } from '@portabletext/react';
-import NicheFaq from '@/app/components/niche/NicheFaq';
+import NicheFAQ from '@/app/components/niche/NicheAsk';
+
 
 interface NichePageProps {
   params: {
@@ -90,7 +91,7 @@ const NichePage = async ({ params }: NichePageProps) => {
           {niche.faqs && (
             <div className="flex flex-col mt-8 justify-center max-w-4xl items-center">
               <h2 className="text-2xl font-bold mb-4 text-center text-sky-900">FAQs</h2>
-              <NicheFaq faqs={niche.faqs} />
+              <NicheFAQ faqs={niche.faqs} />
             </div>
           )}
         </div>
