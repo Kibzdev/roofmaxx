@@ -37,7 +37,11 @@ const NicheContent: React.FC<NicheContentProps> = ({ niche, bannerUrl }) => {
           </div>
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 text-center uppercase text-sky-800 tracking-wide">Benefits</h2>
-            <p>{niche.niche_benefits}</p>
+            <div className="flex items-center justify-center w-full">
+              <div className="mt-4 text-center tracking-wider">
+                <PortableText value={niche.niche_benefits} />
+              </div>
+            </div>
           </div>
           {niche.faqs && (
             <div className="flex flex-col mt-8 justify-center max-w-3xl items-center w-full">
