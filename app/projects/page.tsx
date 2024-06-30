@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import PageIntro from '../components/PageIntro';
 import { groq } from 'next-sanity';
