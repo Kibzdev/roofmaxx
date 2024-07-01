@@ -5,7 +5,7 @@ import PageIntro from '../PageIntro';
 const HeaderTitle: React.FC = () => {
   return (
     <>
-     <PageIntro eyebrow="Know Us" title="The Company">
+     <PageIntro eyebrow="Know Us" title="Roofmax">
         <p>We can not wait to hear from you.</p>
       </PageIntro>
       

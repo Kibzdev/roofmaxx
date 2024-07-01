@@ -17,7 +17,6 @@ export default function BlogLayout({
 }) {
   return (
     <html lang="en">
-      <Navbar/>
       <body className={inter.className}>
         {children}
       </body>

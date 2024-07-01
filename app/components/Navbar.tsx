@@ -1,5 +1,6 @@
+"use client"
 import Image from 'next/image';
-import { Fragment, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import logo from '../../public/assets/logos/logo.svg';
 import {
@@ -33,7 +34,7 @@ const Navbar = () => {
   };
 
   const handleServicesToggle = () => {
-    setServicesOpen(!servicesOpen);
+    setServicesOpen((prev) => !prev);
   };
 
   const closeServicesDropdown = () => {
@@ -65,9 +66,15 @@ const Navbar = () => {
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
             <Menu as="div" className="relative ml-10">
-              <MenuButton className={desktopLinkClasses}>Services</MenuButton>
+              <MenuButton
+                className={desktopLinkClasses}
+                onClick={handleServicesToggle}
+              >
+                Services
+              </MenuButton>
               <Transition
-                as={Fragment}
+                as="div"
+                show={servicesOpen}
                 enter="transition ease-out duration-100"
                 enterFrom="transform opacity-0 scale-95"
                 enterTo="transform opacity-100 scale-100"
@@ -75,20 +82,28 @@ const Navbar = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <MenuItems className="absolute z-10 mt-6 w-[340px] origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <MenuItems
+                  as="div"
+                  className="absolute z-10 mt-6 w-[340px] origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  onMouseLeave={closeServicesDropdown}
+                >
                   <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
                     {serviceLinks.map((serviceLink) => (
-                      <MenuItem key={serviceLink.service_id}>
+                      <MenuItem key={serviceLink.service_id} as="div">
                         {({ active }) => (
                           <div
                             className={`block w-full data-[focus]:bg-blue-100 px-4 py-4 ${
                               active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
                             }`}
+                            onClick={closeServicesDropdown}
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
                               className="flex flex-col gap-6 px-0 font-bold items-start justify-start text-sky-800"
-                              onClick={closeServicesDropdown}
+                              onClick={() => {
+                                closeServicesDropdown();
+                                setMenuOpen(false); // Ensure the mobile menu also closes if open
+                              }}
                             >
                               {toSentenceCase(serviceLink.label)}
                             </Link>
