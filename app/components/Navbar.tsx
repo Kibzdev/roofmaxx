@@ -12,6 +12,7 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
+import { toSentenceCase } from '@/app/utils/sentenceCase';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,10 +87,10 @@ const Navbar = () => {
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-6 px-0 font-bold uppercase text-sky-800 items-start justify-start"
+                              className="flex flex-col gap-6 px-0 font-bold items-start justify-start text-sky-800"
                               onClick={closeServicesDropdown}
                             >
-                              {serviceLink.label}
+                              {toSentenceCase(serviceLink.label)}
                             </Link>
                           </div>
                         )}
@@ -158,9 +159,9 @@ const Navbar = () => {
               {servicesOpen && (
                 <ul className="pl-1 mt-2">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.service_id} className="ml-2 uppercase py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                    <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
                       <Link href={`/services/${serviceLink.href}`} onClick={() => { handleNav(); closeServicesDropdown(); }}>
-                        {serviceLink.label}
+                        {toSentenceCase(serviceLink.label)}
                       </Link>
                     </li>
                   ))}

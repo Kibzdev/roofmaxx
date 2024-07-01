@@ -22,7 +22,7 @@ const PageIntro: React.FC<PageIntroProps> = ({ eyebrow, title, children, centere
           <span className={clsx("mt-6 block max-w-5xl font-display text-2xl md:text-5xl font-semibold tracking-tight text-sky-800 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
          </h1>
          <div className={clsx(
-            "mt-6 max-w-3xl text-xl text-gray-700",
+            "mt-6 w-full text-xl text-gray-700",
             centered && "mx-auto"
           )}>
            {children}
