@@ -36,14 +36,14 @@ const Offices: React.FC<OfficesProps> = ({ invert = false, ...props }) => {
     <ul role="list" {...props}>
       <li>
         <Office name="Nairobi" invert={invert}>
-        Eastlands
+        Westlands
           <br />
         southeast of the central business district.
         </Office>
       </li>
       <li>
         <Office name="Embakasi" invert={invert}>
-        Eastlands
+        Westslands
           <br />
         Opposite Cocacola
         </Office>

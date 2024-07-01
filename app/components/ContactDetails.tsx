@@ -23,8 +23,8 @@ const ContactDetails: React.FC = () => {
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm md:text-xl sm:grid-cols-2">
           {[
-            ["Careers", "careers@roofmax.com"],
-            ["Sales", "sales@roofmax.com"],
+            ["Careers", "careers@roofmax.co.ke"],
+            ["Sales", "sales@roofmax.co.ke"],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-sky-800 ">{label}</dt>

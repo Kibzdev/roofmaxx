@@ -15,8 +15,6 @@ const Home: React.FC = () => {
       <ProjectsCard/>
       <TeamView/>
       <ContactUs/>
-      <LatestPost/>
-
     </main>
   );
 }
