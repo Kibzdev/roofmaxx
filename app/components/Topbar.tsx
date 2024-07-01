@@ -4,7 +4,7 @@ import EmailLink from './EmailLink';
 import ContactLink from './ContactLink';
 
 const TopBar: React.FC = () => {
-  const email = 'info@roofmax.com';
+  const email = 'info@roofmax.co.ke';
   const subject = 'Customer Inquiry';
   const body = 'Hello, I would like more information about your services.';
   const phoneNumber = '+254713147147';

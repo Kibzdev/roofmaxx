@@ -29,16 +29,12 @@ const OurDelivery: React.FC = () => {
         "md:flex-1",
         "flex flex-col justify-center items-center md:items-start"
       )}>
-        <h2 className="text-4xl font-bold text-sky-800 mb-4 uppercase">
+        <h2 className="text-xl  md:text-2xl  font-bold text-sky-800 mb-4 uppercase">
        Consultation centric
         </h2>
-        <p className="text-gray-500 mb-4 text-2xl tracking-wider">
+        <p className="text-gray-500 mb-4 md:text-xl text-sm tracking-wider">
           Our consultants help address your most challenging issues by providing strategic, financial, operational, and IT services.
         </p>
-        <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
-          Read More  <span className="px-2 text-white-500 text-xl">→</span>
-        </button>
-       
       </div>
     </div>
     </Container>

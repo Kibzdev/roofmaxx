@@ -14,7 +14,7 @@ const Office: React.FC<OfficeProps> = ({ name, children, invert = false }) => {
     <address
       className={clsx(
         "text-sm not-italic",
-        invert ? "text-neutral-300" : "text-sky-800 "
+        invert ? "text-neutral-300" : "text-sky-800 text-sm md:text-xl"
       )}
     >
       <strong className={invert ? "text-white" : "text-red-500"}>

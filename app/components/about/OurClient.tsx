@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import clsx from 'clsx';
 import Container from '../Container';
 import FadeIn from '../FadeIn';
+import AboutSchedule from './AboutSchedule';
 
 const OurClient: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]); // State to hold service data
@@ -71,13 +72,13 @@ const OurClient: React.FC = () => {
           <div
             className={clsx(
               "mb-8 md:mb-0",
-              "md:flex md:flex-col md:justify-center md:mr-12 md:w-1/2"
+              "md:flex md:flex-col md:justify-center md:mr-12 md:w-full"
             )}
           >
             <h1 className="text-4xl font-bold leading-tight text-sky-800 uppercase">
               How we work with our Clients.
             </h1>
-            <p className="mt-4 text-gray-500 tracking-wider text-xl">
+            <p className="mt-4 text-gray-500 tracking-wider md:text-lg text-sm">
               Roofing is what we do best. Whether you’re in the market for a roof repair, waterproofing, guttering, roof painting or an entirely new roof installation, our skilled team has got you covered. We provide quality workmanship and satisfaction is guaranteed.
               <br />
               ROOFMAX is the one stop Centre of Excellence for all your roofing requirements. We work round the country - installing, repairing and maintaining hundreds of roofs at the most affordable prices in the industry.
@@ -89,7 +90,7 @@ const OurClient: React.FC = () => {
               Crowning Dream Homes Across Kenya: Welcome to Roofmax!!
             </p>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
+          {/* <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
           <div className="flex flex-col w-full md:w=[440px] bg-red-500 h-full py-8 px-8">
         <h2 className="text-2xl font-bold mb-4 text-white">We are Always Ready To Listen!</h2>
         <p className="mb-4 text-sky-800">Schedule Free  Quote</p>
@@ -130,7 +131,8 @@ const OurClient: React.FC = () => {
         </form>
       </div>
            
-          </div>
+          </div> */}
+          {/* <AboutSchedule/> */}
         </div>
       </FadeIn>
     </Container>
