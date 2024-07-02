@@ -6,7 +6,7 @@ import Logo from './Logo';
 
 const Navbar = () => {
   const navigation = [
-    { title: "Home", href: "/" },
+    { title: "Home", href: "/www.roofmax.co.ke" },
     { title: "Features", href: "/features" },
     { title: "About me", href: "/about" },
     { title: "Studio", href: "/studio" },

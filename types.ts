@@ -7,6 +7,27 @@ type Base = {
   _updatedAt: string;
 };
 
+export interface Post extends Base {
+  author: Author;
+  body: Block[];
+  categories: Category[];
+  mainImage: Image;
+  slug: Slug;
+  title: string;
+  description: string;
+}
+
+interface Author extends Base {
+  description: string;
+  image: Image;
+  name: string;
+  slug: Slug;
+}
+
+// Image type definition
+export interface Image {
+  asset: Asset;
+}
 // Reference type definition
 interface Reference {
   _type: "reference";
@@ -40,7 +61,10 @@ export interface PortableTextBlock {
   markDefs?: any[];
   style?: string;
 }
-
+interface Category extends Base {
+  description: string;
+  title: string;
+}
 // Block type definition
 interface Block {
   _type: 'block';
@@ -159,10 +183,7 @@ export interface Faq {
   answer: string;
 }
 
-// Image type definition
-export interface Image {
-  asset: Asset;
-}
+
 
 // Niche type definition extending Base
 export interface Niche extends Base {

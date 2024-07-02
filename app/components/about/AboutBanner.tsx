@@ -6,13 +6,13 @@ const ServiceBanner: React.FC = () => {
   // TypeScript definitions aren't required here as no props or complex states are used
 
   return (
-    <div className="relative w-full h-64 sm:h-96 bg-gray-300 mt-0">
+    <div className="relative w-full max-h-screen mt-0">
       <Image 
         src={bgservice}
         alt="Service Image" // Modified alt text for better clarity
-        className="object-cover w-full h-full"
-        width={1440}
-        height={640}
+        className="object-contain max-h-screen w-full h-full"
+        width={1200}
+        height={400}
       />
     </div>
   );

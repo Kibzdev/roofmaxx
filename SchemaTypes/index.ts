@@ -4,6 +4,10 @@ import { serviceType } from './serviceType'
 import { locationType } from './locationType'
 import { teamType } from './teamType'
 import {  nicheType } from './nicheType'
+import { authorType } from './author'
+import { postType } from './postType'
+import { categoryType } from './categoryType'
+import { blockContentType } from './blockContentType'
 
 export const schemaTypes = [
   serviceType,
@@ -12,5 +16,8 @@ export const schemaTypes = [
   locationType,
   teamType,
   nicheType,
-
+  authorType,
+  postType,
+  categoryType,
+  blockContentType,
 ]
