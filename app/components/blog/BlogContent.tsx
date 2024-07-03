@@ -1,9 +1,10 @@
 import { Post } from '@/types'
 import React from 'react'
-import Container from '../Container';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/sanityclient';
+import ContainerBlog from '../ContainerBlog';
 
 interface Props {
   posts: Post[];
@@ -11,7 +12,7 @@ interface Props {
 
 const BlogContent = ({ posts }: Props) => {
   return (
-    <Container className="bg-gray-100 py-20 px-10 flex flex-col gap-10">
+    <ContainerBlog className="bg-gray-100 py-20 px-10 flex flex-col gap-10">
       {posts.map((post) => (
         <Link
           href={{
@@ -31,7 +32,7 @@ const BlogContent = ({ posts }: Props) => {
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
               <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
-                <p className="text-lg font-semibold">Click to Read</p>
+                <p className="text-lg text-red-500 font-semibold">Click to Read</p>
               </div>
             </div>
             <div className="w-full md:w-2/5 flex flex-col justify-between py-10 px-4">
@@ -40,19 +41,19 @@ const BlogContent = ({ posts }: Props) => {
                   {post?.categories.map((item) => (
                     <p
                       key={item?._id}
-                      className="text-xs uppercase text-blue-600 font-semibold"
+                      className="text-xs uppercase text-red-500 font-semibold"
                     >
                       {item?.title}
                     </p>
                   ))}
                 </div>
-                <h2 className="text-2xl font-semibold hover:text-orange-600 duration-200 cursor-pointer">
+                <h2 className="text-2xl font-semibold hover:text-sky-900 duration-200 cursor-pointer">
                   {post?.title}
                 </h2>
                 <p className="text-gray-500">{post?.description}</p>
               </div>
               <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-gray-500">
+                <p className="text-sm font-semibold text-sky-800">
                   {new Date(post?._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
@@ -67,14 +68,14 @@ const BlogContent = ({ posts }: Props) => {
                     alt="author image"
                     className="rounded-full object-cover w-10 h-10"
                   />
-                  <p className="text-sm font-medium">{post?.author?.name}</p>
+                  <p className="text-sm font-medium text-sky-800">{post?.author?.name}</p>
                 </div>
               </div>
             </div>
           </div>
         </Link>
       ))}
-    </Container>
+    </ContainerBlog>
   );
 };
 

@@ -5,13 +5,11 @@ import { sanityClient } from '@/sanity/lib/sanityclient';
 import BlogContent from '@/app/components/blog/BlogContent';
 
 
-const query = `
-  *[_type == "post"] {
-    ...,
-    author->,
-    categories[]->
-  } | order(_createdAt asc)
-`;
+const query = groq`*[_type == 'post']{
+  ...,
+  author->,
+  categories[]->
+} | order(_createdAt asc)`;
 
 
 
