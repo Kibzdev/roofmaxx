@@ -3,7 +3,7 @@ import { herobg } from '@/public/assets';
 
 const Hero = () => {
   return (
-    <div className="w-full max-h-screen relative">
+    <div className="w-full max-h-screen relative mt-28 md:mt-36">
       <Image
         src={herobg}
         alt="banner image"

@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col items-center md:items-start">
+        {/* <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Services</h3>
           <ul className="space-y-2">
             {serviceLinks.map(link => (
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Contact</h3>
           <p className="mb-2 flex items-center">
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             <span className="mr-2">✉️</span> sales@roofmax.co.ke<br/>
           </p>
         </div>
-        <div className="flex flex-col items-center md:items-start">
+        {/* <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Recent Posts</h3>
           <div className="space-y-4">
             <div className="flex items-start">
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
