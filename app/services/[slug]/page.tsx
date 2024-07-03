@@ -77,7 +77,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
         <PageIntro title={service.identification.service_name} />
 
         <div className="flex w-full">
-          <div className="text-gray-700 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-center p-8">
+          <div className="text-gray-700 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-widest text-lg font-medium text-left p-8">
             {service.identification.service_desc && (
               <PortableText value={service.identification.service_desc} />
             )}
