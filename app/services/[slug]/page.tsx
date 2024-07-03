@@ -62,14 +62,14 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
   return (
     <div className="flex flex-col w-full mt-28 md:mt-36">
-      <div className="relative w-full h-96 md:h-[640px] bg-gray-200 shadow-lg">
+      <div className="relative w-full max-h-screen mt-0">
         {serviceBannerUrl && (
           <Image
             src={serviceBannerUrl}
             alt={service.identification.service_name}
-            fill
-            sizes="100vw"
-            style={{ objectFit: 'cover' }}
+            className="object-contain max-h-screen w-full h-full"
+             width={1200}
+             height={400}
           />
         )}
       </div>
@@ -85,7 +85,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
         </div>
 
         <Container>
-          <div className="flex flex-col md:flex-row justify-center gap-4 items-center md:justify-around py-4 px-4">
+          {/* <div className="flex flex-col md:flex-row justify-center gap-4 items-center md:justify-around py-4 px-4">
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Service Niches</h2>
               <div className="flex flex-wrap justify-center gap-4 rounded-xl">
@@ -94,7 +94,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col w-full justify-center items-center">
             <h2 className="text-2xl font-bold text-sky-800 uppercase py-4 text-center mt-8">Service Projects</h2>
