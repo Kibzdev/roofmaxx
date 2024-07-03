@@ -75,7 +75,7 @@ const OurClient: React.FC = () => {
               "md:flex md:flex-col md:justify-center md:mr-12 md:w-full"
             )}
           >
-            <h1 className="text-4xl font-bold leading-tight text-sky-800 uppercase">
+            <h1 className=" text-xl md:text-4xl font-bold leading-tight text-sky-800 uppercase">
               How we work with our Clients.
             </h1>
             <p className="mt-4 text-gray-500 tracking-wider md:text-lg text-sm">

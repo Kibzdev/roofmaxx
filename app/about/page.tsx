@@ -6,6 +6,7 @@ import OurDelivery from '../components/about/OurDelivery'
 import ValuesTitle from '../components/about/ValuesTitle'
 import GetStartedCTO from '../components/about/GetStartedCTO'
 import CoreValue from '../components/about/CoreValues'
+import ServiceValueCard from '../components/service/ServiceValues'
 
 
 const About = () => {
@@ -16,7 +17,7 @@ const About = () => {
       <OurClient/>
       <OurDelivery/>
       <ValuesTitle/>
-      <CoreValue/>
+      <ServiceValueCard/>
       <GetStartedCTO/>
     </div>
     
