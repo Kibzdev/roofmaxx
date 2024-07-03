@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/sanityclient';
 
-
 interface Props {
   posts: Post[];
 }
@@ -41,13 +40,13 @@ const BlogContent = ({ posts }: Props) => {
                   {post?.categories.map((item) => (
                     <p
                       key={item?._id}
-                      className="text-xs uppercase text-sky-800 font-semibold"
+                      className="text-xs uppercase text-blue-600 font-semibold"
                     >
                       {item?.title}
                     </p>
                   ))}
                 </div>
-                <h2 className="text-2xl font-semibold hover:text-red-500 duration-200 cursor-pointer">
+                <h2 className="text-2xl font-semibold hover:text-orange-600 duration-200 cursor-pointer">
                   {post?.title}
                 </h2>
                 <p className="text-gray-500">{post?.description}</p>
@@ -79,4 +78,4 @@ const BlogContent = ({ posts }: Props) => {
   );
 };
 
-export default BlogContent
+export default BlogContent;

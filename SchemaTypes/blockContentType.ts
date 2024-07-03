@@ -24,6 +24,16 @@ export const blockContentType = defineType({
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
+          { title: 'Underline', value: 'underline' },
+          { title: 'Strike-through', value: 'strike-through' },
+          { title: 'Subscript', value: 'subscript' },
+          { title: 'Superscript', value: 'superscript' },
+          { title: 'Highlight', value: 'highlight' },
+          { title: 'Code', value: 'code' },
+          { title: 'Red', value: 'red' },
+          { title: 'Gray', value: 'gray' },
+          { title: 'Blue', value: 'blue' },
+          { title: 'Custom Color', value: 'customColor' },
         ],
         annotations: [
           {
@@ -51,6 +61,26 @@ export const blockContentType = defineType({
     defineArrayMember({
       type: 'image',
       options: { hotspot: true },
+    }),
+    defineArrayMember({
+      title: 'Icon',
+      name: 'icon',
+      type: 'object',
+      fields: [
+        {
+          title: 'Icon Type',
+          name: 'iconType',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Info', value: 'info' },
+              { title: 'Warning', value: 'warning' },
+              { title: 'Error', value: 'error' },
+              { title: 'Success', value: 'success' },
+            ],
+          },
+        },
+      ],
     }),
   ],
 });

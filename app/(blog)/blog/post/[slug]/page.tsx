@@ -64,10 +64,10 @@ const SlugPage = async ({ params: { slug } }: Props) => {
             alt="author image"
             className="w-32 h-32 rounded-full object-cover"
           />
-          <p className="text-3xl text-[#5442ae] font-semibold">
+          <p className="text-3xl text-sky-800 font-semibold">
             {post?.author?.name}
           </p>
-          <p className="text-center tracking-wide text-sm">
+          <p className="text-center tracking-wider text-sm md:text-md  text-gray-700">
             {post?.author?.description}
           </p>
           <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
             <Link
               href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
               target="blank"
-              className="w-10 h-10 bg-[#3e5b98] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
+              className="w-10 h-10 bg-[#3e5b98] text-white text-xl rounded-full flex items-center justify-center hover:bg-sky-900 duration-200"
             >
               <FaFacebookF />
             </Link>
