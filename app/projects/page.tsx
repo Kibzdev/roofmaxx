@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
   return (
     <div className='mt-40 '>
       <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
-        <p>
+        <p className='text-sm md:text-lg tracking-wide'>
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
         </p>
       </PageIntro>
