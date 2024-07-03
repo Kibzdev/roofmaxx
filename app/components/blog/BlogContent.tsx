@@ -31,8 +31,8 @@ const BlogContent = ({ posts }: Props) => {
                 className="w-full max-h-[500px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
-              <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
-                <p className="text-lg text-red-500 font-semibold">Click to Read</p>
+              <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-sky-900 backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
+                <p className="text-lg text-white font-semibold">Click to Read</p>
               </div>
             </div>
             <div className="w-full md:w-2/5 flex flex-col justify-between py-10 px-4">
