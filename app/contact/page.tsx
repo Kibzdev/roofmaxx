@@ -6,6 +6,7 @@ import ContactForm from '../components/ContactFormy';
 const ContactPage = () => {
   return (
     <>
+      <div className='mt-28'>
       <PageIntro eyebrow="Contact us" title="services">
         <p>We can not wait to hear from you.</p>
       </PageIntro>
@@ -15,6 +16,7 @@ const ContactPage = () => {
           <ContactForm />
         </div>
       </Container>
+      </div>
     </>
   );
 };
