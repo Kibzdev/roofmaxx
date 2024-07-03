@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -84,7 +84,7 @@ const Navbar = () => {
               >
                 <MenuItems
                   as="div"
-                  className="absolute z-10 mt-6 w-[340px] origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className="absolute z-10 mt-6 w-[340px] max-h-80 overflow-y-auto origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar"
                   onMouseLeave={closeServicesDropdown}
                 >
                   <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
@@ -172,7 +172,7 @@ const Navbar = () => {
             >
               Services
               {servicesOpen && (
-                <ul className="pl-1 mt-2">
+                <ul className="pl-1 mt-2 max-h-80 overflow-y-auto custom-scrollbar">
                   {serviceLinks.map((serviceLink) => (
                     <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
                       <Link href={`/services/${serviceLink.href}`} onClick={() => { handleNav(); closeServicesDropdown(); }}>

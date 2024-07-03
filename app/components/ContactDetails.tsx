@@ -16,8 +16,8 @@ const ContactDetails: React.FC = () => {
         Prefer doing things in person? We don’t but we have to list our
         addresses here for legal reasons.
       </p>
-      <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
-      <Border className="mt-16 pt-16">
+      <Offices className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />
+      <Border className="mt-8 pt-8">
         <h2 className="font-display text-sm md:text-xl font-semibold text-red-500">
           Email us
         </h2>
@@ -40,7 +40,7 @@ const ContactDetails: React.FC = () => {
           ))}
         </dl>
       </Border>
-      <Border className="mt-16 pt-16">
+      <Border className="mt-8 pt-8">
         <h2 className="font-display text-sm md:text-xl font-semibold text-red-500">
           Follow us
         </h2>

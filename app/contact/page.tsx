@@ -6,11 +6,11 @@ import ContactForm from '../components/ContactFormy';
 const ContactPage = () => {
   return (
     <>
-      <div className='mt-28'>
-      <PageIntro eyebrow="Contact us" title="services">
+      <div className='mt-40 flex-col '>
+      <PageIntro  title="Contact Us">
         <p>We can not wait to hear from you.</p>
       </PageIntro>
-      <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <Container className="mt-6">
         <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2 mb-4">
           <ContactDetails />
           <ContactForm />
