@@ -61,7 +61,7 @@ html, body {
 /* Custom scrollbar styling */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
-  height: 4px; /* Reduce scrollbar height */
+  height: 0; /* Remove bottom scrollbar height */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
