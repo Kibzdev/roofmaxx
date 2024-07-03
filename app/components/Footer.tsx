@@ -6,6 +6,9 @@ import { quickLinks } from "@/constants";
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
 import { greenroof, clayroof } from "../../public/assets";
+import { SocialMediaProfiles } from './SocialMedia';
+import SocialIcons from './SocialIcons';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const [serviceLinks, setServiceLinks] = useState<ServiceLink[]>([]);
@@ -60,6 +63,17 @@ const Footer: React.FC = () => {
             <span className="mr-2">✉️</span> sales@roofmax.co.ke<br/>
           </p>
         </div>
+        <div className='flex flex-col w-full justify-center items-center'>
+        <p>&copy; 2024 Roofmax</p>
+        <p className='text-sm md:text-2xl font-semibold hover:text-red-500'>Share With a Friend On: </p>
+        </div>
+        <div className="flex  items-center justify-center md:justify-end space-x-4 mt-2 md:mt-4">
+       <a href="#" className="text-red-500 hover:text-white text-2xl md:text-6xl"><FaFacebookF /></a>
+       <a href="#" className="text-red-500 hover:text-white text-2xl md:text-6xl"><FaTwitter /></a>
+       <a href="#" className="text-red-500 hover:text-white text-2xl md:text-6xl"><FaInstagram /></a>
+      </div>
+
+        
         {/* <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8">Recent Posts</h3>
           <div className="space-y-4">
