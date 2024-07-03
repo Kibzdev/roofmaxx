@@ -103,8 +103,8 @@ const ContactUs: React.FC = () => {
         <p className="mb-4 text:lg font-medium  md:text-xl">Embakasi, Next to Coca-cola Bottles Factory</p>
         <h3 className="font-bold text-red-500 uppercase">Email Us</h3>
         <p className="mb-4 font-medium md:text-xl tracking-wider py-2">  
-          info@roofingmax.co.ke <br />
-          sales@roofingmax.co.ke
+          info@roofmax.co.ke <br />
+          sales@roofmax.co.ke
         </p>
         <h3 className="mb-4  font-medium">
           <span className="text-red-500 font-bold mb-4 md:text-xl tracking-wider py-2">Call Us:</span> <br />

@@ -54,10 +54,10 @@ const Footer: React.FC = () => {
             <span className="mr-2">📞</span> +(254) 713 147 147 <br />
           </p>
           <p className="mb-2 flex items-center">
-            <span className="mr-2">✉️</span> info@roofmax.com <br/>
+            <span className="mr-2">✉️</span> info@roofmax.co.ke <br/>
           </p>
           <p className="mb-2 flex items-center">
-            <span className="mr-2">✉️</span> sales@roofmax.com <br/>
+            <span className="mr-2">✉️</span> sales@roofmax.co.ke<br/>
           </p>
         </div>
         <div className="flex flex-col items-center md:items-start">
