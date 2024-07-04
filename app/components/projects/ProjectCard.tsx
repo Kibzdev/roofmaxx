@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import { groq } from 'next-sanity';
 import { sanityClient } from '@/sanity/lib/sanityclient';
@@ -7,6 +7,8 @@ import GalleryCard from './GalleryCard';
 import Container from '../Container';
 import Button from '../Button';
 import Link from 'next/link';
+import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
+import { Project } from '@/types';
 
 const query = groq`*[_type == "project"] {
   projectid,
@@ -15,14 +17,15 @@ const query = groq`*[_type == "project"] {
   "slug": slug.current
 }`;
 
-const ProjectsCard = () => {
-  const [projects, setProjects] = useState([]);
-  const [error, setError] = useState('');
+const ProjectsCard: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [error, setError] = useState<string>('');
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const data = await sanityClient.fetch(query);
+        const data: Project[] = await sanityClient.fetch(query);
         setProjects(data);
       } catch (err) {
         console.error("Failed to fetch projects:", err);
@@ -33,6 +36,26 @@ const ProjectsCard = () => {
     fetchProjects();
   }, []);
 
+  const openModal = (index: number) => {
+    setCurrentProjectIndex(index);
+  };
+
+  const closeModal = () => {
+    setCurrentProjectIndex(null);
+  };
+
+  const handleNext = () => {
+    if (currentProjectIndex !== null) {
+      setCurrentProjectIndex((prevIndex) => (prevIndex !== null ? (prevIndex + 1) % projects.length : 0));
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentProjectIndex !== null) {
+      setCurrentProjectIndex((prevIndex) => (prevIndex !== null ? (prevIndex - 1 + projects.length) % projects.length : projects.length - 1));
+    }
+  };
+
   return (
     <div>
       <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
@@ -41,17 +64,46 @@ const ProjectsCard = () => {
         </p>
       </PageIntro>
       <div className='mt-8'>
-      <Container>
-        {error ? <p>{error}</p> : <GalleryCard projects={projects} />}
-        <div className='flex justify-end w-full mt-4'>
-        <Link href="/projects">
-          <Button className='bg-red-500 text-white px-4 py-4'> View More</Button>
-        </Link>
+        <Container>
+          {error ? (
+            <p>{error}</p>
+          ) : (
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+              {projects.map((project, index) => (
+                <div key={project.projectid} onClick={() => openModal(index)} className='cursor-pointer'>
+                  <GalleryCard project={project} />
+                </div>
+              ))}
+            </div>
+          )}
+          <div className='flex justify-end w-full mt-4'>
+            <Link href="/projects">
+              <Button className='bg-red-500 text-white px-4 py-4'> View More</Button>
+            </Link>
+          </div>
+        </Container>
       </div>
-      </Container>
-      </div>
-   
-      
+
+      {currentProjectIndex !== null && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
+          <div className='relative bg-white p-4 rounded-lg max-w-xl w-full'>
+            <button className='absolute top-4 right-4 text-white bg-red-500 p-2 rounded-full' onClick={closeModal}>
+              <FaTimes size={24} />
+            </button>
+            <div className='mt-12'>
+              <GalleryCard project={projects[currentProjectIndex]} isModal={true} />
+            </div>
+            <div className='flex justify-between mt-4'>
+              <button onClick={handlePrev} className='bg-red-500 text-white p-2 rounded-full'>
+                <FaChevronLeft />
+              </button>
+              <button onClick={handleNext} className='bg-red-500 text-white p-2 rounded-full'>
+                <FaChevronRight />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
