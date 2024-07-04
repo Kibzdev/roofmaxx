@@ -14,6 +14,7 @@ import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/r
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
 import { toSentenceCase } from '@/app/utils/sentenceCase';
+import { logoDark, logoWhite } from '@/public/assets';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,7 +51,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link href="/" passHref>
             <Image
-              src={logo}
+              src={logoDark}
               alt="logo"
               className="cursor-pointer hidden sm:block"
               priority
@@ -130,6 +131,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="sm:hidden flex justify-between items-center w-full">
+          <div onClick={handleNav} className="cursor-pointer">
+            <AiOutlineMenu size={25} className="text-white" />
+          </div>
           <Link href="/" passHref>
             <Image
               src={logo}
@@ -141,9 +145,6 @@ const Navbar = () => {
               height={60}
             />
           </Link>
-          <div onClick={handleNav} className="cursor-pointer">
-            <AiOutlineMenu size={25} className="text-white" />
-          </div>
         </div>
       </div>
 
@@ -155,9 +156,20 @@ const Navbar = () => {
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
-        <div className="flex w-full items-center justify-end">
+        <div className="flex w-full items-center justify-between">
+          <Link href="/" passHref>
+            <Image
+              src={logoWhite}
+              alt="logo"
+              className="cursor-pointer"
+              priority
+              sizes="(max-width: 768px) 32px, (min-width: 769px) 64px"
+              width={160}
+              height={60}
+            />
+          </Link>
           <div onClick={handleNav} className="cursor-pointer">
-            <AiOutlineClose size={25} className="text-sky-800" />
+            <AiOutlineClose size={25} className="text-red-500" />
           </div>
         </div>
 

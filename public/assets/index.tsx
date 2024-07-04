@@ -46,9 +46,11 @@ const spcfloor ='/assets/images/spcfloor.png'
 const gutter ='/assets/images/gutter.png'
 const homebg = '/assets/images/home-bg.jpg'
 const aboutbg =  '/assets/images/aboutbg.png'
+const logoDark = '/assets/logos/logo-darkbg.png'
+const logoWhite = '/assets/logos/logo-whitebg.png'
 
 export {
-  repair,roofrepair,aboutbg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
+  repair,roofrepair,logoDark,logoWhite,aboutbg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
   flatceiling, commercial,residential,drone,paint,paints,kev,paintbg,
   rocket, gent01, gent02, gent03,diamond,techy,ctabg,framewhite,vector,
    polygon, contractor,quality, certified,tech,goal,security,cert,checkmark,nyki,quotey

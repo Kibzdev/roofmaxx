@@ -10,12 +10,12 @@ const TopBar: React.FC = () => {
   const phoneNumber = '+254713147147';
 
   return (
-    <div className="fixed flex bg-red-500 justify-between items-center h-12 w-full z-50">
-      <div className="flex items-center md:justify-center sm:justify-between gap-2 mx-auto md:w-1/2">
+    <div className="fixed flex bg-red-500 justify-between items-center h-12 w-full z-50 px-4">
+      <div className="flex items-center justify-center gap-2 mx-auto w-full md:w-1/2">
         <ContactLink phoneNumber={phoneNumber}/>
         <EmailLink email={email} subject={subject} body={body}/>
       </div>
-      <div className="hidden md:block gap-2 text-sky-800 items-center justify-center w-1/2">
+      <div className="hidden md:flex gap-2 text-sky-800 items-center justify-center w-1/2">
         <SocialIcons />
       </div>
     </div>

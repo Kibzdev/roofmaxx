@@ -45,7 +45,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
   const post: Post = await sanityClient.fetch(query, { slug });
 
   return (
-    <Container className="mb-10 md:mt-36 mt-20">
+    <Container className="mb-10 md:mt-36 mt-24">
       <div className="flex items-center mb-10">
         <div className="w-full md:w-2/3">
           <Image
