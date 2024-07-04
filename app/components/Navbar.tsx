@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
+  const mobileLinkClasses = "ml-10 uppercase font-bold text-sky-800 hover:border-b hover:border-b-red-500 text-lg";
 
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
@@ -149,24 +149,25 @@ const Navbar = () => {
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
-        <div className="flex w-full items-center justify-between">
-          <Link href="/" passHref>
-            <Image
-              src={logoWhite}
-              alt="logo"
-              className="cursor-pointer"
-              priority
-              sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
-              width={240}
-              height={90}
-            />
-          </Link>
-          <div onClick={handleNav} className="cursor-pointer">
-            <AiOutlineClose size={25} className="text-red-500" />
-          </div>
-        </div>
+       <div className="flex w-full items-center justify-between  h-12 py-6">
+        <Link href="/" passHref>
+          <Image
+            src={logoWhite}
+            alt="logo"
+            className="cursor-pointer"
+            priority
+            sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
+            width={240}
+            height={90}
+          />
+        </Link>
+  <div onClick={handleNav} className="cursor-pointer">
+    <AiOutlineClose size={25} className="text-red-500" />
+  </div>
+</div>
 
-        <div className="flex-col py-4">
+
+        <div className="flex-col py-2 ml-4 mt-6">
           <ul className="flex flex-col font-medium gap-4">
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/">Home</Link>
