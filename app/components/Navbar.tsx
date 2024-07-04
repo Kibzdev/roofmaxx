@@ -131,9 +131,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="sm:hidden flex justify-between items-center w-full px-4">
-          <div onClick={handleNav} className="cursor-pointer">
+          <div onClick={handleNav} className="cursor-pointer flex items-center h-full">
             <AiOutlineMenu size={25} className="text-white" />
           </div>
+          <div className="flex-grow"></div>
           <Link href="/" passHref>
             <Image
               src={logo}
