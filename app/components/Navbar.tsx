@@ -42,7 +42,7 @@ const Navbar = () => {
   };
 
   const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
+  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-lg";
 
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
@@ -151,7 +151,7 @@ const Navbar = () => {
       <div
         className={
           menuOpen
-            ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 overflow-x-hidden"
+            ? "fixed left-0 top-0 w-[85%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 overflow-x-hidden"
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
