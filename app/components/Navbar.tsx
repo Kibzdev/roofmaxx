@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 uppercase font-bold text-sky-800 hover:border-b hover:border-b-red-500 text-lg";
+  const mobileLinkClasses = "ml-10 uppercase font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-lg";
 
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
@@ -203,10 +203,22 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-row justify-around pt-10 items-center">
-          <AiOutlineInstagram size={30} className="cursor-pointer text-sky-800" />
-          <AiOutlineFacebook size={30} className="cursor-pointer text-sky-800" />
-          <AiOutlineX size={30} className="cursor-pointer" />
+       <div className="flex flex-row justify-evenly pt-10 items-center">
+          <Link href="https://www.instagram.com" passHref>
+            <a target="_blank" rel="noopener noreferrer">
+              <AiOutlineInstagram className="cursor-pointer text-red-500 text-4xl" />
+            </a>
+          </Link>
+          <Link href="https://www.facebook.com" passHref>
+            <a target="_blank" rel="noopener noreferrer">
+              <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
+            </a>
+          </Link>
+          <Link href="https://www.example.com" passHref> {/* Replace with the desired URL */}
+            <a target="_blank" rel="noopener noreferrer">
+              <AiOutlineX className="cursor-pointer text-red-500 text-4xl" />
+            </a>
+          </Link>
         </div>
       </div>
     </nav>
