@@ -14,7 +14,7 @@ import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/r
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
 import { toSentenceCase } from '@/app/utils/sentenceCase';
-import { logoDark, logoWhite } from '@/public/assets';
+import { logoDark, logoWhite, logowhite } from '@/public/assets';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link href="/" passHref>
             <Image
-              src={logoDark}
+              src={logo}
               alt="logo"
               className="cursor-pointer hidden sm:block"
               priority
@@ -130,7 +130,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="sm:hidden flex justify-between items-center w-full">
+        <div className="sm:hidden flex justify-between items-center w-full px-4">
           <div onClick={handleNav} className="cursor-pointer">
             <AiOutlineMenu size={25} className="text-white" />
           </div>
@@ -140,9 +140,9 @@ const Navbar = () => {
               alt="logo"
               className="cursor-pointer"
               priority
-              sizes="(max-width: 768px) 32px, (min-width: 769px) 64px"
-              width={160}
-              height={60}
+              sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
+              width={240}
+              height={90}
             />
           </Link>
         </div>
@@ -163,9 +163,9 @@ const Navbar = () => {
               alt="logo"
               className="cursor-pointer"
               priority
-              sizes="(max-width: 768px) 32px, (min-width: 769px) 64px"
-              width={160}
-              height={60}
+              sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
+              width={240}
+              height={90}
             />
           </Link>
           <div onClick={handleNav} className="cursor-pointer">

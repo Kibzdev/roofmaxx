@@ -37,6 +37,7 @@ const techy = '/assets/icons/tech-1.svg'
 const flatceiling = '/assets/images/flat-ceiling.webp' 
 const delivery ='/assets/images/delivery.webp' 
 const logo = '/assets/logos/logo.svg'
+const logowhite = '/assets/logos/logo-whitebg.svg'
 const herobg ='/assets/images/hero-bg.png'
 const festus ='/assets/team/festus.jpg'
 const mambo ='/assets/team/Mambo.jpg'
@@ -50,7 +51,7 @@ const logoDark = '/assets/logos/logo-darkbg.png'
 const logoWhite = '/assets/logos/logo-whitebg.png'
 
 export {
-  repair,roofrepair,logoDark,logoWhite,aboutbg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
+  repair,roofrepair,logoDark,logowhite,logoWhite,aboutbg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
   flatceiling, commercial,residential,drone,paint,paints,kev,paintbg,
   rocket, gent01, gent02, gent03,diamond,techy,ctabg,framewhite,vector,
    polygon, contractor,quality, certified,tech,goal,security,cert,checkmark,nyki,quotey
