@@ -99,7 +99,7 @@ const Navbar = () => {
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-2 px-0 font-bold items-start justify-start text-sky-800 text-sm"
+                              className="flex flex-col gap-2 px-0 font-bold items-start justify-start text-sky-800 text-sm" // Default text size for desktop
                               onClick={() => {
                                 closeServicesDropdown();
                                 setMenuOpen(false); // Ensure the mobile menu also closes if open
@@ -174,7 +174,7 @@ const Navbar = () => {
               {servicesOpen && (
                 <ul className="pl-1 mt-2 max-h-80 overflow-y-auto custom-scrollbar">
                   {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-sm font-semibold">
+                    <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-xs font-semibold"> {/* Reduced text size to `text-xs` */}
                       <Link href={`/services/${serviceLink.href}`} onClick={() => { handleNav(); closeServicesDropdown(); }}>
                         {toSentenceCase(serviceLink.label)}
                       </Link>

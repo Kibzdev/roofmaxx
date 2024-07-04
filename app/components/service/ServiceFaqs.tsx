@@ -21,7 +21,7 @@ interface ServiceFaqsProps {
 const ServiceFaqs: React.FC<ServiceFaqsProps> = ({ faqs = [] }) => {
   return (
     <div className="flex justify-center items-center flex-col w-full rounded-3xl bg-white p-8">
-      <h1 className="text-xl font-semibold mb-4 uppercase text-red-500">Frequently Asked Questions</h1>
+      <h1 className="text-lg  md:text-xl font-semibold mb-4 uppercase text-red-500">FAQS</h1>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq: FaqItem) => (
           <AccordionItem key={faq._key || uuidv4()} value={faq._key || uuidv4()}>
