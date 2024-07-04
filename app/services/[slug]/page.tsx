@@ -97,7 +97,7 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           </div> */}
 
           <div className="flex flex-col w-full justify-center items-center">
-            <h2 className="text-2xl font-bold text-sky-800 uppercase py-4 text-center mt-8">Similar Projects</h2>
+            <h2 className=" text-xl  md:text-2xl font-semibold text-sky-800 py-4 text-center mt-8">Similar Projects</h2>
             <ServiceProjects />
           </div>
           <div className="flex max-w-6xl items-center justify-center">
