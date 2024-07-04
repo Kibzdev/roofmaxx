@@ -42,7 +42,7 @@ const Navbar = () => {
   };
 
   const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-lg";
+  const mobileLinkClasses = "ml-10 uppercase text-sky-800 hover:border-b text-xl";
 
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
@@ -92,14 +92,14 @@ const Navbar = () => {
                       <MenuItem key={serviceLink.service_id} as="div">
                         {({ active }) => (
                           <div
-                            className={`block w-full data-[focus]:bg-blue-100 px-4 py-4 ${
+                            className={`block w-full data-[focus]:bg-blue-100 px-4 py-2 ${
                               active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
                             }`}
                             onClick={closeServicesDropdown}
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-6 px-0 font-bold items-start justify-start text-sky-800"
+                              className="flex flex-col gap-2 px-0 font-bold items-start justify-start text-sky-800 text-sm"
                               onClick={() => {
                                 closeServicesDropdown();
                                 setMenuOpen(false); // Ensure the mobile menu also closes if open
