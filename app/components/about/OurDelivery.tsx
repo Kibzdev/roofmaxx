@@ -32,8 +32,8 @@ const OurDelivery: React.FC = () => {
         <h2 className="text-xl  md:text-2xl  font-bold text-sky-800 mb-4 uppercase">
        Consultation centric
         </h2>
-        <p className="text-gray-500 mb-4 md:text-xl text-sm tracking-wider">
-          Our consultants help address your most challenging issues by providing strategic, financial, operational, and IT services.
+        <p className="text-gray-600 mb-4 font-normal  leading-6 md:text-xl text-sm">
+          Our customer-centric approach ensures that you receive personalized solutions tailored to your specific requirements. We encourage open and transparent consultation, valuing your input at every stage of the process.
         </p>
       </div>
     </div>

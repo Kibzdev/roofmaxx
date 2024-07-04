@@ -29,7 +29,7 @@ const ServiceFaqs: React.FC<ServiceFaqsProps> = ({ faqs = [] }) => {
               {faq.question}
             </AccordionTrigger>
             <AccordionContent className="transition-height duration-500 ease-in-out">
-              <p className="text-lg text-gray-700 tracking-wider leading-5 font-medium">{faq.answer}</p>
+              <p className="text-lg text-gray-500 tracking-wider leading-5 font-medium">{faq.answer}</p>
             </AccordionContent>
           </AccordionItem>
         ))}
