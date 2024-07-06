@@ -7,7 +7,31 @@ import {
   Niche,
   GalleryCardProject,
   ProjectClient,
+  TeamMember
 } from '../../types'; // Adjust the import path as necessary
+
+
+export const fetchTeamMembers = async (): Promise<TeamMember[]> => {
+  const query = groq`
+    *[_type == "team"]{
+      _id,
+      workid,
+      "photo": image.asset->url,
+      firstname,
+      lastname,
+      expertise,
+      description,
+      "slug": slug.current,
+      "projects": projects[]->{
+        _id,
+        title,
+        "bannerUrl": banner.asset->url
+      }
+    }
+  `;
+  const data: TeamMember[] = await sanityClient.fetch(query);
+  return data;
+};
 
 // Fetch all service links for navigation
 export const fetchServiceLinks = async (): Promise<ServiceLink[]> => {

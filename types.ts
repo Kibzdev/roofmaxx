@@ -88,6 +88,23 @@ interface Span {
   text: string;
 }
 
+// team members
+export type TeamMember = {
+  _id: string;
+  workid: string;
+  photo: string;
+  firstname: string;
+  lastname: string;
+  expertise: string;
+  description: any[];
+  slug: string;
+  projects: {
+    _id: string;
+    title: string;
+    bannerUrl: string;
+  }[];
+};
+
 // Category type definition extending Base
 interface Category extends Base {
   description: string;
