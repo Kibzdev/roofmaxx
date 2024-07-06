@@ -90,27 +90,29 @@ const Projects: React.FC = () => {
             </div>
           )}
         </Container>
-        <div className='mt-4'>
-          <Pagination>
-            <PaginationContent>
-              <PaginationPrevious onClick={() => handlePageChange(currentPage - 1)} className='text-sky-800 p-2 rounded-full'>
-                <FaChevronLeft className='text-red-500' />
-              </PaginationPrevious>
-              {Array.from({ length: totalPages }, (_, i) => (
-                <PaginationLink
-                  key={i}
-                  href={`#`} // You might want to replace `#` with the actual URL if needed
-                  onClick={() => handlePageChange(i + 1)}
-                >
-                  {i + 1}
-                </PaginationLink>
-              ))}
-              <PaginationNext onClick={() => handlePageChange(currentPage + 1)} className='bg-sky-800 text-white px-4 py-2 hover:text-red-500 rounded-full'>
-                <FaChevronRight className='text-red-500' />
-              </PaginationNext>
-            </PaginationContent>
-          </Pagination>
-        </div>
+        {projects.length > itemsPerPage && ( // Conditionally render pagination
+          <div className='mt-4'>
+            <Pagination>
+              <PaginationContent>
+                <PaginationPrevious onClick={() => handlePageChange(currentPage - 1)} className='text-sky-800 p-2 rounded-full'>
+                  <FaChevronLeft className='text-red-500' />
+                </PaginationPrevious>
+                {Array.from({ length: totalPages }, (_, i) => (
+                  <PaginationLink
+                    key={i}
+                    href={`#`} // You might want to replace `#` with the actual URL if needed
+                    onClick={() => handlePageChange(i + 1)}
+                  >
+                    {i + 1}
+                  </PaginationLink>
+                ))}
+                <PaginationNext onClick={() => handlePageChange(currentPage + 1)} className='bg-sky-800 text-white px-4 py-2 hover:text-red-500 rounded-full'>
+                  <FaChevronRight className='text-red-500' />
+                </PaginationNext>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        )}
       </div>
 
       {currentProjectIndex !== null && (
