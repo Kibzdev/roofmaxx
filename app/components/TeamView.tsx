@@ -41,7 +41,7 @@ const TeamView: React.FC = () => {
         <SectionIntro subtitle="Meet our Experts" title="The Team" />
       </div>
       <FadeIn>
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 md:gap-1 gap-4 max-w-8xl w-full justify-center items-center px-4 sm:px-0">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 md:gap-1  max-w-8xl w-full justify-center items-center px-4 sm:px-0">
           {teamMembers.map((teamMember: TeamMember) => (
             <div key={teamMember._id} className=" flex flex-col p-4 justify-center items-center">
               <ExpertCard 
