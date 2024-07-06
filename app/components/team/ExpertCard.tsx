@@ -14,8 +14,8 @@ const ExpertCard: React.FC<ExpertCardProps> = ({ photo, firstname, lastname, exp
   const fullName = `${firstname} ${lastname}`;
 
   return (
-    <Card className="flex flex-col border-b-4 border-b-[#ef4444] bg-[#075985] shadow-b-md shadow-[#ef4444] w-[320px] h-[340px] sm:w-full sm:h-full md:w-80 lg:w-80">
-      <CardHeader className="relative w-full h-[340px] sm:h-60 md:h-48 lg:h-64 flex justify-center items-center bg-gray-200 overflow-hidden rounded-sm shadow-lg shadow-black">
+    <Card className="flex flex-col border-b-4 border-b-[#ef4444] bg-[#075985] shadow-b-md shadow-[#ef4444] w-[375px] h-[375px] sm:w-full sm:h-full md:w-80 lg:w-80">
+      <CardHeader className="relative w-full h-[375px] sm:h-60 md:h-48 lg:h-64 flex justify-center items-center bg-gray-200 overflow-hidden rounded-sm shadow-lg shadow-black">
         <Image
           src={photo}
           alt={fullName} // Update alt to reflect the full name or a more descriptive text
