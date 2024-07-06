@@ -20,7 +20,7 @@ const HeroBanner: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full h-screen mt-24 md:mt-0 bg-slate-500 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+    <div className="relative w-full h-screen mt-24 md:mt-28 bg-slate-500 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="absolute inset-0">
         <Image
           src={homebg}

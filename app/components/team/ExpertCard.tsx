@@ -14,7 +14,7 @@ const ExpertCard: React.FC<ExpertCardProps> = ({ photo, firstname, lastname, exp
   const fullName = `${firstname} ${lastname}`;
 
   return (
-    <Card className="border-b-4 border-b-[#ef4444] bg-[#075985] shadow-b-md shadow-[#ef4444] w-[340px] h-[440px] sm:w-full sm:h-full md:w-80 lg:w-80">
+    <Card className="border-b-4 border-b-[#ef4444] bg-[#075985] shadow-b-md shadow-[#ef4444] w-[320px] h-[340px] sm:w-full sm:h-full md:w-80 lg:w-80">
       <CardHeader className="relative w-full h-[340px] sm:h-60 md:h-48 lg:h-64 flex justify-center items-center bg-gray-200 overflow-hidden rounded-sm shadow-lg shadow-black">
         <Image
           src={photo}
