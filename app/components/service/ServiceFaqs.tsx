@@ -25,11 +25,11 @@ const ServiceFaqs: React.FC<ServiceFaqsProps> = ({ faqs = [] }) => {
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq: FaqItem) => (
           <AccordionItem key={faq._key || uuidv4()} value={faq._key || uuidv4()}>
-            <AccordionTrigger className=" text-lg  md:text-xl font-medium tracking-wide text-center text-sky-800">
+            <AccordionTrigger className=" text-lg  md:text-lg font-medium tracking-wide text-center text-sky-800">
               {faq.question}
             </AccordionTrigger>
             <AccordionContent className="transition-height duration-500 ease-in-out">
-              <p className="text-lg text-gray-500 tracking-normal leading-6 font-normal">{faq.answer}</p>
+              <p className="text-sm md:text-lg text-gray-500 tracking-wide leading-6 font-normal">{faq.answer}</p>
             </AccordionContent>
           </AccordionItem>
         ))}
