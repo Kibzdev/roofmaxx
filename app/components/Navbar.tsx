@@ -173,9 +173,9 @@ const Navbar = () => {
             </li>
             <li
               onClick={handleServicesToggle}
-              className={`${mobileLinkClasses} cursor-pointer flex items-center`}
+              className={`${mobileLinkClasses} cursor-pointer flex items-center justify-between`}
             >
-              Services <AiOutlineRight className="ml-2" />
+              <span>Services</span> <AiOutlineRight className="ml-2" />
             </li>
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/projects">Projects</Link>
