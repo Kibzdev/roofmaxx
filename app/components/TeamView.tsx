@@ -36,14 +36,14 @@ const TeamView: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col bg-[#075985] w-full h-full mt-2 py-6 px-6 items-center gap-10 ">
+    <div className="flex flex-col bg-[#075985] w-full h-full mt-2 py-6 px-6 items-center  justify-center gap-10 ">
       <div className="w-full">
         <SectionIntro subtitle="Meet our Experts" title="The Team" />
       </div>
       <FadeIn>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-1 gap-4 max-w-8xl w-full justify-center items-center px-4 sm:px-0">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 md:gap-1 gap-4 max-w-8xl w-full justify-center items-center px-4 sm:px-0">
           {teamMembers.map((teamMember: TeamMember) => (
-            <div key={teamMember._id} className="p-4">
+            <div key={teamMember._id} className=" flex flex-col p-4 justify-center items-center">
               <ExpertCard 
                 photo={teamMember.photo} 
                 firstname={teamMember.firstname} 
