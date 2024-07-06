@@ -121,14 +121,14 @@ const ServiceProjects = () => {
                 <Card>
                   <CardContent className="p-0">
                     <div
-                      className="w-full h-[430px] rounded-lg overflow-hidden shadow-lg cursor-pointer"
+                      className="w-[375px] h-[375px] md:w-full md:h-[430px] rounded-lg overflow-hidden shadow-lg cursor-pointer"
                       onClick={() => openModal(index)}
                     >
                       <Image
                         src={project.projectbannerUrl}
                         alt={project.project_name}
-                        width={400}
-                        height={300}
+                        width={375}
+                        height={375}
                         style={{ objectFit: 'cover' }}
                         className="w-full h-full"
                       />

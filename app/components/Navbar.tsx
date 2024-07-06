@@ -8,12 +8,11 @@ import {
   AiOutlineClose,
   AiOutlineInstagram,
   AiOutlineFacebook,
-  AiOutlineX,
+  AiOutlineRight,
 } from 'react-icons/ai';
-import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
-import { logoDark, logoWhite, logowhite } from '@/public/assets';
+import { logoWhite } from '@/public/assets';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,8 +41,8 @@ const Navbar = () => {
     setServicesOpen(false);
   };
 
-  const desktopLinkClasses = "text-white uppercase hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 uppercase font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
+  const desktopLinkClasses = "text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
+  const mobileLinkClasses = "ml-10 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
 
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
@@ -66,56 +65,14 @@ const Navbar = () => {
             <li className="ml-10 text-xl">
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
-            <Menu as="div" className="relative ml-10">
-              <MenuButton
+            <li className="relative ml-10">
+              <button
                 className={desktopLinkClasses}
                 onClick={handleServicesToggle}
               >
-                Services
-              </MenuButton>
-              <Transition
-                as="div"
-                show={servicesOpen}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <MenuItems
-                  as="div"
-                  className="absolute z-10 mt-6 w-[340px] max-h-80 overflow-y-auto origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar"
-                  onMouseLeave={closeServicesDropdown}
-                >
-                  <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
-                    {serviceLinks.map((serviceLink) => (
-                      <MenuItem key={serviceLink.service_id} as="div">
-                        {({ active }) => (
-                          <div
-                            className={`block w-full data-[focus]:bg-blue-100 px-4 py-2 ${
-                              active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
-                            }`}
-                            onClick={closeServicesDropdown}
-                          >
-                            <Link
-                              href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-2 px-0 font-bold items-start justify-start text-sky-800 text-sm" // Default text size for desktop
-                              onClick={() => {
-                                closeServicesDropdown();
-                                setMenuOpen(false); // Ensure the mobile menu also closes if open
-                              }}
-                            >
-                              {serviceLink.label}
-                            </Link>
-                          </div>
-                        )}
-                      </MenuItem>
-                    ))}
-                  </div>
-                </MenuItems>
-              </Transition>
-            </Menu>
+                Services <AiOutlineRight className="inline-block ml-1" />
+              </button>
+            </li>
             <li className="ml-10 text-xl">
               <Link href="/projects" className={desktopLinkClasses}>Projects</Link>
             </li>
@@ -173,20 +130,9 @@ const Navbar = () => {
             </li>
             <li
               onClick={handleServicesToggle}
-              className={`${mobileLinkClasses} cursor-pointer`}
+              className={`${mobileLinkClasses} cursor-pointer flex items-center`}
             >
-              Services
-              {servicesOpen && (
-                <ul className="pl-1 mt-2 max-h-80 overflow-y-auto custom-scrollbar">
-                  {serviceLinks.map((serviceLink) => (
-                    <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-xs font-semibold"> {/* Reduced text size to `text-xs` */}
-                      <Link href={`/services/${serviceLink.href}`} onClick={() => { handleNav(); closeServicesDropdown(); }}>
-                        {serviceLink.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              Services <AiOutlineRight className="ml-2" />
             </li>
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/projects">Projects</Link>
@@ -205,7 +151,33 @@ const Navbar = () => {
         <div className="flex flex-row justify-evenly pt-10 items-center">
           <AiOutlineInstagram className="cursor-pointer text-red-500 text-4xl" />
           <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
-          <AiOutlineX className="cursor-pointer text-red-500 text-4xl" />
+        </div>
+      </div>
+
+      {/* Services Side Menu */}
+      <div
+        className={
+          servicesOpen
+            ? "fixed right-0 top-0 w-[100%] sm:w-[50%] h-screen bg-white p-10 ease-in duration-500 overflow-x-hidden"
+            : "fixed right-[-100%] top-0 w-[100%] sm:w-[50%] h-screen bg-white p-10 ease-in duration-500 overflow-x-hidden"
+        }
+      >
+        <div className="flex w-full items-center justify-between h-12 py-6">
+          <div onClick={handleServicesToggle} className="cursor-pointer">
+            <AiOutlineClose size={25} className="text-red-500" />
+          </div>
+        </div>
+
+        <div className="flex-col py-2 ml-4 mt-6">
+          <ul className="flex flex-col font-medium gap-4">
+            {serviceLinks.map((serviceLink) => (
+              <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-xs font-semibold">
+                <Link href={`/services/${serviceLink.href}`} onClick={() => { closeServicesDropdown(); handleNav(); }}>
+                  {serviceLink.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </nav>

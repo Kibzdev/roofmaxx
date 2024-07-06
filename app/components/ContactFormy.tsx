@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const ContactForm: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [serviceSelected, setServiceSelected] = useState<boolean>(false);
 
   useEffect(() => {
     const getServices = async () => {
@@ -36,6 +37,10 @@ const ContactForm: React.FC = () => {
     }
   };
 
+  const handleServiceChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setServiceSelected(event.target.value !== '');
+  };
+
   return (
     <>
       <ToastContainer />
@@ -47,15 +52,18 @@ const ContactForm: React.FC = () => {
           <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
             <TextInput label="Name" name="name" autoComplete="name" />
             <TextInput label="Email" type="email" name="email" autoComplete="email" />
-            <TextInput label="Company" name="company" autoComplete="organization" />
             <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
             <TextInput label="Message" name="message" />
-            <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
+            <div className={`border ${serviceSelected ? 'border-sky-800' : 'border-neutral-300'} px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl`}>
               <div className="mt-0">
                 {loading ? (
                   <p>Loading services...</p>
                 ) : (
-                  <select name="service" className="block w-full p-2 border border-none rounded-md text-sky-800 focu">
+                  <select
+                    name="service"
+                    className="block w-full p-2 border border-none rounded-md text-sky-800 focus:ring-sky-600 focus:border-sky-600"
+                    onChange={handleServiceChange}
+                  >
                     <option value="" disabled selected>Select a service</option>
                     {services.map((service) => (
                       <option key={service.identification.service_id} value={service.identification.service_id}>

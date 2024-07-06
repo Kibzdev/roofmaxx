@@ -5,7 +5,7 @@ const GetStartedCTO: React.FC = () => {
   return (
     <div className={clsx("w-full flex flex-col md:flex-row items-center md:justify-center bg-red-500 text-white p-4", "md:p-8")}>
       <div className="flex  flex-col w-full md:w-auto md:text-left ">
-        <h2 className="text-lg md:text-2xl text-center md:text-center font-bold uppercase text-sky-800">Ready to Get Started</h2>
+        <h2 className="text-lg md:text-2xl text-center md:text-center font-bold uppercase text-white">Ready to Get Started</h2>
         <p className="mt-2 text-sm md:text-md font-medium tracking-wide text-center md:text-center">
           By entering your email, you’ll gain access to the latest innovations, expert advice,
         </p>

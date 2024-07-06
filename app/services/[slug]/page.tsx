@@ -63,22 +63,25 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
   return (
     <div className="flex flex-col w-full mt-28 md:mt-36">
-      <div className="relative w-full max-h-screen mt-0">
+   <div className="md:bg-white md:max-w-8xl md:mx-16" style={{ boxShadow: '10px 0px 15px -3px rgba(0, 0, 0, 0.1), -10px 0px 15px -3px rgba(0, 0, 0, 0.1)' }}>
+      <div className="relative w-full mt-0">
         {serviceBannerUrl && (
           <Image
             src={serviceBannerUrl}
             alt={service.identification.service_name}
-            className="object-contain max-h-screen w-full h-full"
-             width={1200}
-             height={400}
+            layout="responsive"
+            width={1200}
+            height={400}
+            className="object-contain w-full max-h-screen md:max-h-[540px]"
           />
         )}
       </div>
+
       <div className="container mx-auto px-4 py-8">
         <PageIntro title={service.identification.service_name} />
 
         <div className="flex w-full">
-          <div className="text-gray-600 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-wide text-sm  md:text-lg font-normal text-left p-8">
+          <div className="text-gray-600 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-wide text-sm md:text-lg font-normal text-left p-8">
             {service.identification.service_desc && (
               <PortableText value={service.identification.service_desc} />
             )}
@@ -86,29 +89,14 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
         </div>
 
         <Container>
-          {/* <div className="flex flex-col md:flex-row justify-center gap-4 items-center md:justify-around py-4 px-4">
-            <div className="flex flex-col">
-              <h2 className="text-2xl font-bold mt-8 text-sky-800 uppercase">Service Niches</h2>
-              <div className="flex flex-wrap justify-center gap-4 rounded-xl">
-                {service.service_types?.map((niche: Niche) => (
-                  <NicheCard key={niche._id} niche={niche} serviceSlug={slug} />
-                ))}
-              </div>
-            </div>
-          </div> */}
-
-          <div className="flex flex-col w-full justify-center items-center">
-            <h2 className=" text-xl  md:text-2xl font-semibold text-sky-800 py-4 text-center mt-8">Similar Projects</h2>
-            <ServiceProjects />
-          </div>
           <div className="flex max-w-6xl items-center justify-center">
             <ServiceFaqs faqs={service.faqs || []} />
           </div>
         </Container>
       </div>
-    <GetStartedCTO/>
     </div>
-    
+    <GetStartedCTO />
+    </div>
   );
 };
 
