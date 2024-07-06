@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/pagination';
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { Project } from '@/types';
+import GetStartedCTO from '../components/GetStartedCTO';
 
 const query = groq`*[_type == "project"] {
   projectid,
@@ -138,6 +139,7 @@ const Projects: React.FC = () => {
           </div>
         </div>
       )}
+      <GetStartedCTO/>
     </div>
   );
 };

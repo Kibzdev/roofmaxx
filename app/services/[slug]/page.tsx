@@ -9,6 +9,7 @@ import { urlFor } from '@/sanity/lib/sanityclient';
 import ServiceProjects from '@/app/components/service/ServiceProjects';
 import { PortableText } from '@portabletext/react';
 import { Service, FaqItem, Niche } from '@/types';
+import GetStartedCTO from '@/app/components/GetStartedCTO';
 
 interface ServiceDataProps {
   params: {
@@ -105,7 +106,9 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           </div>
         </Container>
       </div>
+    <GetStartedCTO/>
     </div>
+    
   );
 };
 

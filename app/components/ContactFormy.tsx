@@ -1,10 +1,8 @@
-// components/ContactForm.tsx
 "use client";
 import React, { useEffect, useState } from 'react';
 import FadeIn from './FadeIn';
 import Button from './Button';
 import TextInput from './TextInput';
-import RadioInput from './RadioInput';
 import { fetchServiceData } from '@/sanity/lib/fetch';
 import { Service } from '@/types';
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,7 +15,10 @@ const ContactForm: React.FC = () => {
   useEffect(() => {
     const getServices = async () => {
       const fetchedServices = await fetchServiceData();
-      setServices(fetchedServices);
+      const sortedServices = fetchedServices.sort((a, b) =>
+        a.identification.service_name.localeCompare(b.identification.service_name)
+      );
+      setServices(sortedServices);
       setLoading(false);
     };
     getServices();
@@ -50,21 +51,18 @@ const ContactForm: React.FC = () => {
             <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
             <TextInput label="Message" name="message" />
             <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
-              <fieldset>
-                <legend className="text-lg font-medium text-sky-800">Service</legend>
-              </fieldset>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="mt-0">
                 {loading ? (
                   <p>Loading services...</p>
                 ) : (
-                  services.map((service) => (
-                    <RadioInput
-                      key={service.identification.service_id}
-                      label={service.identification.service_name}
-                      name="service"
-                      value={service.identification.service_id}
-                    />
-                  ))
+                  <select name="service" className="block w-full p-2 border border-none rounded-md text-sky-800 focu">
+                    <option value="" disabled selected>Select a service</option>
+                    {services.map((service) => (
+                      <option key={service.identification.service_id} value={service.identification.service_id}>
+                        {service.identification.service_name}
+                      </option>
+                    ))}
+                  </select>
                 )}
               </div>
             </div>

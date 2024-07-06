@@ -15,6 +15,7 @@ const ContactUs: React.FC = () => {
   useEffect(() => {
     const loadServices = async () => {
       const serviceData = await fetchServiceData();
+      serviceData.sort((a, b) => a.identification.service_name.localeCompare(b.identification.service_name)); // Sort services by name
       setServices(serviceData);
     };
 

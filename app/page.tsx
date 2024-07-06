@@ -6,6 +6,7 @@ import ContactUs from './components/ContactUs';
 import LatestPost from './components/LatestPost';
 import HeroBanner from './components/HeroBanner';
 import ProjectsCard from './components/projects/ProjectCard';
+import GetStartedCTO from './components/GetStartedCTO';
 
 const Home: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
       <ProjectsCard/>
       <TeamView/>
       <ContactUs/>
+      <GetStartedCTO/>
     </main>
   );
 }

@@ -3,6 +3,7 @@ import ContactDetails from '../components/ContactDetails';
 import Container from '../components/Container';
 import PageIntro from '../components/PageIntro';
 import ContactForm from '../components/ContactFormy';
+import GetStartedCTO from '../components/GetStartedCTO';
 
 const ContactPage = () => {
   return (
@@ -21,6 +22,7 @@ const ContactPage = () => {
             </div>
           </div>
         </Container>
+        <GetStartedCTO/>
       </div>
     </>
   );
