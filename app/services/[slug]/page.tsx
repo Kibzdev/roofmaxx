@@ -87,12 +87,11 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
             )}
           </div>
         </div>
-
-        <Container>
-          <div className="flex w-full md:max-w-6xl items-center justify-center">
+ 
+          <div className="flex flex-col w-full md:max-w-6xl items-center justify-center  mx-auto">
             <ServiceFaqs faqs={service.faqs || []} />
           </div>
-        </Container>
+      
       </div>
     </div>
     <GetStartedCTO />
