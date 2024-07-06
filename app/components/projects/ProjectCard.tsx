@@ -68,7 +68,7 @@ const ProjectsCard: React.FC = () => {
           {error ? (
             <p>{error}</p>
           ) : (
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-center'>
               {projects.map((project, index) => (
                 <div key={project.projectid} onClick={() => openModal(index)} className='cursor-pointer'>
                   <GalleryCard project={project} />
@@ -86,7 +86,7 @@ const ProjectsCard: React.FC = () => {
 
       {currentProjectIndex !== null && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='relative bg-white p-4 rounded-lg max-w-xl w-full'>
+          <div className='relative bg-white p-4 rounded-lg max-w-xl w-full mx-2'>
             <button className='absolute top-4 right-4 text-white bg-red-500 p-2 rounded-full' onClick={closeModal}>
               <FaTimes size={24} />
             </button>
