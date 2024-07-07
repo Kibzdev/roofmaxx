@@ -20,8 +20,10 @@ export default async function BlogHome () {
   return (
 
     <main>
-      <Hero/>
+      <div className="mt-20  md:mt-36">
       <BlogContent posts={posts}/>
+      </div>
+     
     </main>
   )
 }
