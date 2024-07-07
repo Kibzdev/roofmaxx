@@ -78,7 +78,7 @@ const OurClient: React.FC = () => {
             <h1 className=" text-xl md:text-4xl font-bold leading-tight text-sky-800 uppercase">
               How we work with our Clients.
             </h1>
-            <p className="mt-4 text-gray-500 tracking-wider md:text-lg text-sm">
+            <p className="mt-4 text-left text-gray-500 tracking-wider md:text-lg text-sm">
               Roofing is what we do best. Whether you’re in the market for a roof repair, waterproofing, guttering, roof painting or an entirely new roof installation, our skilled team has got you covered. We provide quality workmanship and satisfaction is guaranteed.
               <br />
               ROOFMAX is the one stop Centre of Excellence for all your roofing requirements. We work round the country - installing, repairing and maintaining hundreds of roofs at the most affordable prices in the industry.
