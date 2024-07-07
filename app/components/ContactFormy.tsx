@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import FadeIn from './FadeIn';
 import Button from './Button';
 import TextInput from './TextInput';
@@ -12,6 +12,13 @@ const ContactForm: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [serviceSelected, setServiceSelected] = useState<boolean>(false);
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
+  const [location, setLocation] = useState('');
+  const [serviceName, setServiceName] = useState('');
 
   useEffect(() => {
     const getServices = async () => {
@@ -38,35 +45,68 @@ const ContactForm: React.FC = () => {
   };
 
   const handleServiceChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setServiceSelected(event.target.value !== '');
+    const value = event.target.value;
+    setServiceName(value);
+    setServiceSelected(value !== '');
+  };
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log('Data', name, email, phone, location, serviceName, message);
   };
 
   return (
     <>
       <ToastContainer />
       <FadeIn>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <h2 className="font-display text-base font-semibold text-sky-900 uppercase">
             Work Inquiries
           </h2>
           <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-            <TextInput label="Name" name="name" autoComplete="name" />
-            <TextInput label="Email" type="email" name="email" autoComplete="email" />
-            <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-            <TextInput label="Message" name="message" />
+            <TextInput 
+              label="Name" 
+              value={name}  
+              onChange={(e) => setName(e.target.value)}
+              name="name"  
+              autoComplete="name" 
+            />
+            <TextInput 
+              label="Email" 
+              type="email" 
+              name="email"  
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              autoComplete="email" 
+            />
+            <TextInput 
+              label="Phone" 
+              type="tel" 
+              name="phone" 
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              autoComplete="tel" 
+            />
+            <TextInput 
+              label="Message" 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)} 
+              name="message" 
+            />
             <div className={`border ${serviceSelected ? 'border-sky-800' : 'border-neutral-300'} px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl`}>
               <div className="mt-0">
                 {loading ? (
                   <p>Loading services...</p>
                 ) : (
                   <select
-                    name="service"
-                    className="block w-full p-2 border border-none rounded-md text-sky-800 focus:ring-sky-600 focus:border-sky-600"
+                    name="serviceName"
+                    value={serviceName}
                     onChange={handleServiceChange}
+                    className="block w-full p-2 border border-none rounded-md text-sky-800 focus:ring-sky-600 focus:border-sky-600"
                   >
-                    <option value="" disabled selected>Select a service</option>
+                    <option value="" disabled>Select a service</option>
                     {services.map((service) => (
-                      <option key={service.identification.service_id} value={service.identification.service_id}>
+                      <option key={service.identification.service_id} value={service.identification.service_name}>
                         {service.identification.service_name}
                       </option>
                     ))}
