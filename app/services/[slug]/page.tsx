@@ -1,20 +1,22 @@
 import { Metadata } from 'next';
-import { fetchServiceBySlug } from '@/sanity/lib/fetch';
+import { fetchServiceBySlug, fetchAllServiceSlugs } from '@/sanity/lib/fetch';
 import PageIntro from '@/app/components/PageIntro';
 import Image from 'next/image';
-import Container from '@/app/components/Container';
 import ServiceFaqs from '@/app/components/service/ServiceFaqs';
-import NicheCard from '@/app/components/niche/NicheCard';
-import { urlFor } from '@/sanity/lib/sanityclient';
-import ServiceProjects from '@/app/components/service/ServiceProjects';
 import { PortableText } from '@portabletext/react';
-import { Service, FaqItem, Niche } from '@/types';
 import GetStartedCTO from '@/app/components/GetStartedCTO';
+import { Service, FaqItem } from '@/types';
+import { urlFor } from '@/sanity/lib/sanityclient';
 
 interface ServiceDataProps {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const slugs = await fetchAllServiceSlugs();
+  return slugs.map((slug: string) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: ServiceDataProps): Promise<Metadata> {
@@ -63,40 +65,41 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
   return (
     <div className="flex flex-col w-full mt-28 md:mt-36">
-   <div className="md:bg-white md:max-w-8xl md:mx-16" style={{ boxShadow: '10px 0px 15px -3px rgba(0, 0, 0, 0.1), -10px 0px 15px -3px rgba(0, 0, 0, 0.1)' }}>
-      <div className="relative w-full mt-0">
-        {serviceBannerUrl && (
-          <Image
-            src={serviceBannerUrl}
-            alt={service.identification.service_name}
-            layout="responsive"
-            width={1200}
-            height={400}
-            className="object-contain w-full max-h-screen md:max-h-[540px]"
-          />
-        )}
-      </div>
-
-      <div className="container mx-auto px-4 py-8">
-        <PageIntro title={service.identification.service_name} />
-
-        <div className="flex w-full">
-          <div className="text-gray-600 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-wide text-sm md:text-lg font-normal text-left p-8">
-            {service.identification.service_desc && (
-              <PortableText value={service.identification.service_desc} />
-            )}
-          </div>
+      <div className="md:bg-white md:max-w-8xl md:mx-16" style={{ boxShadow: '10px 0px 15px -3px rgba(0, 0, 0, 0.1), -10px 0px 15px -3px rgba(0, 0, 0, 0.1)' }}>
+        <div className="relative w-full mt-0">
+          {serviceBannerUrl && (
+            <Image
+              src={serviceBannerUrl}
+              alt={service.identification.service_name}
+              layout="responsive"
+              width={1200}
+              height={400}
+              className="object-contain w-full max-h-screen md:max-h-[540px]"
+            />
+          )}
         </div>
- 
-          <div className="flex flex-col w-full md:max-w-6xl items-center justify-center  mx-auto">
+
+        <div className="container mx-auto px-4 py-8">
+          <PageIntro title={service.identification.service_name} />
+
+          <div className="flex w-full">
+            <div className="text-gray-600 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-wide text-sm md:text-lg font-normal text-left p-8">
+              {service.identification.service_desc && (
+                <PortableText value={service.identification.service_desc} />
+              )}
+            </div>
+          </div>
+
+          <div className="flex flex-col w-full md:max-w-6xl items-center justify-center mx-auto">
             <ServiceFaqs faqs={service.faqs || []} />
           </div>
-      
+        </div>
       </div>
-    </div>
-    <GetStartedCTO />
+      <GetStartedCTO />
     </div>
   );
 };
+
+export const revalidate = 60; // Revalidate every 60 seconds
 
 export default ServicePage;

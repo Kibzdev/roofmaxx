@@ -185,6 +185,16 @@ export async function fetchServiceBySlug(slug: string): Promise<Service> {
   return service;
 }
 
+export const fetchAllServiceSlugs = async (): Promise<string[]> => {
+  const query = groq`
+    *[_type == "service"]{
+      "slug": slug.current
+    }
+  `;
+  const data = await sanityClient.fetch<{ slug: string }[]>(query);
+  return data.map(service => service.slug);
+};
+
 // Fetch all niches
 export const fetchNicheData = async (): Promise<Niche[]> => {
   const query = groq`
