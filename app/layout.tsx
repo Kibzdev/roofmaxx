@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import Head from 'next/head';
 import { Metadata } from 'next';
 import BottomMenu from './components/BottomMenu';
+import Cookies from './components/Cookies';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,8 +32,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={`${inter.className} overflow-x-hidden`}>
         <Header />
         <BottomMenu />
+
         {children}
         <Footer />
+        <Cookies />
       </body>
     </html>
   );
