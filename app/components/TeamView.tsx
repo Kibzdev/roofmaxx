@@ -60,7 +60,7 @@ const TeamView: React.FC = () => {
         </div>
       </FadeIn>
       <div className=' flex w-full items-center justify-center mt-4 mb-4'>
-            <h3 className='md:font-extrabold font-bold tracking-wider text-lg md:text-3xl text-white  text-center'> We've built an amazing team at Roofmax and we are still growing</h3>
+            <h3 className='md:font-extrabold font-bold tracking-wider text-lg md:text-3xl text-white  text-center'> We &apos; ve built an amazing team at Roofmax and we are still growing</h3>
         </div>
     </div>
   );

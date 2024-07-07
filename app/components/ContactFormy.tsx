@@ -59,41 +59,58 @@ const ContactForm: React.FC = () => {
     <>
       <ToastContainer />
       <FadeIn>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="max-w-xl mx-auto">
           <h2 className="font-display text-base font-semibold text-sky-900 uppercase">
             Work Inquiries
           </h2>
-          <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-            <TextInput 
-              label="Name" 
-              value={name}  
-              onChange={(e) => setName(e.target.value)}
-              name="name"  
-              autoComplete="name" 
-            />
-            <TextInput 
-              label="Email" 
-              type="email" 
-              name="email"  
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              autoComplete="email" 
-            />
-            <TextInput 
-              label="Phone" 
-              type="tel" 
-              name="phone" 
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              autoComplete="tel" 
-            />
-            <TextInput 
-              label="Message" 
-              value={message}
-              onChange={(e) => setMessage(e.target.value)} 
-              name="message" 
-            />
-            <div className={`border ${serviceSelected ? 'border-sky-800' : 'border-neutral-300'} px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl`}>
+          <div className="isolate mt-6 -space-y-px bg-white/50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <TextInput 
+                label="Name" 
+                value={name}  
+                onChange={(e) => setName(e.target.value)}
+                name="name"  
+                autoComplete="name" 
+                className="col-span-1"
+              />
+              <TextInput 
+                label="Email" 
+                type="email" 
+                name="email"  
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                autoComplete="email" 
+                className="col-span-1"
+              />
+              <TextInput 
+                label="Phone" 
+                type="tel" 
+                name="phone" 
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                autoComplete="tel" 
+                className="col-span-1"
+              />
+              <TextInput 
+                label="Location" 
+                value={location}
+                onChange={(e) => setLocation(e.target.value)} 
+                name="location"
+                className="col-span-1"
+              />
+              <div className="col-span-1 sm:col-span-2 mb-6">
+                <label className="block text-sm font-medium text-gray-700" htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="mt-1 block w-full border border-neutral-300 bg-transparent px-3 py-2 text-sky-800 ring-1 ring-transparent transition focus:border-sky-800 focus:outline-none focus:ring-1 focus:ring-sky-800"
+                />
+              </div>
+            </div>
+            <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 sm:w-1/2`}>
               <div className="mt-0">
                 {loading ? (
                   <p>Loading services...</p>
@@ -102,7 +119,7 @@ const ContactForm: React.FC = () => {
                     name="serviceName"
                     value={serviceName}
                     onChange={handleServiceChange}
-                    className="block w-full p-2 border border-none rounded-md text-sky-800 focus:ring-sky-600 focus:border-sky-600"
+                    className="block w-full p-2 border-none text-sky-800 focus:outline-none focus:ring-0 focus:border-0"
                   >
                     <option value="" disabled>Select a service</option>
                     {services.map((service) => (
@@ -115,7 +132,7 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
           </div>
-          <Button type="submit" className="mt-10 py-4 px-8 bg-sky-800 text-white">
+          <Button type="submit" className="mt-6 w-full py-4 px-8 bg-sky-800 text-white">
             Submit
           </Button>
         </form>

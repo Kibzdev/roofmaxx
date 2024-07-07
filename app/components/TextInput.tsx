@@ -1,4 +1,3 @@
-// components/TextInput.tsx
 import React, { useId } from "react";
 
 // Define TypeScript types for the TextInput component props
@@ -15,7 +14,7 @@ const TextInput: React.FC<TextInputProps> = ({ label, ...props }) => {
         id={id}
         {...props}
         placeholder=" "
-        className="peer text-base font-medium block w-full border border-neutral-300 bg-transparent px-3 pb-2 pt-6 text-sky-800 ring-2 ring-transparent transition focus:border-sky-800 focus:outline-none focus:ring-sky-800 group-first:rounded-t-xl group-last:rounded-b-xl"
+        className="peer text-base font-medium block w-full border border-neutral-300 bg-transparent px-3 pb-2 pt-6 text-sky-800 ring-1 ring-transparent transition focus:border-sky-800 focus:outline-none focus:ring-1 focus:ring-sky-800"
       />
       <label
         htmlFor={id}
