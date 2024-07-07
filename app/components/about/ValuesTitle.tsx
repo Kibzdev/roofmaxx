@@ -10,7 +10,7 @@ const ValuesTitle: React.FC = () => {
           <h1 className="text-3xl font-extrabold leading-tight text-sky-800">Our Core Values</h1>
         </div>
         <div className="flex items-center justify-center">
-          <p className="text-base text-gray-500 italic">
+          <p className="text-small md:text-lg leading-6 text-gray-500 italic">
             when you need us to improve your business, then come with us to help your then come have reach it, you just sit and feel that goal
           </p>
         </div>
