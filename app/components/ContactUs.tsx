@@ -123,7 +123,7 @@ const ContactUs: React.FC = () => {
                 name="serviceName"
                 value={serviceName}
                 onChange={(e) => setServiceName(e.target.value)}
-                className="md:w-full w-4/5 py-4 px-2 border border-gray-300 rounded bg-sky-800 text-white focus:bg-sky-600 focus:border-sky-600 focus:outline-none"
+                className="w-full p-2 bg-red-500 text-white border-b border-white outline-none"
               >
                 <option>Choose Your Service</option>
                 {services.map(service => (
@@ -151,7 +151,7 @@ const ContactUs: React.FC = () => {
               placeholder="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="md:w-full w-4/5 p-2 border border-red-300 shadow-lg rounded bg-red-500 text-sky-800 focus:bg-white focus:border-red-500 focus:outline-none"
+              className="w-full p-2 bg-red-500 text-white border-b border-white outline-none"
               rows={4}
             />
           </div>
