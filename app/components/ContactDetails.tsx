@@ -9,10 +9,10 @@ import Border from '../components/Border';
 const ContactDetails: React.FC = () => {
   return (
     <FadeIn>
-      <h2 className="font-display text-base font-bold text-sky-800 uppercase">
+      <h2 className="font-semibold text-lg  text-sky-800 uppercase">
         Our offices
       </h2>
-      <p className="mt-6 text-sm md:text-xl text-neutral-700">
+      <p className="mt-4 text-gray-500 tracking-normal md:text-lg text-sm">
         Prefer doing things in person? We don’t but we have to list our
         addresses here for legal reasons.
       </p>
@@ -31,7 +31,7 @@ const ContactDetails: React.FC = () => {
               <dd>
                 <Link
                   href={`mailto:${email}`}
-                  className="text-sky-800 hover:text-sky-600 "
+                  className="text-gray-600 hover:text-sky-600 "
                 >
                   {email}
                 </Link>

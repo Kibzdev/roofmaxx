@@ -15,11 +15,11 @@ const TextInput: React.FC<TextInputProps> = ({ label, ...props }) => {
         id={id}
         {...props}
         placeholder=" "
-        className="peer text-lg font-medium  block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12  text-sky-800 ring-4 ring-transparent transition focus:border-sky-800 focus:outline-none focus:ring-sky-800 group-first:rounded-t-2xl group-last:rounded-b-2xl"
+        className="peer text-base font-medium block w-full border border-neutral-300 bg-transparent px-3 pb-2 pt-6 text-sky-800 ring-2 ring-transparent transition focus:border-sky-800 focus:outline-none focus:ring-sky-800 group-first:rounded-t-xl group-last:rounded-b-xl"
       />
       <label
         htmlFor={id}
-        className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-sky-800  transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-sky-800 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-sky-800"
+        className="pointer-events-none absolute left-3 top-1/2 -mt-1.5 origin-left text-sm/3 text-sky-800 transition-all duration-200 peer-focus:-translate-y-2 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-sky-800 peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-sky-800"
       >
         {label}
       </label>

@@ -14,7 +14,7 @@ const Office: React.FC<OfficeProps> = ({ name, children, invert = false }) => {
     <address
       className={clsx(
         "text-sm not-italic",
-        invert ? "text-neutral-300" : "text-sky-800 text-sm md:text-xl"
+        invert ? "text-neutral-300" : "text-gray-600 text-sm md:text-lg leading-6"
       )}
     >
       <strong className={invert ? "text-white" : "text-red-500"}>
@@ -43,7 +43,7 @@ const Offices: React.FC<OfficesProps> = ({ invert = false, ...props }) => {
       </li>
       <li>
         <Office name="Embakasi" invert={invert}>
-        Westslands
+        Westlands
           <br />
         Opposite Cocacola
         </Office>
