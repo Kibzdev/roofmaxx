@@ -9,6 +9,8 @@ import Head from 'next/head';
 import { Metadata } from 'next';
 import BottomMenu from './components/BottomMenu';
 import Cookies from './components/Cookies';
+import CopyRight from './components/Copyright';
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,6 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         {children}
         <Footer />
+        <CopyRight/>
         <Cookies />
       </body>
     </html>

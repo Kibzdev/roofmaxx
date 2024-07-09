@@ -57,7 +57,7 @@ const ProjectsCard: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="mt-16">
       <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
         <p className="font-normal text-sm md:text-lg text-gray-600 leading-6">
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.

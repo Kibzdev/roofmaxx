@@ -9,10 +9,8 @@ export const navData = [
 // constants/paths.js
 export const quickLinks = [
   { id: '1', label: 'Privacy Policy', path: '/privacy' },
-  { id: '2', label: 'Terms& Conditions', path: '/terms' },
-  { id: '3', label: 'About', path: '/about' },
+  { id: '2', label: 'Terms & Conditions', path: '/terms' },
   { id: '4', label: 'Contact', path: '/contact' },
-  { id: '5', label: 'Blog', path: '/blog' },
 ];
 export const servicesLinks = [
   { id: '1', label: 'Roof Installation', path: '/services/roof-installation' },
