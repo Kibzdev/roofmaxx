@@ -105,7 +105,7 @@ export async function generateStaticParams() {
   const query = groq`*[_type == "project"]{"slug": slug.current}`;
   const projects = await sanityClient.fetch(query);
   return projects.map((project: { slug: string }) => ({
-    slug: project.slug,
+    slug: String(project.slug), // Ensuring slug is a string
   }));
 }
 
