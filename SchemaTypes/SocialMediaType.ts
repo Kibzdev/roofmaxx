@@ -6,13 +6,13 @@ export const socialMediaType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'network_name',
+      name: 'socialmedia_name',
       type: 'string',
-      title: 'Network Name',
+      title: 'Social Media Name',
       validation: (rule) =>
         rule
           .required()
-          .error('Network Name is required'),
+          .error('Social Media Name is required'),
     }),
     defineField({
       name: 'url',
@@ -25,22 +25,6 @@ export const socialMediaType = defineType({
             scheme: ['http', 'https'],
           })
           .error('A valid URL is required'),
-    }),
-    defineField({
-      name: 'client',
-      type: 'reference',
-      title: 'Client',
-      to: [{ type: 'client' }],
-      validation: (rule) =>
-        rule
-          .required()
-          .error('Client reference is required'),
-    }),
-    defineField({
-      name: 'icon',
-      type: 'image',
-      title: 'Icon',
-      description: 'Icon representing the social media network',
     }),
   ],
 });

@@ -26,19 +26,19 @@ const BlogContent = ({ posts }: Props) => {
           className="group"
         >
           <div className="flex flex-col w-full md:w-[280px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
-            <div className="w-full group overflow-hidden rounded-tl-md rounded-bl-md relative">
+            <div className="relative w-full h-[200px] md:h-[340px] group overflow-hidden rounded-tl-md rounded-bl-md">
               {post?.mainImage && (
                 <Image
                   src={urlFor(post?.mainImage).url()}
-                  width={500}
-                  height={340}
                   alt="blog post image"
-                  className="w-full h-[340px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-tl-md rounded-bl-md"
                 />
               )}
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
               <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-sky-900 backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
-                <p className="text-sm md:text-lg text-white font-semibold">Click to Read</p>
+                <p className="text-sm  text-white font-md">Click to Read</p>
               </div>
             </div>
             <div className="w-full flex flex-col justify-between py-10 px-4 flex-1">
