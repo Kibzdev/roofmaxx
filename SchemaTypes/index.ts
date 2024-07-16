@@ -8,6 +8,7 @@ import { authorType } from './author'
 import { postType } from './postType'
 import { categoryType } from './categoryType'
 import { blockContentType } from './blockContentType'
+import { socialMediaType } from './SocialMediaType'
 
 export const schemaTypes = [
   serviceType,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   postType,
   categoryType,
   blockContentType,
+  socialMediaType,
 ]
