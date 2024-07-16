@@ -15,7 +15,7 @@ const BlogContent = ({ posts }: Props) => {
   }
 
   return (
-    <ContainerBlog className="bg-gray-100 py-20 px-10 flex flex-col gap-10">
+    <ContainerBlog className="bg-gray-100 py-20 px-10 flex flex-col gap-4">
       {posts.map((post) => (
         <Link
           href={{
@@ -25,7 +25,7 @@ const BlogContent = ({ posts }: Props) => {
           key={post?._id}
           className="group"
         >
-          <div className="flex flex-col w-full md:w-[240px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
+          <div className="flex flex-col w-full md:w-[280px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
             <div className="w-full group overflow-hidden rounded-tl-md rounded-bl-md relative">
               {post?.mainImage && (
                 <Image
