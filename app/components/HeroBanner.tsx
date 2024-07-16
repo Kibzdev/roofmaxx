@@ -31,7 +31,7 @@ const HeroBanner: React.FC = () => {
         />
       
       </div>
-      <div className="absolute mt-4 inset-0 block md:hidden z-50">
+      <div className="absolute mt-4 inset-0 block md:hidden z-20">
         <div className='w-full h-[340px] md:h-[640px]'>
           <Image
             src={homebg}
