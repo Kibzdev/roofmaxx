@@ -1,6 +1,5 @@
-import { Post } from '@/types'
-import React from 'react'
-
+import { Post } from '@/types';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/sanityclient';
@@ -20,56 +19,43 @@ const BlogContent = ({ posts }: Props) => {
             query: { slug: post?.slug?.current },
           }}
           key={post?._id}
+          className="group"
         >
-          <div className="flex flex-col md:flex-row gap-10 bg-white rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
-            <div className="w-full md:w-3/5 group overflow-hidden rounded-tl-md rounded-bl-md relative">
+          <div className="flex flex-col w-full md:w-[240px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
+            <div className="w-full group overflow-hidden rounded-tl-md rounded-bl-md relative">
               <Image
                 src={urlFor(post?.mainImage).url()}
                 width={500}
-                height={500}
+                height={340}
                 alt="blog post image"
-                className="w-full max-h-[500px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+                className="w-full h-[340px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
               <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-sky-900 backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
-                <p className="text-lg text-white font-semibold">Click to Read</p>
+                <p className="text-sm md:text-lg text-white font-semibold">Click to Read</p>
               </div>
             </div>
-            <div className="w-full md:w-2/5 flex flex-col justify-between py-10 px-4">
+            <div className="w-full flex flex-col justify-between py-10 px-4 flex-1">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-2">
                   {post?.categories.map((item) => (
                     <p
                       key={item?._id}
-                      className="text-xs uppercase text-red-500 font-semibold"
+                      className="text-xs uppercase text-red-500 font-semibold group-hover:text-white"
                     >
                       {item?.title}
                     </p>
                   ))}
                 </div>
-                <h2 className="text-2xl font-semibold hover:text-sky-900 duration-200 cursor-pointer">
+                <h2 className="text-lg text-sky-800 font-semibold group-hover:text-white duration-200 cursor-pointer">
                   {post?.title}
                 </h2>
-                <p className="text-gray-500">{post?.description}</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-sky-800">
-                  {new Date(post?._createdAt).toLocaleDateString("en-US", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
+                <p className="text-gray-500 line-clamp-3 group-hover:text-gray-600">
+                  {post?.description}
                 </p>
-                <div className="flex items-center gap-2">
-                  <Image
-                    src={urlFor(post?.author?.image).url()}
-                    width={200}
-                    height={200}
-                    alt="author image"
-                    className="rounded-full object-cover w-10 h-10"
-                  />
-                  <p className="text-sm font-medium text-sky-800">{post?.author?.name}</p>
-                </div>
+              </div>
+              <div className="flex py-4">
+                <h3 className='text-gray-600 text-right group-hover:text-white'>Read More <span className="mr-2 group-hover:no-underline">→</span></h3>
               </div>
             </div>
           </div>

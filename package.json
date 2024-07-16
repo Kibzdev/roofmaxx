@@ -21,6 +21,7 @@
     "@sanity/preview-url-secret": "^1.6.13",
     "@sanity/react-loader": "^1.9.20",
     "@sanity/vision": "^3.43.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "add": "^2.0.6",
     "carousel": "^0.0.3",
     "class-variance-authority": "^0.7.0",

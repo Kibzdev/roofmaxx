@@ -5,7 +5,7 @@ interface Props {
 
 const ContainerBlog = ({ children, className }: Props) => {
   return (
-    <div className={`max-w-screen-xl mx-auto ${className}`}>{children}</div>
+    <div className={` flex flex-col md:flex-row bg flex-wrap  max-w-screen-xl mx-auto ${className}`}>{children}</div>
   );
 };
 
