@@ -10,6 +10,10 @@ interface Props {
 }
 
 const BlogContent = ({ posts }: Props) => {
+  if (!posts) {
+    return <div>No posts available</div>;
+  }
+
   return (
     <ContainerBlog className="bg-gray-100 py-20 px-10 flex flex-col gap-10">
       {posts.map((post) => (
@@ -23,13 +27,15 @@ const BlogContent = ({ posts }: Props) => {
         >
           <div className="flex flex-col w-full md:w-[240px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
             <div className="w-full group overflow-hidden rounded-tl-md rounded-bl-md relative">
-              <Image
-                src={urlFor(post?.mainImage).url()}
-                width={500}
-                height={340}
-                alt="blog post image"
-                className="w-full h-[340px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
-              />
+              {post?.mainImage && (
+                <Image
+                  src={urlFor(post?.mainImage).url()}
+                  width={500}
+                  height={340}
+                  alt="blog post image"
+                  className="w-full h-[340px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+                />
+              )}
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
               <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-sky-900 backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
                 <p className="text-sm md:text-lg text-white font-semibold">Click to Read</p>
@@ -38,7 +44,7 @@ const BlogContent = ({ posts }: Props) => {
             <div className="w-full flex flex-col justify-between py-10 px-4 flex-1">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-2">
-                  {post?.categories.map((item) => (
+                  {post?.categories?.map((item) => (
                     <p
                       key={item?._id}
                       className="text-xs uppercase text-red-500 font-semibold group-hover:text-white"
