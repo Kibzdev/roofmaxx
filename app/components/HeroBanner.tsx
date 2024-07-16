@@ -20,30 +20,29 @@ const HeroBanner: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full h-screen mt-24 md:mt-28 bg-slate-500 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
-      <div className="absolute inset-0 md:block hidden">
+    <div className="relative w-full h-screen mt-24 md:mt-28 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+      <div className="absolute md:w-full md:h-full inset-0 md:block hidden">
         <Image
           src={homebg}
           alt="Background Image"
-          fill
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="z-0"
+          height={840}
+          width={1200}
+          className="w-full h-[840px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
-        <div className="absolute inset-0 bg-black opacity-10 z-10"></div> {/* Optional overlay for better contrast */}
+      
       </div>
-      <div className="absolute mt-4 inset-0 block md:hidden">
-        <Image
-          src={mobileBg}
-          alt="Mobile Background Image"
-          fill
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="z-0"
-        />
-        <div className="absolute inset-0 bg-black opacity-10 z-10"></div> {/* Optional overlay for better contrast */}
+      <div className="absolute mt-4 inset-0 block md:hidden z-50">
+        <div className='w-full h-[340px] md:h-[640px]'>
+          <Image
+            src={homebg}
+            alt="Mobile Background Image"
+            height={340}
+            width={500}
+            className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+          />
+        </div>
       </div>
-      <ScheduleForm className="mt-40  md:ml-44" /> {/* Add margin-left class to align right */}
+      <ScheduleForm className="mt-[480px] md:ml-44" /> {/* Add margin-left class to align right */}
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
