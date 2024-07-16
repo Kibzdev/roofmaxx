@@ -94,7 +94,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
   return (
     <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center md:mt-24 ${className}`}>
       <ToastContainer />
-      <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Schedule a Free Inspection</h2>
+      <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</h2>
       <form className="space-y-4 flex flex-col items-center justify-center" onSubmit={onSubmit}>
         <input
           type="text"

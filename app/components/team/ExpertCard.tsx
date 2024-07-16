@@ -21,7 +21,7 @@ const ExpertCard: React.FC<ExpertCardProps> = ({ photo, firstname, lastname, exp
           alt={fullName} // Update alt to reflect the full name or a more descriptive text
           fill
           sizes="100vw"
-          className="rounded-sm object-cover grayscale hover:grayscale-0 transition duration-300 ease-in-out"
+          className="rounded-sm object-cover  transition duration-300 ease-in-out"
         />
       </CardHeader>
       <CardContent className="text-center p-4">
