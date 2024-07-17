@@ -33,21 +33,52 @@ const HeroBanner: React.FC = () => {
       
       </div>
       <div className="absolute mt-4 inset-0 block md:hidden z-20">
-  <div className='relative w-full h-[340px] md:h-[640px]'>
-    <Image
-      src={mobileBg}
-      alt="Mobile Background Image"
-      height={340}
-      width={500}
-      className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
-    />
-    <FadeIn>
-    <div className='absolute bottom-4 right-12 p-4 bg-black/20'>
+      <div className='relative w-full h-[340px] md:h-[640px]'>
+  <Image
+    src={mobileBg}
+    alt="Mobile Background Image"
+    height={340}
+    width={500}
+    className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+  />
+  <FadeIn>
+    <div className='absolute bottom-4 right-12 p-4 bg-black/20 animated-border'>
       <h1 className='text-white text-4xl md:text-2xl font-bold'>MAKING</h1>
       <h1 className='text-white text-4xl md:text-2xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
     </div>
-    </FadeIn>
-  </div>
+  </FadeIn>
+</div>
+
+<style jsx>{`
+  @keyframes animateBorder {
+    0% {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+    25% {
+      border-left-width: 4px;
+      border-right-width: 0;
+    }
+    50% {
+      border-left-width: 4px;
+      border-right-width: 4px;
+    }
+    75% {
+      border-left-width: 0;
+      border-right-width: 4px;
+    }
+    100% {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+  }
+
+  .animated-border {
+    border-style: solid;
+    border-color: #ef4444;
+    animation: animateBorder 25s linear infinite;
+  }
+`}</style>
   </div>
 
       <ScheduleForm className="mt-[480px] md:ml-44" /> {/* Add margin-left class to align right */}
