@@ -130,7 +130,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="sm:hidden flex justify-between items-center w-full px-4 bg-amber-300">
+        <div className="sm:hidden flex justify-between items-center w-full px-4">
           <div onClick={handleNav} className="ml-0 cursor-pointer flex items-center h-full">
             <AiOutlineMenu size={25} className="text-white" />
           </div>
