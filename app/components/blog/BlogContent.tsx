@@ -25,23 +25,25 @@ const BlogContent = ({ posts }: Props) => {
           key={post?._id}
           className="group"
         >
-          <div className="flex flex-col w-full md:w-[280px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200">
-            <div className="relative w-full h-[200px] md:h-[340px] group overflow-hidden rounded-tl-md rounded-bl-md">
+          <div className="flex flex-col w-full md:w-[280px] mx-auto md:h-[450px] gap-2 bg-white hover:bg-sky-800 rounded-md rounded-tr-md rounded-br-md hover:shadow-md duration-200 rounded-b-md">
+            <div className="relative w-full h-[140px] group overflow-hidden rounded-tl-md rounded-bl-md">
               {post?.mainImage && (
                 <Image
                   src={urlFor(post?.mainImage).url()}
                   alt="blog post image"
-                  layout="fill"
+                  layout="responsive"
+                  width={280} // Specify the desired width
+                  height={140} // Specify the desired height
                   objectFit="cover"
                   className="rounded-tl-md rounded-bl-md"
                 />
               )}
-              <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
+              {/* <div className="absolute top-0 left-0 bg-black/20 w-full h-full group-hover:hidden duration-200" />
               <div className="absolute hidden group-hover:inline-flex bottom-0 left-0 w-full bg-opacity-20 bg-sky-900 backdrop-blur-lg rounded drop-shadow-lg text-white p-5 justify-center duration-200">
-                <p className="text-sm  text-white font-md">Click to Read</p>
-              </div>
+                <p className="text-sm text-white font-md">Click to Read</p>
+              </div> */}
             </div>
-            <div className="w-full flex flex-col justify-between py-10 px-4 flex-1">
+            <div className="w-full flex flex-col justify-between  px-4 flex-1">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-2">
                   {post?.categories?.map((item) => (
@@ -61,7 +63,9 @@ const BlogContent = ({ posts }: Props) => {
                 </p>
               </div>
               <div className="flex py-4">
-                <h3 className='text-gray-600 text-right group-hover:text-white'>Read More <span className="mr-2 group-hover:no-underline">→</span></h3>
+                <h3 className="text-gray-600 text-right group-hover:text-white">
+                  Read More <span className="mr-2 group-hover:no-underline">→</span>
+                </h3>
               </div>
             </div>
           </div>
