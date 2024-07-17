@@ -5,9 +5,6 @@ import Image from 'next/image';
 import { quickLinks } from "@/constants";
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
-import { greenroof, clayroof } from "../../public/assets";
-import { SocialMediaProfiles } from './SocialMedia';
-import SocialIcons from './SocialIcons';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -80,7 +77,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-start justify-start md:space-x-4 mt-2 md:mt-4">
   <h1 className='text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8 tracking-wide md:pl-6'>Follow Us</h1> {/* Added self-start to align left */}
   <div className='flex gap-2 py-4 items-start'> {/* Added items-start to align left */}
-    <a href="#" className="text-red-500 hover:text-white text-2xl md:text-2xl"><FaFacebookF /></a>
+    <a href="https://www.facebook.com/profile.php?id=61560885807834" className="text-red-500 hover:text-white text-2xl md:text-2xl"><FaFacebookF /></a>
     <a href="#" className="text-red-500 hover:text-white text-2xl md:text-2xl"><FaTwitter /></a>
     <a href="#" className="text-red-500 hover:text-white text-2xl md:text-2xl"><FaInstagram /></a>
   </div>

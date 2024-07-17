@@ -174,7 +174,7 @@ const ContactUs: React.FC = () => {
         </h3>
         <p className="font-bold text-red-500">Follow Us on</p>
         <div className="flex justify-center md:justify-end space-x-4 mt-2 md:mt-4">
-          <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/profile.php?id=61560885807834" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaFacebookF /></a>
           <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaTwitter /></a>
           <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaInstagram /></a>
         </div>

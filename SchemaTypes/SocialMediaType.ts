@@ -26,5 +26,17 @@ export const socialMediaType = defineType({
           })
           .error('A valid URL is required'),
     }),
+    defineField({
+      name: 'icon',
+      type: 'image',
+      title: 'Icon',
+      description: 'Icon representing the social media network',
+    }),
   ],
+  preview: {
+    select: {
+      title: 'socialmedia_name',
+      media: 'icon'
+    },
+  }
 });

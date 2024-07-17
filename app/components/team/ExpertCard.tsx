@@ -25,8 +25,8 @@ const ExpertCard: React.FC<ExpertCardProps> = ({ photo, firstname, lastname, exp
         />
       </CardHeader>
       <CardContent className="text-center p-4">
-        <h2 className="text-white text-lg font-bold mt-2 uppercase">{fullName}</h2>
-        <p className="text-[#ef4444] font-semibold">{expertise}</p>
+        <h2 className="text-red-500 text-lg font-bold mt-2 uppercase">{fullName}</h2>
+        <p className=" text-white font-semibold leading-6 tracking-wider">{expertise}</p>
       </CardContent>
     </Card>
   );

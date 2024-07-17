@@ -20,7 +20,7 @@ export const SocialMediaProfiles: SocialMediaProfile[] = [
   
   {
     title: "Facebook",
-    href: "https://www.facebook.com/mabatiyetu",
+    href: "https://www.facebook.com/profile.php?id=61560885807834",
     icon: BsFacebook,
   },
   {

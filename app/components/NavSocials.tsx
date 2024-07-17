@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/f
 const NavSocials: React.FC = () => {
   return (
     <div className="hidden md:flex fixed top-1/2 right-4 transform -translate-y-1/2 flex-col items-center space-y-4 z-50">
-      <Link href="https://facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+      <Link href="https://www.facebook.com/profile.php?id=61560885807834" className="social-icon" target="_blank" rel="noopener noreferrer">
         <FaFacebookF />
       </Link>
       <Link href="https://instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">

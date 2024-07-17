@@ -193,7 +193,10 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row justify-evenly pt-10 items-center">
           <AiOutlineInstagram className="cursor-pointer text-red-500 text-4xl" />
+          <Link href="https://www.facebook.com/profile.php?id=61560885807834">
           <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
+          </Link>
+         
         </div>
       </div>
 
