@@ -227,12 +227,12 @@ const Navbar = () => {
        
 
         <div className="py-4  mt-0">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-2 mb-4">
             {serviceLinks.map((serviceLink) => (
               <li key={serviceLink.service_id} onClick={() => setMenuOpen(false)}>
                 <Link
                   href={`/services/${serviceLink.href}`}
-                  className="block w-full data-[focus]:bg-blue-100 px-4 py-2 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-lg"
+                  className="block w-full data-[focus]:bg-blue-100 px-4  font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-lg"
                   onClick={() => {
                     closeServicesDropdown();
                     setMenuOpen(false);
