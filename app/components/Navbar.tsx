@@ -149,7 +149,7 @@ const Navbar = () => {
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
-        <div className="flex w-full items-center justify-between h-12 py-6">
+        <div className="flex w-full items-center justify-between h-12 py-6 px-8">
           <Link href="/" passHref>
             <Image
               src={logoWhite}
@@ -157,8 +157,8 @@ const Navbar = () => {
               className="cursor-pointer"
               priority
               sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
-              width={240}
-              height={90}
+              width={140}
+              height={40}
             />
           </Link>
           <div onClick={handleNav} className="cursor-pointer">
@@ -208,7 +208,7 @@ const Navbar = () => {
         }
       >
         <div className="flex flex-col justify-start items-start h-full ">
-          <div className="flex w-full justify-between items-center">
+          <div className="flex w-full justify-between items-center py-6">
             <Link href="/" passHref>
             <Image
                 src={logoWhite}

@@ -49,7 +49,7 @@ const homebg = '/assets/images/home-bg.jpg'
 const mobileBg = '/assets/images/mobilebg.jpg'
 const aboutbg =  '/assets/images/aboutbg.png'
 const logoDark = '/assets/logos/logo-darkbg.png'
-const logoWhite = '/assets/logos/logo-whitebg.png'
+const logoWhite = '/assets/logos/logo-whitebg.svg'
 
 export {
   repair,roofrepair,logoDark,logowhite,logoWhite,aboutbg,mobileBg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
