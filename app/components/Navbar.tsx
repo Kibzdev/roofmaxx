@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
       <div className="flex justify-between items-center h-full w-full ">
-        <div className="flex ml-64 items-center ">
+        <div className="flex md:ml-64 items-center ">
           <Link href="/" passHref>
             <Image
               src={logo}
@@ -130,13 +130,12 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="sm:hidden flex justify-between items-center w-full px-4">
-          <div onClick={handleNav} className="cursor-pointer flex items-center h-full">
+        <div className="sm:hidden flex justify-between items-center w-full px-4 bg-amber-300">
+          <div onClick={handleNav} className="ml-0 cursor-pointer flex items-center h-full">
             <AiOutlineMenu size={25} className="text-white" />
           </div>
-          <div className="flex-grow"></div>
           <Link href="/" passHref>
-            <div className="text-white text-xl font-bold">Roofmax</div>
+            <div className="text-white text-xl font-bold ml-auto">Roofmax</div>
           </Link>
         </div>
       </div>
@@ -204,44 +203,32 @@ const Navbar = () => {
         className={
           servicesOpen
             ? "fixed right-0 top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
-            : "fixed right-[-100%] top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
+            : "fixed right-[-100%] top-0 w-[85%] p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
         }
       >
-        <div className="flex flex-col justify-start items-start h-full ">
-          <div className="flex w-full justify-between items-center py-6">
-            <Link href="/" passHref>
-            <Image
-                src={logoWhite}
-                alt="logo"
-                className="cursor-pointer"
-                priority
-                width={140}
-                height={60}
-              />      
-            </Link>
-            <div onClick={handleServicesToggle} className="cursor-pointer">
-              <AiOutlineClose size={25} className="text-red-500" />
-            </div>
+        <div className="flex w-full items-center justify-between h-12 py-6 px-8">
+          <div onClick={handleServicesToggle} className="cursor-pointer">
+            <AiOutlineClose size={25} className="text-red-500" />
           </div>
+        </div>
 
-          <div className="flex-col py-2 ml-4 mt-0">
-            <ul className="flex flex-col font-medium gap-4">
-              {serviceLinks.map((serviceLink) => (
-                <li
-                  key={serviceLink.service_id}
+        <div className="py-4 ml-4 mt-6">
+          <ul className="flex flex-col gap-4">
+            {serviceLinks.map((serviceLink) => (
+              <li key={serviceLink.service_id} onClick={() => setMenuOpen(false)}>
+                <Link
+                  href={`/services/${serviceLink.href}`}
+                  className="block w-full data-[focus]:bg-blue-100 px-4 py-2 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-lg"
                   onClick={() => {
+                    closeServicesDropdown();
                     setMenuOpen(false);
-                    setServicesOpen(false);
                   }}
-                  className={mobileLinkClasses}
                 >
-                  <Link href={`/services/${serviceLink.href}`}>
-                    {serviceLink.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  {serviceLink.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </nav>
