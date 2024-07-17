@@ -53,11 +53,11 @@ const Navbar = () => {
             <Image
               src={logo}
               alt="logo"
-              className="cursor-pointer hidden sm:block"
+              className="cursor-pointer hidden sm:block py-2"
               priority
               sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
-              width={340}
-              height={120}
+              width={240}
+              height={40}
             />
           </Link>
         </div>
