@@ -232,7 +232,7 @@ const Navbar = () => {
               <li key={serviceLink.service_id} onClick={() => setMenuOpen(false)}>
                 <Link
                   href={`/services/${serviceLink.href}`}
-                  className="block w-full data-[focus]:bg-blue-100 px-4  font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-lg"
+                  className="block w-full data-[focus]:bg-blue-100 px-4  font-md text-sky-800 hover:border-b hover:border-b-red-500 text-lg"
                   onClick={() => {
                     closeServicesDropdown();
                     setMenuOpen(false);
