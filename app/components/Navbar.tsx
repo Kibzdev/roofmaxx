@@ -206,13 +206,27 @@ const Navbar = () => {
             : "fixed right-[-100%] top-0 w-[85%] p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
         }
       >
-        <div className="flex w-full items-center justify-between h-12 py-6 px-8">
-          <div onClick={handleServicesToggle} className="cursor-pointer">
-            <AiOutlineClose size={25} className="text-red-500" />
+        <div className="flex flex-col justify-start items-start h-full">
+          <div className="flex w-full justify-between items-center px-4 py-2">
+            <Link href="/" passHref>
+              <Image
+                src={logoWhite}
+                alt="logo"
+                className="cursor-pointer "
+                priority
+                sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
+                width={120}
+                height={40}
+              />
+            </Link>
+            <div onClick={handleServicesToggle} className="cursor-pointer">
+              <AiOutlineClose size={25} className="text-red-500" />
+            </div>
           </div>
-        </div>
 
-        <div className="py-4 ml-4 mt-6">
+       
+
+        <div className="py-4  mt-0">
           <ul className="flex flex-col gap-4">
             {serviceLinks.map((serviceLink) => (
               <li key={serviceLink.service_id} onClick={() => setMenuOpen(false)}>
@@ -230,6 +244,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+      </div>
       </div>
     </nav>
   );
