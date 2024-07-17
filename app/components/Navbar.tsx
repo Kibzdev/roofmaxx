@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <nav className="fixed flex justify-between items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '3rem' }}>
       <div className="flex justify-between items-center h-full w-full ">
-        <div className="flex items-center">
+        <div className="flex ml-64 items-center ">
           <Link href="/" passHref>
             <Image
               src={logo}
@@ -56,8 +56,8 @@ const Navbar = () => {
               className="cursor-pointer hidden sm:block py-2"
               priority
               sizes="(max-width: 768px) 64px, (min-width: 769px) 128px"
-              width={240}
-              height={40}
+              width={180}
+              height={80}
             />
           </Link>
         </div>
@@ -157,7 +157,7 @@ const Navbar = () => {
               className="cursor-pointer"
               priority
               sizes="(max-width: 768px) 192px, (min-width: 769px) 384px" // Adjusted to 3x size
-              width={140}
+              width={120}
               height={40}
             />
           </Link>
