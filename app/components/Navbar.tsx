@@ -13,7 +13,7 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
-import { logoWhite } from '@/public/assets';
+import { logowhite, logoWhite } from '@/public/assets';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -194,9 +194,8 @@ const Navbar = () => {
         <div className="flex flex-row justify-evenly pt-10 items-center">
           <AiOutlineInstagram className="cursor-pointer text-red-500 text-4xl" />
           <Link href="https://www.facebook.com/profile.php?id=61560885807834">
-          <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
+            <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
           </Link>
-         
         </div>
       </div>
 
@@ -204,26 +203,45 @@ const Navbar = () => {
       <div
         className={
           servicesOpen
-            ? "fixed right-0 top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-x-hidden"
-            : "fixed right-[-100%] top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-x-hidden"
+            ? "fixed right-0 top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
+            : "fixed right-[-100%] top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
         }
       >
-        <div className="flex w-full items-center justify-between h-12 py-6">
-          <div onClick={handleServicesToggle} className="cursor-pointer">
-            <AiOutlineClose size={25} className="text-red-500" />
+        <div className="flex flex-col justify-start items-start h-full ">
+          <div className="flex w-full justify-between items-center">
+            <Link href="/" passHref>
+            <Image
+                src={logoWhite}
+                alt="logo"
+                className="cursor-pointer"
+                priority
+                width={140}
+                height={60}
+              />      
+            </Link>
+            <div onClick={handleServicesToggle} className="cursor-pointer">
+              <AiOutlineClose size={25} className="text-red-500" />
+            </div>
           </div>
-        </div>
 
-        <div className="flex-col py-2 ml-4 mt-6">
-          <ul className="flex flex-col font-medium gap-4">
-            {serviceLinks.map((serviceLink) => (
-              <li key={serviceLink.service_id} className="ml-2 py-2 text-sky-800 hover:border-b-4 hover:border-b-red-500 text-xs font-semibold">
-                <Link href={`/services/${serviceLink.href}`} onClick={() => { closeServicesDropdown(); handleNav(); }}>
-                  {serviceLink.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex-col py-2 ml-4 mt-0">
+            <ul className="flex flex-col font-medium gap-4">
+              {serviceLinks.map((serviceLink) => (
+                <li
+                  key={serviceLink.service_id}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className={mobileLinkClasses}
+                >
+                  <Link href={`/services/${serviceLink.href}`}>
+                    {serviceLink.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
