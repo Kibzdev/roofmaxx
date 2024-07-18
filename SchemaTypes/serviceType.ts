@@ -57,6 +57,11 @@ export const serviceType = defineType({
       },
     }),
     defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
+    defineField({
       name: 'service_banner',
       type: 'image',
       title: 'Service Image',

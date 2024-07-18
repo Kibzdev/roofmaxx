@@ -13,7 +13,7 @@ const BottomMenu: React.FC = () => {
           <ChatIcon className="w-6 h-6" />
           <span className="text-sm">WhatsApp</span>
         </a>
-        <a href="mailto:sales@info.roofmax.co.ke" className="flex flex-col items-center text-center text-red-500 hover:text-sky-800  hover:translate-x-1">
+        <a href="mailto:sales@roofmax.co.ke" className="flex flex-col items-center text-center text-red-500 hover:text-sky-800  hover:translate-x-1">
           <MailIcon className="w-6 h-6" />
           <span className="text-sm">E-mail</span>
         </a>

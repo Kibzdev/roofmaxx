@@ -9,6 +9,7 @@ import { postType } from './postType'
 import { categoryType } from './categoryType'
 import { blockContentType } from './blockContentType'
 import { socialMediaType } from './SocialMediaType'
+import { seoType } from './seo'
 
 export const schemaTypes = [
   serviceType,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   categoryType,
   blockContentType,
   socialMediaType,
+  seoType,
 ]
