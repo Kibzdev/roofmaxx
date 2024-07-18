@@ -9,19 +9,6 @@ interface ScheduleFormProps {
   className?: string;
 }
 
-const requiredServiceNames = [
-  "New Roof Installation",
-  "PVC Gutter Installation",
-  "Roof Inspection",
-  "Airless Roof Spray Painting",
-  "High Pressure Roof Cleaning",
-  "WaterProofing",
-  "Light Gauge Steel Construction",
-  "Skylights & Translucent Sheeting",
-  "Interior Construction",
-  "Solar Panel Cleaning"
-];
-
 const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(false);
@@ -37,13 +24,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
     const loadServices = async () => {
       try {
         const serviceData = await fetchServiceData();
-        const serviceMap = serviceData.reduce((map, service) => {
-          map[service.identification.service_name] = service;
-          return map;
-        }, {} as { [key: string]: Service });
-
-        const orderedServices = requiredServiceNames.map(name => serviceMap[name]).filter(Boolean);
-        setServices(orderedServices);
+        setServices(serviceData);
       } catch (error) {
         console.error('Failed to fetch services:', error);
       }
