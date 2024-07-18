@@ -202,8 +202,8 @@ const Navbar = () => {
       <div
         className={
           servicesOpen
-            ? "fixed right-0 top-0 w-[85%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
-            : "fixed right-[-100%] top-0 w-[85%] p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
+            ? "fixed right-0 top-0 w-[100%] sm:hidden h-screen bg-white p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
+            : "fixed right-[-100%] top-0 w-[100%] p-10 ease-in duration-500 overflow-y-auto custom-scrollbar"
         }
       >
         <div className="flex flex-col justify-start items-start h-full">
