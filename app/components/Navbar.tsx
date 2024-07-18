@@ -148,7 +148,7 @@ const Navbar = () => {
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
-        <div className="flex w-full items-center justify-between h-12 py-6 px-8">
+        <div className="flex w-full items-center justify-between h-12 py-6 pl-14">
           <Link href="/" passHref>
             <Image
               src={logoWhite}
