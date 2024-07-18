@@ -32,7 +32,7 @@ const HeroBanner: React.FC = () => {
         />
         <FadeIn>
     <div className='absolute bottom-2 right-36 p-4 bg-black/20 animated-border'>
-      <h1 className='text-white text-4xl md:text-8xl font-bold'>MAKING</h1>
+      <h1 className='text-white text-4xl md:text-8xl  font-bold'>MAKING</h1>
       <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
     </div>
   </FadeIn>

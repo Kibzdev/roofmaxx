@@ -9,7 +9,7 @@ const BottomMenu: React.FC = () => {
           <HomeIcon className="w-6 h-6" />
           <span className="text-sm">Home</span>
         </Link>
-        <a href="https://wa.me/0713147147" className="flex flex-col items-center text-center text-red-500 hover:text-sky-800  hover:translate-x-1">
+        <a href="https://wa.me/+254713147147" className="flex flex-col items-center text-center text-red-500 hover:text-sky-800  hover:translate-x-1">
           <ChatIcon className="w-6 h-6" />
           <span className="text-sm">WhatsApp</span>
         </a>
