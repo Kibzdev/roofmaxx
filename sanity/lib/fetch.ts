@@ -7,9 +7,11 @@ import {
   Niche,
   GalleryCardProject,
   ProjectClient,
-  TeamMember
+  TeamMember,
+  PageData // Import the new type
 } from '../../types'; // Adjust the import path as necessary
 
+// Existing functions...
 
 export const fetchTeamMembers = async (): Promise<TeamMember[]> => {
   const query = groq`
@@ -33,7 +35,6 @@ export const fetchTeamMembers = async (): Promise<TeamMember[]> => {
   return data;
 };
 
-// Fetch all service links for navigation
 export const fetchServiceLinks = async (): Promise<ServiceLink[]> => {
   const query = groq`
     *[_type == "service"]{
@@ -46,7 +47,6 @@ export const fetchServiceLinks = async (): Promise<ServiceLink[]> => {
   return data;
 };
 
-// Fetch all services
 export const fetchServiceData = async (): Promise<Service[]> => {
   const query = groq`
     *[_type == "service"] {
@@ -69,7 +69,6 @@ export const fetchServiceData = async (): Promise<Service[]> => {
   return data;
 };
 
-// Fetch all projects
 export const fetchProjects = async (): Promise<Project[]> => {
   const query = groq`
     *[_type == "project"]{
@@ -101,7 +100,6 @@ export const fetchProjects = async (): Promise<Project[]> => {
   return data;
 };
 
-// Fetch project gallery card data
 export async function fetchGalleryCard(): Promise<GalleryCardProject[]> {
   const query = groq`
     *[_type == "project"]{
@@ -120,7 +118,6 @@ export async function fetchGalleryCard(): Promise<GalleryCardProject[]> {
   }
 }
 
-// Fetch project details by slug
 export const fetchProjectBySlug = async (slug: string): Promise<Project> => {
   const query = groq`
     *[_type == "project" && slug.current == $slug][0] {
@@ -143,7 +140,6 @@ export const fetchProjectBySlug = async (slug: string): Promise<Project> => {
   return await sanityClient.fetch(query, { slug });
 };
 
-// Fetch service details by slug
 export async function fetchServiceBySlug(slug: string): Promise<Service> {
   const query = groq`
   *[_type == "service" && slug.current == $slug][0]{
@@ -195,7 +191,6 @@ export const fetchAllServiceSlugs = async (): Promise<string[]> => {
   return data.map(service => service.slug);
 };
 
-// Fetch all niches
 export const fetchNicheData = async (): Promise<Niche[]> => {
   const query = groq`
     *[_type == "niche"]{
@@ -219,7 +214,6 @@ export const fetchNicheData = async (): Promise<Niche[]> => {
   return niches;
 };
 
-// Fetch niche details by slug
 export const fetchNicheBySlug = async (slug: string): Promise<Niche | null> => {
   const query = groq`
     *[_type == "nicheType" && slug.current == $slug][0] {
@@ -269,5 +263,27 @@ export const fetchAllNiches = async (): Promise<Niche[]> => {
     }
   `;
   const data: Niche[] = await sanityClient.fetch(query);
+  return data;
+};
+
+// New function to fetch page data including sections
+export const fetchPageData = async (): Promise<PageData | null> => {
+  const query = groq`
+    *[_type == "page" && slug.current == "our-client"][0] {
+      title,
+      sections[]{
+        _key,
+        heading,
+        content[]{
+          ...,
+          ...select(_type == "image" => {
+            "url": asset->url
+          })
+        },
+        location
+      }
+    }
+  `;
+  const data: PageData | null = await sanityClient.fetch(query);
   return data;
 };

@@ -56,11 +56,7 @@ export const serviceType = defineType({
         maxLength: 200, // Optional: sets the maximum slug length
       },
     }),
-    defineField({
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
-    }),
+    
     defineField({
       name: 'service_banner',
       type: 'image',

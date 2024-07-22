@@ -20,5 +20,5 @@ export const seoType = defineType({
     validation: Rule =>Rule.max(155).warning('Meta description should be under 155 characters to avoid being cut off in SERPS.'),
   }),
   
-  ]
-})
+  ],
+});

@@ -7,6 +7,36 @@ type Base = {
   _updatedAt: string;
 };
 
+// Define the types for sections and page data
+
+// Content can include images
+
+interface BlockContent {
+  _type: 'block';
+  children: { text: string }[];
+}
+
+interface ImageContent {
+  _type: 'image';
+  asset: { url: string };
+  alt: string;
+}
+
+type Content = BlockContent | ImageContent;
+// Define the Section type
+interface Section {
+  _key: string;
+  heading: string;
+  content: Content[];
+  location: string;
+}
+
+// Define the PageData type
+export interface PageData extends Base {
+  title: string;
+  sections: Section[];
+}
+
 export interface Post extends Base {
   author: Author;
   body: Block[];
