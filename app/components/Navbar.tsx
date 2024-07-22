@@ -126,6 +126,9 @@ const Navbar = () => {
               <Link href="/contact" className={desktopLinkClasses}>Contact</Link>
             </li>
             <li className="ml-10 text-xl">
+              <Link href="/diaspora" className={desktopLinkClasses}>Diaspora Build</Link>
+            </li>
+            <li className="ml-10 text-xl">
               <Link href="/blog" className={desktopLinkClasses}>Blog</Link>
             </li>
           </ul>
@@ -185,6 +188,10 @@ const Navbar = () => {
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/contact">Contact</Link>
             </li>
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
+              <Link href="/diaspora">Diaspora Build</Link>
+            </li>
+        
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/blog">Blog</Link>
             </li>
