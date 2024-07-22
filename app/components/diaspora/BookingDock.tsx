@@ -92,7 +92,7 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
               <span className='mt-1'>Diaspora Booking</span>
             </button>
           </SheetTrigger>
-          <SheetContent className='bg-white'>
+          <SheetContent className='bg-white w-full'>
             <SheetHeader>
               <SheetTitle>Are you absolutely sure?</SheetTitle>
               <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:max-w-md justify-center md:mt-24 ${className}`}>
