@@ -21,35 +21,22 @@ const Tailor = () => {
       </div>
       <div className='flex-1 flex-col px-6 py-6'>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
        <span className='inline-flex items-center'>
       <MdArchitecture className='mr-4 text-green-500' /> 
-       Your Design & Plans Our Craftmanship
+       Your Custom Designs 
     </span>
-       </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
-              </ul>   
-          </li>
-          
+       </h2> 
         </ul>
         <ul>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
        <span className='inline-flex items-center'>
        <HiMiniHomeModern className='mr-4 text-slate-600' />
         Modern Designs
     </span>
        </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
-              </ul>   
-          </li>
-          
+    
         </ul>
 
 
@@ -57,19 +44,12 @@ const Tailor = () => {
         </ul>
         <ul>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
        <span className='inline-flex items-center'>
        <HiShoppingCart className='mr-4 text-sky-800' />
           Material Sourcing
     </span>
-       </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
-              </ul>   
-          </li>
-          
+       </h2> 
         </ul>
 
 

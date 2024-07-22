@@ -12,25 +12,18 @@ const Schedule = () => {
         <FadeIn>
         <p className='text-gray-600 mb-4 font-normal  leading-6 md:text-xl text-sm px-6'>
         We work around your schedule, making it easy to plan and manage roofing projects from abroad, 
-        with minimal disruption to your daily routine. Our flexible approach means you can approve plans, 
-        make decisions, and receive updates at times that suit you, regardless of time zone differences.
+        with minimal disruption to your daily routine. 
         </p>
         </FadeIn>
       </div>
       <div className='flex-1 flex-col px-6 py-6'>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
        <span className='inline-flex items-center'>
       <FaCalendarDays className='mr-4 text-green-500' /> 
     Easy Scheduling
     </span>
        </h2>
-          <li>
-             <ul>
-               <li>Google Calendar</li>
-               <li>Facetime</li>
-              </ul>   
-          </li>
           <button className='bg-red-500 px-6 py-4 text-white mt-4 rounded-sm '>Book Now</button>
         </ul>
         <ul>

@@ -56,25 +56,23 @@ const Cordination = () => {
         </ul>
       </li>
     </ul>
-        <ul>
-        <ul className='flex flex-col  items-center'>
+
+    <ul className="flex flex-col items-start">
         <h2 className='w-full text-left text-lg md:text-2xl text-red-500 font-semibold'>
-       <span className='inline-flex items-center'>
-       <MdEmail className='mr-4 text-slate-600' />
-      Email
-    </span>
-       </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
+        <span className='inline-flex items-center'>
+         <MdEmail className='mr-4 text-slate-600' />
+          Email
+    </span>  
+     </h2>
+          <li className="flex  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm ">
+             <ul className="flex flex-col gap-3 md:ml-20 md:items-start items-center justify-start md:py-6 py-2">
+               <li className="flex  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
+                <span className="mr-2">✉️</span> info@roofmax.co.ke <br/></li>
+               <li className="flex  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
+                 <span className="mr-2">✉️</span> sales@roofmax.co.ke<br/></li>
               </ul>   
           </li>
           
-        </ul>
-
-
-
         </ul>
         <ul>
         <ul className='flex flex-col  items-center'>
@@ -84,13 +82,6 @@ const Cordination = () => {
       Milestone Tracker 
     </span>
        </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
-              </ul>   
-          </li>
-          
         </ul>
 
 
