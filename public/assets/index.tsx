@@ -50,9 +50,12 @@ const mobileBg = '/assets/images/mobile-bg.png'
 const aboutbg =  '/assets/images/aboutbg.png'
 const logoDark = '/assets/logos/logo-darkbg.png'
 const logoWhite = '/assets/logos/logo-whitebg.svg'
+const whatsapp = '/assets/images/whatsapp.png'
+const facetime = '/assets/images/facetime.png'
+
 
 export {
-  repair,roofrepair,logoDark,logowhite,logoWhite,aboutbg,mobileBg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
+  repair,roofrepair,logoDark,whatsapp,facetime,logowhite,logoWhite,aboutbg,mobileBg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
   flatceiling, commercial,residential,drone,paint,paints,kev,paintbg,
   rocket, gent01, gent02, gent03,diamond,techy,ctabg,framewhite,vector,
    polygon, contractor,quality, certified,tech,goal,security,cert,checkmark,nyki,quotey

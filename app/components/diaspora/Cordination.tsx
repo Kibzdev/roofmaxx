@@ -3,6 +3,8 @@ import { FaVideo } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { GiArcheryTarget } from "react-icons/gi";
 import FadeIn from '../FadeIn';
+import Image from 'next/image';
+import { facetime, whatsapp } from '@/public/assets';
 
 const Cordination = () => {
   return (
@@ -19,24 +21,44 @@ const Cordination = () => {
         </FadeIn>
       </div>
       <div className='flex-1 flex-col px-6 py-6'>
-        <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
-       <span className='inline-flex items-center'>
-      <FaVideo className='mr-4 text-green-500' /> 
-       Video Calls
-    </span>
-       </h2>
-          <li>
-             <ul>
-               <li>What up</li>
-               <li>Facetime</li>
-              </ul>   
+      <ul className='flex flex-col items-start'>
+      <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
+        <span className='inline-flex items-center'>
+          <FaVideo className='mr-4 text-green-500' />
+          Video Calls
+        </span>
+      </h2>
+      <li className='w-full'>
+        <ul className='flex flex-col gap-3 md:ml-20 md:items-start items-center justify-start md:py-6 py-2'>
+          <li className='flex  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm'>
+            <span className='mr-2'>
+              <Image src={whatsapp}
+                width={24}
+                height={24}
+                className='w-[24px] h-[24px] md:w-[44px] md:h-[44px]'
+                alt='whatsup'
+               />
+            </span>
+            Whatsup
           </li>
-          
+          <li className='flex  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm'>
+            <span className='mr-2'>
+              <Image 
+              src={facetime}
+                width={24}
+                height={24}
+                className='w-[24px] h-[24px] md:w-[44px] md:h-[44px]'
+                alt='whatsup'
+              />
+            </span>
+           Facetime
+          </li>
         </ul>
+      </li>
+    </ul>
         <ul>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500 font-semibold'>
        <span className='inline-flex items-center'>
        <MdEmail className='mr-4 text-slate-600' />
       Email
@@ -56,7 +78,7 @@ const Cordination = () => {
         </ul>
         <ul>
         <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-4xl text-red-500 font-semibold'>
+        <h2 className='w-full text-left text-lg md:text-2xl text-red-500 font-semibold'>
        <span className='inline-flex items-center'>
        <GiArcheryTarget  className='mr-4 text-sky-800' />
       Milestone Tracker 
