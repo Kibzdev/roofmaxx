@@ -1,6 +1,6 @@
 import React from 'react'
 import FadeIn from '../FadeIn'
-import { FaCalendarDays } from "react-icons/fa6";
+
 
 const Schedule = () => {
   return (
@@ -16,19 +16,7 @@ const Schedule = () => {
         </p>
         </FadeIn>
       </div>
-      <div className='flex-1 flex-col px-6 py-6'>
-        <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
-       <span className='inline-flex items-center'>
-      <FaCalendarDays className='mr-4 text-green-500' /> 
-    Easy Scheduling
-    </span>
-       </h2>
-          <button className='bg-red-500 px-6 py-4 text-white mt-4 rounded-sm '>Book Now</button>
-        </ul>
-        <ul>
-        </ul>
-      </div>
+     
     </div>
   )
 }

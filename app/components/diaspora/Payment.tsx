@@ -16,27 +16,7 @@ const Payment = () => {
         </p>
         </FadeIn>
       </div>
-      <div className='flex-1 flex-col px-6 py-6'>
-        <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
-       <span className='inline-flex items-center'>
-      <BsCreditCard2FrontFill className='mr-4 text-green-500' /> 
-    Bank to Bank
-    </span>
-       </h2>
-          
-        </ul>
-        <ul>
-        <ul className='flex flex-col  items-center'>
-        <h2 className='w-full text-left text-lg md:text-2xl text-red-500  opacity-70 font-bold'>
-       <span className='inline-flex items-center'>
-       <RiMobileDownloadFill  className='mr-4 text-slate-600' />
-      Platforms to Mpesa
-    </span>
-       </h2> 
-        </ul>
-        </ul>
-      </div>
+     
     </div>
   )
 }
