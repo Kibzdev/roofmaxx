@@ -83,21 +83,21 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
   };
 
   return (
-    <div className='bg-red-500 h-18 flex justify-end items-center'>
-      <div className='flex flex-col justify-center items-center'>
+    <div className=' h-16 flex justify-end items-center z-45'>
+      <div className='flex flex-col justify-center items-center '>
         <Sheet>
           <SheetTrigger asChild>
-            <button className='flex flex-col items-center justify-center px-4 py-3 text-white bg-sky-800'>
-              <FaPlane className='text-white mb-1 text-2xl' />
-              <span className='mt-1'>Diaspora Booking</span>
+            <button className='flex flex-col items-center justify-center px-10  m md:mt-4 py-2 md:py-4 md:mr-8 text-white bg-sky-800 '>
+              <FaPlane className='text-white mb-1 text-lg  md:text-2xl' />
+              <span className='mt-1 w-full'>Diaspora Booking</span>
             </button>
           </SheetTrigger>
           <SheetContent className='bg-white w-full'>
             <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetTitle className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</SheetTitle>
               <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:max-w-md justify-center md:mt-24 ${className}`}>
       <ToastContainer />
-      <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</h2>
+      {/* <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</h2> */}
       <form className="space-y-4 flex flex-col items-center justify-center" onSubmit={onSubmit}>
         <input
           type="text"

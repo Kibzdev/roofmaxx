@@ -65,10 +65,10 @@ const Cordination = () => {
     </span>  
      </h2>
           <li className="flex  justify-start  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm ">
-             <ul className="flex flex-col gap-3 md:ml-20 md:items-start items-start justify-start md:py-6 py-2 ">
-               <li className="flex  ml-14 md:ml-0  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
+             <ul className="flex flex-col gap-2 md:ml-20 md:items-start items-start justify-start md:py-6 py-2 ">
+               <li className="flex  ml-20 md:ml-0  items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
                 <span className="mr-2">✉️</span> info@roofmax.co.ke <br/></li>
-               <li className="flex  ml-14 md:ml-0 items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
+               <li className="flex  ml-20 md:ml-0 items-center text-sky-800 md:font-semibold font-normal md:text-2xl text-sm">
                  <span className="mr-2">✉️</span> sales@roofmax.co.ke<br/></li>
               </ul>   
           </li>
