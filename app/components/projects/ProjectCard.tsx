@@ -9,7 +9,7 @@ import Button from '../Button';
 import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { Project } from '@/types';
-import { Skeleton } from "@/components/ui/skeleton"; // Import Skeleton component
+import { Skeleton } from "@/components/ui/skeleton";
 
 const query = groq`*[_type == "project"] {
   projectid,
@@ -21,7 +21,7 @@ const query = groq`*[_type == "project"] {
 const ProjectsCard: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [error, setError] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true); // Add loading state
+  const [loading, setLoading] = useState<boolean>(true);
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -29,11 +29,11 @@ const ProjectsCard: React.FC = () => {
       try {
         const data: Project[] = await sanityClient.fetch(query);
         setProjects(data);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
       } catch (err) {
         console.error("Failed to fetch projects:", err);
         setError('Failed to load projects');
-        setLoading(false); // Set loading to false even if there's an error
+        setLoading(false);
       }
     };
 
@@ -61,7 +61,7 @@ const ProjectsCard: React.FC = () => {
   };
 
   return (
-    <div className="relative mt-48 md:mt-32 lg:mt-32">
+    <div className="relative mt-64 md:mt-32 lg:mt-32">
       <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
         <p className="font-normal text-sm md:text-lg text-gray-600 leading-6">
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.
@@ -118,16 +118,12 @@ const ProjectsCard: React.FC = () => {
   );
 };
 
-export default ProjectsCard;
+const SkeletonCard: React.FC = () => (
+  <div className='p-4'>
+    <Skeleton className='w-full h-48 rounded-md' />
+    <Skeleton className='mt-2 w-3/4 h-6' />
+    <Skeleton className='mt-2 w-1/2 h-6' />
+  </div>
+);
 
-export function SkeletonCard() {
-  return (
-    <div className="flex flex-col space-y-3">
-      <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-      <div className="space-y-2">
-        <Skeleton className="h-4 w-[250px]" />
-        <Skeleton className="h-4 w-[200px]" />
-      </div>
-    </div>
-  );
-}
+export default ProjectsCard;

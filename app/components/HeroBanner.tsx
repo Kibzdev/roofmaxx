@@ -1,9 +1,9 @@
 "use client";
 import { useState } from 'react';
-import { homebg, mobileBg } from '@/public/assets'; // Import your mobile background image
+import { homebg, mobileBg } from '@/public/assets';
 import NavSocials from './NavSocials';
 import Image from 'next/image';
-import ScheduleForm from './ScheduleForm'; // Import the new component
+import ScheduleForm from './ScheduleForm';
 import FadeIn from './FadeIn';
 
 const HeroBanner: React.FC = () => {
@@ -18,7 +18,7 @@ const HeroBanner: React.FC = () => {
       .then(data => setResult(data))
       .catch(error => setResult(error))
       .finally(() => setLoading(false));
-  }
+  };
 
   return (
     <div className="relative w-full h-screen mt-24 md:mt-28 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
@@ -31,92 +31,30 @@ const HeroBanner: React.FC = () => {
           className="w-full h-[840px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
         <FadeIn>
-    <div className='absolute bottom-2 right-36 p-4 bg-black/20 animated-border'>
-      <h1 className='text-white text-4xl md:text-8xl  font-bold'>MAKING</h1>
-      <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
-    </div>
-  </FadeIn>
-  <style jsx>{`
-  @keyframes animateBorder {
-    0% {
-      border-left-width: 0;
-      border-right-width: 0;
-    }
-    25% {
-      border-left-width: 4px;
-      border-right-width: 0;
-    }
-    50% {
-      border-left-width: 4px;
-      border-right-width: 4px;
-    }
-    75% {
-      border-left-width: 0;
-      border-right-width: 4px;
-    }
-    100% {
-      border-left-width: 0;
-      border-right-width: 0;
-    }
-  }
-
-  .animated-border {
-    border-style: solid;
-    border-color: #ef4444;
-    animation: animateBorder 25s linear infinite;
-  }
-`}</style>
+          <div className='absolute bottom-2 right-36 p-4 bg-black/20 animated-border'>
+            <h1 className='text-white text-4xl md:text-8xl font-bold'>MAKING</h1>
+            <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
+          </div>
+        </FadeIn>
       </div>
       <div className="absolute mt-4 inset-0 block md:hidden z-20">
-      <div className='relative w-full h-[340px] md:h-[640px]'>
-  <Image
-    src={mobileBg}
-    alt="Mobile Background Image"
-    height={340}
-    width={500}
-    className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
-  />
-  <FadeIn>
-    <div className='absolute bottom-4 right-12 p-4 bg-black/20 animated-border'>
-      <h1 className='text-white text-4xl md:text-2xl font-bold'>MAKING</h1>
-      <h1 className='text-white text-4xl md:text-2xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
-    </div>
-  </FadeIn>
-</div>
-
-<style jsx>{`
-  @keyframes animateBorder {
-    0% {
-      border-left-width: 0;
-      border-right-width: 0;
-    }
-    25% {
-      border-left-width: 4px;
-      border-right-width: 0;
-    }
-    50% {
-      border-left-width: 4px;
-      border-right-width: 4px;
-    }
-    75% {
-      border-left-width: 0;
-      border-right-width: 4px;
-    }
-    100% {
-      border-left-width: 0;
-      border-right-width: 0;
-    }
-  }
-
-  .animated-border {
-    border-style: solid;
-    border-color: #ef4444;
-    animation: animateBorder 25s linear infinite;
-  }
-`}</style>
-  </div>
-
-      <ScheduleForm className="absolute mt-[540px] md:ml-44" /> {/* Add margin-left class to align right */}
+        <div className='relative w-full h-[340px] md:h-[640px]'>
+          <Image
+            src={mobileBg}
+            alt="Mobile Background Image"
+            height={340}
+            width={500}
+            className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+          />
+          <FadeIn>
+            <div className='absolute bottom-4 right-12 p-4 bg-black/20 animated-border'>
+              <h1 className='text-white text-4xl md:text-2xl font-bold'>MAKING</h1>
+              <h1 className='text-white text-4xl md:text-2xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+      <ScheduleForm className="absolute mt-[528px] md:ml-44" />
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
