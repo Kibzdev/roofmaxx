@@ -13,7 +13,7 @@ const Cordination = () => {
         <h1 className='text-lg md:text-4xl text-sky-800 font-semibold opacity-70 text-center md:text-left'>Seamless Coordination</h1>
         </div>
        
-        <p className='text-gray-600 mb-4 font-normal  leading-6 md:text-xl text-sm px-6'>Living abroad? No problem. Our dedicated team ensures smooth communication and coordination, 
+        <p className='text-gray-600 mb-4 text-center md:text-left font-normal  leading-6 md:text-xl text-sm px-6'>Living abroad? No problem. Our dedicated team ensures smooth communication and coordination, 
           providing regular updates and progress reports to keep you informed. 
           Whether it&lsquo;s via video calls, emails, or messaging apps, we make sure you &lsquo;re always in the loop.
         </p>
