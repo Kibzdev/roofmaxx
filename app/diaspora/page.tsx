@@ -28,7 +28,7 @@ const Page = () => {
           <div className="flex-1 flex-col items-center justify-center px-6 py-6 md:mt-24 md:ml-40 mx-auto">
             <ul className="flex flex-col items-start justify-center w-full">
               <h2 className="w-full md:ml-0 md:text-left text-lg md:text-2xl text-center text-sky-800 font-semibold flex items-end">
-                <span className="inline-flex items-center mr-2 md:mr-8">
+                <span className="inline-flex items-center mr-4 md:mr-8">
                   <FaVideo className="text-2xl md:text-4xl text-red-500" />
                 </span>
                 Video Calls
