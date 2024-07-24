@@ -217,11 +217,14 @@ const Navbar = () => {
             Let&lsquo;s Connect
           </p>
           <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
+          <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+          <a href="https://www.facebook.com/profile.php?id=61560885807834" target="_blank" rel="noopener noreferrer">
+          <AiOutlineFacebook className='text-sky-800 text-2xl' />
+          </a>
+          </div>
+
             <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-              <AiOutlineFacebook />
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-              <AiOutlineInstagram />
+              <AiOutlineInstagram  className='text-sky-800 text-2xl' />
             </div>
           </div>
         </div>

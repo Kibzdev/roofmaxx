@@ -131,7 +131,7 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
           name="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          placeholder="Your Location"
+          placeholder="Country"
           className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
         />
         <select
