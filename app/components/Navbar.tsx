@@ -187,6 +187,10 @@ const Navbar = () => {
               <Link href="/about">About</Link>
             </li>
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
+              <Link href="/diaspora">Diaspora Build</Link>
+            </li>
+           
+            <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/contact">Contact</Link>
             </li>
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
