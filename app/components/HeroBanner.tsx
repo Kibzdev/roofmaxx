@@ -31,7 +31,7 @@ const HeroBanner: React.FC = () => {
           className="w-full h-[840px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
         <FadeIn>
-          <div className='absolute bottom-6 right-36 p-4 bg-black/20 animated-border'>
+          <div className='absolute bottom-12 right-36 p-4 bg-black/20 animated-border'>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>MAKING</h1>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
           </div>
@@ -54,7 +54,7 @@ const HeroBanner: React.FC = () => {
           </FadeIn>
         </div>
       </div>
-      <ScheduleForm className="absolute mt-[528px] md:ml-44" />
+      <ScheduleForm className="absolute mt-[520px] md:ml-44" />
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
