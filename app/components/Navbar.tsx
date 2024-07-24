@@ -205,10 +205,10 @@ const Navbar = () => {
           </Link>
         </div> */}
         <div className="pt-16">
-          <p className="uppercase tracking-widest text-[15px] font-semibold text-red-500">
+          <p className="uppercase tracking-widest text-[15px] text-center font-semibold text-red-500">
             Let&lsquo;s Connect
           </p>
-          <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
+          <div className="flex items-center justify-evenly my-4 w-full sm:w-[80%]">
           <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
           <a href="https://www.facebook.com/profile.php?id=61560885807834" target="_blank" rel="noopener noreferrer">
           <AiOutlineFacebook className='text-sky-800 text-2xl' />
