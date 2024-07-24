@@ -31,7 +31,7 @@ const HeroBanner: React.FC = () => {
           className="w-full h-[840px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
         <FadeIn>
-          <div className='absolute bottom-2 right-36 p-4 bg-black/20 animated-border'>
+          <div className='absolute bottom-6 right-36 p-4 bg-black/20 animated-border'>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>MAKING</h1>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
           </div>
@@ -47,7 +47,7 @@ const HeroBanner: React.FC = () => {
             className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
           />
           <FadeIn>
-            <div className='absolute bottom-4 right-12 p-4 bg-black/20 animated-border'>
+            <div className='absolute bottom-6 right-12 p-4 bg-black/20 animated-border'>
               <h1 className='text-white text-4xl md:text-2xl font-bold'>MAKING</h1>
               <h1 className='text-white text-4xl md:text-2xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
             </div>
