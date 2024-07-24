@@ -12,14 +12,14 @@ const TopBar: React.FC = () => {
 
   return (
     <div className="fixed flex bg-red-500 justify-between items-center h-16 w-full z-50 md:px-4">
-    <div className="flex items-center justify-center  md:gap-2 w-2/3 md:w-1/2">
+    <div className="flex items-center justify-center  md:gap-2  md:w-1/2">
       <ContactLink phoneNumber={phoneNumber} />
       <EmailLink email={email} subject={subject} body={body} />
     </div>
     <div className="hidden md:flex gap-2 text-sky-800 items-center justify-center w-1/2">
       <SocialIcons />
     </div>
-    <div className="flex justify-center items-center w-1/3 md:w-full md:justify-end bg-a-300">
+    <div className="flex justify-center items-center  md:w-full md:justify-end bg-amber-300">
       <BookingDock />
     </div>
   </div>
