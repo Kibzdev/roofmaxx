@@ -19,7 +19,7 @@ interface ScheduleFormProps {
   className?: string;
 }
 
-const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
+const BookingButton:React.FC<ScheduleFormProps> = ({ className }) => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -87,17 +87,14 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
       <div className='flex flex-col justify-center items-center '>
         <Sheet>
           <SheetTrigger asChild>
-          <button className='flex gap-2 items-center justify-center md:px-8 px-2 md:mt-4 py-2 md:py-4 md:mr-8 text-sky-800 border-2 border-red-500/30 shadow-xl rounded-3xl group hover:bg-sky-800 hover:text-white'>
-           <FaPlane className='text-sky-800 group-hover:text-red-500 mb-1 text-lg md:text-2xl rotate-[-45deg]' />
-            <span className='w-full text-sm md:text-lg'>Diaspora Booking</span>
+          <button className='flex gap-2 items-center justify-center md:px-8 px-2  md:mt-4  md:py-8 md:mr-0 text-sky-800  bg-sky-800 rounded-none'>
+           <FaPlane className='text-red-500 group-hover:text-red-500 mb-1 text-lg md:text-2xl rotate-[-45deg]' />
+            <span className='w-full text-sm md:text-lg text-white'>Diaspora Booking</span>
           </button>
-
-
-
           </SheetTrigger>
           <SheetContent className='bg-white w-full'>
             <SheetHeader>
-              <SheetTitle className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</SheetTitle>
+              <SheetTitle className="text-xl text-center font-bold mb-4 text-red-500  uppercase">Get a Free Quote</SheetTitle>
               <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:max-w-md justify-center md:mt-24 ${className}`}>
       <ToastContainer />
       {/* <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</h2> */}
@@ -163,11 +160,11 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
         </button>
       </form>
     </div>
-    <p className="font-bold text-red-500">Follow Us on</p>
-        <div className="flex justify-center md:justify-end space-x-4 mt-2 md:mt-4">
-          <a href="https://www.facebook.com/profile.php?id=61560885807834" className="text-red-500 hover:text-sky-800 text-2xl md:text-6xl"><FaFacebookF /></a>
-          <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-6xl"><FaTwitter /></a>
-          <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-6xl"><FaInstagram /></a>
+    <p className="font-bold text-red-500 text-center mt-4">Follow Us on</p>
+        <div className="flex items-center  md:justify-center space-x-4 mt-4 md:mt-4">
+          <a href="https://www.facebook.com/profile.php?id=61560885807834" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaFacebookF /></a>
+          <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaTwitter /></a>
+          <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-4xl"><FaInstagram /></a>
         </div>
             </SheetHeader>
           </SheetContent>
@@ -177,4 +174,4 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
   );
 };
 
-export default BookingDock;
+export default BookingButton;
