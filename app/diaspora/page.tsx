@@ -35,7 +35,7 @@ const page = () => {
   <ul className="flex flex-col items-start justify-center w-full">
     <h2 className="w-full  md:ml-0 md:text-left text-lg md:text-2xl text-center text-sky-800 font-semibold flex items-end">
       <span className="inline-flex items-center mr-2 md:mr-8">
-        <FaVideo className="text-lg md:text-4xl text-red-500" />
+        <FaVideo className="text-2xl md:text-4xl text-red-500" />
       </span>
       Video Calls
     </h2>
@@ -72,8 +72,8 @@ const page = () => {
   <ul className="flex flex-col items-start justify-center w-full">
     <h2 className="w-full md:text-left text-center text-lg md:text-2xl text-sky-800 font-semibold flex items-end">
       <span className="inline-flex items-center mr-4 md:mr-8">
-        <div className="flex items-center justify-center rounded-full bg-red-500 md:w-[36px] md:h-[36px] h-[18px] w-[18px]">
-          <MdOutlineMailOutline className="text-white md:text-lg text-sm" />
+        <div className="flex items-center justify-center rounded-full bg-red-500 md:w-[36px] md:h-[36px] h-[28px] w-[28px] px-1 py-1">
+          <MdOutlineMailOutline className="text-white md:text-lg text-lg" />
         </div>
       </span>
       Email
@@ -88,7 +88,7 @@ const page = () => {
             src={milestone}
             width={24}
             height={24}
-            className="w-[18px] h-[18px] md:w-[36px] md:h-[36px]"
+            className="w-[28px] h-[28px] md:w-[36px] md:h-[36px]"
             alt="milestone"
           />
         </span>
@@ -104,7 +104,7 @@ const page = () => {
           src={craft}
           width={24}
           height={24}
-          className="w-[18px] h-[18px] md:w-[36px] md:h-[36px]"
+          className="w-[28px] h-[28px] md:w-[36px] md:h-[36px]"
           alt="craft"
         />
       </span>
