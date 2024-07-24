@@ -83,7 +83,7 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
   };
 
   return (
-    <div className=' h-16 flex justify-end items-center z-45 bg-red-500'>
+    <div className=' h-16 flex justify-end items-center md:z-45 bg-red-500'>
       <div className='flex flex-col justify-center items-center '>
         <Sheet>
           <SheetTrigger asChild>
