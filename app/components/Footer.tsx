@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-start">
           <h2 className="text-xl font-semibold mb-4 underline underline-offset-4 decoration-red-500 decoration-2 hover:decoration-4 hover:underline-offset-8 tracking-wide">Visit Us</h2>
           <p className='leading-6 font-medium tracking-wide'>Embakasi</p>
-          <p className='leading-6 font-medium tracking-wide'>Next to Coca-cola Bottles Factory</p>
+          <p className='leading-6 font-medium tracking-wide'>Next to Coca-Cola Bottlers </p>
           <h2 className='text-md underline underline-offset-8 underline-white mt-2'>Working Hours</h2>
 
           <hr/>

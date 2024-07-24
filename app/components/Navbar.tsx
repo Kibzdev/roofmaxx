@@ -100,7 +100,7 @@ const Navbar = () => {
                           >
                             <Link
                               href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-2 px-0 font-bold items-start justify-start text-sky-800 text-sm" // Default text size for desktop
+                              className="flex flex-col gap-2 px-0 font-medium items-start justify-start text-sky-800 text-sm" // Default text size for desktop
                               onClick={() => {
                                 closeServicesDropdown();
                                 setMenuOpen(false); // Ensure the mobile menu also closes if open
