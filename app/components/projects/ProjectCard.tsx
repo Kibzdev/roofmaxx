@@ -61,7 +61,7 @@ const ProjectsCard: React.FC = () => {
   };
 
   return (
-    <div className="mt-40 md:mt-28 lg:mt-32">
+    <div className="relative mt-48 md:mt-32 lg:mt-32">
       <PageIntro eyebrow='Our Work' title="Showcasing Excellence">
         <p className="font-normal text-sm md:text-lg text-gray-600 leading-6">
           With precision craftsmanship, innovative techniques, and unwavering service, we are dedicated to maximizing satisfaction and ensuring peace of mind for every client we serve.

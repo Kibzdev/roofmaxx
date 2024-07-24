@@ -116,7 +116,7 @@ const HeroBanner: React.FC = () => {
 `}</style>
   </div>
 
-      <ScheduleForm className="mt-[480px] md:ml-44" /> {/* Add margin-left class to align right */}
+      <ScheduleForm className="absolute mt-[540px] md:ml-44" /> {/* Add margin-left class to align right */}
       <div className="relative mt-0 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
