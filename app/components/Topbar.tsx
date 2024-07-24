@@ -19,7 +19,7 @@ const TopBar: React.FC = () => {
       <div className="hidden md:flex gap-2 text-sky-800 items-center justify-center w-1/2">
         <SocialIcons />
       </div>
-      <div className='flex w-full justify-end items-end bg-red-500 relative'>
+      <div className='flex-end  md:justify-end items-end w-full  relative bg-amber-300'>
         <BookingDock/>
       </div>
     </div>
