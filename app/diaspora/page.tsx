@@ -4,25 +4,19 @@ import GetStartedCTO from '../components/GetStartedCTO'
 import Tailor from '../components/diaspora/Tailor';
 import Payment from '../components/diaspora/Payment';
 import Cordination from '../components/diaspora/Cordination';
-
-import Schedule from '../components/diaspora/Schedule';
-
 import { FaVideo } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { GiArcheryTarget } from "react-icons/gi";
+
 import Image from 'next/image';
-import { craft, email, facetime, milestone, video, whatsapp } from '@/public/assets';
-import { MdArchitecture, MdOutlineMailOutline } from "react-icons/md";
-import { HiMiniHomeModern } from "react-icons/hi2";
-import { HiShoppingCart } from "react-icons/hi2";
-import { BsCreditCard2FrontFill } from "react-icons/bs";
-import { RiMobileDownloadFill } from "react-icons/ri";
-import { FaCalendarDays } from "react-icons/fa6";
+import { craft,facetime, milestone,  whatsapp } from '@/public/assets';
+import { MdOutlineMailOutline } from "react-icons/md";
+import BookingDock from '../components/diaspora/BookingDock';
+
 
 const page = () => {
   return (
-    <div className='mt-32'>
+    <div className='mt-32 md:mt-44'>
       <div className="md:bg-white md:max-w-8xl md:mx-16" style={{ boxShadow: '10px 0px 15px -3px rgba(0, 0, 0, 0.1), -10px 0px 15px -3px rgba(0, 0, 0, 0.1)' }}>
+        <BookingDock/>
       <div className='flex flex-col md:flex-row justify-center w-full '>
       <div className='md:flex-1 w-full md:mt-20'>
       <Cordination/>
