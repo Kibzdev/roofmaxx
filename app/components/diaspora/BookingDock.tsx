@@ -87,9 +87,9 @@ const BookingDock:React.FC<ScheduleFormProps> = ({ className }) => {
       <div className='flex flex-col justify-center items-center '>
         <Sheet>
           <SheetTrigger asChild>
-            <button className='flex flex-col items-center justify-center px-12   md:mt-4 py-4 md:py-4 md:mr-8 text-white bg-sky-800  '>
+            <button className='flex flex-col items-center justify-center px-8 md:px-1   md:mt-4 py-4 md:py-4 md:mr-8 text-white bg-sky-800  '>
               <FaPlane className='text-white mb-1 text-lg  md:text-2xl' />
-              <span className='mt-1 w-full text-sm md:text-lg'>Diaspora Booking</span>
+              <span className=' w-full text-sm md:text-lg'>Diaspora Booking</span>
             </button>
           </SheetTrigger>
           <SheetContent className='bg-white w-full'>

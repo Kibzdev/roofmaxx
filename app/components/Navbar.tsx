@@ -46,7 +46,7 @@ const Navbar = () => {
   const mobileLinkClasses = "ml-10 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
 
   return (
-    <nav className="fixed flex justify-normal items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-40 px-4 2xl:px-16" style={{ top: '4rem' }}>
+    <nav className="fixed flex justify-normal items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '4rem' }}>
       <div className="flex justify-between max-w-7xl items-center h-full w-full ">
         <div className="flex md:ml-32 items-center ">
           <Link href="/" passHref>
@@ -147,7 +147,7 @@ const Navbar = () => {
       <div
         className={
           menuOpen
-            ? "fixed left-0 top-0 w-[85%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 overflow-x-hidden"
+            ? "fixed left-0 top-0 w-[85%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 overflow-x-hidden z-50"
             : "fixed left-[-100%] top-0 p-10 ease-in duration-500 overflow-x-hidden"
         }
       >
