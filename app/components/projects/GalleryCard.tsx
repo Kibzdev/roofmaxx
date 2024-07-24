@@ -50,7 +50,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ projects, project }) => {
               layout="fill"
               objectFit="cover"
             />
-            <div className="absolute inset-0 bg-sky-800 bg-opacity-40 group-hover:bg-opacity-0 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-sky-800 bg-opacity-60 group-hover:bg-opacity-0 transition-opacity duration-300"></div>
             <h3 className="absolute bottom-2 right-0 left-0 text-white text-lg text-center font-bold group-hover:underline group-hover:underline-offset-8 group-hover:bg-sky-800 group-hover:text-white group-hover:bg-opacity-80">
               {project.project_name}
             </h3>
