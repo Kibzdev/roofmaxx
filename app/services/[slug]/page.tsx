@@ -1,3 +1,4 @@
+// app/pages/ServicePage.tsx
 import { Metadata } from 'next';
 import { fetchServiceBySlug, fetchAllServiceSlugs } from '@/sanity/lib/fetch';
 import PageIntro from '@/app/components/PageIntro';
@@ -7,6 +8,8 @@ import { PortableText } from '@portabletext/react';
 import GetStartedCTO from '@/app/components/GetStartedCTO';
 import { Service, FaqItem } from '@/types';
 import { urlFor } from '@/sanity/lib/sanityclient';
+import components from '@/app/components/CustomPortableText';
+
 
 interface ServiceDataProps {
   params: {
@@ -49,20 +52,6 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
 
   const serviceBannerUrl = service.service_banner?.asset.url || urlFor(service.service_banner?.asset).url();
 
-  const checkForDuplicateKeys = (faqs: FaqItem[]) => {
-    const keys = faqs.map(faq => faq._key);
-    const uniqueKeys = new Set(keys);
-    if (keys.length !== uniqueKeys.size) {
-      console.warn('Duplicate _key values found in faqs:', keys);
-    } else {
-      console.log('No duplicate _key values found in faqs');
-    }
-  };
-
-  if (service.faqs) {
-    checkForDuplicateKeys(service.faqs);
-  }
-
   return (
     <div className="flex flex-col w-full mt-32 md:mt-36">
       <div className="md:bg-white md:max-w-8xl md:mx-16" style={{ boxShadow: '10px 0px 15px -3px rgba(0, 0, 0, 0.1), -10px 0px 15px -3px rgba(0, 0, 0, 0.1)' }}>
@@ -85,7 +74,10 @@ const ServicePage = async ({ params }: ServiceDataProps) => {
           <div className="flex w-full">
             <div className="text-gray-600 w-full md:w-3/2 leading-relaxed items-center justify-center tracking-wide text-sm md:text-lg font-normal text-left p-8">
               {service.identification.service_desc && (
-                <PortableText value={service.identification.service_desc} />
+                <PortableText
+                  value={service.identification.service_desc}
+                  components={components} // Apply custom components here
+                />
               )}
             </div>
           </div>

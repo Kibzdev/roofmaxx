@@ -1,5 +1,5 @@
 // Base type definition for common properties
-type Base = {
+export type Base = {
   _createdAt: string;
   _id: string;
   _rev: string;
@@ -8,7 +8,6 @@ type Base = {
 };
 
 // Define the types for sections and page data
-
 // Content can include images
 
 interface BlockContent {
@@ -23,8 +22,9 @@ interface ImageContent {
 }
 
 type Content = BlockContent | ImageContent;
+
 // Define the Section type
-interface Section {
+export interface Section {
   _key: string;
   heading: string;
   content: Content[];
@@ -37,47 +37,7 @@ export interface PageData extends Base {
   sections: Section[];
 }
 
-export interface Post extends Base {
-  author: Author;
-  body: Block[];
-  categories: Category[];
-  mainImage: Image;
-  slug: Slug;
-  title: string;
-  description: string;
-}
-
-interface Author extends Base {
-  description: string;
-  image: Image;
-  name: string;
-  slug: Slug;
-}
-
-// Image type definition
-export interface Image {
-  asset: Asset;
-}
-// Reference type definition
-interface Reference {
-  _type: "reference";
-  current: string;
-}
-// GalleryCardProject type definition
-export interface GalleryCardProject {
-  projectid: string;
-  project_name: string;
-  projectbannerUrl: string;
-}
-
-
-// Slug type definition
-interface Slug {
-  _type: "slug";
-  current: string;
-}
-
-// Portable Text types
+// Define Portable Text types
 export interface PortableTextSpan {
   _key: string;
   text: string;
@@ -91,12 +51,9 @@ export interface PortableTextBlock {
   markDefs?: any[];
   style?: string;
 }
-interface Category extends Base {
-  description: string;
-  title: string;
-}
+
 // Block type definition
-interface Block {
+export interface Block {
   _type: 'block';
   children: Array<{
     _type: 'span';
@@ -111,14 +68,38 @@ interface Block {
 }
 
 // Span type definition
-interface Span {
+export interface Span {
   _key: string;
   _type: "span";
   marks: string[];
   text: string;
 }
 
-// team members
+// Define Author type
+export interface Author extends Base {
+  description: string;
+  image: Image;
+  name: string;
+  slug: Slug;
+}
+
+// Define Image type
+export interface Image {
+  asset: Asset;
+}
+
+// Define Asset type
+export interface Asset {
+  url: string;
+}
+
+// Define Slug type
+interface Slug {
+  _type: "slug";
+  current: string;
+}
+
+// Define TeamMember type
 export type TeamMember = {
   _id: string;
   workid: string;
@@ -135,48 +116,63 @@ export type TeamMember = {
   }[];
 };
 
-// Category type definition extending Base
-interface Category extends Base {
+// Define Category type extending Base
+export interface Category extends Base {
   description: string;
   title: string;
 }
 
-// ServiceLink type definition
+// Define GalleryCardProject type
+export interface GalleryCardProject {
+  projectid: string;
+  project_name: string;
+  projectbannerUrl: string;
+}
+
+// Define Portable Text types for lists
+export type PortableTextListComponents = {
+  bullet: React.ComponentType<{ children: React.ReactNode }>;
+  number: React.ComponentType<{ children: React.ReactNode }>;
+};
+
+export type PortableTextListItemComponents = React.ComponentType<{ children: React.ReactNode }>;
+
+// Define ServiceLink type
 export interface ServiceLink {
   href: string;
   label: string;
   service_id: string;
 }
 
-// ServiceType type definition
-interface ServiceType {
+// Define ServiceType type
+export interface ServiceType {
   type_name: string;
   type_banner: Image;
   desc: Block[];
   slug: Slug;
 }
 
-// CustomerRequirements type definition
-interface CustomerRequirements {
+// Define CustomerRequirements type
+export interface CustomerRequirements {
   pre_service_requirements: string[];
   post_service_care: string[];
 }
 
-// FAQ type definition
-interface FAQ {
+// Define FAQ type
+export interface FAQ {
   _key: string;
   question: string;
   answer: string;
 }
 
-// ProjectClient type definition
+// Define ProjectClient type
 export interface ProjectClient {
   name: string;
   photoUrl: string;
   testimonial: string;
 }
 
-// ImageAsset type definition
+// Define ImageAsset type
 export interface ImageAsset {
   _type: 'image';
   asset: {
@@ -184,7 +180,7 @@ export interface ImageAsset {
   };
 }
 
-// ServiceIdentification type definition
+// Define ServiceIdentification type
 export interface ServiceIdentification {
   service_id: string;
   service_name: string;
@@ -192,7 +188,7 @@ export interface ServiceIdentification {
   order: number;
 }
 
-// Project type definition
+// Define Project type
 export interface Project {
   projectid: string;
   project_name: string;
@@ -219,21 +215,14 @@ export interface Project {
   slug: string;
 }
 
-// Asset type definition
-export interface Asset {
-  url: string;
-}
-
-// Faq type definition
+// Define Faq type
 export interface Faq {
   _key: string;
   question: string;
   answer: string;
 }
 
-
-
-// Niche type definition extending Base
+// Define Niche type extending Base
 export interface Niche extends Base {
   category: {
     _id: string;
@@ -247,14 +236,14 @@ export interface Niche extends Base {
   faqs: Faq[];
 }
 
-// Location type definition
+// Define Location type
 export interface Location {
   _id: string;
   name: string;
   address?: string;
 }
 
-// Client type definition
+// Define Client type
 export interface Client {
   client_id: string;
   name: string;
@@ -266,36 +255,36 @@ export interface Client {
   project_ref: Array<{ _id: string }>;
 }
 
-// ProjectDetailProps type definition
+// Define ProjectDetailProps type
 export interface ProjectDetailProps {
   projects: Project[];
   clients: Client[];
   locations: Location[];
 }
 
-// GalleryCardProps type definition
+// Define GalleryCardProps type
 export interface GalleryCardProps {
   projects: Project[];
 }
 
-// NichecardProps type definition
+// Define NichecardProps type
 export interface NichecardProps {
   niches: Niche[];
 }
 
-// ServiceParams type definition
+// Define ServiceParams type
 export interface ServiceParams {
   slug: string;
 }
 
-// FaqItem type definition
+// Define FaqItem type
 export interface FaqItem {
   _key: string;
   question: string;
   answer: string;
 }
 
-// Service type definition
+// Define Service type
 export interface Service {
   identification: ServiceIdentification;
   service_types?: Niche[];
@@ -314,12 +303,12 @@ export interface Service {
   clients?: Client[];
 }
 
-// Params type definition
+// Define Params type
 export interface Params {
   slug: string;
 }
 
-// ServiceDataProps type definition
+// Define ServiceDataProps type
 export interface ServiceDataProps {
   params: {
     slug: string;
