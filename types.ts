@@ -36,6 +36,15 @@ export interface PageData extends Base {
   title: string;
   sections: Section[];
 }
+export interface Post extends Base {
+  author: Author;
+  body: Block[];
+  categories: Category[];
+  mainImage: Image;
+  slug: Slug;
+  title: string;
+  description: string;
+}
 
 // Define Portable Text types
 export interface PortableTextSpan {

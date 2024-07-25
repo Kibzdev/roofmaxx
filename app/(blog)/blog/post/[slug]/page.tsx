@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { Post } from "../../../../../types";
+import { Post } from "@/types";
 
 
 import Image from "next/image";
