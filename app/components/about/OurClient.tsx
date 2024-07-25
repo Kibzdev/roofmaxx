@@ -64,9 +64,9 @@ const OurClient: React.FC = () => {
         <div
           className={clsx(
             "flex flex-col justify-center items-center",
-            "bg-white p-8 md:pl-0",
+            "bg-white md:py-4 py-4 px-8 md:pl-0",
             "text-center",
-            "sm:p-12 md:flex-row md:text-left"
+            "sm:p-12 md:flex-row md:text-left "
           )}
         >
           <div
