@@ -18,15 +18,15 @@ const Page = () => {
       <div className="block md:hidden w-full">
           <BookingDock />
         </div>
-        <div className="flex flex-col md:flex-row justify-center w-full">
-          <div className="md:flex-1 w-full md:mt-20">
+        <div className="flex flex-col md:flex-row justify-center md:pb-8 w-full">
+          <div className="md:flex-1 w-full md:mt-4">
             <Cordination />
             <Tailor />
             <Payment />
           </div>
 
-          <div className="flex-1 flex-col items-center justify-center px-6 py-6 md:mt-24 md:ml-40 mx-auto">
-            <ul className="flex flex-col items-start justify-center w-full">
+          <div className="flex-1  flex-col items-center justify-center px-6 pb-2 md:mt-24 md:ml-40 mx-auto ">
+            <ul className="flex flex-col items-start justify-center w-full mt-2  md:mt-4">
               <h2 className="w-full md:ml-0 md:text-left text-lg md:text-2xl text-center text-sky-800 font-semibold flex items-end">
                 <span className="inline-flex items-center mr-4 md:mr-8">
                   <FaVideo className="text-2xl md:text-4xl text-red-500" />
@@ -63,7 +63,7 @@ const Page = () => {
               </li>
             </ul>
 
-            <ul className="flex flex-col items-start justify-center w-full">
+            <ul className="flex flex-col items-start justify-center w-full mt-2 md:mt-4">
               <h2 className="w-full md:text-left text-center text-lg md:text-2xl text-sky-800 font-semibold flex items-end">
                 <span className="inline-flex items-center mr-4 md:mr-8">
                   <div className="flex items-center justify-center rounded-full bg-red-500 md:w-[36px] md:h-[36px] h-[28px] w-[28px] px-1 py-1">
@@ -74,7 +74,7 @@ const Page = () => {
               </h2>
             </ul>
 
-            <ul className="flex flex-col items-start justify-center w-full py-6 md:py-6">
+            <ul className="flex flex-col items-start justify-center w-full mt-2 md:mt-4">
               <ul className="flex flex-col items-start">
                 <h2 className="w-full text-left text-lg md:text-2xl text-sky-800 font-semibold flex items-end">
                   <span className="inline-flex items-center mr-4 md:mr-8">
@@ -91,7 +91,7 @@ const Page = () => {
               </ul>
             </ul>
 
-            <ul className="flex flex-col items-start justify-center w-full">
+            <ul className="flex flex-col items-start justify-center w-full  mt-2 md:mt-4">
               <h2 className="w-full md:text-left text-center text-lg md:text-2xl text-sky-800 font-semibold flex items-end">
                 <span className="inline-flex items-center mr-4 md:mr-8">
                   <Image
@@ -106,6 +106,7 @@ const Page = () => {
               </h2>
             </ul>
           </div>
+
         </div>
       </div>
       <GetStartedCTO />
