@@ -6,7 +6,6 @@ import {
   Project,
   Niche,
   GalleryCardProject,
-  ProjectClient,
   TeamMember,
   PageData // Import the new type
 } from '../../types'; // Adjust the import path as necessary
@@ -49,22 +48,22 @@ export const fetchServiceLinks = async (): Promise<ServiceLink[]> => {
 
 export const fetchServiceData = async (): Promise<Service[]> => {
   const query = groq`
-    *[_type == "service"] {
-      identification {
-        service_id,
-        service_name,
-        service_desc
-      },
-      slug {
-        current
-      },
-      service_banner {
-        asset {
-          url
-        }
+  *[_type == "service"] | order(identification.order asc) {
+    identification {
+      service_id,
+      service_name,
+      service_desc
+    },
+    slug {
+      current
+    },
+    service_banner {
+      asset {
+        url
       }
     }
-  `;
+  }
+`;
   const data: Service[] = await sanityClient.fetch(query);
   return data;
 };
@@ -162,7 +161,7 @@ export async function fetchServiceBySlug(slug: string): Promise<Service> {
       _id,
       title,
       description,
-      niche_name,  // Add this line
+      niche_name,
       niche_banner{
         asset->{
           url

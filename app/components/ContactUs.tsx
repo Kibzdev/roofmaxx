@@ -19,7 +19,8 @@ const ContactUs: React.FC = () => {
   useEffect(() => {
     const loadServices = async () => {
       const serviceData = await fetchServiceData();
-      serviceData.sort((a, b) => a.identification.service_name.localeCompare(b.identification.service_name)); // Sort services by name
+      // Sort services by order field
+      serviceData.sort((a, b) => a.identification.order - b.identification.order);
       setServices(serviceData);
     };
 
@@ -64,33 +65,13 @@ const ContactUs: React.FC = () => {
     }
   };
 
-  const onSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        body: JSON.stringify({ 
-          name,email,phone,message,serviceName
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      })
-
-    } catch(err:any) {
-      console.error('Err', err)
-    }
-    
-  };
-
   return (
     <div className="flex flex-col md:flex-row text-white p-8 rounded-none w-full mx-auto space-y-8 md:space-y-0 md:space-x-8 mt-2">
       <ToastContainer />
       <div className="flex flex-col w-full md:w-3/5 bg-sky-800 h-full py-8 px-8">
         <h2 className="text-2xl font-bold mb-4">We are Always Ready To Listen!</h2>
         <p className="mb-4">Tell us about yourself and we will contact you soon</p>
-        <form className="space-y-4" onSubmit={onSubmit}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="flex-1">
               <label htmlFor="name" className="block text-sm">Name</label>

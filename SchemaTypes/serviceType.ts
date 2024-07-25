@@ -34,6 +34,12 @@ export const serviceType = defineType({
               ]
             }
           }]
+        }),
+        defineField({
+          name: 'order',
+          type: 'number',
+          title: 'Order',
+          description: 'Specify the order of the service in the dropdown list.'
         })
       ]
     }),
@@ -56,7 +62,6 @@ export const serviceType = defineType({
         maxLength: 200, // Optional: sets the maximum slug length
       },
     }),
-    
     defineField({
       name: 'service_banner',
       type: 'image',

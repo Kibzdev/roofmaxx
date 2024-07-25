@@ -23,8 +23,9 @@ const ContactForm: React.FC = () => {
   useEffect(() => {
     const getServices = async () => {
       const fetchedServices = await fetchServiceData();
+      // Sort services by the 'order' field
       const sortedServices = fetchedServices.sort((a, b) =>
-        a.identification.service_name.localeCompare(b.identification.service_name)
+        a.identification.order - b.identification.order
       );
       setServices(sortedServices);
       setLoading(false);

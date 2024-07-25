@@ -189,6 +189,7 @@ export interface ServiceIdentification {
   service_id: string;
   service_name: string;
   service_desc: Block[];
+  order: number;
 }
 
 // Project type definition
