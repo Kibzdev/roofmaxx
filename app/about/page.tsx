@@ -18,7 +18,7 @@ const About = () => {
       <OurDelivery/>
       <ValuesTitle/>
       <ServiceValueCard/>
-      <GetStartedCTO/>
+      <GetStartedCTO/> 
     </div>
     
   )
