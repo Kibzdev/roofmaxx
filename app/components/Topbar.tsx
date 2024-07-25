@@ -19,9 +19,6 @@ const TopBar: React.FC = () => {
     <div className="hidden md:flex gap-2 text-sky-800 items-center justify-center w-1/2">
       <SocialIcons />
     </div>
-    <div className="hidden md:flex justify-center items-center  md:w-full md:justify-end ">
-      <BookingButton />
-    </div>
   </div>
   
 

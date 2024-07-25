@@ -14,15 +14,15 @@ type PageIntroProps = {
 
 const SectionIntro: React.FC<PageIntroProps> = ({ subtitle, title, children, centered = false }) => {
   return (
-    <Container className={clsx("mt-12 sm:mt-32 lg:mt-16 w-full")}>
+    <Container className={clsx("mt-4  lg:mt-4 w-full")}>
       <FadeIn>
          <h1>
           <span className='block font-display text-lg font-semibold text-white'>{subtitle}</span>
           <span className="sr-only"> - </span>
-          <span className={clsx("mt-6 font-bold block max-w-5xl font-display text-4xl tracking-tight text-red-500 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
+          <span className={clsx("mt-1 md:mt-4 font-bold block max-w-5xl font-display text-4xl tracking-tight text-red-500 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
          </h1>
          <div className={clsx(
-            "mt-6 max-w-6xl text-xl text-red-500",
+            "mt-2 max-w-6xl text-xl text-red-500",
             centered && "mx-auto"
           )}>
            {children}

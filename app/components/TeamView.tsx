@@ -37,15 +37,15 @@ const TeamView: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col bg-[#075985] w-full h-full mt-2 py-6 px-6 items-center  justify-center gap-10 ">
-      <div className="w-full">
+    <div className="flex flex-col bg-[#075985] w-full h-full mt-2   px-6 items-center  justify-center">
+      <div className="w-full mt-0">
         <SectionIntro subtitle="Meet our Experts" title="The Team" >
-        <p className='mt-4 text-white tracking-normal md:text-lg text-sm'>At Roofmax we Invest heavily in competence training and qualifications for our installers, ensuring they receive all support
+        <p className='mt-4 text-white  tracking-normal md:text-lg text-sm'>At Roofmax we Invest heavily in competence training and qualifications for our installers, ensuring they receive all support
         and expert advice they need to deliver a high quality roof installation that we are proud to put our name to.</p>
         </SectionIntro>
       </div>
       <FadeIn>
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 md:gap-1  max-w-8xl w-full justify-center items-center px-4 sm:px-0">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 md:gap-1  max-w-8xl   w-full justify-center items-center px-4  sm:px-0">
           {teamMembers.map((teamMember: TeamMember) => (
             <div key={teamMember._id} className=" flex flex-col p-4 justify-center items-center">
               <ExpertCard 
@@ -59,7 +59,7 @@ const TeamView: React.FC = () => {
          
         </div>
       </FadeIn>
-      <div className=' flex w-full items-center justify-center mt-4 mb-4'>
+      <div className=' flex w-full items-center justify-center py-4  mb-4'>
             <h3 className='md:font-extrabold font-bold tracking-wider text-lg md:text-3xl text-white  text-center'> We &apos; ve built an amazing team at Roofmax and we are still growing</h3>
         </div>
     </div>
