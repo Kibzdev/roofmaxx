@@ -18,7 +18,7 @@ const ContactPage = () => {
         </PageIntro>
         <div className="flex flex-col w-full mt-16">
           <div className="flex w-full flex-col-reverse gap-x-8 gap-y-24 lg:grid-cols-2 mb-4">
-            <div className="flex flex-col w-full px-4 md:col-span-1 mx-auto">
+            <div className="flex flex-col w-full md:max-w-6xl   px-4 md:col-span-1 mx-auto">
               <ContactDetails />
             </div>
             <div className='flex flex-col-reverse md:flex-row md:w-full'>
