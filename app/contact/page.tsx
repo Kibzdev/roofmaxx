@@ -28,8 +28,8 @@ const ContactPage = () => {
                     src={contactImg}  
                     sizes="(min-width: 1024px) 41rem, 31rem" 
                     className="justify-center lg:justify-end"
-                    width={550}
-                    height={550}
+                    width={440}
+                    height={450}
                   />
                 </FadeIn>
               </div>
