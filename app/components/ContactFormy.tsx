@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
                 name="location"
                 className="col-span-1"
               />
-              <div className="col-span-1 sm:col-span-2 mb-6">
+                <div className="col-span-1 sm:col-span-2 mb-6">
                 <label className="block text-sm font-medium text-sky-800" htmlFor="message">Message</label>
                 <textarea
                   id="message"
