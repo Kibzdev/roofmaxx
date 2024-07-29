@@ -97,7 +97,7 @@ const ContactForm: React.FC = () => {
                   onChange={(e) => setLocation(e.target.value)} 
                   name="location"
                 />
-                <div className="sm:col-span-2">
+                <div className="sm:col-span-2 pb-5 g">
                   <label className="block text-sm font-medium text-sky-800" htmlFor="message">Message</label>
                   <textarea
                     id="message"
@@ -109,7 +109,8 @@ const ContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 w-full`}>
+              <label className="block text-sm font-medium text-sky-800" htmlFor="message">Service</label>
+              <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 w-full md:`}>
                 <div className="mt-0">
                   {loading ? (
                     <p>Loading services...</p>
