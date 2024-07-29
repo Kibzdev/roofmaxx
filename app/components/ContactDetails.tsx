@@ -8,7 +8,8 @@ import Border from '../components/Border';
 
 const ContactDetails: React.FC = () => {
   return (
-    <FadeIn>
+
+       <FadeIn>
       <h2 className="font-semibold text-lg  text-sky-800 uppercase">
         Our offices
       </h2>
@@ -47,6 +48,8 @@ const ContactDetails: React.FC = () => {
         <SocialMedia className="mt-6" />
       </Border>
     </FadeIn>
+
+   
   );
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 import GetStartedCTO from '../components/GetStartedCTO';
 import Tailor from '../components/diaspora/Tailor';
 import Payment from '../components/diaspora/Payment';
-import Cordination from '../components/diaspora/Cordination';
+import Cordination from '../components/diaspora/Cordinationnn';
 import { FaVideo } from "react-icons/fa";
 
 import Image from 'next/image';

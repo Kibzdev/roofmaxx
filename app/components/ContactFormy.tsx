@@ -7,6 +7,7 @@ import { fetchServiceData } from '@/sanity/lib/fetch';
 import { Service } from '@/types';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Container from './Container';
 
 const ContactForm: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -58,14 +59,15 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      <ToastContainer />
+    <Container>
+    <ToastContainer />
       <FadeIn>
-        <form onSubmit={onSubmit} className="max-w-xl mx-auto">
+        <form onSubmit={onSubmit} className="max-w-4xl  md:w-[840px]">
           <h2 className="font-display text-base font-semibold text-sky-900 uppercase">
             Work Inquiries
           </h2>
           <div className="isolate mt-6 -space-y-px bg-white/50">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               <TextInput 
                 label="Name" 
                 value={name}  
@@ -111,7 +113,7 @@ const ContactForm: React.FC = () => {
                 />
               </div>
             </div>
-            <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 sm:w-1/2`}>
+            <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 w-full md:w-1/2`}>
               <div className="mt-0">
                 {loading ? (
                   <p>Loading services...</p>
@@ -120,7 +122,7 @@ const ContactForm: React.FC = () => {
                     name="serviceName"
                     value={serviceName}
                     onChange={handleServiceChange}
-                    className="block w-full p-2 border-none text-sky-800 focus:outline-none focus:ring-0 focus:border-0"
+                    className="block w-full  p-2 border-none text-sky-800 focus:outline-none focus:ring-0 focus:border-0"
                   >
                     <option value="" disabled>Select a service</option>
                     {services.map((service) => (
@@ -133,11 +135,13 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
           </div>
-          <Button type="submit" className="mt-6 w-full py-4 px-8 bg-sky-800 text-white">
+          <Button type="submit" className="mt-6 w-full md:w-1/2 py-4 px-8 bg-sky-800 text-white items-center">
             Submit
           </Button>
         </form>
       </FadeIn>
+    </Container>
+   
     </>
   );
 };
