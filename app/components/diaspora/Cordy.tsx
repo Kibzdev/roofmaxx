@@ -12,7 +12,7 @@ const Cordy = () => {
     Whether it&lsquo;s via video calls, emails, or messaging apps, we make sure you &lsquo;re always in the loop.
         </p>
         <h3 className="mt-12 font-display text-base font-semibold text-sky-800">
-        always ready to Engage
+        Always ready to Engage
       </h3>
       <List>
          <ListItem title="WhatsApp">
