@@ -21,7 +21,7 @@ const Tailored = () => {
          <ListItem title="Modern Aesthetics">
           <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-lg text-sm py-2">Offer sleek, contemporary roofing designs that reflect the latest trends and innovations from around the world.</p>
          </ListItem>
-         <ListItem title="Eco-Friendly Options ">
+         <ListItem title="Eco-Friendly Options">
           <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-lg text-sm py-2">Provide sustainable roofing solutions, including green roofs and solar panel integrations, catering to environmentally conscious clients.</p>
          </ListItem>
          <ListItem title="End-to-End Service">

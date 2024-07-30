@@ -4,6 +4,7 @@ import ValueStatement from '../components/diaspora/ValueStatement'
 import Cordy from '../components/diaspora/Cordy'
 import Pay from '../components/diaspora/Pay'
 import Tailored from '../components/diaspora/Tailored'
+import GetStartedCTO from '../components/GetStartedCTO'
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
           <Cordy/>
           <Pay/>
           <Tailored/>
+          <GetStartedCTO/>
         </div>
     </div>
   )
