@@ -16,10 +16,13 @@ const Cordy = () => {
       </h3>
       <List>
          <ListItem title="WhatsApp">
-          <p> To ensure a seamless and secure experience, we offer a bank-to-bank transfer service specifically designed for our international clients. </p>
+          <p>Easily connect with us via WhatsApp for instant updates, quick queries, and real-time progress reports. </p>
          </ListItem>
          <ListItem title="FaceTime">
-          <p>Understanding the importance of ease and accessibility, we offer M-Pesa transactions for making substantial payments towards your roofing projects. </p>
+          <p> Easily connect with us via FaceTime for instant updates, virtual meetings, and real-time site visits, ensuring you have a clear view of your project’s progress.</p>
+         </ListItem>
+         <ListItem title="Emails">
+          <p>Receive detailed email updates with photos, videos, and written reports, keeping you informed at every stage. </p>
          </ListItem>
       </List>
    </Section>

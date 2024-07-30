@@ -28,7 +28,7 @@ const ValueStatement = () => {
          <ListItem title="Regular Updates ">
           <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-lg text-sm py-2">Offer frequent progress reports, virtual meetings, and site visits via video calls to ensure you remain informed and engaged throughout the project.</p>
          </ListItem>
-         <ListItem title="Business Context:">
+         <ListItem title="Business Context.">
           <p className="text-gray-600 mb-2 font-normal  md:text-left  leading-6 md:text-lg text-sm py-2">Take the time to understand your business operations, ensuring our solutions not only meet aesthetic and functional needs but also align with your business goals and operational dynamics.</p>
          </ListItem>
       </List>
