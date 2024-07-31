@@ -36,14 +36,15 @@ const Navbar = () => {
     setServicesOpen(false);
   };
 
+  // Adjusted classes for tablet devices
   const desktopLinkClasses = "text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const tabletLinkClasses = "ml-5 md:ml-7 lg:ml-10 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md"; // Adjusted for tablet screens
+  const tabletLinkClasses = "ml-2.5 md:ml-3.5 lg:ml-5 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-sm"; // Updated for tablet screens
   const mobileLinkClasses = "ml-5 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
 
   return (
     <nav className="fixed flex justify-normal items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '4rem' }}>
       <div className="flex justify-between max-w-7xl items-center h-full w-full">
-        <div className="flex md:ml-32 items-center">
+        <div className="flex md:ml-16 items-center">
           <Link href="/" passHref>
             <Image
               src={logo}
@@ -58,10 +59,10 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex w-full justify-center items-center">
           <ul className="flex justify-center items-center">
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
-            <Menu as="div" className="relative ml-5 md:ml-7 lg:ml-10">
+            <Menu as="div" className="relative ml-2.5 md:ml-3.5 lg:ml-5">
               <MenuButton
                 className={desktopLinkClasses}
                 onClick={handleServicesToggle}
@@ -111,19 +112,19 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/projects" className={desktopLinkClasses}>Projects</Link>
             </li>
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/about" className={desktopLinkClasses}>About</Link>
             </li>
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/contact" className={desktopLinkClasses}>Contact</Link>
             </li>
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/diaspora" className={desktopLinkClasses}>Diaspora Build</Link>
             </li>
-            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/blog" className={desktopLinkClasses}>Blog</Link>
             </li>
           </ul>
@@ -192,12 +193,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {/* <div className="flex flex-row justify-evenly pt-10 items-center">
-          <AiOutlineInstagram className="cursor-pointer text-red-500 text-4xl" />
-          <Link href="https://www.facebook.com/profile.php?id=61560885807834">
-            <AiOutlineFacebook className="cursor-pointer text-red-500 text-4xl" />
-          </Link>
-        </div> */}
         <div className="pt-16">
           <p className="uppercase tracking-widest text-[15px] text-center font-semibold text-red-500">
             Let&lsquo;s Connect
