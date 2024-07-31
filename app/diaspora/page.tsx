@@ -9,11 +9,7 @@ import GetStartedCTO from '../components/GetStartedCTO'
 const page = () => {
   return (
     <div className='mt-40 flex-col'>
-       <PageIntro eyebrow='Home Team' title="Diaspora Build" >
-          <p className='mt-4 text-gray-500 tracking-normal md:text-lg text-sm'>
-            Ready to start your project? Contact us today and let &lsquo;s build the future together.
-          </p>
-        </PageIntro>
+       <PageIntro eyebrow='Home Team' title="Diaspora Build" />
         <div>
           {/* Diaspora Statement */}
           <ValueStatement/>

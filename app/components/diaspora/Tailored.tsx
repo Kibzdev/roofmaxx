@@ -1,11 +1,11 @@
 import React from 'react'
 import Section from '../Section'
-import { contactImg } from '@/public/assets'
+import { contactImg, tailorimg } from '@/public/assets'
 import List, { ListItem } from '../List'
 
 const Tailored = () => {
   return (
-    <Section title="Tailored Solutions" image={{ src:contactImg, shape: 2 }}>
+    <Section title="Tailored Solutions" image={{ src:tailorimg, shape: 2 }}>
       <p className='text-gray-600 mb-1  md:text-left font-normal  leading-6 md:text-xl text-sm py-2'>
       At Roofmax Roofing Solutions, we understand that our diaspora clients have unique tastes and requirements,
        influenced by their exposure to diverse architectural styles and roofing designs.</p>

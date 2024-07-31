@@ -35,7 +35,7 @@ export default function ServiceValueCard() {
           <div className="flex justify-between items-center">
             <div className="text-white font-bold">ROOFMAX</div>
             <div className="bg-white text-sky-900 rounded-full p-2 hover:bg-red-500">
-              <Image src={trustIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
+              <Image src={collaborationIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
             </div>
           </div>
         </CardHeader>
@@ -56,7 +56,7 @@ export default function ServiceValueCard() {
           <div className="flex justify-between items-center">
             <div className="text-white font-bold">ROOFMAX</div>
             <div className="bg-white text-sky-900 rounded-full p-2 hover:bg-red-500">
-              <Image src={transparencyIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
+              <Image src={collaborationIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
             </div>
           </div>
         </CardHeader>
@@ -77,7 +77,7 @@ export default function ServiceValueCard() {
           <div className="flex justify-between items-center">
             <div className="text-white font-bold">ROOFMAX</div>
             <div className="bg-white text-sky-900 rounded-full p-2 hover:bg-red-500">
-              <Image src={integrityIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
+              <Image src={collaborationIcon} alt="Icon" width={24} height={24} className="w-6 h-6" />
             </div>
           </div>
         </CardHeader>

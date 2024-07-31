@@ -1,11 +1,11 @@
-import { contactImg } from '@/public/assets'
+import { contactImg, seamlessimg } from '@/public/assets'
 import React from 'react'
 import Section from '../Section'
 import List, { ListItem } from '../List'
 
 const Cordy = () => {
   return (
-   <Section title="Seamless Cordination" image={{ src:contactImg, shape: 2 }}>
+   <Section title="Seamless Cordination" image={{ src:seamlessimg, shape: 2 }}>
    <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2">
     Living abroad? No problem. Our dedicated team ensures smooth communication and coordination, 
     providing regular updates and progress reports to keep you informed. 

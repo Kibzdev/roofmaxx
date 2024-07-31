@@ -1,11 +1,11 @@
 import React from 'react'
 import Section from '../Section'
-import { contactImg } from '@/public/assets'
+import { contactImg, payimg } from '@/public/assets'
 import List, { ListItem } from '../List'
 
 const Pay = () => {
   return (
-    <Section title="Easy Pay" image={{ src:contactImg, shape: 2 }}>
+    <Section title="Easy Pay" image={{ src:payimg, shape: 2 }}>
          <p className='text-gray-600 mb-2 font-normal  md:text-left  leading-6 md:text-xl text-sm py-2'>
            We offer secure and convenient payment options, allowing you to manage transactions safely from anywhere in the world. 
         </p>
