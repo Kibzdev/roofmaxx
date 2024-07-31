@@ -3,13 +3,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import logo from '../../public/assets/logos/logo.svg';
-import {
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineInstagram,
-  AiOutlineFacebook,
-  AiOutlineRight,
-} from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose, AiOutlineInstagram, AiOutlineFacebook, AiOutlineRight } from 'react-icons/ai';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { fetchServiceLinks } from '@/sanity/lib/fetch';
 import { ServiceLink } from '../../types';
@@ -43,7 +37,8 @@ const Navbar = () => {
   };
 
   const desktopLinkClasses = "text-white hover:bg-sky-600 hover:text-white px-3 py-2 rounded-none text-lg font-medium";
-  const mobileLinkClasses = "ml-10 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
+  const tabletLinkClasses = "ml-5 md:ml-7 lg:ml-10 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md"; // Adjusted for tablet screens
+  const mobileLinkClasses = "ml-5 font-semibold text-sky-800 hover:border-b hover:border-b-red-500 text-md";
 
   return (
     <nav className="fixed flex justify-normal items-center w-full h-16 md:h-24 shadow-xl bg-sky-800 z-50 px-4 2xl:px-16" style={{ top: '4rem' }}>
@@ -63,10 +58,10 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex w-full justify-center items-center">
           <ul className="flex justify-center items-center">
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
-            <Menu as="div" className="relative ml-10">
+            <Menu as="div" className="relative ml-5 md:ml-7 lg:ml-10">
               <MenuButton
                 className={desktopLinkClasses}
                 onClick={handleServicesToggle}
@@ -116,19 +111,19 @@ const Navbar = () => {
                 </MenuItems>
               </Transition>
             </Menu>
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/projects" className={desktopLinkClasses}>Projects</Link>
             </li>
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/about" className={desktopLinkClasses}>About</Link>
             </li>
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/contact" className={desktopLinkClasses}>Contact</Link>
             </li>
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/diaspora" className={desktopLinkClasses}>Diaspora Build</Link>
             </li>
-            <li className="ml-10 text-xl">
+            <li className="ml-5 md:ml-7 lg:ml-10 text-xl">
               <Link href="/blog" className={desktopLinkClasses}>Blog</Link>
             </li>
           </ul>
@@ -189,7 +184,6 @@ const Navbar = () => {
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/diaspora">Diaspora Build</Link>
             </li>
-           
             <li onClick={() => setMenuOpen(false)} className={mobileLinkClasses}>
               <Link href="/contact">Contact</Link>
             </li>
@@ -209,19 +203,17 @@ const Navbar = () => {
             Let&lsquo;s Connect
           </p>
           <div className="flex items-center justify-evenly my-4 w-full sm:w-[80%]">
-          <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-          <a href="https://www.facebook.com/profile.php?id=61560885807834" target="_blank" rel="noopener noreferrer">
-          <AiOutlineFacebook className='text-sky-800 text-2xl' />
-          </a>
-          </div>
-
             <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-              <AiOutlineInstagram  className='text-sky-800 text-2xl' />
+              <a href="https://www.facebook.com/profile.php?id=61560885807834" target="_blank" rel="noopener noreferrer">
+                <AiOutlineFacebook className='text-sky-800 text-2xl' />
+              </a>
+            </div>
+            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+              <AiOutlineInstagram className='text-sky-800 text-2xl' />
             </div>
           </div>
+        </div>
       </div>
-      </div>
-
 
       {/* Services Side Menu (Mobile Only) */}
       <div
