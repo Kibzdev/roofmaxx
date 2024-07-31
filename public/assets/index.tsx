@@ -62,12 +62,12 @@ const email ='/assets/images/email.png'
  const diasporaimg = '/assets/images/diaspora.jpg'
  const seamlessimg = '/assets/images/seamless.jpg'
  const tailorimg = '/assets/images/tailored.jpg'
- const payimg = '/assets/images/pay.jpg'
+ const financeimg = '/assets/images/finance.jpg'
 
 
 
 export {
-  repair, video, diasporaimg, seamlessimg, tailorimg, payimg, contactImg, email, craft, milestone, cart, modern, roofrepair,logoDark,whatsapp,facetime,logowhite,logoWhite,aboutbg,mobileBg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
+  repair, video, diasporaimg, seamlessimg, tailorimg,financeimg, contactImg, email, craft, milestone, cart, modern, roofrepair,logoDark,whatsapp,facetime,logowhite,logoWhite,aboutbg,mobileBg, homebg,mary,greenroof,gutter,spcfloor,festus, mambo,osoro,servicebg,herobg, clayroof,delivery,roofing,bgservice, tinceiling,cofferedceiling,logo,
   flatceiling, commercial,residential,drone,paint,paints,kev,paintbg,
   rocket, gent01, gent02, gent03,diamond,techy,ctabg,framewhite,vector,
    polygon, contractor,quality, certified,tech,goal,security,cert,checkmark,nyki,quotey
