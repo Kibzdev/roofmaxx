@@ -121,9 +121,10 @@ const Navbar = () => {
             <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/contact" className={desktopLinkClasses}>Contact</Link>
             </li>
-            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
-              <Link href="/diaspora" className={desktopLinkClasses}>Diaspora Build</Link>
+            <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm whitespace-nowrap">
+            <Link href="/diaspora" className={desktopLinkClasses}>Diaspora Build</Link>
             </li>
+
             <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/blog" className={desktopLinkClasses}>Blog</Link>
             </li>
