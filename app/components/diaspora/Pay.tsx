@@ -1,6 +1,6 @@
 import React from 'react'
 import Section from '../Section'
-import { contactImg, payimg } from '@/public/assets'
+import { payimg } from '@/public/assets'
 import List, { ListItem } from '../List'
 
 const Pay = () => {

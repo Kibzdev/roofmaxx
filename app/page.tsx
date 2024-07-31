@@ -1,4 +1,3 @@
-// Home.tsx
 import React from 'react';
 import TeamView from './components/TeamView';
 import ContactUs from './components/ContactUs';
@@ -9,12 +8,14 @@ import GetStartedCTO from './components/GetStartedCTO';
 const Home: React.FC = () => {
   return (
     <main className='mx-auto'>
-      <HeroBanner/>
+      <HeroBanner />
       {/* <InspireCTO/> */}
-      <ProjectsCard/>
-      <TeamView/>
-      <ContactUs/>
-      <GetStartedCTO/>
+      <div className='bg-amber-300 mt-2'>
+        <ProjectsCard />
+        <TeamView />
+        <ContactUs />
+        <GetStartedCTO />
+      </div>
     </main>
   );
 }
