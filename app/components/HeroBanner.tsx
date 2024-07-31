@@ -21,14 +21,14 @@ const HeroBanner: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen mt-24 md:mt-40 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+    <div className="relative w-full h-640px mt-24 md:mt-40 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="absolute md:w-full md:h-full inset-0 md:block hidden">
         <Image
           src={mobileBg}
           alt="Background Image"
-          height={840}
+          height={640}
           width={1200}
-          className="w-full h-[840px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+          className="w-full h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
         <FadeIn>
           <div className='absolute bottom-12 right-36 p-4 bg-black/20 animated-border'>

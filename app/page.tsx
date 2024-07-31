@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <HeroBanner/>
       {/* <InspireCTO/> */}
       <ProjectsCard/>
-      <TeamView/>
+      <TeamView/>   
       <ContactUs/>
       <GetStartedCTO/>
     </main>
