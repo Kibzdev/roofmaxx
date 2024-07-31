@@ -14,21 +14,20 @@ type PageIntroProps = {
 
 const PageIntro: React.FC<PageIntroProps> = ({ eyebrow, title, children, centered = false }) => {
   return (
-    <Container className={clsx("mt-18 sm:mt-32 md:mt-4")}>
+    <Container className={clsx("mt-24 sm:mt-32 md:mt-0")}>  {/* Adjusted margins */}
       <FadeIn>
          <h1>
           <span className='block font-display text-sm  md:text-xl font-semibold text-sky-600'>{eyebrow}</span>
           <span className="sr-only"> - </span>
-          <span className={clsx("mt-1 block max-w-5xl font-display text-2xl md:text-5xl font-semibold tracking-tight text-sky-800 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
+          <span className={clsx("mt-4 block max-w-5xl font-display text-2xl md:text-5xl font-semibold tracking-tight text-sky-800 [text-wrap:balance] sm:text-6xl", centered && "mx-auto")}>{title}</span>
          </h1>
          <div className={clsx(
-            "mt-1  w-full text-xl text-gray-700",
+            "mt-4 w-full text-xl text-gray-700",  /* Adjusted margin */
             centered && "mx-auto"
           )}>
            {children}
          </div>
       </FadeIn>
-      
     </Container>
   );
 }
