@@ -3,14 +3,13 @@ import Container from "./Container";
 import FadeIn from "./FadeIn";
 import StylizedImage from './contact/ContactStyleImg';
 
-
 interface ImageProps {
   src: string;
   alt?: string;
   width?: number;
   height?: number;
   className?: string;
-  shape?: number
+  shape?: number;
 }
 
 interface SectionProps {
@@ -21,7 +20,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title, image, children }) => {
   return (
-    <Container className="group/section [counter-increment:section]">
+    <Container className="group/section">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
           <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
@@ -31,16 +30,11 @@ const Section: React.FC<SectionProps> = ({ title, image, children }) => {
               className="justify-center lg:justify-end lg:group-even/section:justify-start"
               width={440}
               height={450}
-             
             />
           </FadeIn>
         </div>
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
-            <div
-              className="font-display text-base font-semibold before:text-sky-800 before:content-['/_'] after:text-red-500 after:content-[counter(section,decimal-leading-zero)]"
-              aria-hidden="true"
-            />
             <h2 className="mt-2 font-display text-3xl font-medium tracking-tight text-sky-800 sm:text-4xl">
               {title}
             </h2>
