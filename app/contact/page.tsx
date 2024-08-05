@@ -21,7 +21,7 @@ const ContactPage = () => {
             <div className="flex flex-col w-full md:max-w-6xl   px-4 md:col-span-1 mx-auto">
               <ContactDetails />
             </div>
-            <div className='flex flex-col-reverse md:flex-row md:w-full'>
+            <div className='flex flex-col md:flex-row md:w-full'>
               <div className='flex justify-center lg:w-1/2 lg:justify-end lg:pr-12'>
                 <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
                   <StylizedImage 
