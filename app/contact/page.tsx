@@ -33,7 +33,7 @@ const ContactPage = () => {
                   />
                 </FadeIn>
               </div>
-              <div className='flex-1 items-center justify-center'>
+              <div className='flex-1  items-center justify-center'>
                 <ContactForm />
               </div>
             </div>

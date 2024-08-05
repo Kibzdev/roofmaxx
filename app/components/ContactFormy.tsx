@@ -24,7 +24,6 @@ const ContactForm: React.FC = () => {
   useEffect(() => {
     const getServices = async () => {
       const fetchedServices = await fetchServiceData();
-      // Sort services by the 'order' field
       const sortedServices = fetchedServices.sort((a, b) =>
         a.identification.order - b.identification.order
       );
@@ -36,9 +35,7 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    // Replace with your form submission logic
     try {
-      // Simulate form submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
       toast.success("Form submitted successfully!");
     } catch (error) {
@@ -62,7 +59,7 @@ const ContactForm: React.FC = () => {
       <Container>
         <ToastContainer />
         <FadeIn>
-          <form onSubmit={onSubmit} className="flex flex-col md:w-[540px] w-full bg-pink-500 px-2">
+          <form onSubmit={onSubmit} className="flex flex-col md:w-[540px] w-full px-4 mx-auto">
             <h2 className="font-display text-base font-semibold text-sky-900 uppercase mt-2">
               Work Inquiries
             </h2>
@@ -97,7 +94,7 @@ const ContactForm: React.FC = () => {
                   onChange={(e) => setLocation(e.target.value)} 
                   name="location"
                 />
-                <div className="sm:col-span-2 pb-5 ">
+                <div className="sm:col-span-2 pb-5">
                   <label className="block px-4 text-sm font-medium text-sky-800" htmlFor="message">Message</label>
                   <textarea
                     id="message"
@@ -109,8 +106,8 @@ const ContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              <label className="block text-sm font-medium text-sky-800" htmlFor="message">Service</label>
-              <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 w-full md:`}>
+              <label className="block text-sm font-medium text-sky-800" htmlFor="serviceName">Service</label>
+              <div className={`border ${serviceSelected ? 'border-neutral-300' : 'border-neutral-300'} px-6 py-4 mt-4 w-full`}>
                 <div className="mt-0">
                   {loading ? (
                     <p>Loading services...</p>
