@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
       <Container>
         <ToastContainer />
         <FadeIn>
-          <form onSubmit={onSubmit} className="max-w-4xl md:w-[840px]">
+          <form onSubmit={onSubmit} className="max-w-4xl md:w-[540px]">
             <h2 className="font-display text-base font-semibold text-sky-900 uppercase">
               Work Inquiries
             </h2>
@@ -97,8 +97,8 @@ const ContactForm: React.FC = () => {
                   onChange={(e) => setLocation(e.target.value)} 
                   name="location"
                 />
-                <div className="sm:col-span-2 pb-5 g">
-                  <label className="block text-sm font-medium text-sky-800" htmlFor="message">Message</label>
+                <div className="sm:col-span-2 pb-5 ">
+                  <label className="block px-4 text-sm font-medium text-sky-800" htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
