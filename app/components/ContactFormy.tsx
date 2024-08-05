@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
       <Container>
         <ToastContainer />
         <FadeIn>
-          <form onSubmit={onSubmit} className="md:w-[540px] w-full">
+          <form onSubmit={onSubmit} className="flex flex-col md:w-[540px] w-full bg-pink-500 px-2">
             <h2 className="font-display text-base font-semibold text-sky-900 uppercase mt-2">
               Work Inquiries
             </h2>
