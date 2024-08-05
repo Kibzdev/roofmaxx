@@ -30,12 +30,10 @@ const HeroBanner: React.FC = () => {
           width={1200}
           className="w-full h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
         />
-        <FadeIn>
           <div className='absolute bottom-12 right-36 p-4 bg-black/20 animated-border'>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>MAKING</h1>
             <h1 className='text-white text-4xl md:text-8xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
           </div>
-        </FadeIn>
       </div>
       <div className="absolute mt-4 inset-0 block md:hidden z-20">
         <div className='relative w-full h-[340px] md:h-[640px]'>
@@ -46,12 +44,10 @@ const HeroBanner: React.FC = () => {
             width={500}
             className="w-full h-[340px] md:h-[640px] object-cover group-hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
           />
-          <FadeIn>
             <div className='absolute bottom-6 right-12 p-4 bg-black/20 animated-border'>
               <h1 className='text-white text-4xl md:text-2xl font-bold'>MAKING</h1>
               <h1 className='text-white text-4xl md:text-2xl font-bold'>ROOFS <span className='text-red-500'>LAST</span></h1>
             </div>
-          </FadeIn>
         </div>
       </div>
       <ScheduleForm className="absolute mt-[340px] md:ml-44" />
