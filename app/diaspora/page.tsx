@@ -5,6 +5,7 @@ import Cordy from '../components/diaspora/Cordy'
 import Pay from '../components/diaspora/Pay'
 import Tailored from '../components/diaspora/Tailored'
 import GetStartedCTO from '../components/GetStartedCTO'
+import BookingDock from '../components/diaspora/BookingDock'
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
        <PageIntro  title="Diaspora Build" />
         <div>
           {/* Diaspora Statement */}
+          <BookingDock/>
           <ValueStatement/>
           <Cordy/>
           <Pay/>

@@ -16,13 +16,13 @@ const Cordy = () => {
       </h3>
       <List>
          <ListItem title="WhatsApp">
-          <p>Easily connect with us via WhatsApp for instant updates, quick queries, and real-time progress reports. </p>
+          <p className='text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2'>Easily connect with us via WhatsApp for instant updates, quick queries, and real-time progress reports. </p>
          </ListItem>
          <ListItem title="FaceTime">
-          <p> Easily connect with us via FaceTime for instant updates, virtual meetings, and real-time site visits, ensuring you have a clear view of your project’s progress.</p>
+          <p className='text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2'> Easily connect with us via FaceTime for instant updates, virtual meetings, and real-time site visits, ensuring you have a clear view of your project’s progress.</p>
          </ListItem>
          <ListItem title="Emails">
-          <p>Receive detailed email updates with photos, videos, and written reports, keeping you informed at every stage. </p>
+          <p className='text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2'>Receive detailed email updates with photos, videos, and written reports, keeping you informed at every stage. </p>
          </ListItem>
       </List>
    </Section>

@@ -9,11 +9,9 @@ const ValueStatement = () => {
   return (
 
 
-     <Section title='Diaspora' image={{ src:diasporaimg, shape: 1 }}>
-       <div className="space-y-6 text-base">
-       <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2">At Roofmax Roofing Solutions, we pride ourselves on our deep commitment to understanding and meeting the unique needs of our diaspora clients.</p>
-       <p className="text-gray-600 mb-2 font-normal  md:text-left  leading-6 md:text-xl text-sm py-2">We recognize that being away from home can create distinct challenges when it comes to managing property projects in Kenya.</p>  
-        
+     <Section title='Diaspora' image={{ src:diasporaimg, shape: 2 }}>
+       <div className="space-y-1 text-base">
+       <p className="text-gray-600 mb-2 font-normal md:text-left  leading-6 md:text-xl text-sm py-2">At Roofmax Roofing Solutions, we pride ourselves on our deep commitment to understanding and meeting the unique needs of our diaspora clients. We recognize that being away from home can create distinct challenges when it comes to managing property projects in Kenya.</p> 
       </div>
       <h3 className="mt-12 font-display text-base font-semibold text-sky-800">
         How we Do it?
