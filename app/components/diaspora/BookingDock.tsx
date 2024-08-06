@@ -94,7 +94,7 @@ const BookingDock: React.FC<ScheduleFormProps> = ({ className }) => {
           </SheetTrigger>
           <SheetContent className='bg-white w-full'>
             <SheetHeader>
-              <SheetTitle className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</SheetTitle>
+              <SheetTitle className="text-xl text-center font-bold mb-4 text-red-500  uppercase">Get a Free Quote</SheetTitle>
               <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:max-w-md justify-center md:mt-24 ${className}`}>
                 <ToastContainer />
                 <form className="space-y-4 flex flex-col items-center justify-center" onSubmit={onSubmit}>
@@ -159,7 +159,7 @@ const BookingDock: React.FC<ScheduleFormProps> = ({ className }) => {
                   </button>
                 </form>
               </div>
-              <p className="font-bold text-red-500">Follow Us on</p>
+              <p className="font-bold text-red-500 text-center">Follow Us on</p>
               <div className="flex justify-center md:justify-end space-x-4 mt-2 md:mt-4">
                 <a href="https://www.facebook.com/profile.php?id=61560885807834" className="text-red-500 hover:text-sky-800 text-2xl md:text-6xl"><FaFacebookF /></a>
                 <a href="#" className="text-red-500 hover:text-sky-800 text-2xl md:text-6xl"><FaTwitter /></a>
