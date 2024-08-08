@@ -51,7 +51,7 @@ const HeroBanner: React.FC = () => {
           </div>
         </div>
       </div>
-      <ScheduleForm className="absolute mt-[240px] sm:mt-[340px] md:ml-20 lg:ml-44" />
+      <ScheduleForm className="relative mt-[422px] sm:mt-[340px] md:ml-20 lg:ml-44" />
       <div className="relative mt-0 sm:mt-32 md:mt-48 w-full md:w-2/3 flex justify-center h-full">
         {/* Optionally, additional content can go here */}
       </div>
