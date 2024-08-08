@@ -72,7 +72,7 @@ const OurClient: React.FC = () => {
           <div
             className={clsx(
               "mb-8 md:mb-0",
-              "md:flex md:flex-col md:justify-center md:pl-0 md:w-full"
+              "md:flex md:flex-col md:justify-center md:pl-4 md:w-full"
             )}
           >
             <h1 className="text-xl md:text-4xl font-bold leading-tight text-sky-800 uppercase">
