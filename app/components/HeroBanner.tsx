@@ -21,7 +21,7 @@ const HeroBanner: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[640px] mt-24 sm:mt-32 md:mt-38 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+    <div className="relative w-full h-[640px] mt-18 sm:mt-32 md:mt-38 bg-gray-50 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between">
       <div className="absolute md:w-full md:h-full inset-0 md:block hidden">
         <Image
           src={mobileBg}
