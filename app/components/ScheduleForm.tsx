@@ -67,13 +67,8 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
     }
   };
 
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Data', name, email, phone, location, serviceName, message);
-  };
-
   return (
-    <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full md:w-1/3 md:max-w-md justify-center mt-0 md:mt-12 ${className}`}>
+    <div className={`relative z-20 flex flex-col bg-gray-300 md:bg-red-500 p-6 md:rounded-lg shadow-md w-full sm:w-3/4 md:w-2/3 lg:w-1/3 md:max-w-md justify-center mt-0 md:mt-12 ${className}`}>
       <ToastContainer />
       <h2 className="text-xl text-center font-bold mb-4 text-red-500 md:text-white uppercase">Get a Free Quote</h2>
       <form className="space-y-4 flex flex-col items-center justify-center" onSubmit={handleSubmit}>
@@ -83,7 +78,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
           onChange={(e) => setName(e.target.value)}
           value={name}
           placeholder="Name"
-          className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+          className="w-full py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
         />
         <input
           type="email"
@@ -91,7 +86,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+          className="w-full py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
         />
         <input
           type="text"
@@ -99,7 +94,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="Phone"
-          className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+          className="w-full py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
         />
         <input
           type="text"
@@ -107,12 +102,12 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           placeholder="Your Location"
-          className="md:w-full w-4/5 py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+          className="w-full py-2 px-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
         />
         <select
           name="serviceName"
           onChange={(e) => setServiceName(e.target.value)}
-          className="md:w-full w-4/5 py-4 px-2 border border-gray-300 rounded bg-sky-800 text-white focus:bg-sky-600 focus:border-sky-600 focus:outline-none"
+          className="w-full py-4 px-2 border border-gray-300 rounded bg-sky-800 text-white focus:bg-sky-600 focus:border-sky-600 focus:outline-none"
         >
           <option>Choose Your Service</option>
           {services.map(service => (
@@ -126,7 +121,7 @@ const ScheduleForm: React.FC<ScheduleFormProps> = ({ className }) => {
           placeholder="Message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="md:w-full w-4/5 p-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
+          className="w-full p-2 border border-red-300 shadow-lg rounded bg-sky-800 text-white focus:bg-sky-900 focus:border-red-500 focus:outline-none"
           rows={4}
         />
         <button
