@@ -63,55 +63,58 @@ const Navbar = () => {
               <Link href="/" className={desktopLinkClasses}>Home</Link>
             </li>
             <Menu as="div" className="relative ml-2.5 md:ml-3.5 lg:ml-5">
-              <MenuButton
-                className={desktopLinkClasses}
-                onClick={handleServicesToggle}
+  <MenuButton
+    className={desktopLinkClasses}
+    onClick={handleServicesToggle}
+  >
+    Services
+  </MenuButton>
+  <Transition
+    as="div"
+    show={servicesOpen}
+    enter="transition ease-out duration-100"
+    enterFrom="transform opacity-0 scale-95"
+    enterTo="transform opacity-100 scale-100"
+    leave="transition ease-in duration-75"
+    leaveFrom="transform opacity-100 scale-100"
+    leaveTo="transform opacity-0 scale-95"
+  >
+    <MenuItems
+      as="div"
+      className="absolute z-10 mt-6 w-[340px] max-h-80 overflow-y-auto origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar"
+      onMouseLeave={closeServicesDropdown}
+    >
+      <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
+        {serviceLinks.map((serviceLink) => (
+          <MenuItem key={serviceLink.service_id} as="div">
+            {({ active }) => (
+              <div
+                className={`block w-full data-[focus]:bg-blue-100 px-4 py-2 ${
+                  active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
+                }`}
+                onClick={() => {
+                  closeServicesDropdown(); // Close the dropdown
+                  setServicesOpen(false); // Ensure the dropdown stays closed
+                }}
               >
-                Services
-              </MenuButton>
-              <Transition
-                as="div"
-                show={servicesOpen}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <MenuItems
-                  as="div"
-                  className="absolute z-10 mt-6 w-[340px] max-h-80 overflow-y-auto origin-top-left rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar"
-                  onMouseLeave={closeServicesDropdown}
+                <Link
+                  href={`/services/${serviceLink.href}`}
+                  className="flex flex-col gap-2 px-0 font-semibold items-start justify-start text-sky-800 text-sm"
+                  onClick={() => {
+                    closeServicesDropdown(); // Close the dropdown
+                    setServicesOpen(false); // Ensure the dropdown stays closed
+                  }}
                 >
-                  <div className="flex flex-col flex-wrap rounded-lg justify-between py-1">
-                    {serviceLinks.map((serviceLink) => (
-                      <MenuItem key={serviceLink.service_id} as="div">
-                        {({ active }) => (
-                          <div
-                            className={`block w-full data-[focus]:bg-blue-100 px-4 py-2 ${
-                              active ? "bg-blue-50 border-b-2 border-b-red-500" : ""
-                            }`}
-                            onClick={closeServicesDropdown}
-                          >
-                            <Link
-                              href={`/services/${serviceLink.href}`}
-                              className="flex flex-col gap-2 px-0 font-semibold items-start justify-start text-sky-800 text-sm" // Default text size for desktop
-                              onClick={() => {
-                                closeServicesDropdown();
-                                setMenuOpen(false); // Ensure the mobile menu also closes if open
-                              }}
-                            >
-                              {serviceLink.label}
-                            </Link>
-                          </div>
-                        )}
-                      </MenuItem>
-                    ))}
-                  </div>
-                </MenuItems>
-              </Transition>
-            </Menu>
+                  {serviceLink.label}
+                </Link>
+              </div>
+            )}
+          </MenuItem>
+        ))}
+      </div>
+    </MenuItems>
+  </Transition>
+</Menu>
             <li className="ml-2.5 md:ml-3.5 lg:ml-5 text-sm">
               <Link href="/projects" className={desktopLinkClasses}>Projects</Link>
             </li>
